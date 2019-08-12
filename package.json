@@ -1,0 +1,62 @@
+{
+  "name": "pomodoro",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:icons && CI=false react-scripts build",
+    "build:icons": "tools/build-images.sh",
+    "deploy": "npx firebase deploy",
+    "lint": "npx cspell src/**/* public/**/* && npx eslint 'src/**/*.ts{,x}'",
+    "start": "react-scripts start",
+    "test": "react-scripts test --coverage --watchAll=false"
+  },
+  "dependencies": {
+    "@sentry/browser": "^5.6.1",
+    "firebase": "^6.3.5",
+    "lodash": "^4.17.15",
+    "prettier": "^1.18.2",
+    "pure-uuid": "^1.5.7",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-icons": "^3.7.0",
+    "react-scripts": "^3.1.0",
+    "react-spinners": "^0.5.12",
+    "react-use": "^10.5.0",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.1.0",
+    "@types/jest": "^24.0.17",
+    "@types/lodash": "^4.14.136",
+    "@types/node": "^12.7.1",
+    "@types/prettier": "^1.18.1",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-test-renderer": "^16.9.0",
+    "@types/styled-components": "^4.1.18",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "cspell": "^4.0.27",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "firebase-tools": "^7.2.2",
+    "react-test-renderer": "^16.9.0",
+    "typescript": "^3.5.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

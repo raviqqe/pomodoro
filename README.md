@@ -4,7 +4,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/raviqqe/pomodoro.svg?style=flat-square)](https://codecov.io/gh/raviqqe/pomodoro)
 [![License](https://img.shields.io/github/license/raviqqe/pomodoro.svg?style=flat-square)](LICENSE)
 
-Pomodoro timer
+Note taking app with UI similar to SMS; just talk to yourself to memorize stuff.
 
 ## License
 
