@@ -1,0 +1,10 @@
+{
+  "firebase": {
+    "apiKey": "AIzaSyAjphF5K4I2_TMFCXgTWpyiAuKWjwzRTXM",
+    "projectId": "pomodoro-b3526"
+  },
+  "repositoryURL": "https://github.com/raviqqe/pomodoro",
+  "sentry": {
+    "dsn": "https://b5d53f73a162479eba3f4d4fed35c731@sentry.io/1523173"
+  }
+}
