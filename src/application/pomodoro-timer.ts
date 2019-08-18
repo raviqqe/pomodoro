@@ -24,8 +24,12 @@ export class PomodoroTimer {
     throw new Error("unreachable");
   }
 
-  public stop(): void {
-    this.timer.stop();
+  public pause(): void {
+    this.timer.pause();
+  }
+
+  public restart(): void {
+    this.timer.restart();
   }
 
   public state(): PomodoroTimerState {

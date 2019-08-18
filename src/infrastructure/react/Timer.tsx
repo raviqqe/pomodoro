@@ -38,14 +38,9 @@ const Seconds = styled.span`
 export const Timer = () => {
   const [timer] = useState(new PomodoroTimer());
   const [stopped, setStopped] = useState(true);
+  const [paused, setPaused] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [state, setState] = useState(PomodoroTimerState.Pomodoro);
-
-  const stop = () => {
-    timer.stop();
-    setStopped(true);
-    setState(timer.state());
-  };
 
   return (
     <Container>
@@ -59,7 +54,8 @@ export const Timer = () => {
                 setSeconds(seconds);
               }
 
-              stop();
+              setStopped(true);
+              setState(timer.state());
             }}
             secondary={state !== PomodoroTimerState.Pomodoro}
           >
@@ -77,9 +73,26 @@ export const Timer = () => {
             <Minutes>{Math.floor(seconds / 60)}</Minutes>
             <Seconds>{seconds % 60}</Seconds>
           </Time>
-          <TextButton onClick={stop} secondary={true}>
-            Stop
-          </TextButton>
+          {paused ? (
+            <TextButton
+              onClick={() => {
+                timer.restart();
+                setPaused(false);
+              }}
+            >
+              Restart
+            </TextButton>
+          ) : (
+            <TextButton
+              onClick={() => {
+                timer.pause();
+                setPaused(true);
+              }}
+              secondary={true}
+            >
+              Pause
+            </TextButton>
+          )}
         </>
       )}
     </Container>
