@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import * as application from "../../application/timer";
+import {
+  PomodoroTimerState,
+  PomodoroTimer
+} from "../../application/pomodoro-timer";
 import { TextButton } from "./TextButton";
 
 const Container = styled.div`
@@ -33,9 +36,16 @@ const Seconds = styled.span`
 `;
 
 export const Timer = () => {
-  const [timer] = useState(new application.Timer());
+  const [timer] = useState(new PomodoroTimer());
   const [stopped, setStopped] = useState(true);
   const [seconds, setSeconds] = useState(0);
+  const [state, setState] = useState(PomodoroTimerState.Pomodoro);
+
+  const stop = () => {
+    timer.stop();
+    setStopped(true);
+    setState(timer.state());
+  };
 
   return (
     <Container>
@@ -45,28 +55,20 @@ export const Timer = () => {
             onClick={async () => {
               setStopped(false);
 
-              for await (const seconds of timer.countDownPomodoro()) {
+              for await (const seconds of timer.start()) {
                 setSeconds(seconds);
               }
 
-              setStopped(true);
+              stop();
             }}
+            secondary={state !== PomodoroTimerState.Pomodoro}
           >
-            Pomodoro
-          </TextButton>
-          <TextButton
-            onClick={async () => {
-              setStopped(false);
-
-              for await (const seconds of timer.countDownBreak()) {
-                setSeconds(seconds);
-              }
-
-              setStopped(true);
-            }}
-            secondary={true}
-          >
-            Break
+            Start{" "}
+            {state === PomodoroTimerState.Pomodoro
+              ? "Pomodoro"
+              : state === PomodoroTimerState.ShortBreak
+              ? "Short Break"
+              : "Long Break"}
           </TextButton>
         </ButtonsContainer>
       ) : (
@@ -75,13 +77,7 @@ export const Timer = () => {
             <Minutes>{Math.floor(seconds / 60)}</Minutes>
             <Seconds>{seconds % 60}</Seconds>
           </Time>
-          <TextButton
-            onClick={() => {
-              timer.stop();
-              setStopped(true);
-            }}
-            secondary={true}
-          >
+          <TextButton onClick={stop} secondary={true}>
             Stop
           </TextButton>
         </>
