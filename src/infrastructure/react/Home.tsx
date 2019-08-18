@@ -1,25 +1,13 @@
 import React from "react";
-import { PulseLoader } from "react-spinners";
 import styled from "styled-components";
 import { SignOut } from "./SignOut";
+import { Timer } from "./Timer";
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 85ex;
-  max-width: 100%;
-  margin: auto;
-
-  > :first-child {
-    flex: 1;
-  }
-`;
-
-const LoaderContainer = styled.div`
-  display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 `;
 
 const SignOutContainer = styled.div`
@@ -35,9 +23,7 @@ export interface IProps {
 export const Home = ({ signOut }: IProps) => {
   return (
     <Container>
-      <LoaderContainer>
-        <PulseLoader color="white" />
-      </LoaderContainer>
+      <Timer />
       <SignOutContainer>
         <SignOut signOut={signOut} />
       </SignOutContainer>
