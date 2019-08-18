@@ -3,27 +3,23 @@
 exports[`goes to a home screen when a user signs in 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bZQynM CNtkt"
+    class="sc-gZMcBi eTCLAY"
   >
     <div
-      class="sc-gzVnrw kvUNtX"
+      class="sc-bZQynM bsmBBS"
     >
       <div
-        class="css-lyovzr-Loader"
+        class="sc-gzVnrw YSVJA"
       >
-        <div
-          class="css-jrw1z6-style"
-        />
-        <div
-          class="css-1al05dg-style"
-        />
-        <div
-          class="css-1hs6u6m-style"
-        />
+        <button
+          class="sc-bdVaJa sc-bwzfXH cqtuLn"
+        >
+          Start Pomodoro
+        </button>
       </div>
     </div>
     <div
-      class="sc-htoDjs kBdfIe"
+      class="sc-gqjmRU liTeMR"
     >
       <button
         class="sc-bdVaJa sc-EHOje jauTNv"
@@ -50,27 +46,25 @@ exports[`goes to a home screen when a user signs in 1`] = `
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-bZQynM CNtkt"
+    class="sc-gZMcBi eTCLAY"
   >
     <div
-      class="sc-gzVnrw kvUNtX"
+      class="sc-bZQynM bsmBBS"
     >
       <div
-        class="css-lyovzr-Loader"
+        class="sc-gzVnrw YSVJA"
       >
-        <div
-          class="css-jrw1z6-style"
-        />
-        <div
-          class="css-1al05dg-style"
-        />
-        <div
-          class="css-1hs6u6m-style"
-        />
+        <button
+          class="sc-bdVaJa sc-bwzfXH cqtuLn"
+        >
+          Start
+           
+          Pomodoro
+        </button>
       </div>
     </div>
     <div
-      class="sc-htoDjs kBdfIe"
+      class="sc-gqjmRU liTeMR"
     >
       <button
         class="sc-bdVaJa sc-EHOje jauTNv"

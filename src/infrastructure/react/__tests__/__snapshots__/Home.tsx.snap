@@ -2,27 +2,26 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-htpNat eRmpJU"
+  className="sc-htoDjs egmpJk"
 >
   <div
-    className="sc-bxivhb jtHuoG"
+    className="sc-bxivhb gtwcOJ"
   >
     <div
-      className="css-lyovzr-Loader"
+      className="sc-ifAKCX kfsuSp"
     >
-      <div
-        className="css-jrw1z6-style"
-      />
-      <div
-        className="css-1al05dg-style"
-      />
-      <div
-        className="css-1hs6u6m-style"
-      />
+      <button
+        className="sc-bdVaJa sc-htpNat bkKMzy"
+        onClick={[Function]}
+      >
+        Start
+         
+        Pomodoro
+      </button>
     </div>
   </div>
   <div
-    className="sc-ifAKCX hAePiD"
+    className="sc-dnqmqq fscOyP"
   >
     <button
       className="sc-bdVaJa sc-bwzfXH davee"
