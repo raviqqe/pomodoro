@@ -8,11 +8,10 @@ it("renders", () => {
     create(
       <Home
         seconds={42}
-        paused={false}
+        stopped={false}
         state={PomodoroTimerState.Pomodoro}
         signOut={async () => undefined}
-        pauseTimer={async () => undefined}
-        restartTimer={async () => undefined}
+        stopTimer={async () => undefined}
         startTimer={async () => undefined}
       />
     ).toJSON()

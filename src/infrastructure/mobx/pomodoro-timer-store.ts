@@ -3,7 +3,7 @@ import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
 
 export class PomodoroTimerStore {
   @observable public seconds: number = 0;
-  @observable public paused: boolean = false;
+  @observable public stopped: boolean = true;
   @observable public state: PomodoroTimerState = PomodoroTimerState.Pomodoro;
 
   @action
@@ -12,8 +12,8 @@ export class PomodoroTimerStore {
   }
 
   @action
-  public setPaused(paused: boolean): void {
-    this.paused = paused;
+  public setStopped(stopped: boolean): void {
+    this.stopped = stopped;
   }
 
   @action

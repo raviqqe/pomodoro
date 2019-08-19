@@ -8,7 +8,7 @@ it("starts", async () => {
 
   const timerPresenter = {
     presentTime: jest.fn(),
-    presentPaused: jest.fn()
+    presentStopped: jest.fn()
   };
 
   await new Timer(timerPresenter).start(42);
@@ -16,40 +16,25 @@ it("starts", async () => {
   expect(timerPresenter.presentTime.mock.calls).toEqual(
     range(42, -1, -1).map(seconds => [seconds])
   );
+  expect(timerPresenter.presentStopped.mock.calls).toEqual([[false], [true]]);
 });
 
-it("pauses", async () => {
+it("stops", async () => {
   const spy = jest.spyOn(utilities, "sleep");
   spy.mockResolvedValue(undefined);
 
   const timerPresenter = {
     presentTime: jest.fn(),
-    presentPaused: jest.fn()
-  };
-
-  new Timer(timerPresenter).pause();
-
-  expect(timerPresenter.presentPaused).toBeCalledTimes(1);
-});
-
-it("pauses and restarts", async () => {
-  const spy = jest.spyOn(utilities, "sleep");
-  spy.mockResolvedValue(undefined);
-
-  const timerPresenter = {
-    presentTime: jest.fn(),
-    presentPaused: jest.fn()
+    presentStopped: jest.fn()
   };
 
   const timer = new Timer(timerPresenter);
   const promise = timer.start(42);
 
-  timer.pause();
-  timer.restart();
+  timer.stop();
 
   await promise;
 
-  expect(timerPresenter.presentTime.mock.calls).toEqual(
-    range(42, -1, -1).map(seconds => [seconds])
-  );
+  expect(timerPresenter.presentTime.mock.calls).toEqual([[42]]);
+  expect(timerPresenter.presentStopped.mock.calls).toEqual([[false], [true]]);
 });

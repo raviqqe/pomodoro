@@ -27,12 +27,8 @@ export class PomodoroTimer {
     }
   }
 
-  public pause(): void {
-    this.timer.pause();
-  }
-
-  public restart(): void {
-    this.timer.restart();
+  public stop(): void {
+    this.timer.stop();
   }
 
   private state(): PomodoroTimerState {
@@ -44,15 +40,17 @@ export class PomodoroTimer {
   }
 
   private async startPomodoro(): Promise<void> {
+    await this.timer.start(25 * 60);
+
     this.pomodoro = false;
     this.presenter.presentState(this.state());
-    await this.timer.start(25 * 60);
   }
 
   private async startBreak(seconds: number): Promise<void> {
+    await this.timer.start(seconds);
+
     this.pomodoro = true;
     this.breakCount++;
     this.presenter.presentState(this.state());
-    await this.timer.start(seconds);
   }
 }

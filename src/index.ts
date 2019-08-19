@@ -11,9 +11,8 @@ import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { PomodoroTimer } from "./application/pomodoro-timer";
-import { PomodoroTimerPauser } from "./application/pomodoro-timer-pauser";
+import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper";
 import { PomodoroTimerStarter } from "./application/pomodoro-timer-starter";
-import { PomodoroTimerRestarter } from "./application/pomodoro-timer-restarter";
 import configuration from "./configuration.json";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
@@ -48,9 +47,8 @@ async function main() {
       authenticationController,
       authenticationPresenter
     ),
-    new PomodoroTimerPauser(pomodoroTimer),
-    new PomodoroTimerRestarter(pomodoroTimer),
     new PomodoroTimerStarter(pomodoroTimer),
+    new PomodoroTimerStopper(pomodoroTimer),
     new SignInManager(authenticationController, authenticationPresenter),
     new SignOutManager(authenticationController, authenticationPresenter),
     authenticationStore,

@@ -9,8 +9,8 @@ export class MobxPomodoroTimerPresenter implements IPomodoroTimerPresenter {
     this.store.setSeconds(seconds);
   }
 
-  public presentPaused(paused: boolean): void {
-    this.store.setPaused(paused);
+  public presentStopped(stopped: boolean): void {
+    this.store.setStopped(stopped);
   }
 
   public presentState(state: PomodoroTimerState): void {

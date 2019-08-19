@@ -1,9 +1,9 @@
 import { PomodoroTimer } from "./pomodoro-timer";
 
-export class PomodoroTimerPauser {
+export class PomodoroTimerStopper {
   constructor(private readonly pomodoroTimer: PomodoroTimer) {}
 
-  public pause(): void {
-    this.pomodoroTimer.pause();
+  public stop(): void {
+    this.pomodoroTimer.stop();
   }
 }

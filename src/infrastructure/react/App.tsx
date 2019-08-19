@@ -17,10 +17,7 @@ const LoaderContainer = styled.div`
 `;
 
 interface IProps
-  extends Pick<
-      IHomeProps,
-      "pauseTimer" | "restartTimer" | "startTimer" | "signOut"
-    >,
+  extends Pick<IHomeProps, "stopTimer" | "startTimer" | "signOut">,
     ILandingProps {
   authenticationStore: AuthenticationStore;
   pomodoroTimerStore: PomodoroTimerStore;
@@ -30,7 +27,7 @@ interface IProps
 export const App = observer(
   ({
     authenticationStore: { signedIn },
-    pomodoroTimerStore: { seconds, state, paused },
+    pomodoroTimerStore: { seconds, state, stopped },
     initialize,
     repositoryURL,
     signIn,
@@ -43,7 +40,7 @@ export const App = observer(
         <PulseLoader color="white" />
       </LoaderContainer>
     ) : signedIn ? (
-      <Home {...homeProps} seconds={seconds} state={state} paused={paused} />
+      <Home {...homeProps} seconds={seconds} state={state} stopped={stopped} />
     ) : (
       <Landing repositoryURL={repositoryURL} signIn={signIn} />
     );

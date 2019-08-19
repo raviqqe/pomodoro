@@ -34,23 +34,21 @@ const Seconds = styled.span`
 
 export interface IProps {
   seconds: number;
-  paused: boolean;
+  stopped: boolean;
   startTimer: () => void;
-  pauseTimer: () => void;
-  restartTimer: () => void;
+  stopTimer: () => void;
   state: PomodoroTimerState;
 }
 
 export const Timer = ({
-  paused,
-  pauseTimer,
-  restartTimer,
+  stopped,
+  stopTimer,
   seconds,
   startTimer,
   state
 }: IProps) => (
   <Container>
-    {seconds === 0 ? (
+    {stopped ? (
       <ButtonsContainer>
         <TextButton
           onClick={startTimer}
@@ -70,13 +68,9 @@ export const Timer = ({
           <Minutes>{Math.floor(seconds / 60)}</Minutes>
           <Seconds>{seconds % 60}</Seconds>
         </Time>
-        {paused ? (
-          <TextButton onClick={restartTimer}>Restart</TextButton>
-        ) : (
-          <TextButton onClick={pauseTimer} secondary={true}>
-            Pause
-          </TextButton>
-        )}
+        <TextButton onClick={stopTimer} secondary={true}>
+          Stop
+        </TextButton>
       </>
     )}
   </Container>

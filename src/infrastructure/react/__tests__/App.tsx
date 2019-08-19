@@ -12,8 +12,7 @@ it("renders before a user signs in", async () => {
       initialize={async () => undefined}
       signIn={async () => undefined}
       signOut={async () => undefined}
-      pauseTimer={async () => undefined}
-      restartTimer={async () => undefined}
+      stopTimer={async () => undefined}
       startTimer={async () => undefined}
       repositoryURL="url"
     />
@@ -34,8 +33,7 @@ it("renders after a user signs in", async () => {
       initialize={async () => undefined}
       signIn={async () => undefined}
       signOut={async () => undefined}
-      pauseTimer={async () => undefined}
-      restartTimer={async () => undefined}
+      stopTimer={async () => undefined}
       startTimer={async () => undefined}
       repositoryURL="url"
     />
@@ -56,8 +54,7 @@ it("renders after a user signs out", async () => {
       initialize={async () => undefined}
       signIn={async () => undefined}
       signOut={async () => undefined}
-      pauseTimer={async () => undefined}
-      restartTimer={async () => undefined}
+      stopTimer={async () => undefined}
       startTimer={async () => undefined}
       repositoryURL="url"
     />

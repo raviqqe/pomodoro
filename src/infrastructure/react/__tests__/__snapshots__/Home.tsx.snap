@@ -25,7 +25,7 @@ exports[`renders 1`] = `
       className="sc-bdVaJa sc-htpNat bOjvbW"
       onClick={[Function]}
     >
-      Pause
+      Stop
     </button>
   </div>
   <div
