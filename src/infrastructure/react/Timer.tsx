@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import {
-  PomodoroTimerState,
-  PomodoroTimer
-} from "../../application/pomodoro-timer";
+import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
 import { TextButton } from "./TextButton";
 
 const Container = styled.div`
@@ -35,66 +32,52 @@ const Seconds = styled.span`
   margin-left: 0.2ex;
 `;
 
-export const Timer = () => {
-  const [timer] = useState(new PomodoroTimer());
-  const [stopped, setStopped] = useState(true);
-  const [paused, setPaused] = useState(false);
-  const [seconds, setSeconds] = useState(0);
-  const [state, setState] = useState(PomodoroTimerState.Pomodoro);
+export interface IProps {
+  seconds: number;
+  paused: boolean;
+  startTimer: () => void;
+  pauseTimer: () => void;
+  restartTimer: () => void;
+  state: PomodoroTimerState;
+}
 
-  return (
-    <Container>
-      {stopped ? (
-        <ButtonsContainer>
-          <TextButton
-            onClick={async () => {
-              setStopped(false);
-
-              for await (const seconds of timer.start()) {
-                setSeconds(seconds);
-              }
-
-              setStopped(true);
-              setState(timer.state());
-            }}
-            secondary={state !== PomodoroTimerState.Pomodoro}
-          >
-            Start{" "}
-            {state === PomodoroTimerState.Pomodoro
-              ? "Pomodoro"
-              : state === PomodoroTimerState.ShortBreak
-              ? "Short Break"
-              : "Long Break"}
+export const Timer = ({
+  paused,
+  pauseTimer,
+  restartTimer,
+  seconds,
+  startTimer,
+  state
+}: IProps) => (
+  <Container>
+    {seconds === 0 ? (
+      <ButtonsContainer>
+        <TextButton
+          onClick={startTimer}
+          secondary={state !== PomodoroTimerState.Pomodoro}
+        >
+          Start{" "}
+          {state === PomodoroTimerState.Pomodoro
+            ? "Pomodoro"
+            : state === PomodoroTimerState.ShortBreak
+            ? "Short Break"
+            : "Long Break"}
+        </TextButton>
+      </ButtonsContainer>
+    ) : (
+      <>
+        <Time>
+          <Minutes>{Math.floor(seconds / 60)}</Minutes>
+          <Seconds>{seconds % 60}</Seconds>
+        </Time>
+        {paused ? (
+          <TextButton onClick={restartTimer}>Restart</TextButton>
+        ) : (
+          <TextButton onClick={pauseTimer} secondary={true}>
+            Pause
           </TextButton>
-        </ButtonsContainer>
-      ) : (
-        <>
-          <Time>
-            <Minutes>{Math.floor(seconds / 60)}</Minutes>
-            <Seconds>{seconds % 60}</Seconds>
-          </Time>
-          {paused ? (
-            <TextButton
-              onClick={() => {
-                timer.restart();
-                setPaused(false);
-              }}
-            >
-              Restart
-            </TextButton>
-          ) : (
-            <TextButton
-              onClick={() => {
-                timer.pause();
-                setPaused(true);
-              }}
-              secondary={true}
-            >
-              Pause
-            </TextButton>
-          )}
-        </>
-      )}
-    </Container>
-  );
-};
+        )}
+      </>
+    )}
+  </Container>
+);

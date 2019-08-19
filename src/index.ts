@@ -2,10 +2,18 @@ import { ApplicationInitializer } from "./application/application-initializer";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
 import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
+import { PomodoroTimerStore } from "./infrastructure/mobx/pomodoro-timer-store";
+import { MobxPomodoroTimerPresenter } from "./infrastructure/mobx/mobx-pomodoro-timer-presenter";
+import { AuthenticationStore } from "./infrastructure/mobx/authentication-store";
+import { MobxAuthenticationPresenter } from "./infrastructure/mobx/mobx-authentication-presenter";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
+import { PomodoroTimer } from "./application/pomodoro-timer";
+import { PomodoroTimerPauser } from "./application/pomodoro-timer-pauser";
+import { PomodoroTimerStarter } from "./application/pomodoro-timer-starter";
+import { PomodoroTimerRestarter } from "./application/pomodoro-timer-restarter";
 import configuration from "./configuration.json";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
@@ -22,15 +30,31 @@ async function main() {
     throw new Error("no root element");
   }
 
+  const authenticationStore = new AuthenticationStore();
   const authenticationController = new FirebaseAuthenticationController();
+  const authenticationPresenter = new MobxAuthenticationPresenter(
+    authenticationStore
+  );
+
+  const pomodoroTimerStore = new PomodoroTimerStore();
+  const pomodoroTimerPresenter = new MobxPomodoroTimerPresenter(
+    pomodoroTimerStore
+  );
+  const pomodoroTimer = new PomodoroTimer(pomodoroTimerPresenter);
 
   new ReactRenderer(
     new ApplicationInitializer(
       new InfrastructureInitializer(firebaseInitializer),
-      authenticationController
+      authenticationController,
+      authenticationPresenter
     ),
-    new SignInManager(authenticationController),
-    new SignOutManager(authenticationController),
+    new PomodoroTimerPauser(pomodoroTimer),
+    new PomodoroTimerRestarter(pomodoroTimer),
+    new PomodoroTimerStarter(pomodoroTimer),
+    new SignInManager(authenticationController, authenticationPresenter),
+    new SignOutManager(authenticationController, authenticationPresenter),
+    authenticationStore,
+    pomodoroTimerStore,
     configuration.repositoryURL
   ).render(element);
 

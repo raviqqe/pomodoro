@@ -8,17 +8,25 @@ exports[`renders 1`] = `
     className="sc-bxivhb gtwcOJ"
   >
     <div
-      className="sc-ifAKCX kfsuSp"
+      className="sc-EHOje gzhTTf"
     >
-      <button
-        className="sc-bdVaJa sc-htpNat bkKMzy"
-        onClick={[Function]}
+      <span
+        className="sc-bZQynM eeRSms"
       >
-        Start
-         
-        Pomodoro
-      </button>
+        0
+      </span>
+      <span
+        className="sc-gzVnrw jVgmAG"
+      >
+        42
+      </span>
     </div>
+    <button
+      className="sc-bdVaJa sc-htpNat bOjvbW"
+      onClick={[Function]}
+    >
+      Pause
+    </button>
   </div>
   <div
     className="sc-dnqmqq fscOyP"

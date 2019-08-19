@@ -1,52 +1,67 @@
-import { fireEvent, render, waitForDomChange } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import React from "react";
 import { App } from "../App";
+import { AuthenticationStore } from "../../mobx/authentication-store";
+import { PomodoroTimerStore } from "../../mobx/pomodoro-timer-store";
 
 it("renders before a user signs in", async () => {
   const result = render(
     <App
-      initialize={async () => ({ signedIn: false })}
-      signIn={async () => true}
-      signOut={async () => false}
+      authenticationStore={new AuthenticationStore()}
+      pomodoroTimerStore={new PomodoroTimerStore()}
+      initialize={async () => undefined}
+      signIn={async () => undefined}
+      signOut={async () => undefined}
+      pauseTimer={async () => undefined}
+      restartTimer={async () => undefined}
+      startTimer={async () => undefined}
       repositoryURL="url"
     />
   );
-
-  await waitForDomChange(result);
 
   expect(result.container).toMatchSnapshot();
 });
 
 it("renders after a user signs in", async () => {
+  const authenticationStore = new AuthenticationStore();
+
+  authenticationStore.setSignedIn(true);
+
   const result = render(
     <App
-      initialize={async () => ({ signedIn: true })}
-      signIn={async () => true}
-      signOut={async () => false}
+      authenticationStore={authenticationStore}
+      pomodoroTimerStore={new PomodoroTimerStore()}
+      initialize={async () => undefined}
+      signIn={async () => undefined}
+      signOut={async () => undefined}
+      pauseTimer={async () => undefined}
+      restartTimer={async () => undefined}
+      startTimer={async () => undefined}
       repositoryURL="url"
     />
   );
-
-  await waitForDomChange(result);
 
   expect(result.container).toMatchSnapshot();
 });
 
-it("goes to a home screen when a user signs in", async () => {
-  const { asFragment, container } = render(
+it("renders after a user signs out", async () => {
+  const authenticationStore = new AuthenticationStore();
+
+  authenticationStore.setSignedIn(false);
+
+  const result = render(
     <App
-      initialize={async () => ({ signedIn: false })}
-      signIn={async () => true}
-      signOut={async () => false}
+      authenticationStore={authenticationStore}
+      pomodoroTimerStore={new PomodoroTimerStore()}
+      initialize={async () => undefined}
+      signIn={async () => undefined}
+      signOut={async () => undefined}
+      pauseTimer={async () => undefined}
+      restartTimer={async () => undefined}
+      startTimer={async () => undefined}
       repositoryURL="url"
     />
   );
 
-  await waitForDomChange({ container });
-
-  fireEvent.click(container.querySelector("button") as Element);
-
-  await waitForDomChange({ container });
-
-  expect(asFragment()).toMatchSnapshot();
+  expect(result.container).toMatchSnapshot();
 });

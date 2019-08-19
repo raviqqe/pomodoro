@@ -1,17 +1,11 @@
 import { IAuthenticationController } from "../authentication-controller";
 import { SignOutManager } from "../sign-out-manager";
 
-let signOutMock: jest.Mock;
-let signOutManager: SignOutManager;
+it("signs in", async () => {
+  const signOutManager = new SignOutManager(
+    ({ signOut: jest.fn() } as unknown) as IAuthenticationController,
+    { presentSignedIn: jest.fn() }
+  );
 
-beforeEach(() => {
-  signOutMock = jest.fn();
-  signOutManager = new SignOutManager(({
-    signOut: signOutMock
-  } as unknown) as IAuthenticationController);
-});
-
-it("lists documents", async () => {
   await signOutManager.signOut();
-  expect(signOutMock.mock.calls).toHaveLength(1);
 });

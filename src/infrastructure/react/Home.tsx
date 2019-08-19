@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { SignOut } from "./SignOut";
-import { Timer } from "./Timer";
+import { Timer, IProps as ITimerProps } from "./Timer";
 
 const Container = styled.div`
   display: flex;
@@ -16,17 +16,15 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
-export interface IProps {
+export interface IProps extends ITimerProps {
   signOut: () => Promise<void>;
 }
 
-export const Home = ({ signOut }: IProps) => {
-  return (
-    <Container>
-      <Timer />
-      <SignOutContainer>
-        <SignOut signOut={signOut} />
-      </SignOutContainer>
-    </Container>
-  );
-};
+export const Home = ({ signOut, ...timerProps }: IProps) => (
+  <Container>
+    <Timer {...timerProps} />
+    <SignOutContainer>
+      <SignOut signOut={signOut} />
+    </SignOutContainer>
+  </Container>
+);
