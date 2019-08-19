@@ -35,7 +35,7 @@ export class PomodoroTimer {
     this.timer.restart();
   }
 
-  public state(): PomodoroTimerState {
+  private state(): PomodoroTimerState {
     return this.pomodoro
       ? PomodoroTimerState.Pomodoro
       : (this.breakCount + 1) % 4 === 0
