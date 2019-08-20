@@ -17,7 +17,7 @@ const SignOutContainer = styled.div`
 `;
 
 export interface IProps extends ITimerProps {
-  signOut: () => Promise<void>;
+  signOut: () => void;
 }
 
 export const Home = ({ signOut, ...timerProps }: IProps) => (

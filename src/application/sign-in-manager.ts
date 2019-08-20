@@ -1,15 +1,11 @@
 import { IAuthenticationController } from "./authentication-controller";
-import { IAuthenticationPresenter } from "./authentication-presenter";
 
 export class SignInManager {
   constructor(
-    private readonly authenticationController: IAuthenticationController,
-    private readonly authenticationPresenter: IAuthenticationPresenter
+    private readonly authenticationController: IAuthenticationController
   ) {}
 
   public async signIn(): Promise<void> {
-    this.authenticationPresenter.presentSignedIn(
-      await this.authenticationController.signIn()
-    );
+    await this.authenticationController.signIn();
   }
 }

@@ -49,7 +49,7 @@ async function main() {
     ),
     new PomodoroTimerStarter(pomodoroTimer),
     new PomodoroTimerStopper(pomodoroTimer),
-    new SignInManager(authenticationController, authenticationPresenter),
+    new SignInManager(authenticationController),
     new SignOutManager(authenticationController, authenticationPresenter),
     authenticationStore,
     pomodoroTimerStore,
