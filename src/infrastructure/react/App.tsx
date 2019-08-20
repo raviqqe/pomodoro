@@ -1,9 +1,10 @@
-import { Omit } from "lodash";
-import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
-import React, { useState } from "react";
+import { PulseLoader } from "react-spinners";
+import { observer } from "mobx-react";
+import React from "react";
 import styled from "styled-components";
-import { IInitialState } from "../../application/application-initializer";
+import { AuthenticationStore } from "../mobx/authentication-store";
+import { PomodoroTimerStore } from "../mobx/pomodoro-timer-store";
 import { IProps as ILandingProps, Landing } from "./Landing";
 import { Home, IProps as IHomeProps } from "./Home";
 
@@ -15,40 +16,33 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-interface IProps extends Omit<IHomeProps, "signOut">, ILandingProps {
-  initialize: () => Promise<IInitialState>;
-  signIn: () => Promise<boolean>;
-  signOut: () => Promise<boolean>;
+interface IProps
+  extends Pick<IHomeProps, "stopTimer" | "startTimer" | "signOut">,
+    ILandingProps {
+  authenticationStore: AuthenticationStore;
+  pomodoroTimerStore: PomodoroTimerStore;
+  initialize: () => Promise<void>;
 }
 
-export const App = ({
-  initialize,
-  repositoryURL,
-  signIn,
-  signOut,
-  ...props
-}: IProps) => {
-  const [signedIn, setSignedIn] = useState<boolean | null>(null);
+export const App = observer(
+  ({
+    authenticationStore: { signedIn },
+    pomodoroTimerStore: { seconds, state, stopped },
+    initialize,
+    repositoryURL,
+    signIn,
+    ...homeProps
+  }: IProps) => {
+    useAsync(initialize, []);
 
-  useAsync(async () => {
-    const { signedIn } = await initialize();
-    setSignedIn(signedIn);
-  }, []);
-
-  if (signedIn === null) {
-    return (
+    return signedIn === null ? (
       <LoaderContainer>
         <PulseLoader color="white" />
       </LoaderContainer>
-    );
-  } else if (!signedIn) {
-    return (
-      <Landing
-        repositoryURL={repositoryURL}
-        signIn={async () => setSignedIn(await signIn())}
-      />
+    ) : signedIn ? (
+      <Home {...homeProps} seconds={seconds} state={state} stopped={stopped} />
+    ) : (
+      <Landing repositoryURL={repositoryURL} signIn={signIn} />
     );
   }
-
-  return <Home {...props} signOut={async () => setSignedIn(await signOut())} />;
-};
+);

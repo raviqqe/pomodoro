@@ -1,17 +1,10 @@
 import { IAuthenticationController } from "../authentication-controller";
 import { SignInManager } from "../sign-in-manager";
 
-let signInMock: jest.Mock;
-let signInManager: SignInManager;
-
-beforeEach(() => {
-  signInMock = jest.fn();
-  signInManager = new SignInManager(({
-    signIn: signInMock
+it("signs in", async () => {
+  const signInManager = new SignInManager(({
+    signIn: jest.fn()
   } as unknown) as IAuthenticationController);
-});
 
-it("lists documents", async () => {
   await signInManager.signIn();
-  expect(signInMock.mock.calls).toHaveLength(1);
 });

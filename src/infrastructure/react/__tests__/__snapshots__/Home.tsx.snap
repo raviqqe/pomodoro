@@ -2,27 +2,34 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-htpNat eRmpJU"
+  className="sc-htoDjs egmpJk"
 >
   <div
-    className="sc-bxivhb jtHuoG"
+    className="sc-bxivhb gtwcOJ"
   >
     <div
-      className="css-lyovzr-Loader"
+      className="sc-EHOje gzhTTf"
     >
-      <div
-        className="css-jrw1z6-style"
-      />
-      <div
-        className="css-1al05dg-style"
-      />
-      <div
-        className="css-1hs6u6m-style"
-      />
+      <span
+        className="sc-bZQynM eeRSms"
+      >
+        0
+      </span>
+      <span
+        className="sc-gzVnrw jVgmAG"
+      >
+        42
+      </span>
     </div>
+    <button
+      className="sc-bdVaJa sc-htpNat bOjvbW"
+      onClick={[Function]}
+    >
+      Stop
+    </button>
   </div>
   <div
-    className="sc-ifAKCX hAePiD"
+    className="sc-dnqmqq fscOyP"
   >
     <button
       className="sc-bdVaJa sc-bwzfXH davee"
