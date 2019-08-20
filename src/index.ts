@@ -14,6 +14,8 @@ import { PomodoroTimer } from "./application/pomodoro-timer";
 import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper";
 import { PomodoroTimerStarter } from "./application/pomodoro-timer-starter";
 import configuration from "./configuration.json";
+import { BuiltinNotificationInitializer } from "./infrastructure/notification/builtin-notification-initializer";
+import { BuiltinNotificationPresenter } from "./infrastructure/notification/builtin-notification-presenter";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
 const firebaseInitializer = new FirebaseInitializer(
@@ -39,11 +41,17 @@ async function main() {
   const pomodoroTimerPresenter = new MobxPomodoroTimerPresenter(
     pomodoroTimerStore
   );
-  const pomodoroTimer = new PomodoroTimer(pomodoroTimerPresenter);
+  const pomodoroTimer = new PomodoroTimer(
+    pomodoroTimerPresenter,
+    new BuiltinNotificationPresenter()
+  );
 
   new ReactRenderer(
     new ApplicationInitializer(
-      new InfrastructureInitializer(firebaseInitializer),
+      new InfrastructureInitializer(
+        firebaseInitializer,
+        new BuiltinNotificationInitializer()
+      ),
       authenticationController,
       authenticationPresenter
     ),

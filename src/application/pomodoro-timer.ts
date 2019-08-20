@@ -1,14 +1,18 @@
 import { Timer } from "./timer";
 import { IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
 import { PomodoroTimerState } from "./pomodoro-timer-state";
+import { INotificationPresenter } from "./notification-presenter";
 
 export class PomodoroTimer {
   private readonly timer: Timer;
   private pomodoro: boolean = true;
   private breakCount: number = 0;
 
-  constructor(private readonly presenter: IPomodoroTimerPresenter) {
-    this.timer = new Timer(presenter);
+  constructor(
+    private readonly timerPresenter: IPomodoroTimerPresenter,
+    private readonly notificationPresenter: INotificationPresenter
+  ) {
+    this.timer = new Timer(timerPresenter);
   }
 
   public start(): void {
@@ -47,6 +51,7 @@ export class PomodoroTimer {
     this.timer.start(25 * 60, () => {
       this.pomodoro = false;
       this.presentState();
+      this.notificationPresenter.presentNotification("Pomodoro finished!");
     });
   }
 
@@ -55,10 +60,11 @@ export class PomodoroTimer {
       this.pomodoro = true;
       this.breakCount++;
       this.presentState();
+      this.notificationPresenter.presentNotification("Break finished!");
     });
   }
 
   private presentState() {
-    this.presenter.presentState(this.state());
+    this.timerPresenter.presentState(this.state());
   }
 }
