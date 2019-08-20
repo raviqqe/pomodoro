@@ -1,6 +1,6 @@
-import { range } from "lodash";
+import { last, range } from "lodash";
 import { PomodoroTimer } from "../pomodoro-timer";
-import * as utilities from "../../domain/utilities";
+import { Timer } from "../timer";
 import { IPomodoroTimerPresenter } from "../pomodoro-timer-presenter";
 import { PomodoroTimerState } from "../pomodoro-timer-state";
 
@@ -8,8 +8,6 @@ let timerPresenter: jest.Mocked<IPomodoroTimerPresenter>;
 let pomodoroTimer: PomodoroTimer;
 
 beforeEach(() => {
-  jest.spyOn(utilities, "sleep").mockResolvedValue(undefined);
-
   timerPresenter = {
     presentTime: jest.fn(),
     presentStopped: jest.fn(),
@@ -18,26 +16,25 @@ beforeEach(() => {
   pomodoroTimer = new PomodoroTimer(timerPresenter);
 });
 
-it("starts", async () => {
-  await pomodoroTimer.start();
+it("starts", () => {
+  pomodoroTimer.start();
 });
 
-it("stops", async () => {
-  const promise = pomodoroTimer.start();
-
+it("stops", () => {
+  pomodoroTimer.start();
   pomodoroTimer.stop();
 
-  await promise;
-
-  expect(timerPresenter.presentTime.mock.calls).toEqual([[25 * 60]]);
   expect(timerPresenter.presentState.mock.calls).toEqual([
     [PomodoroTimerState.Pomodoro]
   ]);
 });
 
-it("changes its state", async () => {
+it("changes its state", () => {
+  const spy = jest.spyOn(Timer.prototype, "start");
+
   for (const _ of range(8)) {
-    await pomodoroTimer.start();
+    pomodoroTimer.start();
+    (last(spy.mock.calls) as any)[1]();
   }
 
   expect(timerPresenter.presentState.mock.calls).toEqual([

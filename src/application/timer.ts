@@ -1,29 +1,29 @@
-import { range } from "lodash";
-import { sleep } from "../domain/utilities";
 import { ITimerPresenter } from "./timer-presenter";
 
 export class Timer {
-  private stopped: boolean = true;
+  private interval?: number;
 
   constructor(private readonly presenter: ITimerPresenter) {}
 
-  public async start(duration: number): Promise<void> {
-    this.stopped = false;
+  public start(duration: number, callback: () => void): void {
     this.presenter.presentStopped(false);
+    this.presenter.presentTime(duration);
 
-    for (const seconds of range(duration, -1, -1)) {
-      if (this.stopped) {
-        break;
+    this.interval = setInterval(() => {
+      duration--;
+
+      if (duration < 0) {
+        this.presenter.presentStopped(true);
+        clearInterval(this.interval);
+        callback();
+      } else {
+        this.presenter.presentTime(duration);
       }
-
-      this.presenter.presentTime(seconds);
-      await sleep(1000);
-    }
-
-    this.presenter.presentStopped(true);
+    }, 1000);
   }
 
   public stop(): void {
-    this.stopped = true;
+    clearInterval(this.interval);
+    this.presenter.presentStopped(true);
   }
 }

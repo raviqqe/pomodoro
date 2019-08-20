@@ -11,16 +11,16 @@ export class PomodoroTimer {
     this.timer = new Timer(presenter);
   }
 
-  public async start(): Promise<void> {
+  public start(): void {
     switch (this.state()) {
       case PomodoroTimerState.Pomodoro:
-        await this.startPomodoro();
+        this.startPomodoro();
         break;
       case PomodoroTimerState.ShortBreak:
-        await this.startBreak(5 * 60);
+        this.startBreak(5 * 60);
         break;
       case PomodoroTimerState.LongBreak:
-        await this.startBreak(15 * 60);
+        this.startBreak(15 * 60);
         break;
       default:
         throw new Error("unreachable");
@@ -28,10 +28,11 @@ export class PomodoroTimer {
   }
 
   public stop(): void {
+    this.timer.stop();
+
     this.pomodoro = true;
     this.breakCount = 0;
-
-    this.timer.stop();
+    this.presentState();
   }
 
   private state(): PomodoroTimerState {
@@ -42,21 +43,19 @@ export class PomodoroTimer {
       : PomodoroTimerState.ShortBreak;
   }
 
-  private async startPomodoro(): Promise<void> {
-    this.pomodoro = false;
-
-    await this.timer.start(25 * 60);
-
-    this.presentState();
+  private startPomodoro(): void {
+    this.timer.start(25 * 60, () => {
+      this.pomodoro = false;
+      this.presentState();
+    });
   }
 
-  private async startBreak(seconds: number): Promise<void> {
-    this.pomodoro = true;
-    this.breakCount++;
-
-    await this.timer.start(seconds);
-
-    this.presentState();
+  private startBreak(seconds: number): void {
+    this.timer.start(seconds, () => {
+      this.pomodoro = true;
+      this.breakCount++;
+      this.presentState();
+    });
   }
 
   private presentState() {
