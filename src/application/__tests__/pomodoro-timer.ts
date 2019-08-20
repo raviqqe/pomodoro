@@ -30,6 +30,9 @@ it("stops", async () => {
   await promise;
 
   expect(timerPresenter.presentTime.mock.calls).toEqual([[25 * 60]]);
+  expect(timerPresenter.presentState.mock.calls).toEqual([
+    [PomodoroTimerState.Pomodoro]
+  ]);
 });
 
 it("changes its state", async () => {
