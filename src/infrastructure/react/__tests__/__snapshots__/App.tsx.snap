@@ -14,9 +14,9 @@ exports[`renders after a user signs in 1`] = `
         <button
           class="sc-bdVaJa sc-bwzfXH cqtuLn"
         >
-          Start
+          🍅
            
-          Pomodoro
+          Start
         </button>
       </div>
     </div>

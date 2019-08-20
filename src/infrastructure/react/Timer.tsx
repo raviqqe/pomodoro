@@ -54,12 +54,12 @@ export const Timer = ({
           onClick={startTimer}
           secondary={state !== PomodoroTimerState.Pomodoro}
         >
-          Start{" "}
           {state === PomodoroTimerState.Pomodoro
-            ? "Pomodoro"
+            ? "🍅"
             : state === PomodoroTimerState.ShortBreak
-            ? "Short Break"
-            : "Long Break"}
+            ? "🛌"
+            : "🛌🛌"}{" "}
+          Start
         </TextButton>
       </ButtonsContainer>
     ) : (
