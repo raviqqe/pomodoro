@@ -4,13 +4,11 @@ import * as utilities from "../../domain/utilities";
 import { IPomodoroTimerPresenter } from "../pomodoro-timer-presenter";
 import { PomodoroTimerState } from "../pomodoro-timer-state";
 
-let spy: jest.SpyInstance;
 let timerPresenter: jest.Mocked<IPomodoroTimerPresenter>;
 let pomodoroTimer: PomodoroTimer;
 
 beforeEach(() => {
-  spy = jest.spyOn(utilities, "sleep");
-  spy.mockResolvedValue(undefined);
+  jest.spyOn(utilities, "sleep").mockResolvedValue(undefined);
 
   timerPresenter = {
     presentTime: jest.fn(),
