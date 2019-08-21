@@ -1,4 +1,5 @@
 {
+  "ignorePaths": ["**/*.svg"],
   "words": [
     "darkturquoise",
     "paleturquoise",
