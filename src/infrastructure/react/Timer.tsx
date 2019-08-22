@@ -7,61 +7,55 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const ButtonsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   > * {
-    margin: 1em;
+    margin: 1rem;
   }
+`;
+
+const State = styled.div`
+  font-size: 5em;
 `;
 
 const Time = styled.div`
   color: white;
-`;
-
-const Minutes = styled.span`
   font-size: 10em;
 `;
 
+const Minutes = styled.span``;
+
 const Seconds = styled.span`
-  font-size: 6em;
+  font-size: 0.6em;
   margin-left: 0.2ex;
 `;
 
 export interface IProps {
   seconds: number;
-  stopped: boolean;
   startTimer: () => void;
-  stopTimer: () => void;
   state: PomodoroTimerState;
+  stopTimer: () => void;
+  stopped: boolean;
 }
 
 export const Timer = ({
-  stopped,
-  stopTimer,
   seconds,
   startTimer,
-  state
+  state,
+  stopTimer,
+  stopped
 }: IProps) => (
   <Container>
     {stopped ? (
-      <ButtonsContainer>
-        <TextButton
-          onClick={startTimer}
-          secondary={state !== PomodoroTimerState.Pomodoro}
-        >
+      <>
+        <State>
           {state === PomodoroTimerState.Pomodoro
             ? "🍅"
             : state === PomodoroTimerState.ShortBreak
             ? "🛌"
-            : "🛌🛌"}{" "}
-          Start
-        </TextButton>
-      </ButtonsContainer>
+            : "🛌🛌"}
+        </State>
+        <TextButton onClick={startTimer}>Start</TextButton>
+      </>
     ) : (
       <>
         <Time>

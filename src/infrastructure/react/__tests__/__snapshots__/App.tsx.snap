@@ -6,19 +6,18 @@ exports[`renders after a user signs in 1`] = `
     class="sc-gZMcBi eTCLAY"
   >
     <div
-      class="sc-bZQynM bsmBBS"
+      class="sc-bZQynM cFnNPp"
     >
       <div
-        class="sc-gzVnrw YSVJA"
+        class="sc-gzVnrw ghFpzK"
       >
-        <button
-          class="sc-bdVaJa sc-bwzfXH cqtuLn"
-        >
-          🍅
-           
-          Start
-        </button>
+        🍅
       </div>
+      <button
+        class="sc-bdVaJa sc-bwzfXH cqtuLn"
+      >
+        Start
+      </button>
     </div>
     <div
       class="sc-gqjmRU liTeMR"
