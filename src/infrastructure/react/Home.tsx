@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { SignOut } from "./SignOut";
+import { ViewTimer } from "./ViewTimer";
+import { ViewGraph } from "./ViewGraph";
 import { Timer, IProps as ITimerProps } from "./Timer";
+import {
+  PerformanceGraph,
+  IProps as IPerformanceGraphProps
+} from "./PerformanceGraph";
 
 const Container = styled.div`
   display: flex;
@@ -10,21 +16,49 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-const SignOutContainer = styled.div`
+const ButtonsContainer = styled.div`
   position: fixed;
   top: 0.5em;
   right: 0.5em;
+
+  > *:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
 `;
 
-export interface IProps extends ITimerProps {
+export interface IProps extends ITimerProps, IPerformanceGraphProps {
   signOut: () => void;
+  viewGraph: () => Promise<void>;
 }
 
-export const Home = ({ signOut, ...timerProps }: IProps) => (
-  <Container>
-    <Timer {...timerProps} />
-    <SignOutContainer>
-      <SignOut signOut={signOut} />
-    </SignOutContainer>
-  </Container>
-);
+export const Home = ({
+  performanceGraph,
+  signOut,
+  viewGraph,
+  ...timerProps
+}: IProps) => {
+  const [graphViewed, setGraphViewed] = useState(false);
+
+  return (
+    <Container>
+      {graphViewed ? (
+        <PerformanceGraph performanceGraph={performanceGraph} />
+      ) : (
+        <Timer {...timerProps} />
+      )}
+      <ButtonsContainer>
+        <SignOut signOut={signOut} />
+        {graphViewed ? (
+          <ViewTimer viewTimer={() => setGraphViewed(false)} />
+        ) : (
+          <ViewGraph
+            viewGraph={async () => {
+              await viewGraph();
+              setGraphViewed(true);
+            }}
+          />
+        )}
+      </ButtonsContainer>
+    </Container>
+  );
+};

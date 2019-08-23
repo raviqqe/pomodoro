@@ -5,19 +5,26 @@ export class Timer {
 
   constructor(private readonly presenter: ITimerPresenter) {}
 
-  public start(duration: number, callback: () => void): void {
+  public start(
+    duration: number,
+    callbacks: {
+      tickCallback: () => Promise<void>;
+      endCallback: () => Promise<void>;
+    }
+  ): void {
     this.presenter.presentStopped(false);
     this.presenter.presentTime(duration);
 
-    this.interval = setInterval(() => {
+    this.interval = setInterval(async () => {
       duration--;
 
       if (duration < 0) {
         this.presenter.presentStopped(true);
         clearInterval(this.interval);
-        callback();
+        await callbacks.endCallback();
       } else {
         this.presenter.presentTime(duration);
+        await callbacks.tickCallback();
       }
     }, 1000);
   }

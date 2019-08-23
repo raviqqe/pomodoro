@@ -4,9 +4,12 @@ import { Timer } from "../timer";
 import { IPomodoroTimerPresenter } from "../pomodoro-timer-presenter";
 import { INotificationPresenter } from "../notification-presenter";
 import { PomodoroTimerState } from "../pomodoro-timer-state";
+import { PerformanceTracker } from "../performance-tracker";
+import { IPerformanceRecordRepository } from "../performance-record-repository";
 
 let timerPresenter: jest.Mocked<IPomodoroTimerPresenter>;
 let notificationPresenter: jest.Mocked<INotificationPresenter>;
+let performanceRecordRepository: jest.Mocked<IPerformanceRecordRepository>;
 let pomodoroTimer: PomodoroTimer;
 
 beforeEach(() => {
@@ -16,7 +19,18 @@ beforeEach(() => {
     presentState: jest.fn()
   };
   notificationPresenter = { presentNotification: jest.fn() };
-  pomodoroTimer = new PomodoroTimer(timerPresenter, notificationPresenter);
+  performanceRecordRepository = {
+    create: jest.fn(),
+    findOne: jest.fn(),
+    findManySince: jest.fn(),
+    update: jest.fn()
+  };
+
+  pomodoroTimer = new PomodoroTimer(
+    timerPresenter,
+    notificationPresenter,
+    new PerformanceTracker(performanceRecordRepository)
+  );
 });
 
 afterEach(() => jest.restoreAllMocks());
@@ -39,7 +53,7 @@ it("changes its state", () => {
 
   for (const _ of range(8)) {
     pomodoroTimer.start();
-    (last(spy.mock.calls) as any)[1]();
+    (last(spy.mock.calls) as any)[1].endCallback();
   }
 
   expect(timerPresenter.presentState.mock.calls).toEqual([
@@ -58,9 +72,9 @@ it("notifies the end of pomodoros and breaks", () => {
   const spy = jest.spyOn(Timer.prototype, "start");
 
   pomodoroTimer.start();
-  (last(spy.mock.calls) as any)[1]();
+  (last(spy.mock.calls) as any)[1].endCallback();
   pomodoroTimer.start();
-  (last(spy.mock.calls) as any)[1]();
+  (last(spy.mock.calls) as any)[1].endCallback();
 
   expect(notificationPresenter.presentNotification.mock.calls).toEqual([
     ["Pomodoro finished!"],

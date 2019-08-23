@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-htoDjs egmpJk"
+  className="sc-dnqmqq kxZxpv"
 >
   <div
     className="sc-bxivhb fnePsM"
@@ -29,7 +29,7 @@ exports[`renders 1`] = `
     </button>
   </div>
   <div
-    className="sc-dnqmqq fscOyP"
+    className="sc-iwsKbI kgCYuO"
   >
     <button
       className="sc-bdVaJa sc-bwzfXH davee"
@@ -51,6 +51,29 @@ exports[`renders 1`] = `
       >
         <path
           d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+    </button>
+    <button
+      className="sc-bdVaJa sc-bwzfXH davee"
+      onClick={[Function]}
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 512 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M176 64h64v384h-64zM80 336h64v112H80zM272 272h64v176h-64zM368 176h64v272h-64z"
         />
       </svg>
     </button>

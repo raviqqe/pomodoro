@@ -2,8 +2,11 @@
   "ignorePaths": ["**/*.svg"],
   "words": [
     "darkturquoise",
+    "deserialize",
+    "luxon",
     "paleturquoise",
     "pomodoro",
+    "pomodoros",
     "rect",
     "restarter",
     "xlink",

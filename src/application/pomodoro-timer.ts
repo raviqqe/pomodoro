@@ -2,6 +2,7 @@ import { Timer } from "./timer";
 import { IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
 import { PomodoroTimerState } from "./pomodoro-timer-state";
 import { INotificationPresenter } from "./notification-presenter";
+import { PerformanceTracker } from "./performance-tracker";
 
 export class PomodoroTimer {
   private readonly timer: Timer;
@@ -10,7 +11,8 @@ export class PomodoroTimer {
 
   constructor(
     private readonly timerPresenter: IPomodoroTimerPresenter,
-    private readonly notificationPresenter: INotificationPresenter
+    private readonly notificationPresenter: INotificationPresenter,
+    private readonly performanceTracker: PerformanceTracker
   ) {
     this.timer = new Timer(timerPresenter);
   }
@@ -48,19 +50,25 @@ export class PomodoroTimer {
   }
 
   private startPomodoro(): void {
-    this.timer.start(25 * 60, () => {
-      this.pomodoro = false;
-      this.presentState();
-      this.notificationPresenter.presentNotification("Pomodoro finished!");
+    this.timer.start(25 * 60, {
+      tickCallback: () => this.performanceTracker.addSecond(),
+      endCallback: async () => {
+        this.pomodoro = false;
+        this.presentState();
+        this.notificationPresenter.presentNotification("Pomodoro finished!");
+      }
     });
   }
 
   private startBreak(seconds: number): void {
-    this.timer.start(seconds, () => {
-      this.pomodoro = true;
-      this.breakCount++;
-      this.presentState();
-      this.notificationPresenter.presentNotification("Break finished!");
+    this.timer.start(seconds, {
+      tickCallback: async () => {},
+      endCallback: async () => {
+        this.pomodoro = true;
+        this.breakCount++;
+        this.presentState();
+        this.notificationPresenter.presentNotification("Break finished!");
+      }
     });
   }
 

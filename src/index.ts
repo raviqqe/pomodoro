@@ -6,6 +6,11 @@ import { PomodoroTimerStore } from "./infrastructure/mobx/pomodoro-timer-store";
 import { MobxPomodoroTimerPresenter } from "./infrastructure/mobx/mobx-pomodoro-timer-presenter";
 import { AuthenticationStore } from "./infrastructure/mobx/authentication-store";
 import { MobxAuthenticationPresenter } from "./infrastructure/mobx/mobx-authentication-presenter";
+import { PerformanceTracker } from "./application/performance-tracker";
+import { PerformanceGraphViewer } from "./application/performance-graph-viewer";
+import { FirestorePerformanceRecordRepository } from "./infrastructure/firebase/firestore-performance-record-repository";
+import { PerformanceGraphStore } from "./infrastructure/mobx/performance-graph-store";
+import { MobxPerformanceGraphPresenter } from "./infrastructure/mobx/mobx-performance-graph-presenter";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 import { SignInManager } from "./application/sign-in-manager";
@@ -37,14 +42,19 @@ async function main() {
     authenticationStore
   );
 
+  const performanceRecordRepository = new FirestorePerformanceRecordRepository();
   const pomodoroTimerStore = new PomodoroTimerStore();
   const pomodoroTimerPresenter = new MobxPomodoroTimerPresenter(
     pomodoroTimerStore
   );
   const pomodoroTimer = new PomodoroTimer(
     pomodoroTimerPresenter,
-    new BuiltinNotificationPresenter()
+    new BuiltinNotificationPresenter(),
+    new PerformanceTracker(performanceRecordRepository)
   );
+
+  const graphStore = new PerformanceGraphStore();
+  const graphPresenter = new MobxPerformanceGraphPresenter(graphStore);
 
   new ReactRenderer(
     new ApplicationInitializer(
@@ -55,12 +65,14 @@ async function main() {
       authenticationController,
       authenticationPresenter
     ),
+    new PerformanceGraphViewer(performanceRecordRepository, graphPresenter),
     new PomodoroTimerStarter(pomodoroTimer),
     new PomodoroTimerStopper(pomodoroTimer),
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController, authenticationPresenter),
     authenticationStore,
     pomodoroTimerStore,
+    graphStore,
     configuration.repositoryURL
   ).render(element);
 
