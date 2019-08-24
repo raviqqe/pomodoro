@@ -8,8 +8,8 @@ let tracker: PerformanceTracker;
 beforeEach(() => {
   performanceRecordRepository = {
     create: jest.fn(),
-    findOne: jest.fn(),
     findManySince: jest.fn(),
+    findOne: jest.fn(),
     update: jest.fn()
   };
   tracker = new PerformanceTracker(performanceRecordRepository);

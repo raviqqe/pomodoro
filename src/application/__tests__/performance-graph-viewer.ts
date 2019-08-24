@@ -10,8 +10,8 @@ let viewer: PerformanceGraphViewer;
 beforeEach(() => {
   performanceRecordRepository = {
     create: jest.fn(),
-    findOne: jest.fn(),
     findManySince: jest.fn(),
+    findOne: jest.fn(),
     update: jest.fn()
   };
   performanceGraphPresenter = { presentGraph: jest.fn() };

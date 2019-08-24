@@ -14,15 +14,15 @@ let pomodoroTimer: PomodoroTimer;
 
 beforeEach(() => {
   timerPresenter = {
-    presentTime: jest.fn(),
+    presentState: jest.fn(),
     presentStopped: jest.fn(),
-    presentState: jest.fn()
+    presentTime: jest.fn()
   };
   notificationPresenter = { presentNotification: jest.fn() };
   performanceRecordRepository = {
     create: jest.fn(),
-    findOne: jest.fn(),
     findManySince: jest.fn(),
+    findOne: jest.fn(),
     update: jest.fn()
   };
 

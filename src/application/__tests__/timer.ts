@@ -3,8 +3,8 @@ import { Timer } from "../timer";
 import { ITimerPresenter } from "../timer-presenter";
 
 const dummyCallbacks = {
-  tickCallback: async () => {},
-  endCallback: async () => {}
+  endCallback: async () => {},
+  tickCallback: async () => {}
 };
 
 let timerPresenter: jest.Mocked<ITimerPresenter>;
@@ -12,8 +12,8 @@ let timer: Timer;
 
 beforeEach(() => {
   timerPresenter = {
-    presentTime: jest.fn(),
-    presentStopped: jest.fn()
+    presentStopped: jest.fn(),
+    presentTime: jest.fn()
   };
   timer = new Timer(timerPresenter);
 });

@@ -51,24 +51,24 @@ export class PomodoroTimer {
 
   private startPomodoro(): void {
     this.timer.start(25 * 60, {
-      tickCallback: () => this.performanceTracker.addSecond(),
       endCallback: async () => {
         this.pomodoro = false;
         this.presentState();
         this.notificationPresenter.presentNotification("Pomodoro finished!");
-      }
+      },
+      tickCallback: () => this.performanceTracker.addSecond()
     });
   }
 
   private startBreak(seconds: number): void {
     this.timer.start(seconds, {
-      tickCallback: async () => {},
       endCallback: async () => {
         this.pomodoro = true;
         this.breakCount++;
         this.presentState();
         this.notificationPresenter.presentNotification("Break finished!");
-      }
+      },
+      tickCallback: async () => {}
     });
   }
 
