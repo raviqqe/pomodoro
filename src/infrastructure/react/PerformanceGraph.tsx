@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 import React from "react";
 import { ResponsiveContainer, XAxis, YAxis, Bar, BarChart } from "recharts";
 import styled from "styled-components";
@@ -20,7 +21,9 @@ export const PerformanceGraph = ({ performanceGraph }: IProps) => (
         <XAxis
           dataKey="date"
           tickFormatter={date =>
-            DateSerializer.deserialize(date).toLocaleDateString()
+            DateTime.fromJSDate(
+              DateSerializer.deserialize(date)
+            ).toLocaleString({ day: "numeric", month: "long" })
           }
           tickMargin={10}
         />
