@@ -1,15 +1,21 @@
 import { range } from "lodash";
 import { PerformanceTracker } from "../performance-tracker";
+import { IPerformanceRecordRepository } from "../performance-record-repository";
 
-it("tracks performance by a minute", async () => {
-  const performanceRecordRepository = {
+let performanceRecordRepository: jest.Mocked<IPerformanceRecordRepository>;
+let tracker: PerformanceTracker;
+
+beforeEach(() => {
+  performanceRecordRepository = {
     create: jest.fn(),
     findOne: jest.fn(),
     findManySince: jest.fn(),
     update: jest.fn()
   };
-  const tracker = new PerformanceTracker(performanceRecordRepository);
+  tracker = new PerformanceTracker(performanceRecordRepository);
+});
 
+it("tracks performance by a minute", async () => {
   await tracker.addSecond();
 
   expect(performanceRecordRepository.create.mock.calls).toEqual([]);
@@ -20,5 +26,24 @@ it("tracks performance by a minute", async () => {
 
   expect(performanceRecordRepository.create.mock.calls).toEqual([
     [expect.objectContaining({ date: expect.any(String), seconds: 60 })]
+  ]);
+});
+
+it("updates an existing performance record", async () => {
+  performanceRecordRepository.findOne.mockImplementationOnce(async () => null);
+  performanceRecordRepository.findOne.mockImplementationOnce(async date => ({
+    date,
+    seconds: 60
+  }));
+
+  for (const _ of range(120)) {
+    await tracker.addSecond();
+  }
+
+  expect(performanceRecordRepository.create.mock.calls).toEqual([
+    [expect.objectContaining({ date: expect.any(String), seconds: 60 })]
+  ]);
+  expect(performanceRecordRepository.update.mock.calls).toEqual([
+    [expect.objectContaining({ date: expect.any(String), seconds: 120 })]
   ]);
 });
