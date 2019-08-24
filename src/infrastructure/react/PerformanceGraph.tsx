@@ -16,7 +16,7 @@ export interface IProps {
 export const PerformanceGraph = ({ performanceGraph }: IProps) => (
   <Container>
     <ResponsiveContainer>
-      <BarChart data={performanceGraph.points}>
+      <BarChart data={performanceGraph.data}>
         <XAxis
           dataKey="date"
           tickFormatter={date =>

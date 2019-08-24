@@ -7,7 +7,7 @@ it("renders", () => {
   expect(
     create(
       <Home
-        performanceGraph={{ points: [] }}
+        performanceGraph={{ data: [] }}
         seconds={42}
         stopped={false}
         state={PomodoroTimerState.Pomodoro}

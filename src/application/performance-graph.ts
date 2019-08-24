@@ -1,3 +1,3 @@
 export interface IPerformanceGraph {
-  points: { date: string; pomodoros: number }[];
+  data: { date: string; pomodoros: number }[];
 }

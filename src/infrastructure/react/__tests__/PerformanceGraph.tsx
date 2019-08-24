@@ -6,7 +6,7 @@ import { DateSerializer } from "../../../domain/date-serializer";
 it("renders with no data", () => {
   const result = render(
     <div>
-      <PerformanceGraph performanceGraph={{ points: [] }} />
+      <PerformanceGraph performanceGraph={{ data: [] }} />
     </div>
   );
   expect(result.container).toMatchSnapshot();
@@ -17,9 +17,7 @@ it("renders with data", () => {
     <div>
       <PerformanceGraph
         performanceGraph={{
-          points: [
-            { date: DateSerializer.serialize(new Date(0)), pomodoros: 42 }
-          ]
+          data: [{ date: DateSerializer.serialize(new Date(0)), pomodoros: 42 }]
         }}
       />
     </div>

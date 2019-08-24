@@ -16,6 +16,6 @@ it("views a performance graph", async () => {
   await viewer.viewGraph();
 
   expect(performanceGraphPresenter.presentGraph.mock.calls).toEqual([
-    [{ points: [{ date: "20190831", pomodoros: 0 }] }]
+    [{ data: [{ date: "20190831", pomodoros: 0 }] }]
   ]);
 });

@@ -19,7 +19,7 @@ export class PerformanceGraphViewer {
     );
 
     this.performanceGraphPresenter.presentGraph({
-      points: records.map(({ date, seconds }) => ({
+      data: records.map(({ date, seconds }) => ({
         date,
         pomodoros: seconds / 25 / 60
       }))
