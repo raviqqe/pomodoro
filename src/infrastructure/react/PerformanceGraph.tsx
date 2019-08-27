@@ -1,6 +1,13 @@
 import { DateTime } from "luxon";
 import React from "react";
-import { ResponsiveContainer, XAxis, YAxis, Bar, BarChart } from "recharts";
+import {
+  CartesianGrid,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  Bar,
+  BarChart
+} from "recharts";
 import styled from "styled-components";
 import { DateSerializer } from "../../domain/date-serializer";
 import { IPerformanceGraph } from "../../application/performance-graph";
@@ -26,16 +33,18 @@ export const PerformanceGraph = ({ performanceGraph }: IProps) =>
     <Container>
       <ResponsiveContainer>
         <BarChart data={performanceGraph.data}>
+          <CartesianGrid stroke="grey" strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
-            tickFormatter={date =>
+            tickFormatter={(date: string): string =>
               DateTime.fromJSDate(
                 DateSerializer.deserialize(date)
               ).toLocaleString({ day: "numeric", month: "long" })
             }
             tickMargin={10}
+            stroke="grey"
           />
-          <YAxis tickMargin={5} />
+          <YAxis allowDecimals={false} tickMargin={5} stroke="grey" />
           <Bar dataKey="pomodoros" fill="salmon" />
         </BarChart>
       </ResponsiveContainer>
