@@ -5,6 +5,7 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
+  Label,
   Bar,
   BarChart
 } from "recharts";
@@ -44,7 +45,14 @@ export const PerformanceGraph = ({ performanceGraph }: IProps) =>
             tickMargin={10}
             stroke="grey"
           />
-          <YAxis allowDecimals={false} tickMargin={5} stroke="grey" />
+          <YAxis allowDecimals={false} tickMargin={5} stroke="grey">
+            <Label
+              angle={-90}
+              position="insideLeft"
+              style={{ fill: "grey" }}
+              value="Pomodoros"
+            />
+          </YAxis>
           <Bar dataKey="pomodoros" fill="salmon" />
         </BarChart>
       </ResponsiveContainer>
