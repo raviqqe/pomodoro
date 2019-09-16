@@ -41,7 +41,7 @@
     "@types/recharts": "^1.1.21",
     "@types/styled-components": "^4.1.19",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^2.2.0",
+    "@typescript-eslint/parser": "^2.3.0",
     "cspell": "^4.0.30",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
