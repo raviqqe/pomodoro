@@ -18,7 +18,7 @@ const Container = styled.div`
   height: 80vh;
 `;
 
-const NoGraphMessage = styled.div`
+const Message = styled.div`
   color: white;
   font-size: 1.5em;
 `;
@@ -29,12 +29,12 @@ export interface IProps {
 
 export const PerformanceGraph = ({ performanceGraph }: IProps) =>
   performanceGraph.data.length === 0 ? (
-    <NoGraphMessage>No performance graph to show yet!</NoGraphMessage>
+    <Message>No performance graph to show yet!</Message>
   ) : (
     <Container>
       <ResponsiveContainer>
         <BarChart data={performanceGraph.data}>
-          <CartesianGrid stroke="grey" strokeDasharray="3 3" />
+          <CartesianGrid fill="white" stroke="grey" strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
             tickFormatter={(date: string): string =>
