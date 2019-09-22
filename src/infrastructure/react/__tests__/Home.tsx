@@ -9,12 +9,12 @@ it("renders", () => {
       <Home
         performanceGraph={{ data: [] }}
         seconds={42}
-        stopped={false}
+        signOut={async () => {}}
+        startTimer={async () => {}}
         state={PomodoroTimerState.Pomodoro}
-        signOut={async () => undefined}
-        stopTimer={async () => undefined}
-        startTimer={async () => undefined}
-        viewGraph={async () => undefined}
+        stopTimer={async () => {}}
+        stopped={false}
+        viewGraph={async () => {}}
       />
     ).toJSON()
   ).toMatchSnapshot();

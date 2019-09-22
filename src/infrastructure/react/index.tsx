@@ -31,14 +31,14 @@ export class ReactRenderer {
       <>
         <App
           authenticationStore={this.authenticationStore}
-          pomodoroTimerStore={this.pomodoroTimerStore}
-          performanceGraphStore={this.performanceGraphStore}
           initialize={() => this.applicationInitializer.initialize()}
+          performanceGraphStore={this.performanceGraphStore}
+          pomodoroTimerStore={this.pomodoroTimerStore}
           repositoryURL={this.repositoryURL}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
-          stopTimer={() => this.pomodoroTimerStopper.stop()}
           startTimer={() => this.pomodoroTimerStarter.start()}
+          stopTimer={() => this.pomodoroTimerStopper.stop()}
           viewGraph={() => this.performanceGraphViewer.viewGraph()}
         />
         <GlobalStyle />

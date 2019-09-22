@@ -9,14 +9,14 @@ it("renders before a user signs in", async () => {
   const result = render(
     <App
       authenticationStore={new AuthenticationStore()}
+      initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      initialize={async () => undefined}
+      repositoryURL="url"
       signIn={async () => undefined}
       signOut={async () => undefined}
-      stopTimer={async () => undefined}
       startTimer={async () => undefined}
-      repositoryURL="url"
+      stopTimer={async () => undefined}
       viewGraph={async () => undefined}
     />
   );
@@ -32,14 +32,14 @@ it("renders after a user signs in", async () => {
   const result = render(
     <App
       authenticationStore={authenticationStore}
+      initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      initialize={async () => undefined}
+      repositoryURL="url"
       signIn={async () => undefined}
       signOut={async () => undefined}
-      stopTimer={async () => undefined}
       startTimer={async () => undefined}
-      repositoryURL="url"
+      stopTimer={async () => undefined}
       viewGraph={async () => undefined}
     />
   );
@@ -55,14 +55,14 @@ it("renders after a user signs out", async () => {
   const result = render(
     <App
       authenticationStore={authenticationStore}
+      initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      initialize={async () => undefined}
+      repositoryURL="url"
       signIn={async () => undefined}
       signOut={async () => undefined}
-      stopTimer={async () => undefined}
       startTimer={async () => undefined}
-      repositoryURL="url"
+      stopTimer={async () => undefined}
       viewGraph={async () => undefined}
     />
   );

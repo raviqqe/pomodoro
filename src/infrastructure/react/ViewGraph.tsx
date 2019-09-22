@@ -7,7 +7,7 @@ interface IProps {
 }
 
 export const ViewGraph = ({ viewGraph }: IProps) => (
-  <CircleButton secondary={true} onClick={viewGraph}>
+  <CircleButton onClick={viewGraph} secondary={true}>
     <IoMdStats />
   </CircleButton>
 );

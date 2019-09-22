@@ -37,15 +37,15 @@ export const PerformanceGraph = ({ performanceGraph }: IProps) =>
           <CartesianGrid fill="white" stroke="grey" strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
+            stroke="grey"
             tickFormatter={(date: string): string =>
               DateTime.fromJSDate(
                 DateSerializer.deserialize(date)
               ).toLocaleString({ day: "numeric", month: "long" })
             }
             tickMargin={10}
-            stroke="grey"
           />
-          <YAxis allowDecimals={false} tickMargin={5} stroke="grey">
+          <YAxis allowDecimals={false} stroke="grey" tickMargin={5}>
             <Label
               angle={-90}
               position="insideLeft"

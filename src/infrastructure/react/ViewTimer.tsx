@@ -7,7 +7,7 @@ interface IProps {
 }
 
 export const ViewTimer = ({ viewTimer }: IProps) => (
-  <CircleButton secondary={true} onClick={viewTimer}>
+  <CircleButton onClick={viewTimer} secondary={true}>
     <MdTimer />
   </CircleButton>
 );
