@@ -78,7 +78,7 @@ exports[`renders after a user signs out 1`] = `
     </button>
     <a
       class="sc-ifAKCX imCiow"
-      href="url"
+      href=""
       target="_blank"
     >
       <svg

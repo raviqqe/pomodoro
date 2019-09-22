@@ -12,7 +12,7 @@ it("renders before a user signs in", async () => {
       initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      repositoryURL="url"
+      repositoryURL=""
       signIn={async () => undefined}
       signOut={async () => undefined}
       startTimer={async () => undefined}
@@ -35,7 +35,7 @@ it("renders after a user signs in", async () => {
       initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      repositoryURL="url"
+      repositoryURL=""
       signIn={async () => undefined}
       signOut={async () => undefined}
       startTimer={async () => undefined}
@@ -58,7 +58,7 @@ it("renders after a user signs out", async () => {
       initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      repositoryURL="url"
+      repositoryURL=""
       signIn={async () => undefined}
       signOut={async () => undefined}
       startTimer={async () => undefined}

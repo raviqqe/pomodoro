@@ -20,6 +20,6 @@ it("renders", () => {
     new AuthenticationStore(),
     new PomodoroTimerStore(),
     new PerformanceGraphStore(),
-    "url"
+    ""
   ).render(document.createElement("div"));
 });

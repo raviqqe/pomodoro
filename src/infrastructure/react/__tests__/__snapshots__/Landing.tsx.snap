@@ -17,7 +17,7 @@ exports[`renders 1`] = `
   </button>
   <a
     className="sc-ifAKCX imCiow"
-    href="url"
+    href=""
     target="_blank"
   >
     <svg
