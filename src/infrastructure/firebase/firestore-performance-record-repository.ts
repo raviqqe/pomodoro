@@ -1,5 +1,5 @@
 import "firebase/firestore";
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import { IPerformanceRecordRepository } from "../../application/performance-record-repository";
 import { IPerformanceRecord } from "../../application/performance-record";
 
