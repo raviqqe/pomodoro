@@ -12,6 +12,7 @@ import {
 import styled from "styled-components";
 import { DateSerializer } from "../../domain/date-serializer";
 import { IPerformanceGraph } from "../../application/performance-graph";
+import { white } from "./style/colors";
 
 const Container = styled.div`
   width: 80vw;
@@ -19,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Message = styled.div`
-  color: white;
+  color: ${white};
   font-size: 1.5em;
 `;
 

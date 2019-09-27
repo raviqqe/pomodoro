@@ -2,6 +2,7 @@ import { GoMarkGithub } from "react-icons/go";
 import React from "react";
 import styled from "styled-components";
 import { SignIn } from "./SignIn";
+import { blue, black } from "./style/colors";
 
 const Container = styled.div`
   height: 100vh;
@@ -17,7 +18,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  color: steelblue;
+  color: ${blue};
   font-family: "Chelsea Market", sans-serif;
   font-size: 4em;
   font-weight: bold;
@@ -28,7 +29,7 @@ const Title = styled.div`
 const GitHubLink = styled.a`
   font-size: 2.5rem;
   margin: 1.5rem;
-  color: #222;
+  color: ${black};
   display: block;
   position: fixed;
   bottom: 0em;

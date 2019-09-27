@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
 import { TextButton } from "./TextButton";
+import { white } from "./style/colors";
 
 const Container = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ const State = styled.div`
 `;
 
 const Time = styled.div`
-  color: white;
+  color: ${white};
   font-size: 10em;
 `;
 
