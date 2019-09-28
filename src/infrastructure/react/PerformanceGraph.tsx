@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { last } from "lodash";
 import React from "react";
 import {
   CartesianGrid,
@@ -28,22 +29,29 @@ export interface IProps {
   performanceGraph: IPerformanceGraph;
 }
 
-export const PerformanceGraph = ({ performanceGraph }: IProps) =>
-  performanceGraph.data.length === 0 ? (
+export const PerformanceGraph = ({ performanceGraph: { data } }: IProps) =>
+  data.length === 0 ? (
     <Message>No performance graph to show yet!</Message>
   ) : (
     <Container>
       <ResponsiveContainer>
-        <BarChart data={performanceGraph.data}>
+        <BarChart data={data}>
           <CartesianGrid fill="white" stroke="grey" strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
             stroke="grey"
-            tickFormatter={(date: string): string =>
-              DateTime.fromJSDate(
-                DateSerializer.deserialize(date)
-              ).toLocaleString({ day: "numeric", month: "long" })
-            }
+            tickFormatter={(date: string): string => {
+              const days: number = DateTime.fromJSDate(
+                DateSerializer.deserialize(
+                  (last(data) as { date: string }).date
+                )
+              ).diff(
+                DateTime.fromJSDate(DateSerializer.deserialize(date)),
+                "days"
+              ).days;
+
+              return days === 0 ? "Today" : `${days} days ago`;
+            }}
             tickMargin={10}
           />
           <YAxis allowDecimals={false} stroke="grey" tickMargin={5}>
