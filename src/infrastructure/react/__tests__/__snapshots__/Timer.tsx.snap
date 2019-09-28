@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders while running 1`] = `
+<div
+  className="sc-htpNat gtagEw"
+>
+  <div
+    className="sc-ifAKCX keaSSY"
+  >
+    <span
+      className="sc-EHOje jvzENE"
+    >
+      0
+    </span>
+    <span
+      className="sc-bZQynM jtiYKY"
+    >
+      42
+    </span>
+  </div>
+  <button
+    className="sc-bdVaJa sc-bwzfXH jryXLU"
+    onClick={[Function]}
+  >
+    Stop
+  </button>
+</div>
+`;
+
+exports[`renders with long break state 1`] = `
+<div
+  className="sc-htpNat gtagEw"
+>
+  <div
+    className="sc-bxivhb dEBCMN"
+  >
+    🛌🛌
+  </div>
+  <button
+    className="sc-bdVaJa sc-bwzfXH cqtuLn"
+    onClick={[Function]}
+  >
+    Start
+  </button>
+</div>
+`;
+
+exports[`renders with pomodoro state 1`] = `
+<div
+  className="sc-htpNat gtagEw"
+>
+  <div
+    className="sc-bxivhb dEBCMN"
+  >
+    🍅
+  </div>
+  <button
+    className="sc-bdVaJa sc-bwzfXH cqtuLn"
+    onClick={[Function]}
+  >
+    Start
+  </button>
+</div>
+`;
+
+exports[`renders with short break state 1`] = `
+<div
+  className="sc-htpNat gtagEw"
+>
+  <div
+    className="sc-bxivhb dEBCMN"
+  >
+    🛌
+  </div>
+  <button
+    className="sc-bdVaJa sc-bwzfXH cqtuLn"
+    onClick={[Function]}
+  >
+    Start
+  </button>
+</div>
+`;

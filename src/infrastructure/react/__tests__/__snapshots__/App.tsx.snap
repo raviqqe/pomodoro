@@ -40,6 +40,7 @@ exports[`renders after a user signs in 1`] = `
         </svg>
       </button>
       <button
+        aria-label="View Graph"
         class="sc-bdVaJa sc-EHOje jauTNv"
       >
         <svg
