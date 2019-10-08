@@ -18,7 +18,7 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-interface IProps
+export interface IProps
   extends Pick<
       IHomeProps,
       "stopTimer" | "startTimer" | "signOut" | "viewGraph"

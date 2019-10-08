@@ -1,23 +1,30 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import { App } from "../App";
+import { App, IProps } from "../App";
 import { AuthenticationStore } from "../../mobx/authentication-store";
 import { PerformanceGraphStore } from "../../mobx/performance-graph-store";
 import { PomodoroTimerStore } from "../../mobx/pomodoro-timer-store";
 
+const commonProps: Omit<
+  IProps,
+  "authenticationStore" | "performanceGraphStore" | "pomodoroTimerStore"
+> = {
+  initialize: async () => {},
+  repositoryURL: "",
+  signIn: async () => {},
+  signOut: async () => {},
+  startTimer: async () => {},
+  stopTimer: async () => {},
+  viewGraph: async () => {}
+};
+
 it("renders before a user signs in", async () => {
   const result = render(
     <App
+      {...commonProps}
       authenticationStore={new AuthenticationStore()}
-      initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      repositoryURL=""
-      signIn={async () => undefined}
-      signOut={async () => undefined}
-      startTimer={async () => undefined}
-      stopTimer={async () => undefined}
-      viewGraph={async () => undefined}
     />
   );
 
@@ -31,16 +38,10 @@ it("renders after a user signs in", async () => {
 
   const result = render(
     <App
+      {...commonProps}
       authenticationStore={authenticationStore}
-      initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      repositoryURL=""
-      signIn={async () => undefined}
-      signOut={async () => undefined}
-      startTimer={async () => undefined}
-      stopTimer={async () => undefined}
-      viewGraph={async () => undefined}
     />
   );
 
@@ -54,16 +55,10 @@ it("renders after a user signs out", async () => {
 
   const result = render(
     <App
+      {...commonProps}
       authenticationStore={authenticationStore}
-      initialize={async () => undefined}
       performanceGraphStore={new PerformanceGraphStore()}
       pomodoroTimerStore={new PomodoroTimerStore()}
-      repositoryURL=""
-      signIn={async () => undefined}
-      signOut={async () => undefined}
-      startTimer={async () => undefined}
-      stopTimer={async () => undefined}
-      viewGraph={async () => undefined}
     />
   );
 
