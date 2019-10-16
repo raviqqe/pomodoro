@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^5.7.1",
-    "firebase": "^7.2.0",
+    "firebase": "^7.2.1",
     "lodash": "^4.17.15",
     "luxon": "^1.19.3",
     "mobx": "^5.14.0",
