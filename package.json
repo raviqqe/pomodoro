@@ -15,7 +15,7 @@
     "firebase": "^7.2.1",
     "lodash": "^4.17.15",
     "luxon": "^1.19.3",
-    "mobx": "^5.14.0",
+    "mobx": "^5.14.1",
     "mobx-react": "^6.1.4",
     "prettier": "^1.18.2",
     "pure-uuid": "^1.5.7",
