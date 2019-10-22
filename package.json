@@ -20,7 +20,7 @@
     "prettier": "^1.18.2",
     "pure-uuid": "^1.5.7",
     "react": "^16.11.0",
-    "react-dom": "^16.10.2",
+    "react-dom": "^16.11.0",
     "react-icons": "^3.7.0",
     "react-scripts": "^3.2.0",
     "react-spinners": "^0.6.1",
