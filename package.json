@@ -39,7 +39,7 @@
     "@types/react-dom": "^16.9.4",
     "@types/react-test-renderer": "^16.9.1",
     "@types/recharts": "^1.8.2",
-    "@types/styled-components": "^4.1.21",
+    "@types/styled-components": "^4.1.22",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
     "cspell": "^4.0.33",
