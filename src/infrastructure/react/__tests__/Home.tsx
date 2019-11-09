@@ -22,9 +22,9 @@ it("renders", () => {
 it("views a performance graph", async () => {
   const { container } = render(<Home {...props} />);
 
-  fireEvent.click(container.querySelector(
-    `[aria-label="View Graph"]`
-  ) as Element);
+  fireEvent.click(
+    container.querySelector(`[aria-label="View Graph"]`) as Element
+  );
   await waitForDomChange();
 
   expect(container).toMatchSnapshot();
@@ -33,14 +33,14 @@ it("views a performance graph", async () => {
 it("goes back to a timer view", async () => {
   const { container } = render(<Home {...props} />);
 
-  fireEvent.click(container.querySelector(
-    `[aria-label="View Graph"]`
-  ) as Element);
+  fireEvent.click(
+    container.querySelector(`[aria-label="View Graph"]`) as Element
+  );
   await waitForDomChange();
 
-  fireEvent.click(container.querySelector(
-    `[aria-label="View Timer"]`
-  ) as Element);
+  fireEvent.click(
+    container.querySelector(`[aria-label="View Timer"]`) as Element
+  );
 
   expect(container).toMatchSnapshot();
 });
