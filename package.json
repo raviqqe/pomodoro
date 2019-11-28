@@ -14,7 +14,7 @@
     "@sentry/browser": "^5.9.1",
     "firebase": "^7.5.0",
     "lodash": "^4.17.15",
-    "luxon": "^1.21.2",
+    "luxon": "^1.21.3",
     "mobx": "^5.15.0",
     "mobx-react": "^6.1.4",
     "prettier": "^1.19.1",
