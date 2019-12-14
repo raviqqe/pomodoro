@@ -33,6 +33,16 @@ it("views a performance graph", async () => {
   ]);
 });
 
+it("views a performance graph without data", async () => {
+  performanceRecordRepository.findManySince.mockResolvedValue([]);
+
+  await viewer.viewGraph(DateSerializer.deserialize("20190831"));
+
+  expect(performanceGraphPresenter.presentGraph.mock.calls).toEqual([
+    [{ data: [] }]
+  ]);
+});
+
 it("complements data in missing dates", async () => {
   performanceRecordRepository.findManySince.mockResolvedValue([
     { date: "20190831", seconds: 0 },

@@ -20,19 +20,24 @@ export class PerformanceGraphViewer {
     );
 
     this.performanceGraphPresenter.presentGraph({
-      data: range(
-        DateSerializer.deserialize(records[0].date).getTime(),
-        today.getTime() + 1,
-        Duration.fromObject({ days: 1 }).as("milliseconds")
-      ).map(milliseconds => {
-        const date: string = DateSerializer.serialize(new Date(milliseconds));
-        const record = records.find(record => record.date === date);
+      data:
+        records.length === 0
+          ? []
+          : range(
+              DateSerializer.deserialize(records[0].date).getTime(),
+              today.getTime() + 1,
+              Duration.fromObject({ days: 1 }).as("milliseconds")
+            ).map(milliseconds => {
+              const date: string = DateSerializer.serialize(
+                new Date(milliseconds)
+              );
+              const record = records.find(record => record.date === date);
 
-        return {
-          date,
-          pomodoros: record ? record.seconds / 25 / 60 : 0
-        };
-      })
+              return {
+                date,
+                pomodoros: record ? record.seconds / 25 / 60 : 0
+              };
+            })
     });
   }
 }
