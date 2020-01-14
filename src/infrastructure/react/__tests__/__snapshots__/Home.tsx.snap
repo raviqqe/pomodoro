@@ -23,7 +23,7 @@ exports[`goes back to a timer view 1`] = `
         </span>
       </div>
       <button
-        class="sc-AykKC sc-AykKE cJtYbK"
+        class="sc-AykKC sc-AykKE kNrEFh"
       >
         Stop
       </button>
@@ -32,7 +32,7 @@ exports[`goes back to a timer view 1`] = `
       class="sc-fzXfLQ jJLvIq"
     >
       <button
-        class="sc-AykKC sc-AykKD fyAhDl"
+        class="sc-AykKC sc-AykKD fhKdRU"
       >
         <svg
           fill="currentColor"
@@ -50,7 +50,7 @@ exports[`goes back to a timer view 1`] = `
       </button>
       <button
         aria-label="View Graph"
-        class="sc-AykKC sc-AykKD fyAhDl"
+        class="sc-AykKC sc-AykKD fhKdRU"
       >
         <svg
           fill="currentColor"
@@ -93,7 +93,7 @@ exports[`renders 1`] = `
       </span>
     </div>
     <button
-      className="sc-AykKC sc-AykKE cJtYbK"
+      className="sc-AykKC sc-AykKE kNrEFh"
       onClick={[Function]}
     >
       Stop
@@ -103,7 +103,7 @@ exports[`renders 1`] = `
     className="sc-fzXfLQ jJLvIq"
   >
     <button
-      className="sc-AykKC sc-AykKD fyAhDl"
+      className="sc-AykKC sc-AykKD fhKdRU"
       onClick={[Function]}
     >
       <svg
@@ -127,7 +127,7 @@ exports[`renders 1`] = `
     </button>
     <button
       aria-label="View Graph"
-      className="sc-AykKC sc-AykKD fyAhDl"
+      className="sc-AykKC sc-AykKD fhKdRU"
       onClick={[Function]}
     >
       <svg
@@ -167,7 +167,7 @@ exports[`views a performance graph 1`] = `
       class="sc-fzXfLQ jJLvIq"
     >
       <button
-        class="sc-AykKC sc-AykKD fyAhDl"
+        class="sc-AykKC sc-AykKD fhKdRU"
       >
         <svg
           fill="currentColor"
@@ -185,7 +185,7 @@ exports[`views a performance graph 1`] = `
       </button>
       <button
         aria-label="View Timer"
-        class="sc-AykKC sc-AykKD fyAhDl"
+        class="sc-AykKC sc-AykKD fhKdRU"
       >
         <svg
           fill="currentColor"
