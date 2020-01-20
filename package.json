@@ -24,7 +24,7 @@
     "react-icons": "^3.8.0",
     "react-scripts": "^3.3.0",
     "react-spinners": "^0.8.0",
-    "react-use": "^13.20.0",
+    "react-use": "^13.21.0",
     "recharts": "^1.8.5",
     "styled-components": "^5.0.0"
   },
