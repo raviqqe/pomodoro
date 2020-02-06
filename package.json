@@ -16,7 +16,7 @@
     "lodash": "^4.17.15",
     "luxon": "^1.22.0",
     "mobx": "^5.15.4",
-    "mobx-react": "^6.1.5",
+    "mobx-react": "^6.1.6",
     "prettier": "^1.19.1",
     "pure-uuid": "^1.6.0",
     "react": "^16.12.0",
