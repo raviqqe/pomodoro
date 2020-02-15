@@ -6,12 +6,10 @@ import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
 
 const props: IProps = {
   performanceGraph: { data: [] },
-  seconds: 42,
   signOut: async () => {},
   startTimer: async () => {},
-  state: PomodoroTimerState.Pomodoro,
   stopTimer: async () => {},
-  stopped: false,
+  timer: { seconds: 42, state: PomodoroTimerState.Pomodoro, stopped: false },
   viewGraph: async () => {}
 };
 
