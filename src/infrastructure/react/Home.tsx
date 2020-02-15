@@ -26,16 +26,20 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-export interface IProps extends ITimerProps, IPerformanceGraphProps {
+export interface IProps
+  extends Omit<ITimerProps, "seconds" | "state" | "stopped">,
+    IPerformanceGraphProps {
   signOut: () => void;
+  timer: Pick<ITimerProps, "seconds" | "state" | "stopped">;
   viewGraph: () => Promise<void>;
 }
 
 export const Home = ({
   performanceGraph,
   signOut,
+  timer,
   viewGraph,
-  ...timerProps
+  ...restProps
 }: IProps) => {
   const [graphViewed, setGraphViewed] = useState(false);
 
@@ -44,7 +48,7 @@ export const Home = ({
       {graphViewed ? (
         <PerformanceGraph performanceGraph={performanceGraph} />
       ) : (
-        <Timer {...timerProps} />
+        <Timer {...timer} {...restProps} />
       )}
       <ButtonsContainer>
         <SignOut signOut={signOut} />
