@@ -9,6 +9,7 @@ import { ReactRenderer } from "..";
 it("renders", () => {
   new ReactRenderer(
     document.createElement("div"),
+    [],
     {} as ApplicationInitializer,
     {} as PerformanceGraphViewer,
     {} as PomodoroTimerStarter,

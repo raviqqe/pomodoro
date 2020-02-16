@@ -46,8 +46,9 @@ async function main() {
 
   const graphPresenter = new PerformanceGraphPresenter();
 
-  const renderer = new ReactRenderer(
+  new ReactRenderer(
     element,
+    [authenticationPresenter, graphPresenter, pomodoroTimerPresenter],
     new ApplicationInitializer(
       new InfrastructureInitializer(
         firebaseInitializer,
@@ -62,13 +63,7 @@ async function main() {
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController, authenticationPresenter),
     configuration.repositoryURL
-  );
-
-  authenticationPresenter.setRenderer(renderer);
-  graphPresenter.setRenderer(renderer);
-  pomodoroTimerPresenter.setRenderer(renderer);
-
-  renderer.render();
+  ).render();
 
   await navigator.serviceWorker.register("/service-worker.js");
 }

@@ -12,6 +12,10 @@ import { IPerformanceGraph } from "../../application/performance-graph";
 import { App, IProps as IAppProps } from "./App";
 import { GlobalStyle } from "./style";
 
+interface IPresenter {
+  setRenderer(renderer: IRenderer): void;
+}
+
 interface IProps
   extends Pick<IAppProps, "performanceGraph" | "signedIn" | "timer"> {}
 
@@ -24,6 +28,7 @@ export class ReactRenderer implements IRenderer {
 
   constructor(
     private readonly element: HTMLElement,
+    presenters: IPresenter[],
     private readonly applicationInitializer: ApplicationInitializer,
     private readonly performanceGraphViewer: PerformanceGraphViewer,
     private readonly pomodoroTimerStarter: PomodoroTimerStarter,
@@ -31,7 +36,11 @@ export class ReactRenderer implements IRenderer {
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
     private readonly repositoryURL: string
-  ) {}
+  ) {
+    for (const presenter of presenters) {
+      presenter.setRenderer(this);
+    }
+  }
 
   public render(): void {
     this.renderProps({});
