@@ -15,24 +15,20 @@ export class PomodoroTimerPresenter implements IPomodoroTimerPresenter {
   }
 
   public presentTime(seconds: number): void {
-    this.timer = { ...this.timer, seconds };
-
-    this.render();
+    this.renderTimer({ seconds });
   }
 
   public presentState(state: PomodoroTimerState): void {
-    this.timer = { ...this.timer, state };
-
-    this.render();
+    this.renderTimer({ state });
   }
 
   public presentStopped(stopped: boolean): void {
-    this.timer = { ...this.timer, stopped };
-
-    this.render();
+    this.renderTimer({ stopped });
   }
 
-  private render(): void {
+  private renderTimer(timer: Partial<IPomodoroTimer>): void {
+    this.timer = { ...this.timer, ...timer };
+
     this.renderer?.renderTimer(this.timer);
   }
 }
