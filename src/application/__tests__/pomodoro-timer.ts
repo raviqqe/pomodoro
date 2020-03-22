@@ -16,14 +16,14 @@ beforeEach(() => {
   timerPresenter = {
     presentState: jest.fn(),
     presentStopped: jest.fn(),
-    presentTime: jest.fn()
+    presentTime: jest.fn(),
   };
   notificationPresenter = { presentNotification: jest.fn() };
   performanceRecordRepository = {
     create: jest.fn(),
     findManySince: jest.fn(),
     findOne: jest.fn(),
-    update: jest.fn()
+    update: jest.fn(),
   };
 
   pomodoroTimer = new PomodoroTimer(
@@ -44,7 +44,7 @@ it("stops", () => {
   pomodoroTimer.stop();
 
   expect(timerPresenter.presentState.mock.calls).toEqual([
-    [PomodoroTimerState.Pomodoro]
+    [PomodoroTimerState.Pomodoro],
   ]);
 });
 
@@ -64,7 +64,7 @@ it("changes its state", () => {
     [PomodoroTimerState.ShortBreak],
     [PomodoroTimerState.Pomodoro],
     [PomodoroTimerState.LongBreak],
-    [PomodoroTimerState.Pomodoro]
+    [PomodoroTimerState.Pomodoro],
   ]);
 });
 
@@ -78,6 +78,6 @@ it("notifies the end of pomodoros and breaks", () => {
 
   expect(notificationPresenter.presentNotification.mock.calls).toEqual([
     ["Pomodoro finished!"],
-    ["Break finished!"]
+    ["Break finished!"],
   ]);
 });

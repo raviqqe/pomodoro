@@ -6,7 +6,7 @@ import { ViewGraph } from "./ViewGraph";
 import { Timer, IProps as ITimerProps } from "./Timer";
 import {
   PerformanceGraph,
-  IProps as IPerformanceGraphProps
+  IProps as IPerformanceGraphProps,
 } from "./PerformanceGraph";
 
 const Container = styled.div`

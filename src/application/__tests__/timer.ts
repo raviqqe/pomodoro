@@ -4,7 +4,7 @@ import { ITimerPresenter } from "../timer-presenter";
 
 const dummyCallbacks = {
   endCallback: async () => {},
-  tickCallback: async () => {}
+  tickCallback: async () => {},
 };
 
 let timerPresenter: jest.Mocked<ITimerPresenter>;
@@ -13,7 +13,7 @@ let timer: Timer;
 beforeEach(() => {
   timerPresenter = {
     presentStopped: jest.fn(),
-    presentTime: jest.fn()
+    presentTime: jest.fn(),
   };
   timer = new Timer(timerPresenter);
 });
@@ -68,6 +68,6 @@ it("presents time", () => {
 
   expect(timerPresenter.presentStopped.mock.calls).toEqual([[false], [true]]);
   expect(timerPresenter.presentTime.mock.calls).toEqual(
-    range(42, -1, -1).map(seconds => [seconds])
+    range(42, -1, -1).map((seconds) => [seconds])
   );
 });

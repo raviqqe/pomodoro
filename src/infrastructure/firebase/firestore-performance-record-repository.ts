@@ -27,7 +27,7 @@ export class FirestorePerformanceRecordRepository
       .get();
 
     return querySnapshot.docs.map(
-      snapshot => snapshot.data() as IPerformanceRecord
+      (snapshot) => snapshot.data() as IPerformanceRecord
     );
   }
 
@@ -36,9 +36,7 @@ export class FirestorePerformanceRecordRepository
   }
 
   public async createOrUpdate(record: IPerformanceRecord): Promise<void> {
-    await this.collection()
-      .doc(record.date)
-      .set(record);
+    await this.collection().doc(record.date).set(record);
   }
 
   private collection(): firebase.firestore.CollectionReference {

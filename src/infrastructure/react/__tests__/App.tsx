@@ -13,7 +13,7 @@ const props: IProps = {
   startTimer: async () => {},
   stopTimer: async () => {},
   timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
-  viewGraph: async () => {}
+  viewGraph: async () => {},
 };
 
 it("renders before a user signs in", async () => {

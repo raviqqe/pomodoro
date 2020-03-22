@@ -3,6 +3,6 @@ import { PomodoroTimer } from "../pomodoro-timer";
 
 it("stops a pomodoro timer", async () => {
   await new PomodoroTimerStopper(({
-    stop: jest.fn()
+    stop: jest.fn(),
   } as unknown) as PomodoroTimer).stop();
 });

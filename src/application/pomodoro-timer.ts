@@ -56,7 +56,7 @@ export class PomodoroTimer {
         this.presentState();
         this.notificationPresenter.presentNotification("Pomodoro finished!");
       },
-      tickCallback: () => this.performanceTracker.addSecond()
+      tickCallback: () => this.performanceTracker.addSecond(),
     });
   }
 
@@ -68,7 +68,7 @@ export class PomodoroTimer {
         this.presentState();
         this.notificationPresenter.presentNotification("Break finished!");
       },
-      tickCallback: async () => {}
+      tickCallback: async () => {},
     });
   }
 

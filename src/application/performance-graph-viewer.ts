@@ -27,17 +27,17 @@ export class PerformanceGraphViewer {
               DateSerializer.deserialize(records[0].date).getTime(),
               today.getTime() + 1,
               Duration.fromObject({ days: 1 }).as("milliseconds")
-            ).map(milliseconds => {
+            ).map((milliseconds) => {
               const date: string = DateSerializer.serialize(
                 new Date(milliseconds)
               );
-              const record = records.find(record => record.date === date);
+              const record = records.find((record) => record.date === date);
 
               return {
                 date,
-                pomodoros: record ? record.seconds / 25 / 60 : 0
+                pomodoros: record ? record.seconds / 25 / 60 : 0,
               };
-            })
+            }),
     });
   }
 }

@@ -6,7 +6,7 @@ import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
 const commonProps: Omit<IProps, "state" | "stopped"> = {
   seconds: 42,
   startTimer: async () => {},
-  stopTimer: async () => {}
+  stopTimer: async () => {},
 };
 
 it("renders while running", () => {
