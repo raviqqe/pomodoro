@@ -8,7 +8,7 @@ import {
   YAxis,
   Label,
   Bar,
-  BarChart
+  BarChart,
 } from "recharts";
 import styled from "styled-components";
 import { DateSerializer } from "../../domain/date-serializer";

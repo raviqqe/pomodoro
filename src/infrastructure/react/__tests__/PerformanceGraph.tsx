@@ -14,7 +14,9 @@ it("renders with data", () => {
     create(
       <PerformanceGraph
         performanceGraph={{
-          data: [{ date: DateSerializer.serialize(new Date(0)), pomodoros: 42 }]
+          data: [
+            { date: DateSerializer.serialize(new Date(0)), pomodoros: 42 },
+          ],
         }}
       />,
       { createNodeMock: () => ({ parentElement: document.body }) }

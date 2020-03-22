@@ -43,7 +43,7 @@ export const Timer = ({
   startTimer,
   state,
   stopTimer,
-  stopped
+  stopped,
 }: IProps) => (
   <Container>
     {stopped ? (

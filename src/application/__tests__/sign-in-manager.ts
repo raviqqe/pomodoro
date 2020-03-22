@@ -3,7 +3,7 @@ import { SignInManager } from "../sign-in-manager";
 
 it("signs in", async () => {
   const signInManager = new SignInManager(({
-    signIn: jest.fn()
+    signIn: jest.fn(),
   } as unknown) as IAuthenticationController);
 
   await signInManager.signIn();

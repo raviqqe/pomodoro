@@ -10,7 +10,7 @@ beforeEach(() => {
     create: jest.fn(),
     findManySince: jest.fn(),
     findOne: jest.fn(),
-    update: jest.fn()
+    update: jest.fn(),
   };
   tracker = new PerformanceTracker(performanceRecordRepository);
 });
@@ -25,15 +25,15 @@ it("tracks performance by a minute", async () => {
   }
 
   expect(performanceRecordRepository.create.mock.calls).toEqual([
-    [expect.objectContaining({ date: expect.any(String), seconds: 60 })]
+    [expect.objectContaining({ date: expect.any(String), seconds: 60 })],
   ]);
 });
 
 it("updates an existing performance record", async () => {
   performanceRecordRepository.findOne.mockImplementationOnce(async () => null);
-  performanceRecordRepository.findOne.mockImplementationOnce(async date => ({
+  performanceRecordRepository.findOne.mockImplementationOnce(async (date) => ({
     date,
-    seconds: 60
+    seconds: 60,
   }));
 
   for (const _ of range(120)) {
@@ -41,9 +41,9 @@ it("updates an existing performance record", async () => {
   }
 
   expect(performanceRecordRepository.create.mock.calls).toEqual([
-    [expect.objectContaining({ date: expect.any(String), seconds: 60 })]
+    [expect.objectContaining({ date: expect.any(String), seconds: 60 })],
   ]);
   expect(performanceRecordRepository.update.mock.calls).toEqual([
-    [expect.objectContaining({ date: expect.any(String), seconds: 120 })]
+    [expect.objectContaining({ date: expect.any(String), seconds: 120 })],
   ]);
 });

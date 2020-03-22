@@ -10,7 +10,7 @@ const props: IProps = {
   startTimer: async () => {},
   stopTimer: async () => {},
   timer: { seconds: 42, state: PomodoroTimerState.Pomodoro, stopped: false },
-  viewGraph: async () => {}
+  viewGraph: async () => {},
 };
 
 it("renders", () => {

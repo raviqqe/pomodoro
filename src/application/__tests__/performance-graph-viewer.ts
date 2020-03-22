@@ -12,7 +12,7 @@ beforeEach(() => {
     create: jest.fn(),
     findManySince: jest.fn(),
     findOne: jest.fn(),
-    update: jest.fn()
+    update: jest.fn(),
   };
   performanceGraphPresenter = { presentGraph: jest.fn() };
   viewer = new PerformanceGraphViewer(
@@ -23,13 +23,13 @@ beforeEach(() => {
 
 it("views a performance graph", async () => {
   performanceRecordRepository.findManySince.mockResolvedValue([
-    { date: "20190831", seconds: 0 }
+    { date: "20190831", seconds: 0 },
   ]);
 
   await viewer.viewGraph(DateSerializer.deserialize("20190831"));
 
   expect(performanceGraphPresenter.presentGraph.mock.calls).toEqual([
-    [{ data: [{ date: "20190831", pomodoros: 0 }] }]
+    [{ data: [{ date: "20190831", pomodoros: 0 }] }],
   ]);
 });
 
@@ -39,14 +39,14 @@ it("views a performance graph without data", async () => {
   await viewer.viewGraph(DateSerializer.deserialize("20190831"));
 
   expect(performanceGraphPresenter.presentGraph.mock.calls).toEqual([
-    [{ data: [] }]
+    [{ data: [] }],
   ]);
 });
 
 it("complements data in missing dates", async () => {
   performanceRecordRepository.findManySince.mockResolvedValue([
     { date: "20190831", seconds: 0 },
-    { date: "20190902", seconds: 0 }
+    { date: "20190902", seconds: 0 },
   ]);
 
   await viewer.viewGraph(DateSerializer.deserialize("20190902"));
@@ -57,9 +57,9 @@ it("complements data in missing dates", async () => {
         data: [
           { date: "20190831", pomodoros: 0 },
           { date: "20190901", pomodoros: 0 },
-          { date: "20190902", pomodoros: 0 }
-        ]
-      }
-    ]
+          { date: "20190902", pomodoros: 0 },
+        ],
+      },
+    ],
   ]);
 });

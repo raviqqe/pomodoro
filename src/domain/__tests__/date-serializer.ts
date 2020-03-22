@@ -3,9 +3,7 @@ import { DateSerializer } from "../date-serializer";
 
 it("deserializes a date", () => {
   expect(DateSerializer.deserialize("20190831").getTime()).toBe(
-    DateTime.local(2019, 8, 31)
-      .toJSDate()
-      .getTime()
+    DateTime.local(2019, 8, 31).toJSDate().getTime()
   );
 });
 

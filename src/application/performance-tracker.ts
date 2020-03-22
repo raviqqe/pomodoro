@@ -26,7 +26,7 @@ export class PerformanceTracker {
     if (record) {
       await this.performanceRecordRepository.update({
         date,
-        seconds: record.seconds + MINUTE
+        seconds: record.seconds + MINUTE,
       });
     } else {
       await this.performanceRecordRepository.create({ date, seconds: MINUTE });

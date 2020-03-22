@@ -23,7 +23,7 @@ export class ReactRenderer implements IRenderer {
   private props: IProps = {
     performanceGraph: { data: [] },
     signedIn: null,
-    timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true }
+    timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
   };
 
   constructor(

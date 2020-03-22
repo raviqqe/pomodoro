@@ -7,7 +7,7 @@ export class PomodoroTimerPresenter implements IPomodoroTimerPresenter {
   private timer: IPomodoroTimer = {
     seconds: 0,
     state: PomodoroTimerState.Pomodoro,
-    stopped: true
+    stopped: true,
   };
 
   public setRenderer(renderer: IRenderer): void {
