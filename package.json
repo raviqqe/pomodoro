@@ -14,7 +14,7 @@
     "@sentry/browser": "^5.15.0",
     "firebase": "^7.12.0",
     "lodash": "^4.17.15",
-    "luxon": "^1.22.0",
+    "luxon": "^1.22.2",
     "prettier": "^2.0.2",
     "pure-uuid": "^1.6.0",
     "react": "^16.13.1",
