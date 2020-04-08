@@ -6,24 +6,24 @@ exports[`goes back to a timer view 1`] = `
     class="sc-fzoLsD jZdxgt"
   >
     <div
-      class="sc-AxhCb gjpeCM"
+      class="sc-AxgMl gtCEPL"
     >
       <div
-        class="sc-AxgMl fxlqHc"
+        class="sc-Axmtr eDWjWR"
       >
         <span
-          class="sc-AxheI fniENP"
+          class="sc-AxmLO cAKCgh"
         >
           0
         </span>
         <span
-          class="sc-Axmtr kfBEis"
+          class="sc-fzozJi jiyBHg"
         >
           42
         </span>
       </div>
       <button
-        class="sc-AxjAm sc-AxiKw hKCzML"
+        class="sc-AxiKw sc-AxhUy duGlOm"
       >
         Stop
       </button>
@@ -32,7 +32,7 @@ exports[`goes back to a timer view 1`] = `
       class="sc-fzpans lYotm"
     >
       <button
-        class="sc-AxjAm sc-AxirZ huBbKx"
+        class="sc-AxiKw sc-AxhCb qxhjB"
       >
         <svg
           fill="currentColor"
@@ -50,7 +50,7 @@ exports[`goes back to a timer view 1`] = `
       </button>
       <button
         aria-label="View Graph"
-        class="sc-AxjAm sc-AxirZ huBbKx"
+        class="sc-AxiKw sc-AxhCb qxhjB"
       >
         <svg
           fill="currentColor"
@@ -76,24 +76,24 @@ exports[`renders 1`] = `
   className="sc-fzoLsD jZdxgt"
 >
   <div
-    className="sc-AxhCb gjpeCM"
+    className="sc-AxgMl gtCEPL"
   >
     <div
-      className="sc-AxgMl fxlqHc"
+      className="sc-Axmtr eDWjWR"
     >
       <span
-        className="sc-AxheI fniENP"
+        className="sc-AxmLO cAKCgh"
       >
         0
       </span>
       <span
-        className="sc-Axmtr kfBEis"
+        className="sc-fzozJi jiyBHg"
       >
         42
       </span>
     </div>
     <button
-      className="sc-AxjAm sc-AxiKw hKCzML"
+      className="sc-AxiKw sc-AxhUy duGlOm"
       onClick={[Function]}
     >
       Stop
@@ -103,7 +103,7 @@ exports[`renders 1`] = `
     className="sc-fzpans lYotm"
   >
     <button
-      className="sc-AxjAm sc-AxirZ huBbKx"
+      className="sc-AxiKw sc-AxhCb qxhjB"
       onClick={[Function]}
     >
       <svg
@@ -127,7 +127,7 @@ exports[`renders 1`] = `
     </button>
     <button
       aria-label="View Graph"
-      className="sc-AxjAm sc-AxirZ huBbKx"
+      className="sc-AxiKw sc-AxhCb qxhjB"
       onClick={[Function]}
     >
       <svg
@@ -159,7 +159,7 @@ exports[`views a performance graph 1`] = `
     class="sc-fzoLsD jZdxgt"
   >
     <div
-      class="sc-fzozJi cLPkW"
+      class="sc-AxirZ fFDNdo"
     >
       No performance graph to show yet!
     </div>
@@ -167,7 +167,7 @@ exports[`views a performance graph 1`] = `
       class="sc-fzpans lYotm"
     >
       <button
-        class="sc-AxjAm sc-AxirZ huBbKx"
+        class="sc-AxiKw sc-AxhCb qxhjB"
       >
         <svg
           fill="currentColor"
@@ -185,7 +185,7 @@ exports[`views a performance graph 1`] = `
       </button>
       <button
         aria-label="View Timer"
-        class="sc-AxjAm sc-AxirZ huBbKx"
+        class="sc-AxiKw sc-AxhCb qxhjB"
       >
         <svg
           fill="currentColor"
