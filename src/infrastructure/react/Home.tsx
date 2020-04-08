@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { SignOut } from "./SignOut";
-import { ViewTimer } from "./ViewTimer";
-import { ViewGraph } from "./ViewGraph";
-import { Timer, IProps as ITimerProps } from "./Timer";
 import {
   PerformanceGraph,
   IProps as IPerformanceGraphProps,
 } from "./PerformanceGraph";
+import { SignOut } from "./SignOut";
+import { Timer, IProps as ITimerProps } from "./Timer";
+import { ViewGraph } from "./ViewGraph";
+import { ViewTimer } from "./ViewTimer";
 
 const Container = styled.div`
   display: flex;

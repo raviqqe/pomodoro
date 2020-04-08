@@ -1,8 +1,8 @@
-import { create } from "react-test-renderer";
-import React from "react";
 import { render, fireEvent, waitForDomChange } from "@testing-library/react";
-import { Home, IProps } from "../Home";
+import React from "react";
+import { create } from "react-test-renderer";
 import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
+import { Home, IProps } from "../Home";
 
 const props: IProps = {
   performanceGraph: { data: [] },

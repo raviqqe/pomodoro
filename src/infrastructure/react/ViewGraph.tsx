@@ -1,5 +1,5 @@
-import { IoMdStats } from "react-icons/io";
 import React from "react";
+import { IoMdStats } from "react-icons/io";
 import { CircleButton } from "./CircleButton";
 
 interface IProps {

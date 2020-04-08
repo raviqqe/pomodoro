@@ -1,8 +1,8 @@
-import { Timer } from "./timer";
-import { IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
-import { PomodoroTimerState } from "./pomodoro-timer-state";
 import { INotificationPresenter } from "./notification-presenter";
 import { PerformanceTracker } from "./performance-tracker";
+import { IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
+import { PomodoroTimerState } from "./pomodoro-timer-state";
+import { Timer } from "./timer";
 
 export class PomodoroTimer {
   private readonly timer: Timer;

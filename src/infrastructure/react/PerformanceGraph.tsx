@@ -1,5 +1,5 @@
-import { DateTime } from "luxon";
 import { last } from "lodash";
+import { DateTime } from "luxon";
 import React from "react";
 import {
   CartesianGrid,
@@ -11,8 +11,8 @@ import {
   BarChart,
 } from "recharts";
 import styled from "styled-components";
-import { DateSerializer } from "../../domain/date-serializer";
 import { IPerformanceGraph } from "../../application/performance-graph";
+import { DateSerializer } from "../../domain/date-serializer";
 import { white } from "./style/colors";
 
 const Container = styled.div`

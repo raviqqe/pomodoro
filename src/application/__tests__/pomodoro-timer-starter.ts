@@ -1,5 +1,5 @@
-import { PomodoroTimerStarter } from "../pomodoro-timer-starter";
 import { PomodoroTimer } from "../pomodoro-timer";
+import { PomodoroTimerStarter } from "../pomodoro-timer-starter";
 
 it("starts a pomodoro timer", async () => {
   await new PomodoroTimerStarter(({

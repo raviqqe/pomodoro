@@ -1,7 +1,7 @@
+import { DateSerializer } from "../../domain/date-serializer";
+import { IPerformanceGraphPresenter } from "../performance-graph-presenter";
 import { PerformanceGraphViewer } from "../performance-graph-viewer";
 import { IPerformanceRecordRepository } from "../performance-record-repository";
-import { IPerformanceGraphPresenter } from "../performance-graph-presenter";
-import { DateSerializer } from "../../domain/date-serializer";
 
 let performanceRecordRepository: jest.Mocked<IPerformanceRecordRepository>;
 let performanceGraphPresenter: jest.Mocked<IPerformanceGraphPresenter>;
