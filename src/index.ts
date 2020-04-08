@@ -1,23 +1,23 @@
 import { ApplicationInitializer } from "./application/application-initializer";
-import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
-import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
-import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
-import { PomodoroTimerPresenter } from "./infrastructure/pomodoro-timer-presenter";
-import { AuthenticationPresenter } from "./infrastructure/authentication-presenter";
-import { PerformanceTracker } from "./application/performance-tracker";
 import { PerformanceGraphViewer } from "./application/performance-graph-viewer";
-import { FirestorePerformanceRecordRepository } from "./infrastructure/firebase/firestore-performance-record-repository";
-import { PerformanceGraphPresenter } from "./infrastructure/performance-graph-presenter";
-import { ReactRenderer } from "./infrastructure/react";
-import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
+import { PerformanceTracker } from "./application/performance-tracker";
+import { PomodoroTimer } from "./application/pomodoro-timer";
+import { PomodoroTimerStarter } from "./application/pomodoro-timer-starter";
+import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
-import { PomodoroTimer } from "./application/pomodoro-timer";
-import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper";
-import { PomodoroTimerStarter } from "./application/pomodoro-timer-starter";
 import configuration from "./configuration.json";
+import { AuthenticationPresenter } from "./infrastructure/authentication-presenter";
+import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
+import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
+import { FirestorePerformanceRecordRepository } from "./infrastructure/firebase/firestore-performance-record-repository";
+import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
 import { BuiltinNotificationInitializer } from "./infrastructure/notification/builtin-notification-initializer";
 import { BuiltinNotificationPresenter } from "./infrastructure/notification/builtin-notification-presenter";
+import { PerformanceGraphPresenter } from "./infrastructure/performance-graph-presenter";
+import { PomodoroTimerPresenter } from "./infrastructure/pomodoro-timer-presenter";
+import { ReactRenderer } from "./infrastructure/react";
+import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
 const firebaseInitializer = new FirebaseInitializer(

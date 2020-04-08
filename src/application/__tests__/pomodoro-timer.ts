@@ -1,11 +1,11 @@
 import { last, range } from "lodash";
-import { PomodoroTimer } from "../pomodoro-timer";
-import { Timer } from "../timer";
-import { IPomodoroTimerPresenter } from "../pomodoro-timer-presenter";
 import { INotificationPresenter } from "../notification-presenter";
-import { PomodoroTimerState } from "../pomodoro-timer-state";
-import { PerformanceTracker } from "../performance-tracker";
 import { IPerformanceRecordRepository } from "../performance-record-repository";
+import { PerformanceTracker } from "../performance-tracker";
+import { PomodoroTimer } from "../pomodoro-timer";
+import { IPomodoroTimerPresenter } from "../pomodoro-timer-presenter";
+import { PomodoroTimerState } from "../pomodoro-timer-state";
+import { Timer } from "../timer";
 
 let timerPresenter: jest.Mocked<IPomodoroTimerPresenter>;
 let notificationPresenter: jest.Mocked<INotificationPresenter>;

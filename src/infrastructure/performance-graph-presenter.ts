@@ -1,5 +1,5 @@
-import { IPerformanceGraphPresenter } from "../application/performance-graph-presenter";
 import { IPerformanceGraph } from "../application/performance-graph";
+import { IPerformanceGraphPresenter } from "../application/performance-graph-presenter";
 import { IRenderer } from "./renderer";
 
 export class PerformanceGraphPresenter implements IPerformanceGraphPresenter {

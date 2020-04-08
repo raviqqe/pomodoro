@@ -1,7 +1,7 @@
-import { create } from "react-test-renderer";
 import React from "react";
-import { PerformanceGraph } from "../PerformanceGraph";
+import { create } from "react-test-renderer";
 import { DateSerializer } from "../../../domain/date-serializer";
+import { PerformanceGraph } from "../PerformanceGraph";
 
 it("renders with no data", () => {
   expect(

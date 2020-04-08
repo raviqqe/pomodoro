@@ -1,6 +1,6 @@
 import { range } from "lodash";
-import { PerformanceTracker } from "../performance-tracker";
 import { IPerformanceRecordRepository } from "../performance-record-repository";
+import { PerformanceTracker } from "../performance-tracker";
 
 let performanceRecordRepository: jest.Mocked<IPerformanceRecordRepository>;
 let tracker: PerformanceTracker;

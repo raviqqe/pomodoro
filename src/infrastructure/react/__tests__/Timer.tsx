@@ -1,7 +1,7 @@
-import { create } from "react-test-renderer";
 import React from "react";
-import { Timer, IProps } from "../Timer";
+import { create } from "react-test-renderer";
 import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
+import { Timer, IProps } from "../Timer";
 
 const commonProps: Omit<IProps, "state" | "stopped"> = {
   seconds: 42,
