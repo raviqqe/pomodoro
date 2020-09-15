@@ -11,7 +11,7 @@ export class PerformanceTracker {
     private readonly performanceRecordRepository: IPerformanceRecordRepository
   ) {}
 
-  public async addSecond() {
+  public async addSecond(): Promise<void> {
     this.seconds++;
 
     if (this.seconds !== MINUTE) {
