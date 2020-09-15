@@ -6,8 +6,8 @@ import { Timer } from "./timer";
 
 export class PomodoroTimer {
   private readonly timer: Timer;
-  private pomodoro: boolean = true;
-  private breakCount: number = 0;
+  private pomodoro = true;
+  private breakCount = 0;
 
   constructor(
     private readonly timerPresenter: IPomodoroTimerPresenter,

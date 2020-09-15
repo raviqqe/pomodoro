@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 
-const DATE_FORMAT: string = "yyyyMMdd";
+const DATE_FORMAT = "yyyyMMdd";
 
 export class DateSerializer {
   public static serialize(date: Date): string {

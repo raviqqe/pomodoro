@@ -2,10 +2,10 @@ import { DateSerializer } from "../domain/date-serializer";
 import { IPerformanceRecord } from "./performance-record";
 import { IPerformanceRecordRepository } from "./performance-record-repository";
 
-const MINUTE: number = 60;
+const MINUTE = 60;
 
 export class PerformanceTracker {
-  private seconds: number = 0;
+  private seconds = 0;
 
   constructor(
     private readonly performanceRecordRepository: IPerformanceRecordRepository
