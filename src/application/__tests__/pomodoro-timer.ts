@@ -48,12 +48,12 @@ it("stops", () => {
   ]);
 });
 
-it("changes its state", () => {
+it("changes its state", async () => {
   const spy = jest.spyOn(Timer.prototype, "start");
 
   for (const _ of range(8)) {
     pomodoroTimer.start();
-    last(spy.mock.calls)?.[1].endCallback();
+    await last(spy.mock.calls)?.[1].endCallback();
   }
 
   expect(timerPresenter.presentState.mock.calls).toEqual([
@@ -68,13 +68,13 @@ it("changes its state", () => {
   ]);
 });
 
-it("notifies the end of pomodoros and breaks", () => {
+it("notifies the end of pomodoros and breaks", async () => {
   const spy = jest.spyOn(Timer.prototype, "start");
 
   pomodoroTimer.start();
-  last(spy.mock.calls)?.[1].endCallback();
+  await last(spy.mock.calls)?.[1].endCallback();
   pomodoroTimer.start();
-  last(spy.mock.calls)?.[1].endCallback();
+  await last(spy.mock.calls)?.[1].endCallback();
 
   expect(notificationPresenter.presentNotification.mock.calls).toEqual([
     ["Pomodoro finished!"],
