@@ -3,7 +3,5 @@ import { create } from "react-test-renderer";
 import { ViewTimer } from "../ViewTimer";
 
 it("renders", () => {
-  expect(
-    create(<ViewTimer viewTimer={() => undefined} />).toJSON()
-  ).toMatchSnapshot();
+  expect(create(<ViewTimer viewTimer={() => {}} />).toJSON()).toMatchSnapshot();
 });
