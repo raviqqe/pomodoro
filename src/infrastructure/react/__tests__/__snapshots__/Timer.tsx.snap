@@ -2,24 +2,24 @@
 
 exports[`renders while running 1`] = `
 <div
-  className="sc-dlnjPT hWZNmz"
+  className="sc-dlfnbm eMghch"
 >
   <div
-    className="sc-eCApGN dNqBsi"
+    className="sc-eCssSg dmOjzj"
   >
     <span
-      className="sc-jSFkmK"
+      className="sc-jSgupP"
     >
       0
     </span>
     <span
-      className="sc-gKAblj jWDDcM"
+      className="sc-gKsewC iEXlGO"
     >
       42
     </span>
   </div>
   <button
-    className="sc-bdnylx sc-gtssRu iwZKpE jsKurr"
+    className="sc-bdfBwQ sc-gsTCUz iEhruk gWqNOS"
     onClick={[Function]}
   >
     Stop
@@ -29,15 +29,15 @@ exports[`renders while running 1`] = `
 
 exports[`renders with long break state 1`] = `
 <div
-  className="sc-dlnjPT hWZNmz"
+  className="sc-dlfnbm eMghch"
 >
   <div
-    className="sc-hKFyIo iSWyBM"
+    className="sc-hKgILt RRwRW"
   >
     🛌🛌
   </div>
   <button
-    className="sc-bdnylx sc-gtssRu fbGLvz jsKurr"
+    className="sc-bdfBwQ sc-gsTCUz egYkqn gWqNOS"
     onClick={[Function]}
   >
     Start
@@ -47,15 +47,15 @@ exports[`renders with long break state 1`] = `
 
 exports[`renders with pomodoro state 1`] = `
 <div
-  className="sc-dlnjPT hWZNmz"
+  className="sc-dlfnbm eMghch"
 >
   <div
-    className="sc-hKFyIo iSWyBM"
+    className="sc-hKgILt RRwRW"
   >
     🍅
   </div>
   <button
-    className="sc-bdnylx sc-gtssRu fbGLvz jsKurr"
+    className="sc-bdfBwQ sc-gsTCUz egYkqn gWqNOS"
     onClick={[Function]}
   >
     Start
@@ -65,15 +65,15 @@ exports[`renders with pomodoro state 1`] = `
 
 exports[`renders with short break state 1`] = `
 <div
-  className="sc-dlnjPT hWZNmz"
+  className="sc-dlfnbm eMghch"
 >
   <div
-    className="sc-hKFyIo iSWyBM"
+    className="sc-hKgILt RRwRW"
   >
     🛌
   </div>
   <button
-    className="sc-bdnylx sc-gtssRu fbGLvz jsKurr"
+    className="sc-bdfBwQ sc-gsTCUz egYkqn gWqNOS"
     onClick={[Function]}
   >
     Start
