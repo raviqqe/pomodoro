@@ -12,6 +12,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
