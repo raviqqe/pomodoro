@@ -1,4 +1,4 @@
-import { render, fireEvent, waitForDomChange } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import React from "react";
 import { create } from "react-test-renderer";
 import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
@@ -23,7 +23,7 @@ it("views a performance graph", async () => {
   fireEvent.click(
     container.querySelector(`[aria-label="View Graph"]`) as Element
   );
-  await waitForDomChange();
+  await waitFor(() => container.querySelector(`[aria-label="View Timer"]`));
 
   expect(container).toMatchSnapshot();
 });
@@ -34,7 +34,7 @@ it("goes back to a timer view", async () => {
   fireEvent.click(
     container.querySelector(`[aria-label="View Graph"]`) as Element
   );
-  await waitForDomChange();
+  await waitFor(() => container.querySelector(`[aria-label="View Timer"]`));
 
   fireEvent.click(
     container.querySelector(`[aria-label="View Timer"]`) as Element
