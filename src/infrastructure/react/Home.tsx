@@ -40,7 +40,7 @@ export const Home = ({
   timer,
   viewGraph,
   ...restProps
-}: IProps) => {
+}: IProps): JSX.Element => {
   const [graphViewed, setGraphViewed] = useState(false);
 
   return (

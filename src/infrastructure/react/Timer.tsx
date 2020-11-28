@@ -44,7 +44,7 @@ export const Timer = ({
   state,
   stopTimer,
   stopped,
-}: IProps) => (
+}: IProps): JSX.Element => (
   <Container>
     {stopped ? (
       <>
