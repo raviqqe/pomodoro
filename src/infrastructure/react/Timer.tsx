@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
 import { TextButton } from "./TextButton";
