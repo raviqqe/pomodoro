@@ -29,7 +29,9 @@ export interface IProps {
   performanceGraph: IPerformanceGraph;
 }
 
-export const PerformanceGraph = ({ performanceGraph: { data } }: IProps) =>
+export const PerformanceGraph = ({
+  performanceGraph: { data },
+}: IProps): JSX.Element =>
   data.length === 0 ? (
     <Message>No performance graph to show yet!</Message>
   ) : (
