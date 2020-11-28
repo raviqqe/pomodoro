@@ -1,4 +1,3 @@
-import React from "react";
 import { create } from "react-test-renderer";
 import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
 import { Timer, IProps } from "../Timer";

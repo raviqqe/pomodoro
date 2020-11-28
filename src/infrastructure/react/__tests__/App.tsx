@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import React from "react";
 import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
 import { App, IProps } from "../App";
 

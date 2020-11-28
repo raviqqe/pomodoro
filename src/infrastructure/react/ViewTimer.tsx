@@ -1,4 +1,3 @@
-import React from "react";
 import { MdTimer } from "react-icons/md";
 import { CircleButton } from "./CircleButton";
 

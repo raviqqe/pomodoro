@@ -1,6 +1,5 @@
 import { last } from "lodash";
 import { DateTime } from "luxon";
-import React from "react";
 import {
   CartesianGrid,
   ResponsiveContainer,
