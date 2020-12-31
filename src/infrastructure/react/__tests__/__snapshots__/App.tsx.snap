@@ -106,19 +106,19 @@ exports[`renders before a user signs in 1`] = `
   <div
     class="sc-bqyKva gFNaCE"
   >
-    <div
+    <span
       class="css-0"
     >
-      <div
+      <span
         class="css-b0t2tw"
       />
-      <div
+      <span
         class="css-fz02ge"
       />
-      <div
+      <span
         class="css-1xlchjq"
       />
-    </div>
+    </span>
   </div>
 </div>
 `;
