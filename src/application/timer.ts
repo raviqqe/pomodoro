@@ -16,7 +16,7 @@ export class Timer {
     this.presenter.presentTime(duration);
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    this.interval = setInterval(async () => {
+    this.interval = window.setInterval(async () => {
       duration--;
 
       if (duration < 0) {
