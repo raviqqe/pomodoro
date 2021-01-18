@@ -5,7 +5,6 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
-  Label,
   Bar,
   BarChart,
 } from "recharts";
@@ -54,13 +53,16 @@ export const PerformanceGraph = ({
               return days === 0 ? "Today" : `${days} days ago`;
             }}
           />
-          <YAxis allowDecimals={false} stroke="grey">
-            <Label
-              position="insideLeft"
-              style={{ fill: "grey" }}
-              value="Pomodoros"
-            />
-          </YAxis>
+          <YAxis
+            allowDecimals={false}
+            label={{
+              angle: -90,
+              position: "insideLeft",
+              style: { fill: "grey" },
+              value: "Pomodoros",
+            }}
+            stroke="grey"
+          />
           <Bar dataKey="pomodoros" fill="salmon" />
         </BarChart>
       </ResponsiveContainer>
