@@ -53,11 +53,9 @@ export const PerformanceGraph = ({
 
               return days === 0 ? "Today" : `${days} days ago`;
             }}
-            tickMargin={10}
           />
-          <YAxis allowDecimals={false} stroke="grey" tickMargin={5}>
+          <YAxis allowDecimals={false} stroke="grey">
             <Label
-              angle={-90}
               position="insideLeft"
               style={{ fill: "grey" }}
               value="Pomodoros"
