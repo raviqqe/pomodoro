@@ -6,6 +6,7 @@ exports[`renders with data 1`] = `
 >
   <div
     className="recharts-responsive-container"
+    id="undefined"
     style={
       Object {
         "height": "100%",
@@ -16,17 +17,7 @@ exports[`renders with data 1`] = `
       }
     }
   >
-    <div
-      style={
-        Object {
-          "display": "none",
-          "height": 0,
-          "position": "absolute",
-          "visibility": "hidden",
-          "width": 0,
-        }
-      }
-    />
+    <div />
   </div>
 </div>
 `;
