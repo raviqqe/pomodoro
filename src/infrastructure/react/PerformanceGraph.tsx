@@ -56,6 +56,7 @@ export const PerformanceGraph = ({
           />
           <YAxis allowDecimals={false} stroke="grey">
             <Label
+              angle={-90}
               position="insideLeft"
               style={{ fill: "grey" }}
               value="Pomodoros"
