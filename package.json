@@ -20,7 +20,7 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
     "react-spinners": "^0.10.4",
-    "react-use": "^15.3.8",
+    "react-use": "^17.0.1",
     "recharts": "^1.8.5",
     "styled-components": "^5.2.1",
     "workbox-precaching": "^6.0.2"
