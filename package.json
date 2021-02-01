@@ -23,7 +23,7 @@
     "react-use": "^17.0.1",
     "recharts": "^1.8.5",
     "styled-components": "^5.2.1",
-    "workbox-precaching": "^6.0.2"
+    "workbox-precaching": "^6.1.0"
   },
   "devDependencies": {
     "@raviqqe/eslint-config": "^1.0.8",
