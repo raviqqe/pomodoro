@@ -18,7 +18,7 @@
     "pure-uuid": "^1.6.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.1.0",
+    "react-icons": "^4.2.0",
     "react-spinners": "^0.10.4",
     "react-use": "^17.1.0",
     "recharts": "^1.8.5",
