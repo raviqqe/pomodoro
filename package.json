@@ -17,7 +17,7 @@
     "luxon": "^1.26.0",
     "pure-uuid": "^1.6.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-spinners": "^0.10.6",
     "react-use": "^17.2.1",
