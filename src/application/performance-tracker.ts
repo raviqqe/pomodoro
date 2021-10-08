@@ -19,9 +19,8 @@ export class PerformanceTracker {
     }
 
     const date: string = DateSerializer.serialize(new Date());
-    const record: IPerformanceRecord | null = await this.performanceRecordRepository.findOne(
-      date
-    );
+    const record: IPerformanceRecord | null =
+      await this.performanceRecordRepository.findOne(date);
 
     if (record) {
       await this.performanceRecordRepository.update({

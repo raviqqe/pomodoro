@@ -36,7 +36,8 @@ async function main() {
   const authenticationController = new FirebaseAuthenticationController();
   const authenticationPresenter = new AuthenticationPresenter();
 
-  const performanceRecordRepository = new FirestorePerformanceRecordRepository();
+  const performanceRecordRepository =
+    new FirestorePerformanceRecordRepository();
   const pomodoroTimerPresenter = new PomodoroTimerPresenter();
   const pomodoroTimer = new PomodoroTimer(
     pomodoroTimerPresenter,
