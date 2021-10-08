@@ -3,7 +3,7 @@ import { SignOutManager } from "../sign-out-manager";
 
 it("signs in", async () => {
   const signOutManager = new SignOutManager(
-    ({ signOut: jest.fn() } as unknown) as IAuthenticationController,
+    { signOut: jest.fn() } as unknown as IAuthenticationController,
     { presentSignedIn: jest.fn() }
   );
 

@@ -4,7 +4,8 @@ import { IPerformanceRecord } from "../../application/performance-record";
 import { IPerformanceRecordRepository } from "../../application/performance-record-repository";
 
 export class FirestorePerformanceRecordRepository
-  implements IPerformanceRecordRepository {
+  implements IPerformanceRecordRepository
+{
   public async create(record: IPerformanceRecord): Promise<void> {
     await this.createOrUpdate(record);
   }
