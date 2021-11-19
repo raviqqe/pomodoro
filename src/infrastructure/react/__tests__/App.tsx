@@ -1,9 +1,17 @@
-import { render } from "@testing-library/react";
+import { act, render, waitFor } from "@testing-library/react";
 import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
 import { App, IProps } from "../App";
 
+const initialize = jest.fn();
+
+const wait = () => waitFor(() => expect(initialize).toBeCalled());
+
+beforeEach(() => {
+  initialize.mockReset().mockResolvedValue(undefined);
+});
+
 const props: IProps = {
-  initialize: async () => {},
+  initialize,
   performanceGraph: { data: [] },
   repositoryURL: "",
   signIn: async () => {},
@@ -16,19 +24,31 @@ const props: IProps = {
 };
 
 it("renders before a user signs in", async () => {
-  expect(
-    render(<App {...props} signedIn={null} />).container
-  ).toMatchSnapshot();
+  await act(async () => {
+    expect(
+      render(<App {...props} signedIn={null} />).container
+    ).toMatchSnapshot();
+
+    await wait();
+  });
 });
 
 it("renders after a user signs in", async () => {
-  expect(
-    render(<App {...props} signedIn={true} />).container
-  ).toMatchSnapshot();
+  await act(async () => {
+    expect(
+      render(<App {...props} signedIn={true} />).container
+    ).toMatchSnapshot();
+
+    await wait();
+  });
 });
 
 it("renders after a user signs out", async () => {
-  expect(
-    render(<App {...props} signedIn={false} />).container
-  ).toMatchSnapshot();
+  await act(async () => {
+    expect(
+      render(<App {...props} signedIn={false} />).container
+    ).toMatchSnapshot();
+
+    await wait();
+  });
 });
