@@ -33,11 +33,15 @@ async function main() {
     throw new Error("no root element");
   }
 
-  const authenticationController = new FirebaseAuthenticationController();
+  const firebaseApp = await firebaseInitializer.initialize();
+  const authenticationController = new FirebaseAuthenticationController(
+    firebaseApp
+  );
   const authenticationPresenter = new AuthenticationPresenter();
 
-  const performanceRecordRepository =
-    new FirestorePerformanceRecordRepository();
+  const performanceRecordRepository = new FirestorePerformanceRecordRepository(
+    firebaseApp
+  );
   const pomodoroTimerPresenter = new PomodoroTimerPresenter();
   const pomodoroTimer = new PomodoroTimer(
     pomodoroTimerPresenter,
@@ -51,10 +55,7 @@ async function main() {
     element,
     [authenticationPresenter, graphPresenter, pomodoroTimerPresenter],
     new ApplicationInitializer(
-      new InfrastructureInitializer(
-        firebaseInitializer,
-        new BuiltinNotificationInitializer()
-      ),
+      new InfrastructureInitializer(new BuiltinNotificationInitializer()),
       authenticationController,
       authenticationPresenter
     ),

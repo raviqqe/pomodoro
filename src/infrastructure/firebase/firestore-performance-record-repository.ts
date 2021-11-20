@@ -1,20 +1,40 @@
-import "firebase/compat/firestore";
-import firebase from "firebase/compat/app";
+import { FirebaseApp } from "firebase/app";
+import { Auth, getAuth } from "firebase/auth";
+import {
+  collection,
+  CollectionReference,
+  doc,
+  Firestore,
+  getDocs,
+  getFirestore,
+  orderBy,
+  query,
+  setDoc,
+  where,
+} from "firebase/firestore";
 import { IPerformanceRecord } from "../../application/performance-record";
 import { IPerformanceRecordRepository } from "../../application/performance-record-repository";
 
 export class FirestorePerformanceRecordRepository
   implements IPerformanceRecordRepository
 {
+  private readonly auth: Auth;
+  private readonly firestore: Firestore;
+
+  constructor(app: FirebaseApp) {
+    this.auth = getAuth(app);
+    this.firestore = getFirestore(app);
+  }
+
   public async create(record: IPerformanceRecord): Promise<void> {
     await this.createOrUpdate(record);
   }
 
   public async findOne(date: string): Promise<IPerformanceRecord | null> {
-    const querySnapshot = await this.collection()
-      .where("date", "==", date)
-      .get();
-    const documentSnapshot = querySnapshot.docs[0];
+    const snapshot = await getDocs(
+      query(this.collection(), where("date", "==", date))
+    );
+    const documentSnapshot = snapshot.docs[0];
 
     return documentSnapshot
       ? (documentSnapshot.data() as IPerformanceRecord)
@@ -22,12 +42,11 @@ export class FirestorePerformanceRecordRepository
   }
 
   public async findManySince(date: string): Promise<IPerformanceRecord[]> {
-    const querySnapshot = await this.collection()
-      .where("date", ">=", date)
-      .orderBy("date")
-      .get();
+    const snapshot = await getDocs(
+      query(this.collection(), where("date", ">=", date), orderBy("date"))
+    );
 
-    return querySnapshot.docs.map(
+    return snapshot.docs.map(
       (snapshot) => snapshot.data() as IPerformanceRecord
     );
   }
@@ -37,20 +56,19 @@ export class FirestorePerformanceRecordRepository
   }
 
   public async createOrUpdate(record: IPerformanceRecord): Promise<void> {
-    await this.collection().doc(record.date).set(record);
+    await setDoc(doc(this.collection(), record.date), record);
   }
 
-  private collection(): firebase.firestore.CollectionReference {
-    const user = firebase.auth().currentUser;
+  private collection(): CollectionReference {
+    const user = this.auth.currentUser;
 
     if (!user) {
       throw new Error("user not authenticated");
     }
 
-    return firebase
-      .firestore()
-      .collection("users")
-      .doc(user.uid)
-      .collection("performanceRecords");
+    return collection(
+      doc(collection(this.firestore, "users"), user.uid),
+      "performanceRecords"
+    );
   }
 }
