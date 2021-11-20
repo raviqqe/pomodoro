@@ -12,7 +12,7 @@ import { sleep } from "../../domain/utilities";
 export class FirebaseAuthenticationController
   implements IAuthenticationController
 {
-  private auth: Auth;
+  private readonly auth: Auth;
   private signedIn: boolean | null = null;
 
   constructor(app: FirebaseApp) {

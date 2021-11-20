@@ -1,5 +1,8 @@
-import firestore from "firebase/firestore";
 import firebase, { FirebaseApp } from "firebase/app";
+import {
+  enableMultiTabIndexedDbPersistence,
+  getFirestore,
+} from "firebase/firestore";
 
 export class FirebaseInitializer {
   constructor(
@@ -15,9 +18,7 @@ export class FirebaseInitializer {
       storageBucket: `${this.projectId}.appspot.com`,
     });
 
-    await firestore.enableMultiTabIndexedDbPersistence(
-      firestore.getFirestore(app)
-    );
+    await enableMultiTabIndexedDbPersistence(getFirestore(app));
 
     return app;
   }

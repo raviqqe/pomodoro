@@ -1,3 +1,5 @@
+import { FirebaseApp } from "firebase/app";
+import { Auth, getAuth } from "firebase/auth";
 import {
   collection,
   CollectionReference,
@@ -10,8 +12,6 @@ import {
   setDoc,
   where,
 } from "firebase/firestore";
-import { FirebaseApp } from "firebase/app";
-import { Auth, getAuth } from "firebase/auth";
 import { IPerformanceRecord } from "../../application/performance-record";
 import { IPerformanceRecordRepository } from "../../application/performance-record-repository";
 
