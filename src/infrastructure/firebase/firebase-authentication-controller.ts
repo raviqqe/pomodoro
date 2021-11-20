@@ -1,27 +1,33 @@
-import "firebase/compat/auth";
-import firebase from "firebase/compat/app";
+import { FirebaseApp } from "firebase/app";
+import auth from "firebase/auth";
+import {
+  Auth,
+  GoogleAuthProvider,
+  signInWithRedirect,
+  User,
+} from "firebase/auth";
 import { IAuthenticationController } from "../../application/authentication-controller";
 import { sleep } from "../../domain/utilities";
 
 export class FirebaseAuthenticationController
   implements IAuthenticationController
 {
+  private auth: Auth;
   private signedIn: boolean | null = null;
 
-  constructor() {
-    firebase.auth().onAuthStateChanged((user: firebase.User | null): void => {
+  constructor(app: FirebaseApp) {
+    this.auth = auth.getAuth(app);
+    this.auth.onAuthStateChanged((user: User | null): void => {
       this.signedIn = !!user;
     });
   }
 
   public async signIn(): Promise<void> {
-    await firebase
-      .auth()
-      .signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    await signInWithRedirect(this.auth, new GoogleAuthProvider());
   }
 
   public async signOut(): Promise<boolean> {
-    await firebase.auth().signOut();
+    await this.auth.signOut();
     return this.isSignedIn();
   }
 
