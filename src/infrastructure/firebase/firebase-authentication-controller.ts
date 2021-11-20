@@ -1,7 +1,7 @@
 import { FirebaseApp } from "firebase/app";
-import auth from "firebase/auth";
 import {
   Auth,
+  getAuth,
   GoogleAuthProvider,
   signInWithRedirect,
   User,
@@ -16,7 +16,7 @@ export class FirebaseAuthenticationController
   private signedIn: boolean | null = null;
 
   constructor(app: FirebaseApp) {
-    this.auth = auth.getAuth(app);
+    this.auth = getAuth(app);
     this.auth.onAuthStateChanged((user: User | null): void => {
       this.signedIn = !!user;
     });

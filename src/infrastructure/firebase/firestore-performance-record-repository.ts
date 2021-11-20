@@ -1,4 +1,15 @@
-import firestore, { CollectionReference, Firestore } from "firebase/firestore";
+import {
+  collection,
+  CollectionReference,
+  doc,
+  Firestore,
+  getDocs,
+  getFirestore,
+  orderBy,
+  query,
+  setDoc,
+  where,
+} from "firebase/firestore";
 import { FirebaseApp } from "firebase/app";
 import auth from "firebase/auth";
 import { IPerformanceRecord } from "../../application/performance-record";
@@ -13,7 +24,7 @@ export class FirestorePerformanceRecordRepository
 
   constructor(app: FirebaseApp) {
     this.auth = auth.getAuth(app);
-    this.firestore = firestore.getFirestore(app);
+    this.firestore = getFirestore(app);
   }
 
   public async create(record: IPerformanceRecord): Promise<void> {
@@ -21,8 +32,8 @@ export class FirestorePerformanceRecordRepository
   }
 
   public async findOne(date: string): Promise<IPerformanceRecord | null> {
-    const snapshot = await firestore.getDocs(
-      firestore.query(this.collection(), firestore.where("date", "==", date))
+    const snapshot = await getDocs(
+      query(this.collection(), where("date", "==", date))
     );
     const documentSnapshot = snapshot.docs[0];
 
@@ -32,12 +43,8 @@ export class FirestorePerformanceRecordRepository
   }
 
   public async findManySince(date: string): Promise<IPerformanceRecord[]> {
-    const snapshot = await firestore.getDocs(
-      firestore.query(
-        this.collection(),
-        firestore.where("date", ">=", date),
-        firestore.orderBy("date")
-      )
+    const snapshot = await getDocs(
+      query(this.collection(), where("date", ">=", date), orderBy("date"))
     );
 
     return snapshot.docs.map(
@@ -50,10 +57,7 @@ export class FirestorePerformanceRecordRepository
   }
 
   public async createOrUpdate(record: IPerformanceRecord): Promise<void> {
-    await firestore.setDoc(
-      firestore.doc(this.collection(), record.date),
-      record
-    );
+    await setDoc(doc(this.collection(), record.date), record);
   }
 
   private collection(): CollectionReference {
@@ -63,8 +67,8 @@ export class FirestorePerformanceRecordRepository
       throw new Error("user not authenticated");
     }
 
-    return firestore.collection(
-      firestore.doc(firestore.collection(this.firestore, "users"), user.uid),
+    return collection(
+      doc(collection(this.firestore, "users"), user.uid),
       "performanceRecords"
     );
   }
