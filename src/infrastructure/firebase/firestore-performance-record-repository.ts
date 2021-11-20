@@ -11,10 +11,9 @@ import {
   where,
 } from "firebase/firestore";
 import { FirebaseApp } from "firebase/app";
-import auth from "firebase/auth";
+import { Auth, getAuth } from "firebase/auth";
 import { IPerformanceRecord } from "../../application/performance-record";
 import { IPerformanceRecordRepository } from "../../application/performance-record-repository";
-import { Auth } from "firebase/auth";
 
 export class FirestorePerformanceRecordRepository
   implements IPerformanceRecordRepository
@@ -23,7 +22,7 @@ export class FirestorePerformanceRecordRepository
   private readonly firestore: Firestore;
 
   constructor(app: FirebaseApp) {
-    this.auth = auth.getAuth(app);
+    this.auth = getAuth(app);
     this.firestore = getFirestore(app);
   }
 
