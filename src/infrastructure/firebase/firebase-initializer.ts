@@ -13,6 +13,7 @@ export class FirebaseInitializer {
   public async initialize(): Promise<FirebaseApp> {
     const app = initializeApp({
       apiKey: this.apiKey,
+      authDomain: `${this.projectId}.firebaseapp.com`,
       projectId: this.projectId,
     });
 
