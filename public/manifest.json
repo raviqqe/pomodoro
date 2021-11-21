@@ -1,7 +1,7 @@
 {
   "short_name": "Pomodoro",
   "name": "Pomodoro",
-  "icons": [{ "src": "icon.svg", "sizes": "680x680" }],
+  "icons": [{ "src": "icon.svg", "sizes": "any" }],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "paleturquoise",
