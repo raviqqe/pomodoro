@@ -11,11 +11,11 @@
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
-            "value": "https://tasks.code2d.org"
+            "value": "https://pomodoro.code2d.org"
           },
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self' *.googleapis.com *.gstatic.com; frame-ancestors 'none'"
+            "value": "default-src 'self' *.googleapis.com *.gstatic.com sentury.io; style-src 'self' 'unsafe-inline' *.googleapis.com; frame-ancestors 'none'"
           },
           {
             "key": "Strict-Transport-Security",
