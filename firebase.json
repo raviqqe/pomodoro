@@ -11,7 +11,7 @@
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
-            "value": "https://tasks.code2d.org"
+            "value": "https://pomodoro.code2d.org"
           },
           {
             "key": "Content-Security-Policy",
