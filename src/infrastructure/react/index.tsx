@@ -1,4 +1,4 @@
-import { render } from "react-dom";
+import { createRoot } from "react-dom";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { IPerformanceGraph } from "../../application/performance-graph";
 import { PerformanceGraphViewer } from "../../application/performance-graph-viewer";
@@ -24,9 +24,10 @@ export class ReactRenderer implements IRenderer {
     signedIn: null,
     timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
   };
+  private readonly root;
 
   constructor(
-    private readonly element: HTMLElement,
+    element: HTMLElement,
     presenters: IPresenter[],
     private readonly applicationInitializer: ApplicationInitializer,
     private readonly performanceGraphViewer: PerformanceGraphViewer,
@@ -36,6 +37,8 @@ export class ReactRenderer implements IRenderer {
     private readonly signOutManager: SignOutManager,
     private readonly repositoryURL: string
   ) {
+    this.root = createRoot(element);
+
     for (const presenter of presenters) {
       presenter.setRenderer(this);
     }
@@ -60,7 +63,7 @@ export class ReactRenderer implements IRenderer {
   private renderProps(props: Partial<IProps>): void {
     this.props = { ...this.props, ...props };
 
-    render(
+    this.root.render(
       <>
         <App
           {...this.props}
@@ -73,8 +76,7 @@ export class ReactRenderer implements IRenderer {
           viewGraph={() => this.performanceGraphViewer.viewGraph()}
         />
         <GlobalStyle />
-      </>,
-      this.element
+      </>
     );
   }
 }
