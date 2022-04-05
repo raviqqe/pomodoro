@@ -37,7 +37,7 @@
     "@types/recharts": "^2.0.0",
     "@types/styled-components": "^5.1.24",
     "cspell": "^5.19.5",
-    "firebase-tools": "^10.5.0",
+    "firebase-tools": "^10.6.0",
     "react-scripts": "^5.0.0",
     "react-test-renderer": "^18.0.0",
     "resize-observer-polyfill": "^1.5.1",
