@@ -10,7 +10,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@sentry/browser": "^6.19.4",
+    "@sentry/browser": "^6.19.6",
     "firebase": "^9.6.10",
     "lodash": "^4.17.21",
     "luxon": "^2.3.1",
@@ -31,11 +31,11 @@
     "@types/jest": "^27.4.1",
     "@types/lodash": "^4.14.181",
     "@types/luxon": "^2.3.1",
-    "@types/react": "^17.0.43",
-    "@types/react-dom": "^17.0.14",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "@types/react-test-renderer": "^17.0.1",
     "@types/recharts": "^2.0.0",
-    "@types/styled-components": "^5.1.24",
+    "@types/styled-components": "^5.1.25",
     "cspell": "^5.19.5",
     "firebase-tools": "^10.6.0",
     "react-scripts": "^5.0.0",
