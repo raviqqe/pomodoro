@@ -1,4 +1,4 @@
-import { render } from "react-dom";
+import { createRoot, Root } from "react-dom";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { IPerformanceGraph } from "../../application/performance-graph";
 import { PerformanceGraphViewer } from "../../application/performance-graph-viewer";
@@ -19,6 +19,7 @@ interface IProps
   extends Pick<IAppProps, "performanceGraph" | "signedIn" | "timer"> {}
 
 export class ReactRenderer implements IRenderer {
+  private root: Root;
   private props: IProps = {
     performanceGraph: { data: [] },
     signedIn: null,
@@ -26,7 +27,7 @@ export class ReactRenderer implements IRenderer {
   };
 
   constructor(
-    private readonly element: HTMLElement,
+    element: HTMLElement,
     presenters: IPresenter[],
     private readonly applicationInitializer: ApplicationInitializer,
     private readonly performanceGraphViewer: PerformanceGraphViewer,
@@ -39,6 +40,8 @@ export class ReactRenderer implements IRenderer {
     for (const presenter of presenters) {
       presenter.setRenderer(this);
     }
+
+    this.root = createRoot(element);
   }
 
   public render(): void {
@@ -60,7 +63,7 @@ export class ReactRenderer implements IRenderer {
   private renderProps(props: Partial<IProps>): void {
     this.props = { ...this.props, ...props };
 
-    render(
+    this.root.render(
       <>
         <App
           {...this.props}
@@ -73,8 +76,7 @@ export class ReactRenderer implements IRenderer {
           viewGraph={() => this.performanceGraphViewer.viewGraph()}
         />
         <GlobalStyle />
-      </>,
-      this.element
+      </>
     );
   }
 }
