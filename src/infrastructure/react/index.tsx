@@ -19,7 +19,7 @@ interface IProps
   extends Pick<IAppProps, "performanceGraph" | "signedIn" | "timer"> {}
 
 export class ReactRenderer implements IRenderer {
-  private root: Root;
+  private readonly root: Root;
   private props: IProps = {
     performanceGraph: { data: [] },
     signedIn: null,
