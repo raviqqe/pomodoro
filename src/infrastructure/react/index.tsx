@@ -1,4 +1,4 @@
-import { createRoot, Root } from "react-dom";
+import { createRoot, Root } from "react-dom/client";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { IPerformanceGraph } from "../../application/performance-graph";
 import { PerformanceGraphViewer } from "../../application/performance-graph-viewer";
