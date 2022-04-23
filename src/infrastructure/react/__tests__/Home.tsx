@@ -1,4 +1,10 @@
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import {
+  render,
+  fireEvent,
+  waitFor,
+  RenderResult,
+  act,
+} from "@testing-library/react";
 import { create } from "react-test-renderer";
 import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
 import { Home, IProps } from "../Home";
@@ -17,27 +23,57 @@ it("renders", () => {
 });
 
 it("views a performance graph", async () => {
-  const { container } = render(<Home {...props} />);
+  let result: RenderResult | undefined;
 
-  fireEvent.click(
-    container.querySelector(`[aria-label="View Graph"]`) as Element
+  act(() => {
+    result = render(<Home {...props} />);
+  });
+
+  act(() => {
+    fireEvent.click(
+      result?.container.querySelector(`[aria-label="View Graph"]`) as Element
+    );
+  });
+
+  await waitFor(() =>
+    expect(
+      result?.container.querySelector(`[aria-label="View Timer"]`)
+    ).toBeTruthy()
   );
-  await waitFor(() => container.querySelector(`[aria-label="View Timer"]`));
 
-  expect(container).toMatchSnapshot();
+  expect(result?.container).toMatchSnapshot();
 });
 
 it("goes back to a timer view", async () => {
-  const { container } = render(<Home {...props} />);
+  let result: RenderResult | undefined;
 
-  fireEvent.click(
-    container.querySelector(`[aria-label="View Graph"]`) as Element
+  act(() => {
+    result = render(<Home {...props} />);
+  });
+
+  act(() => {
+    fireEvent.click(
+      result?.container.querySelector(`[aria-label="View Graph"]`) as Element
+    );
+  });
+
+  await waitFor(() =>
+    expect(
+      result?.container.querySelector(`[aria-label="View Timer"]`)
+    ).toBeTruthy()
   );
-  await waitFor(() => container.querySelector(`[aria-label="View Timer"]`));
 
-  fireEvent.click(
-    container.querySelector(`[aria-label="View Timer"]`) as Element
+  act(() => {
+    fireEvent.click(
+      result?.container.querySelector(`[aria-label="View Timer"]`) as Element
+    );
+  });
+
+  await waitFor(() =>
+    expect(
+      result?.container.querySelector(`[aria-label="View Graph"]`)
+    ).toBeTruthy()
   );
 
-  expect(container).toMatchSnapshot();
+  expect(result?.container).toMatchSnapshot();
 });
