@@ -1,4 +1,4 @@
-import { act, render, waitFor } from "@testing-library/react";
+import { act, render, RenderResult, waitFor } from "@testing-library/react";
 import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
 import { App, IProps } from "../App";
 
@@ -24,31 +24,37 @@ const props: IProps = {
 };
 
 it("renders before a user signs in", async () => {
-  await act(async () => {
-    expect(
-      render(<App {...props} signedIn={null} />).container
-    ).toMatchSnapshot();
+  let result: RenderResult | undefined;
 
-    await wait();
+  act(() => {
+    result = render(<App {...props} signedIn={null} />);
   });
+
+  expect(result?.container).toMatchSnapshot();
+
+  await wait();
 });
 
 it("renders after a user signs in", async () => {
-  await act(async () => {
-    expect(
-      render(<App {...props} signedIn={true} />).container
-    ).toMatchSnapshot();
+  let result: RenderResult | undefined;
 
-    await wait();
+  act(() => {
+    result = render(<App {...props} signedIn={true} />);
   });
+
+  expect(result?.container).toMatchSnapshot();
+
+  await wait();
 });
 
 it("renders after a user signs out", async () => {
-  await act(async () => {
-    expect(
-      render(<App {...props} signedIn={false} />).container
-    ).toMatchSnapshot();
+  let result: RenderResult | undefined;
 
-    await wait();
+  act(() => {
+    result = render(<App {...props} signedIn={false} />);
   });
+
+  expect(result?.container).toMatchSnapshot();
+
+  await wait();
 });
