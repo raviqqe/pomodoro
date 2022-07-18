@@ -36,7 +36,7 @@
     "@types/react-test-renderer": "^18.0.0",
     "@types/recharts": "^2.0.0",
     "@types/styled-components": "^5.1.25",
-    "cspell": "^6.2.3",
+    "cspell": "^6.3.0",
     "firebase-tools": "^11.2.2",
     "react-scripts": "^5.0.1",
     "react-test-renderer": "^18.1.0",
