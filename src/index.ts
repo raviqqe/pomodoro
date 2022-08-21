@@ -20,10 +20,7 @@ import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
-const firebaseInitializer = new FirebaseInitializer(
-  configuration.firebase.projectId,
-  configuration.firebase.apiKey
-);
+const firebaseInitializer = new FirebaseInitializer(configuration.firebase);
 const errorReporter = new SentryErrorReporter(configuration.sentry.dsn);
 
 async function main() {
@@ -64,7 +61,7 @@ async function main() {
     new PomodoroTimerStopper(pomodoroTimer),
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController, authenticationPresenter),
-    configuration.repositoryURL
+    configuration.repositoryUrl
   ).render();
 
   await navigator.serviceWorker.register("/service-worker.js");
