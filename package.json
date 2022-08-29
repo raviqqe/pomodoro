@@ -13,7 +13,7 @@
     "@sentry/browser": "^7.11.1",
     "firebase": "^9.9.3",
     "lodash": "^4.17.21",
-    "luxon": "^3.0.1",
+    "luxon": "^3.0.2",
     "pure-uuid": "^1.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
