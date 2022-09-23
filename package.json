@@ -20,7 +20,7 @@
     "react-icons": "^4.4.0",
     "react-spinners": "^0.13.4",
     "react-use": "^17.4.0",
-    "recharts": "^2.1.12",
+    "recharts": "^2.1.14",
     "styled-components": "^5.3.5",
     "workbox-precaching": "^6.5.4"
   },
