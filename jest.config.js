@@ -4,4 +4,5 @@ module.exports = {
     "\\.[jt]sx?$": "babel-jest",
   },
   transformIgnorePatterns: ["/node_modules/react-spinners"],
+  setupFiles: ["<rootDir>/src/setupTests.ts"],
 };
