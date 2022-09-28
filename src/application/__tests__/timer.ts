@@ -41,7 +41,7 @@ it("calls a tick callback", () => {
     (spy.mock.calls[0]?.[0] as () => void)();
   }
 
-  expect(tickCallback).toBeCalledTimes(42);
+  expect(tickCallback).toHaveBeenCalledTimes(42);
 });
 
 it("calls an end callback when time is up", () => {
@@ -54,7 +54,7 @@ it("calls an end callback when time is up", () => {
     (spy.mock.calls[0]?.[0] as () => void)();
   }
 
-  expect(endCallback).toBeCalledTimes(1);
+  expect(endCallback).toHaveBeenCalledTimes(1);
 });
 
 it("presents time", () => {
