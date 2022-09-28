@@ -6,7 +6,7 @@
     "build": "react-scripts build",
     "start": "react-scripts start",
     "lint": "cspell src/**/* 'public/**/*.{html,json}'",
-    "test": "react-scripts test",
+    "test": "jest",
     "deploy": "firebase deploy"
   },
   "dependencies": {
@@ -20,13 +20,15 @@
     "react-icons": "^4.4.0",
     "react-spinners": "^0.13.4",
     "react-use": "^17.4.0",
-    "recharts": "^2.1.12",
+    "recharts": "^2.1.13",
     "styled-components": "^5.3.5",
     "workbox-precaching": "^6.5.4"
   },
   "devDependencies": {
-    "@raviqqe/eslint-config": "^1.0.10",
-    "@raviqqe/react-tsconfig": "^1.0.6",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "@raviqqe/eslint-config": "git://github.com/raviqqe/eslint-config",
+    "@raviqqe/react-tsconfig": "git://github.com/raviqqe/react-tsconfig",
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.0.3",
     "@types/lodash": "^4.14.185",

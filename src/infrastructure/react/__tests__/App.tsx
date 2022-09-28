@@ -4,7 +4,7 @@ import { App, IProps } from "../App";
 
 const initialize = jest.fn();
 
-const wait = () => waitFor(() => expect(initialize).toBeCalled());
+const wait = () => waitFor(() => expect(initialize).toHaveBeenCalled());
 
 beforeEach(() => {
   initialize.mockReset().mockResolvedValue(undefined);
