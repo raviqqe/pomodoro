@@ -6,7 +6,7 @@
     "build": "react-scripts build",
     "start": "react-scripts start",
     "lint": "cspell src/**/* 'public/**/*.{html,json}'",
-    "test": "react-scripts test",
+    "test": "jest",
     "deploy": "firebase deploy"
   },
   "dependencies": {
@@ -25,6 +25,8 @@
     "workbox-precaching": "^6.5.4"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
     "@raviqqe/eslint-config": "git://github.com/raviqqe/eslint-config",
     "@raviqqe/react-tsconfig": "git://github.com/raviqqe/react-tsconfig",
     "@testing-library/react": "^13.4.0",
