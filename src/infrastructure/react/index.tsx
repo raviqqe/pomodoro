@@ -1,3 +1,4 @@
+import { StrictMode } from "react";
 import { createRoot, Root } from "react-dom/client";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { IPerformanceGraph } from "../../application/performance-graph";
@@ -64,7 +65,7 @@ export class ReactRenderer implements IRenderer {
     this.props = { ...this.props, ...props };
 
     this.root.render(
-      <>
+      <StrictMode>
         <App
           {...this.props}
           initialize={() => this.applicationInitializer.initialize()}
@@ -76,7 +77,7 @@ export class ReactRenderer implements IRenderer {
           viewGraph={() => this.performanceGraphViewer.viewGraph()}
         />
         <GlobalStyle />
-      </>
+      </StrictMode>
     );
   }
 }
