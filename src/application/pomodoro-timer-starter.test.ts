@@ -1,9 +1,9 @@
+import { expect, it, vi } from "vitest";
 import { PomodoroTimer } from "./pomodoro-timer";
 import { PomodoroTimerStarter } from "./pomodoro-timer-starter";
-import { expect, it, vi } from "vitest";
 
-it("starts a pomodoro timer", () => {
-  new PomodoroTimerStarter(
+it("starts a pomodoro timer", async () => {
+  await new PomodoroTimerStarter(
     {
       start: vi.fn(),
     } as unknown as PomodoroTimer,
@@ -11,10 +11,10 @@ it("starts a pomodoro timer", () => {
   ).start();
 });
 
-it("initializes notifications", () => {
+it("initializes notifications", async () => {
   const notificationInitializer = { initialize: vi.fn() };
 
-  new PomodoroTimerStarter(
+  await new PomodoroTimerStarter(
     {
       start: vi.fn(),
     } as unknown as PomodoroTimer,

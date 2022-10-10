@@ -5,9 +5,9 @@ import {
   RenderResult,
   act,
 } from "@testing-library/react";
+import { expect, it } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
 import { Home, IProps } from "./Home";
-import { expect, it } from "vitest";
 
 const props: IProps = {
   performanceGraph: { data: [] },

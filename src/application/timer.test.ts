@@ -1,7 +1,7 @@
 import { range } from "lodash";
+import { afterEach, beforeEach, it, vi, expect, Mocked } from "vitest";
 import { Timer } from "./timer";
 import { ITimerPresenter } from "./timer-presenter";
-import { afterEach, beforeEach, it, vi, expect, Mocked } from "vitest";
 
 const dummyCallbacks = {
   endCallback: async () => {},

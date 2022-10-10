@@ -1,7 +1,7 @@
 import { act, render, RenderResult, waitFor } from "@testing-library/react";
+import { beforeEach, expect, it, vi } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
 import { App, IProps } from "./App";
-import { beforeEach, expect, it, vi } from "vitest";
 
 const initialize = vi.fn();
 

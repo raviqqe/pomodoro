@@ -1,6 +1,6 @@
-import { TextButton } from "./TextButton";
-import { expect, it } from "vitest";
 import { render } from "@testing-library/react";
+import { expect, it } from "vitest";
+import { TextButton } from "./TextButton";
 
 it("renders", () => {
   expect(

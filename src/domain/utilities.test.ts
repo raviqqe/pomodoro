@@ -1,5 +1,5 @@
-import { sleep } from "./utilities";
 import { it } from "vitest";
+import { sleep } from "./utilities";
 
 it("sleeps", async () => {
   await sleep(0);

@@ -1,7 +1,7 @@
 import { range } from "lodash";
+import { vi, beforeEach, it, expect, Mocked } from "vitest";
 import { IPerformanceRecordRepository } from "./performance-record-repository";
 import { PerformanceTracker } from "./performance-tracker";
-import { vi, beforeEach, it, expect, Mocked } from "vitest";
 
 let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
 let tracker: PerformanceTracker;

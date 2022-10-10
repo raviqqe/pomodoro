@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import { SignIn } from "./SignIn";
 import { expect, it } from "vitest";
+import { SignIn } from "./SignIn";
 
 it("renders", () => {
   expect(
