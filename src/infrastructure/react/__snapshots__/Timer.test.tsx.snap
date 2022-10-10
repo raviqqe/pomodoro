@@ -1,0 +1,78 @@
+// Vitest Snapshot v1
+
+exports[`renders while running 1`] = `
+<div
+  class="sc-dkrFOg IsHIT"
+>
+  <div
+    class="sc-eDvSVe dXemcg"
+  >
+    <span
+      class="sc-jSUZER"
+    >
+      0
+    </span>
+    <span
+      class="sc-gKPRtg PXMhH"
+    >
+      42
+    </span>
+  </div>
+  <button
+    class="sc-bcXHqe sc-gswNZR fmEPPj gCUrWJ"
+  >
+    Stop
+  </button>
+</div>
+`;
+
+exports[`renders with long break state 1`] = `
+<div
+  class="sc-dkrFOg IsHIT"
+>
+  <div
+    class="sc-hLBbgP blDmMu"
+  >
+    🛌🛌
+  </div>
+  <button
+    class="sc-bcXHqe sc-gswNZR eTvdtE gCUrWJ"
+  >
+    Start
+  </button>
+</div>
+`;
+
+exports[`renders with pomodoro state 1`] = `
+<div
+  class="sc-dkrFOg IsHIT"
+>
+  <div
+    class="sc-hLBbgP blDmMu"
+  >
+    🍅
+  </div>
+  <button
+    class="sc-bcXHqe sc-gswNZR eTvdtE gCUrWJ"
+  >
+    Start
+  </button>
+</div>
+`;
+
+exports[`renders with short break state 1`] = `
+<div
+  class="sc-dkrFOg IsHIT"
+>
+  <div
+    class="sc-hLBbgP blDmMu"
+  >
+    🛌
+  </div>
+  <button
+    class="sc-bcXHqe sc-gswNZR eTvdtE gCUrWJ"
+  >
+    Start
+  </button>
+</div>
+`;
