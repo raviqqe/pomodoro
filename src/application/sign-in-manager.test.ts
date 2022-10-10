@@ -1,9 +1,10 @@
-import { IAuthenticationController } from "../authentication-controller";
-import { SignInManager } from "../sign-in-manager";
+import { IAuthenticationController } from "./authentication-controller";
+import { SignInManager } from "./sign-in-manager";
+import { it, vi } from "vitest";
 
 it("signs in", async () => {
   const signInManager = new SignInManager({
-    signIn: jest.fn(),
+    signIn: vi.fn(),
   } as unknown as IAuthenticationController);
 
   await signInManager.signIn();

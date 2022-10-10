@@ -1,29 +1,30 @@
 import { last, range } from "lodash";
-import { INotificationPresenter } from "../notification-presenter";
-import { IPerformanceRecordRepository } from "../performance-record-repository";
-import { PerformanceTracker } from "../performance-tracker";
-import { PomodoroTimer } from "../pomodoro-timer";
-import { IPomodoroTimerPresenter } from "../pomodoro-timer-presenter";
-import { PomodoroTimerState } from "../pomodoro-timer-state";
-import { Timer } from "../timer";
+import { INotificationPresenter } from "./notification-presenter";
+import { IPerformanceRecordRepository } from "./performance-record-repository";
+import { PerformanceTracker } from "./performance-tracker";
+import { PomodoroTimer } from "./pomodoro-timer";
+import { IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
+import { PomodoroTimerState } from "./pomodoro-timer-state";
+import { Timer } from "./timer";
+import { afterEach, vi, Mocked, beforeEach, expect, it } from "vitest";
 
-let timerPresenter: jest.Mocked<IPomodoroTimerPresenter>;
-let notificationPresenter: jest.Mocked<INotificationPresenter>;
-let performanceRecordRepository: jest.Mocked<IPerformanceRecordRepository>;
+let timerPresenter: Mocked<IPomodoroTimerPresenter>;
+let notificationPresenter: Mocked<INotificationPresenter>;
+let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
 let pomodoroTimer: PomodoroTimer;
 
 beforeEach(() => {
   timerPresenter = {
-    presentState: jest.fn(),
-    presentStopped: jest.fn(),
-    presentTime: jest.fn(),
+    presentState: vi.fn(),
+    presentStopped: vi.fn(),
+    presentTime: vi.fn(),
   };
-  notificationPresenter = { presentNotification: jest.fn() };
+  notificationPresenter = { presentNotification: vi.fn() };
   performanceRecordRepository = {
-    create: jest.fn(),
-    findManySince: jest.fn(),
-    findOne: jest.fn(),
-    update: jest.fn(),
+    create: vi.fn(),
+    findManySince: vi.fn(),
+    findOne: vi.fn(),
+    update: vi.fn(),
   };
 
   pomodoroTimer = new PomodoroTimer(
@@ -33,7 +34,9 @@ beforeEach(() => {
   );
 });
 
-afterEach(() => jest.restoreAllMocks());
+afterEach(() => {
+  vi.restoreAllMocks();
+});
 
 it("starts", () => {
   pomodoroTimer.start();
@@ -49,7 +52,7 @@ it("stops", () => {
 });
 
 it("changes its state", async () => {
-  const spy = jest.spyOn(Timer.prototype, "start");
+  const spy = vi.spyOn(Timer.prototype, "start");
 
   for (const _ of range(8)) {
     pomodoroTimer.start();
@@ -69,7 +72,7 @@ it("changes its state", async () => {
 });
 
 it("notifies the end of pomodoros and breaks", async () => {
-  const spy = jest.spyOn(Timer.prototype, "start");
+  const spy = vi.spyOn(Timer.prototype, "start");
 
   pomodoroTimer.start();
   await last(spy.mock.calls)?.[1].endCallback();

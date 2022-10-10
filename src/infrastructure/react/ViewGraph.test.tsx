@@ -1,6 +1,9 @@
-import { create } from "react-test-renderer";
-import { ViewGraph } from "../ViewGraph";
+import { render } from "@testing-library/react";
+import { ViewGraph } from "./ViewGraph";
+import { expect, it } from "vitest";
 
 it("renders", () => {
-  expect(create(<ViewGraph viewGraph={() => {}} />).toJSON()).toMatchSnapshot();
+  expect(
+    render(<ViewGraph viewGraph={() => {}} />).container.firstChild
+  ).toMatchSnapshot();
 });

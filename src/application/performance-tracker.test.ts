@@ -1,16 +1,17 @@
 import { range } from "lodash";
-import { IPerformanceRecordRepository } from "../performance-record-repository";
-import { PerformanceTracker } from "../performance-tracker";
+import { IPerformanceRecordRepository } from "./performance-record-repository";
+import { PerformanceTracker } from "./performance-tracker";
+import { vi, beforeEach, it, expect, Mocked } from "vitest";
 
-let performanceRecordRepository: jest.Mocked<IPerformanceRecordRepository>;
+let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
 let tracker: PerformanceTracker;
 
 beforeEach(() => {
   performanceRecordRepository = {
-    create: jest.fn(),
-    findManySince: jest.fn(),
-    findOne: jest.fn(),
-    update: jest.fn(),
+    create: vi.fn(),
+    findManySince: vi.fn(),
+    findOne: vi.fn(),
+    update: vi.fn(),
   };
   tracker = new PerformanceTracker(performanceRecordRepository);
 });

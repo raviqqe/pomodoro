@@ -1,8 +1,9 @@
 import { act, render, RenderResult, waitFor } from "@testing-library/react";
-import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
-import { App, IProps } from "../App";
+import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
+import { App, IProps } from "./App";
+import { expect, it, vi } from "vitest";
 
-const initialize = jest.fn();
+const initialize = vi.fn();
 
 const wait = () => waitFor(() => expect(initialize).toHaveBeenCalled());
 

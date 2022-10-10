@@ -1,6 +1,7 @@
-import { create } from "react-test-renderer";
-import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
-import { Timer, IProps } from "../Timer";
+import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
+import { Timer, IProps } from "./Timer";
+import { expect, it } from "vitest";
+import { render } from "@testing-library/react";
 
 const commonProps: Omit<IProps, "state" | "stopped"> = {
   seconds: 42,
@@ -10,48 +11,48 @@ const commonProps: Omit<IProps, "state" | "stopped"> = {
 
 it("renders while running", () => {
   expect(
-    create(
+    render(
       <Timer
         {...commonProps}
         state={PomodoroTimerState.Pomodoro}
         stopped={false}
       />
-    ).toJSON()
+    ).container.firstChild
   ).toMatchSnapshot();
 });
 
 it("renders with pomodoro state", () => {
   expect(
-    create(
+    render(
       <Timer
         {...commonProps}
         state={PomodoroTimerState.Pomodoro}
         stopped={true}
       />
-    ).toJSON()
+    ).container.firstChild
   ).toMatchSnapshot();
 });
 
 it("renders with short break state", () => {
   expect(
-    create(
+    render(
       <Timer
         {...commonProps}
         state={PomodoroTimerState.ShortBreak}
         stopped={true}
       />
-    ).toJSON()
+    ).container.firstChild
   ).toMatchSnapshot();
 });
 
 it("renders with long break state", () => {
   expect(
-    create(
+    render(
       <Timer
         {...commonProps}
         state={PomodoroTimerState.LongBreak}
         stopped={true}
       />
-    ).toJSON()
+    ).container.firstChild
   ).toMatchSnapshot();
 });

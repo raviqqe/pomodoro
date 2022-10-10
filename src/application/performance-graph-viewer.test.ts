@@ -1,20 +1,21 @@
-import { DateSerializer } from "../../domain/date-serializer";
-import { IPerformanceGraphPresenter } from "../performance-graph-presenter";
-import { PerformanceGraphViewer } from "../performance-graph-viewer";
-import { IPerformanceRecordRepository } from "../performance-record-repository";
+import { DateSerializer } from "../domain/date-serializer";
+import { IPerformanceGraphPresenter } from "./performance-graph-presenter";
+import { PerformanceGraphViewer } from "./performance-graph-viewer";
+import { IPerformanceRecordRepository } from "./performance-record-repository";
+import { Mocked, expect, it, vi, beforeEach } from "vitest";
 
-let performanceRecordRepository: jest.Mocked<IPerformanceRecordRepository>;
-let performanceGraphPresenter: jest.Mocked<IPerformanceGraphPresenter>;
+let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
+let performanceGraphPresenter: Mocked<IPerformanceGraphPresenter>;
 let viewer: PerformanceGraphViewer;
 
 beforeEach(() => {
   performanceRecordRepository = {
-    create: jest.fn(),
-    findManySince: jest.fn(),
-    findOne: jest.fn(),
-    update: jest.fn(),
+    create: vi.fn(),
+    findManySince: vi.fn(),
+    findOne: vi.fn(),
+    update: vi.fn(),
   };
-  performanceGraphPresenter = { presentGraph: jest.fn() };
+  performanceGraphPresenter = { presentGraph: vi.fn() };
   viewer = new PerformanceGraphViewer(
     performanceRecordRepository,
     performanceGraphPresenter

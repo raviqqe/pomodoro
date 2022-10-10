@@ -5,9 +5,9 @@ import {
   RenderResult,
   act,
 } from "@testing-library/react";
-import { create } from "react-test-renderer";
-import { PomodoroTimerState } from "../../../application/pomodoro-timer-state";
-import { Home, IProps } from "../Home";
+import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
+import { Home, IProps } from "./Home";
+import { expect, it } from "vitest";
 
 const props: IProps = {
   performanceGraph: { data: [] },
@@ -19,7 +19,7 @@ const props: IProps = {
 };
 
 it("renders", () => {
-  expect(create(<Home {...props} />).toJSON()).toMatchSnapshot();
+  expect(render(<Home {...props} />).container.firstChild).toMatchSnapshot();
 });
 
 it("views a performance graph", async () => {

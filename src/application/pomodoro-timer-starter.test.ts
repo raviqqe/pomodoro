@@ -1,21 +1,22 @@
-import { PomodoroTimer } from "../pomodoro-timer";
-import { PomodoroTimerStarter } from "../pomodoro-timer-starter";
+import { PomodoroTimer } from "./pomodoro-timer";
+import { PomodoroTimerStarter } from "./pomodoro-timer-starter";
+import { expect, it, vi } from "vitest";
 
 it("starts a pomodoro timer", () => {
   new PomodoroTimerStarter(
     {
-      start: jest.fn(),
+      start: vi.fn(),
     } as unknown as PomodoroTimer,
-    { initialize: jest.fn() }
+    { initialize: vi.fn() }
   ).start();
 });
 
 it("initializes notifications", () => {
-  const notificationInitializer = { initialize: jest.fn() };
+  const notificationInitializer = { initialize: vi.fn() };
 
   new PomodoroTimerStarter(
     {
-      start: jest.fn(),
+      start: vi.fn(),
     } as unknown as PomodoroTimer,
     notificationInitializer
   ).start();

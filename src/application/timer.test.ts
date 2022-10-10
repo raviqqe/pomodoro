@@ -1,24 +1,27 @@
 import { range } from "lodash";
-import { Timer } from "../timer";
-import { ITimerPresenter } from "../timer-presenter";
+import { Timer } from "./timer";
+import { ITimerPresenter } from "./timer-presenter";
+import { afterEach, beforeEach, it, vi, expect, Mocked } from "vitest";
 
 const dummyCallbacks = {
   endCallback: async () => {},
   tickCallback: async () => {},
 };
 
-let timerPresenter: jest.Mocked<ITimerPresenter>;
+let timerPresenter: Mocked<ITimerPresenter>;
 let timer: Timer;
 
 beforeEach(() => {
   timerPresenter = {
-    presentStopped: jest.fn(),
-    presentTime: jest.fn(),
+    presentStopped: vi.fn(),
+    presentTime: vi.fn(),
   };
   timer = new Timer(timerPresenter);
 });
 
-afterEach(() => jest.restoreAllMocks());
+afterEach(() => {
+  vi.restoreAllMocks();
+});
 
 it("starts", () => {
   timer.start(42, dummyCallbacks);
@@ -32,8 +35,8 @@ it("stops", () => {
 });
 
 it("calls a tick callback", () => {
-  const spy = jest.spyOn(window, "setInterval");
-  const tickCallback = jest.fn();
+  const spy = vi.spyOn(window, "setInterval");
+  const tickCallback = vi.fn();
 
   timer.start(42, { ...dummyCallbacks, tickCallback });
 
@@ -45,8 +48,8 @@ it("calls a tick callback", () => {
 });
 
 it("calls an end callback when time is up", () => {
-  const spy = jest.spyOn(window, "setInterval");
-  const endCallback = jest.fn();
+  const spy = vi.spyOn(window, "setInterval");
+  const endCallback = vi.fn();
 
   timer.start(42, { ...dummyCallbacks, endCallback });
 
@@ -58,7 +61,7 @@ it("calls an end callback when time is up", () => {
 });
 
 it("presents time", () => {
-  const spy = jest.spyOn(window, "setInterval");
+  const spy = vi.spyOn(window, "setInterval");
 
   timer.start(42, dummyCallbacks);
 

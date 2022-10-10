@@ -1,6 +1,9 @@
-import { create } from "react-test-renderer";
-import { ViewTimer } from "../ViewTimer";
+import { ViewTimer } from "./ViewTimer";
+import { expect, it } from "vitest";
+import { render } from "@testing-library/react";
 
 it("renders", () => {
-  expect(create(<ViewTimer viewTimer={() => {}} />).toJSON()).toMatchSnapshot();
+  expect(
+    render(<ViewTimer viewTimer={() => {}} />).container.firstChild
+  ).toMatchSnapshot();
 });
