@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { VictoryBar, VictoryChart, VictoryTheme } from "victory";
-import { IPerformanceGraph } from "../../application/performance-graph";
+import {
+  IPerformanceDatum,
+  IPerformanceGraph,
+} from "../../application/performance-graph";
+import { DateSerializer } from "../../domain/date-serializer";
 import { grey } from "./style/colors";
 
 const Container = styled.div`
@@ -30,7 +34,9 @@ export const PerformanceGraph = ({
         <VictoryBar
           data={data}
           style={{ data: { fill: "#c43a31" } }}
-          x={(datum: { date: string; pomodoros: number }) => datum.date}
+          x={(datum: IPerformanceDatum) =>
+            DateSerializer.deserialize(datum.date)
+          }
         />
       </VictoryChart>
     </Container>
