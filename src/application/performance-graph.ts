@@ -1,3 +1,8 @@
 export interface IPerformanceGraph {
-  data: { date: string; pomodoros: number }[];
+  data: IPerformanceDatum[];
+}
+
+export interface IPerformanceDatum {
+  date: string;
+  pomodoros: number;
 }

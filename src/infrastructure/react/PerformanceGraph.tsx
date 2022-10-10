@@ -1,18 +1,7 @@
-import { last } from "lodash";
-import { DateTime } from "luxon";
-import {
-  CartesianGrid,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-  Label,
-  Bar,
-  BarChart,
-} from "recharts";
 import styled from "styled-components";
+import { VictoryBar, VictoryChart, VictoryTheme } from "victory";
 import { IPerformanceGraph } from "../../application/performance-graph";
-import { DateSerializer } from "../../domain/date-serializer";
-import { white } from "./style/colors";
+import { grey } from "./style/colors";
 
 const Container = styled.div`
   width: 80vw;
@@ -20,7 +9,7 @@ const Container = styled.div`
 `;
 
 const Message = styled.div`
-  color: ${white};
+  color: ${grey};
   font-size: 1.5em;
 `;
 
@@ -30,41 +19,20 @@ export interface IProps {
 
 export const PerformanceGraph = ({
   performanceGraph: { data },
-}: IProps): JSX.Element =>
-  data.length === 0 ? (
+}: IProps): JSX.Element => {
+  // eslint-disable-next-line
+  console.log(data);
+  return data.length === 0 ? (
     <Message>No performance graph to show yet!</Message>
   ) : (
     <Container>
-      <ResponsiveContainer>
-        <BarChart data={data}>
-          <CartesianGrid fill="white" stroke="grey" strokeDasharray="3 3" />
-          <XAxis
-            dataKey="date"
-            stroke="grey"
-            tickFormatter={(date: string): string => {
-              const days: number = DateTime.fromJSDate(
-                DateSerializer.deserialize(
-                  (last(data) as { date: string }).date
-                )
-              ).diff(
-                DateTime.fromJSDate(DateSerializer.deserialize(date)),
-                "days"
-              ).days;
-
-              return days === 0 ? "Today" : `${days} days ago`;
-            }}
-            tickMargin={10}
-          />
-          <YAxis allowDecimals={false} stroke="grey" tickMargin={5}>
-            <Label
-              angle={-90}
-              position="insideLeft"
-              style={{ fill: "grey" }}
-              value="Pomodoros"
-            />
-          </YAxis>
-          <Bar dataKey="pomodoros" fill="salmon" />
-        </BarChart>
-      </ResponsiveContainer>
+      <VictoryChart theme={VictoryTheme.material}>
+        <VictoryBar
+          data={data}
+          style={{ data: { fill: "#c43a31" } }}
+          x={(datum: { date: string; pomodoros: number }) => datum.date}
+        />
+      </VictoryChart>
     </Container>
   );
+};
