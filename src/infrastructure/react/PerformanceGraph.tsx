@@ -1,18 +1,22 @@
+import "chart.js/auto";
 import { last } from "lodash";
 import { DateTime } from "luxon";
-import {
-  CartesianGrid,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-  Label,
-  Bar,
-  BarChart,
-} from "recharts";
+import { Bar } from "react-chartjs-2";
 import styled from "styled-components";
-import { IPerformanceGraph } from "../../application/performance-graph";
+import {
+  IPerformanceDatum,
+  IPerformanceGraph,
+} from "../../application/performance-graph";
 import { DateSerializer } from "../../domain/date-serializer";
 import { white } from "./style/colors";
+
+const formatDate = (date: string, data: IPerformanceDatum[]): string => {
+  const days: number = DateTime.fromJSDate(
+    DateSerializer.deserialize((last(data) as { date: string }).date)
+  ).diff(DateTime.fromJSDate(DateSerializer.deserialize(date)), "days").days;
+
+  return days === 0 ? "Today" : `${days} days ago`;
+};
 
 const Container = styled.div`
   width: 80vw;
@@ -35,36 +39,11 @@ export const PerformanceGraph = ({
     <Message>No performance graph to show yet!</Message>
   ) : (
     <Container>
-      <ResponsiveContainer>
-        <BarChart data={data}>
-          <CartesianGrid fill="white" stroke="grey" strokeDasharray="3 3" />
-          <XAxis
-            dataKey="date"
-            stroke="grey"
-            tickFormatter={(date: string): string => {
-              const days: number = DateTime.fromJSDate(
-                DateSerializer.deserialize(
-                  (last(data) as { date: string }).date
-                )
-              ).diff(
-                DateTime.fromJSDate(DateSerializer.deserialize(date)),
-                "days"
-              ).days;
-
-              return days === 0 ? "Today" : `${days} days ago`;
-            }}
-            tickMargin={10}
-          />
-          <YAxis allowDecimals={false} stroke="grey" tickMargin={5}>
-            <Label
-              angle={-90}
-              position="insideLeft"
-              style={{ fill: "grey" }}
-              value="Pomodoros"
-            />
-          </YAxis>
-          <Bar dataKey="pomodoros" fill="salmon" />
-        </BarChart>
-      </ResponsiveContainer>
+      <Bar
+        data={{
+          datasets: [{ data: data.map((datum) => datum.pomodoros) }],
+          labels: data.map((datum) => formatDate(datum.date, data)),
+        }}
+      />
     </Container>
   );
