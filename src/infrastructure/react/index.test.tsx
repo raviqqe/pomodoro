@@ -1,4 +1,4 @@
-import { it } from "vitest";
+import { it, vi } from "vitest";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { PerformanceGraphViewer } from "../../application/performance-graph-viewer";
 import { PomodoroTimerStarter } from "../../application/pomodoro-timer-starter";
@@ -11,7 +11,7 @@ it("renders", () => {
   new ReactRenderer(
     document.createElement("div"),
     [],
-    {} as ApplicationInitializer,
+    { initialize: vi.fn(async () => {}) } as unknown as ApplicationInitializer,
     {} as PerformanceGraphViewer,
     {} as PomodoroTimerStarter,
     {} as PomodoroTimerStopper,

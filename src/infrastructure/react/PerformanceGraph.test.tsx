@@ -20,8 +20,6 @@ it("renders with data", () => {
           ],
         }}
       />
-      // TODO
-      // { createNodeMock: () => ({ parentElement: document.body }) }
     ).container.firstChild
   ).toMatchSnapshot();
 });
