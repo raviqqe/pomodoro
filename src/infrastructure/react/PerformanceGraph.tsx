@@ -8,7 +8,7 @@ import {
   IPerformanceGraph,
 } from "../../application/performance-graph";
 import { DateSerializer } from "../../domain/date-serializer";
-import { white } from "./style/colors";
+import { white, red } from "./style/colors";
 
 const formatDate = (date: string, data: IPerformanceDatum[]): string => {
   const days: number = DateTime.fromJSDate(
@@ -41,7 +41,13 @@ export const PerformanceGraph = ({
     <Container>
       <Bar
         data={{
-          datasets: [{ data: data.map((datum) => datum.pomodoros) }],
+          datasets: [
+            {
+              backgroundColor: red,
+              data: data.map((datum) => datum.pomodoros),
+              label: "Pomodoros",
+            },
+          ],
           labels: data.map((datum) => formatDate(datum.date, data)),
         }}
       />
