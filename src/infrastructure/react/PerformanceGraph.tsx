@@ -35,7 +35,7 @@ export const PerformanceGraph = ({
           data={data}
           style={{ data: { fill: "#c43a31" } }}
           x={(datum: IPerformanceDatum) =>
-            DateSerializer.deserialize(datum.date)
+            DateSerializer.deserialize(datum.date).getMilliseconds()
           }
         />
       </VictoryChart>
