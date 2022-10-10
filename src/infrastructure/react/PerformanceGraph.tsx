@@ -8,7 +8,7 @@ import {
   IPerformanceGraph,
 } from "../../application/performance-graph";
 import { DateSerializer } from "../../domain/date-serializer";
-import { white, red } from "./style/colors";
+import { grey, red } from "./style/colors";
 
 const formatDate = (date: string, data: IPerformanceDatum[]): string => {
   const days: number = DateTime.fromJSDate(
@@ -24,7 +24,7 @@ const Container = styled.div`
 `;
 
 const Message = styled.div`
-  color: ${white};
+  color: ${grey};
   font-size: 1.5em;
 `;
 
