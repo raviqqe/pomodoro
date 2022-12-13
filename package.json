@@ -34,13 +34,13 @@
     "@types/react-dom": "^18.0.9",
     "@types/recharts": "^2.0.0",
     "@types/styled-components": "^5.1.26",
-    "@vitejs/plugin-react": "^2.2.0",
+    "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "^0.25.8",
     "firebase-tools": "^11.17.0",
     "jsdom": "^20.0.3",
     "resize-observer-polyfill": "^1.5.1",
     "typescript": "^4.9.4",
-    "vite": "^3.2.5",
+    "vite": "^4.0.1",
     "vite-plugin-pwa": "^0.14.0",
     "vitest": "^0.25.7"
   }
