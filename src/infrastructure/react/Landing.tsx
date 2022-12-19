@@ -37,15 +37,15 @@ const GitHubLink = styled.a`
 `;
 
 export interface IProps {
-  repositoryURL: string;
+  repositoryUrl: string;
   signIn: () => void;
 }
 
-export const Landing = ({ repositoryURL, signIn }: IProps): JSX.Element => (
+export const Landing = ({ repositoryUrl, signIn }: IProps): JSX.Element => (
   <Container>
     <Title>P🍅m🍅d🍅r🍅</Title>
     <SignIn signIn={signIn} />
-    <GitHubLink href={repositoryURL} target="_blank">
+    <GitHubLink href={repositoryUrl} target="_blank">
       <GoMarkGithub />
     </GitHubLink>
   </Container>
