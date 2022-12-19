@@ -64,8 +64,6 @@ async function main() {
     new SignOutManager(authenticationController, authenticationPresenter),
     configuration.repositoryUrl
   ).render();
-
-  await navigator.serviceWorker.register("/service-worker.js");
 }
 
 main().catch((error: Error) => errorReporter.report(error));
