@@ -14,7 +14,7 @@ beforeEach(() => {
 const props: IProps = {
   initialize,
   performanceGraph: { data: [] },
-  repositoryURL: "",
+  repositoryUrl: "",
   signIn: async () => {},
   signOut: async () => {},
   signedIn: null,

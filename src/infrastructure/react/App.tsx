@@ -20,7 +20,7 @@ export interface IProps extends IHomeProps, ILandingProps {
 
 export const App = ({
   initialize,
-  repositoryURL,
+  repositoryUrl,
   signedIn,
   signIn,
   ...homeProps
@@ -34,6 +34,6 @@ export const App = ({
   ) : signedIn ? (
     <Home {...homeProps} />
   ) : (
-    <Landing repositoryURL={repositoryURL} signIn={signIn} />
+    <Landing repositoryUrl={repositoryUrl} signIn={signIn} />
   );
 };
