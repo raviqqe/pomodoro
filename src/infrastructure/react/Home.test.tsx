@@ -25,11 +25,11 @@ it("renders", () => {
 it("views a performance graph", async () => {
   let result: RenderResult | undefined;
 
-  await act(() => {
+  act(() => {
     result = render(<Home {...props} />);
   });
 
-  await act(() => {
+  act(() => {
     fireEvent.click(
       result?.container.querySelector(`[aria-label="View Graph"]`) as Element
     );
@@ -47,11 +47,11 @@ it("views a performance graph", async () => {
 it("goes back to a timer view", async () => {
   let result: RenderResult | undefined;
 
-  await act(() => {
+  act(() => {
     result = render(<Home {...props} />);
   });
 
-  await act(() => {
+  act(() => {
     fireEvent.click(
       result?.container.querySelector(`[aria-label="View Graph"]`) as Element
     );
@@ -63,7 +63,7 @@ it("goes back to a timer view", async () => {
     ).toBeTruthy()
   );
 
-  await act(() => {
+  act(() => {
     fireEvent.click(
       result?.container.querySelector(`[aria-label="View Timer"]`) as Element
     );
