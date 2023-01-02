@@ -35,7 +35,7 @@
     "@types/recharts": "^2.0.0",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^3.0.0",
-    "@vitest/coverage-c8": "^0.26.2",
+    "@vitest/coverage-c8": "^0.26.3",
     "firebase-tools": "^11.19.0",
     "jsdom": "^20.0.3",
     "resize-observer-polyfill": "^1.5.1",
