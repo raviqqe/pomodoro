@@ -12,7 +12,7 @@ export default defineConfig({
         icons: [{ src: "icon.svg", sizes: "any" }],
         start_url: ".",
         display: "standalone",
-        theme_color: "salmon",
+        theme_color: "paleturquoise",
         background_color: "paleturquoise",
       },
       workbox: {
