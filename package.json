@@ -11,8 +11,8 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@sentry/browser": "^7.34.0",
-    "firebase": "^9.16.0",
+    "@sentry/browser": "^7.36.0",
+    "firebase": "^9.17.0",
     "lodash": "^4.17.21",
     "luxon": "^3.2.1",
     "pure-uuid": "^1.6.2",
@@ -34,13 +34,13 @@
     "@types/react-dom": "^18.0.10",
     "@types/recharts": "^2.0.0",
     "@types/styled-components": "^5.1.26",
-    "@vitejs/plugin-react": "^3.0.1",
-    "@vitest/coverage-c8": "^0.28.3",
-    "firebase-tools": "^11.21.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-c8": "^0.28.4",
+    "firebase-tools": "^11.22.0",
     "jsdom": "^21.1.0",
     "resize-observer-polyfill": "^1.5.1",
     "typescript": "^4.9.4",
-    "vite": "^4.0.4",
+    "vite": "^4.1.1",
     "vite-plugin-pwa": "^0.14.1",
     "vitest": "^0.28.3"
   }
