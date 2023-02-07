@@ -31,13 +31,13 @@ it("views a performance graph", async () => {
 
   act(() => {
     fireEvent.click(
-      result?.container.querySelector(`[aria-label="View Graph"]`) as Element
+      result?.container.querySelector('[aria-label="View Graph"]') as Element
     );
   });
 
   await waitFor(() =>
     expect(
-      result?.container.querySelector(`[aria-label="View Timer"]`)
+      result?.container.querySelector('[aria-label="View Timer"]')
     ).toBeTruthy()
   );
 
@@ -53,25 +53,25 @@ it("goes back to a timer view", async () => {
 
   act(() => {
     fireEvent.click(
-      result?.container.querySelector(`[aria-label="View Graph"]`) as Element
+      result?.container.querySelector('[aria-label="View Graph"]') as Element
     );
   });
 
   await waitFor(() =>
     expect(
-      result?.container.querySelector(`[aria-label="View Timer"]`)
+      result?.container.querySelector('[aria-label="View Timer"]')
     ).toBeTruthy()
   );
 
   act(() => {
     fireEvent.click(
-      result?.container.querySelector(`[aria-label="View Timer"]`) as Element
+      result?.container.querySelector('[aria-label="View Timer"]') as Element
     );
   });
 
   await waitFor(() =>
     expect(
-      result?.container.querySelector(`[aria-label="View Graph"]`)
+      result?.container.querySelector('[aria-label="View Graph"]')
     ).toBeTruthy()
   );
 
