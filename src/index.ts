@@ -6,7 +6,7 @@ import { PomodoroTimerStarter } from "./application/pomodoro-timer-starter";
 import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
-import * as configuration from "./configuration.json";
+import configuration from "./configuration.json";
 import { AuthenticationPresenter } from "./infrastructure/authentication-presenter";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
