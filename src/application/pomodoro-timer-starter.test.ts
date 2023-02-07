@@ -12,14 +12,14 @@ it("starts a pomodoro timer", async () => {
 });
 
 it("initializes notifications", async () => {
-  const notificationInitializer = { initialize: vi.fn() };
+  const notificationController = { initialize: vi.fn() };
 
   await new PomodoroTimerStarter(
     {
       start: vi.fn(),
     } as unknown as PomodoroTimer,
-    notificationInitializer
+    notificationController
   ).start();
 
-  expect(notificationInitializer.initialize).toHaveBeenCalledTimes(1);
+  expect(notificationController.initialize).toHaveBeenCalledTimes(1);
 });
