@@ -1,6 +1,6 @@
-import { INotificationInitializer } from "../../application/notification-initializer";
+import { INotificationInitializer } from "../../application/notification-controller";
 
-export class BuiltinNotificationInitializer
+export class BuiltinNotificationController
   implements INotificationInitializer
 {
   public async initialize(): Promise<void> {

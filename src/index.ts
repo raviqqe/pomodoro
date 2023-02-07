@@ -11,7 +11,7 @@ import { AuthenticationPresenter } from "./infrastructure/authentication-present
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
 import { FirestorePerformanceRecordRepository } from "./infrastructure/firebase/firestore-performance-record-repository";
-import { BuiltinNotificationInitializer } from "./infrastructure/notification/builtin-notification-initializer";
+import { BuiltinNotificationController } from "./infrastructure/notification/builtin-notification-controller";
 import { BuiltinNotificationPresenter } from "./infrastructure/notification/builtin-notification-presenter";
 import { PerformanceGraphPresenter } from "./infrastructure/performance-graph-presenter";
 import { PomodoroTimerPresenter } from "./infrastructure/pomodoro-timer-presenter";
@@ -57,7 +57,7 @@ async function main() {
     new PerformanceGraphViewer(performanceRecordRepository, graphPresenter),
     new PomodoroTimerStarter(
       pomodoroTimer,
-      new BuiltinNotificationInitializer()
+      new BuiltinNotificationController()
     ),
     new PomodoroTimerStopper(pomodoroTimer),
     new SignInManager(authenticationController, authenticationPresenter),
