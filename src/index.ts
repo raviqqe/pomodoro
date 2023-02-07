@@ -60,7 +60,7 @@ async function main() {
       new BuiltinNotificationInitializer()
     ),
     new PomodoroTimerStopper(pomodoroTimer),
-    new SignInManager(authenticationController),
+    new SignInManager(authenticationController, authenticationPresenter),
     new SignOutManager(authenticationController, authenticationPresenter),
     configuration.repositoryUrl
   ).render();
