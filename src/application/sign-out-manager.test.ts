@@ -1,4 +1,4 @@
-import { it } from "vitest";
+import { expect, it } from "vitest";
 import { SignOutManager } from "./sign-out-manager";
 import { authenticationController, authenticationPresenter } from "./test";
 
@@ -9,4 +9,7 @@ it("signs out", async () => {
   );
 
   await signOutManager.signOut();
+
+  expect(authenticationController.signOut).toHaveBeenCalledOnce();
+  expect(authenticationPresenter.presentSignedIn).toHaveBeenCalledOnce();
 });
