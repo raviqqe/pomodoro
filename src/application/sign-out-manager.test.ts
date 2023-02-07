@@ -1,11 +1,11 @@
-import { it, vi } from "vitest";
-import { IAuthenticationController } from "./authentication-controller";
+import { it } from "vitest";
 import { SignOutManager } from "./sign-out-manager";
+import { authenticationController, authenticationPresenter } from "./test";
 
-it("signs in", async () => {
+it("signs out", async () => {
   const signOutManager = new SignOutManager(
-    { signOut: vi.fn() } as unknown as IAuthenticationController,
-    { presentSignedIn: vi.fn() }
+    authenticationController,
+    authenticationPresenter
   );
 
   await signOutManager.signOut();
