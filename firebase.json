@@ -10,10 +10,6 @@
         "source": "**/*",
         "headers": [
           {
-            "key": "Access-Control-Allow-Origin",
-            "value": "https://pomodoro.code2d.org"
-          },
-          {
             "key": "Content-Security-Policy",
             "value": "default-src 'self' pomodoro-b3526.firebaseapp.com *.google.com *.googleapis.com *.gstatic.com sentry.io; style-src 'self' 'unsafe-inline' *.googleapis.com; frame-ancestors 'none'"
           },
