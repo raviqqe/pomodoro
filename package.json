@@ -11,7 +11,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@sentry/browser": "^7.38.0",
+    "@sentry/browser": "^7.39.0",
     "firebase": "^9.17.1",
     "lodash": "^4.17.21",
     "luxon": "^3.2.1",
@@ -25,8 +25,8 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@raviqqe/eslint-config": "^1.0.21",
-    "@raviqqe/react-tsconfig": "^1.0.0",
+    "@raviqqe/eslint-config": "^1.0.22",
+    "@raviqqe/react-tsconfig": "^1.0.11",
     "@testing-library/react": "^14.0.0",
     "@types/lodash": "^4.14.191",
     "@types/luxon": "^3.2.0",
