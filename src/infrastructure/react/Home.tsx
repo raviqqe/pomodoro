@@ -1,3 +1,4 @@
+import { defaultImport } from "default-import";
 import { useState } from "react";
 import defaultStyled from "styled-components";
 import {
@@ -8,6 +9,8 @@ import { SignOut } from "./SignOut.js";
 import { Timer, type IProps as ITimerProps } from "./Timer.js";
 import { ViewGraph } from "./ViewGraph.js";
 import { ViewTimer } from "./ViewTimer.js";
+
+const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;

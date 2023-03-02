@@ -5,7 +5,7 @@ import { type PomodoroTimerStarter } from "../../application/pomodoro-timer-star
 import { type PomodoroTimerStopper } from "../../application/pomodoro-timer-stopper.js";
 import { type SignInManager } from "../../application/sign-in-manager.js";
 import { type SignOutManager } from "../../application/sign-out-manager.js";
-import { ReactRenderer } from ".";
+import { ReactRenderer } from "./index.js";
 
 it("renders", () => {
   new ReactRenderer(

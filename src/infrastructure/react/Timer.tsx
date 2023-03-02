@@ -1,7 +1,10 @@
+import { defaultImport } from "default-import";
 import defaultStyled from "styled-components";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { TextButton } from "./TextButton.js";
 import { white } from "./style/colors.js";
+
+const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;

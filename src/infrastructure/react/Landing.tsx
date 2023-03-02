@@ -1,7 +1,10 @@
+import { defaultImport } from "default-import";
 import { GoMarkGithub } from "react-icons/go/index.js";
 import defaultStyled from "styled-components";
 import { SignIn } from "./SignIn.js";
 import { blue, black } from "./style/colors.js";
+
+const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   height: 100vh;
