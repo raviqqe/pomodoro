@@ -22,7 +22,7 @@
     "react-spinners": "^0.13.8",
     "react-use": "^17.4.0",
     "recharts": "^2.4.3",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.8"
   },
   "devDependencies": {
     "@raviqqe/eslint-config": "^1.0.22",
