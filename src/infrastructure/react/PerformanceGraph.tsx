@@ -10,7 +10,7 @@ import {
   BarChart,
 } from "recharts";
 import styled from "styled-components";
-import { IPerformanceGraph } from "../../application/performance-graph";
+import { type IPerformanceGraph } from "../../application/performance-graph";
 import { DateSerializer } from "../../domain/date-serializer";
 import { white } from "./style/colors";
 

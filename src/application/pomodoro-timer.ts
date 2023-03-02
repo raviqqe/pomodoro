@@ -1,6 +1,6 @@
-import { INotificationPresenter } from "./notification-presenter";
-import { PerformanceTracker } from "./performance-tracker";
-import { IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
+import { type INotificationPresenter } from "./notification-presenter";
+import { type PerformanceTracker } from "./performance-tracker";
+import { type IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
 import { PomodoroTimerState } from "./pomodoro-timer-state";
 import { Timer } from "./timer";
 

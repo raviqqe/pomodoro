@@ -1,15 +1,15 @@
 import { StrictMode } from "react";
-import { createRoot, Root } from "react-dom/client";
-import { ApplicationInitializer } from "../../application/application-initializer";
-import { IPerformanceGraph } from "../../application/performance-graph";
-import { PerformanceGraphViewer } from "../../application/performance-graph-viewer";
-import { PomodoroTimerStarter } from "../../application/pomodoro-timer-starter";
+import { createRoot, type Root } from "react-dom/client";
+import { type ApplicationInitializer } from "../../application/application-initializer";
+import { type IPerformanceGraph } from "../../application/performance-graph";
+import { type PerformanceGraphViewer } from "../../application/performance-graph-viewer";
+import { type PomodoroTimerStarter } from "../../application/pomodoro-timer-starter";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
-import { PomodoroTimerStopper } from "../../application/pomodoro-timer-stopper";
-import { SignInManager } from "../../application/sign-in-manager";
-import { SignOutManager } from "../../application/sign-out-manager";
-import { IRenderer, IPomodoroTimer } from "../renderer";
-import { App, IProps as IAppProps } from "./App";
+import { type PomodoroTimerStopper } from "../../application/pomodoro-timer-stopper";
+import { type SignInManager } from "../../application/sign-in-manager";
+import { type SignOutManager } from "../../application/sign-out-manager";
+import { type IRenderer, type IPomodoroTimer } from "../renderer";
+import { App, type IProps as IAppProps } from "./App";
 import { GlobalStyle } from "./style";
 
 interface IPresenter {

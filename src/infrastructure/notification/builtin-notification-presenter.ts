@@ -1,4 +1,4 @@
-import { INotificationPresenter } from "../../application/notification-presenter";
+import { type INotificationPresenter } from "../../application/notification-presenter";
 
 export class BuiltinNotificationPresenter implements INotificationPresenter {
   public presentNotification(message: string): void {

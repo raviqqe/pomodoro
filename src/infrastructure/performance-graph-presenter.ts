@@ -1,6 +1,6 @@
-import { IPerformanceGraph } from "../application/performance-graph";
-import { IPerformanceGraphPresenter } from "../application/performance-graph-presenter";
-import { IRenderer } from "./renderer";
+import { type IPerformanceGraph } from "../application/performance-graph";
+import { type IPerformanceGraphPresenter } from "../application/performance-graph-presenter";
+import { type IRenderer } from "./renderer";
 
 export class PerformanceGraphPresenter implements IPerformanceGraphPresenter {
   private renderer: IRenderer | null = null;

@@ -1,8 +1,8 @@
-import { Mocked, expect, it, vi, beforeEach } from "vitest";
+import { type Mocked, expect, it, vi, beforeEach } from "vitest";
 import { DateSerializer } from "../domain/date-serializer";
-import { IPerformanceGraphPresenter } from "./performance-graph-presenter";
+import { type IPerformanceGraphPresenter } from "./performance-graph-presenter";
 import { PerformanceGraphViewer } from "./performance-graph-viewer";
-import { IPerformanceRecordRepository } from "./performance-record-repository";
+import { type IPerformanceRecordRepository } from "./performance-record-repository";
 
 let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
 let performanceGraphPresenter: Mocked<IPerformanceGraphPresenter>;

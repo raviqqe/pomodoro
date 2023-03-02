@@ -1,10 +1,10 @@
 import { last, range } from "lodash";
-import { afterEach, vi, Mocked, beforeEach, expect, it } from "vitest";
-import { INotificationPresenter } from "./notification-presenter";
-import { IPerformanceRecordRepository } from "./performance-record-repository";
+import { afterEach, vi, type Mocked, beforeEach, expect, it } from "vitest";
+import { type INotificationPresenter } from "./notification-presenter";
+import { type IPerformanceRecordRepository } from "./performance-record-repository";
 import { PerformanceTracker } from "./performance-tracker";
 import { PomodoroTimer } from "./pomodoro-timer";
-import { IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
+import { type IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
 import { PomodoroTimerState } from "./pomodoro-timer-state";
 import { Timer } from "./timer";
 

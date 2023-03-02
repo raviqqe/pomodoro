@@ -1,10 +1,10 @@
-import { FirebaseApp } from "firebase/app";
-import { Auth, getAuth } from "firebase/auth";
+import { type FirebaseApp } from "firebase/app";
+import { type Auth, getAuth } from "firebase/auth";
 import {
   collection,
-  CollectionReference,
+  type CollectionReference,
   doc,
-  Firestore,
+  type Firestore,
   getDocs,
   getFirestore,
   orderBy,
@@ -12,8 +12,8 @@ import {
   setDoc,
   where,
 } from "firebase/firestore";
-import { IPerformanceRecord } from "../../application/performance-record";
-import { IPerformanceRecordRepository } from "../../application/performance-record-repository";
+import { type IPerformanceRecord } from "../../application/performance-record";
+import { type IPerformanceRecordRepository } from "../../application/performance-record-repository";
 
 export class FirestorePerformanceRecordRepository
   implements IPerformanceRecordRepository

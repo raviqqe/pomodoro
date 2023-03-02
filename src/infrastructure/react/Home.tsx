@@ -2,10 +2,10 @@ import { useState } from "react";
 import styled from "styled-components";
 import {
   PerformanceGraph,
-  IProps as IPerformanceGraphProps,
+  type IProps as IPerformanceGraphProps,
 } from "./PerformanceGraph";
 import { SignOut } from "./SignOut";
-import { Timer, IProps as ITimerProps } from "./Timer";
+import { Timer, type IProps as ITimerProps } from "./Timer";
 import { ViewGraph } from "./ViewGraph";
 import { ViewTimer } from "./ViewTimer";
 

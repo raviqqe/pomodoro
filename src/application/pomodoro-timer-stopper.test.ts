@@ -1,5 +1,5 @@
 import { it, vi } from "vitest";
-import { PomodoroTimer } from "./pomodoro-timer";
+import { type PomodoroTimer } from "./pomodoro-timer";
 import { PomodoroTimerStopper } from "./pomodoro-timer-stopper";
 
 it("stops a pomodoro timer", () => {

@@ -1,8 +1,8 @@
 import { range } from "lodash";
 import { Duration, DateTime } from "luxon";
 import { DateSerializer } from "../domain/date-serializer";
-import { IPerformanceGraphPresenter } from "./performance-graph-presenter";
-import { IPerformanceRecordRepository } from "./performance-record-repository";
+import { type IPerformanceGraphPresenter } from "./performance-graph-presenter";
+import { type IPerformanceRecordRepository } from "./performance-record-repository";
 
 export class PerformanceGraphViewer {
   constructor(
