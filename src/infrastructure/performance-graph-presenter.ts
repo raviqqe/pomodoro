@@ -1,5 +1,5 @@
-import { type IPerformanceGraph } from "../application/performance-graph.js";
 import { type IPerformanceGraphPresenter } from "../application/performance-graph-presenter.js";
+import { type IPerformanceGraph } from "../application/performance-graph.js";
 import { type IRenderer } from "./renderer.js";
 
 export class PerformanceGraphPresenter implements IPerformanceGraphPresenter {

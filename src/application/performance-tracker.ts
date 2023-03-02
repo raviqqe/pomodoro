@@ -1,6 +1,6 @@
 import { DateSerializer } from "../domain/date-serializer.js";
-import { type IPerformanceRecord } from "./performance-record.js";
 import { type IPerformanceRecordRepository } from "./performance-record-repository.js";
+import { type IPerformanceRecord } from "./performance-record.js";
 
 const MINUTE = 60;
 

@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { type ApplicationInitializer } from "../../application/application-initializer.js";
-import { type IPerformanceGraph } from "../../application/performance-graph.js";
 import { type PerformanceGraphViewer } from "../../application/performance-graph-viewer.js";
+import { type IPerformanceGraph } from "../../application/performance-graph.js";
 import { type PomodoroTimerStarter } from "../../application/pomodoro-timer-starter.js";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { type PomodoroTimerStopper } from "../../application/pomodoro-timer-stopper.js";

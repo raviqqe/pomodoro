@@ -1,9 +1,9 @@
 import { ApplicationInitializer } from "./application/application-initializer.js";
 import { PerformanceGraphViewer } from "./application/performance-graph-viewer.js";
 import { PerformanceTracker } from "./application/performance-tracker.js";
-import { PomodoroTimer } from "./application/pomodoro-timer.js";
 import { PomodoroTimerStarter } from "./application/pomodoro-timer-starter.js";
 import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper.js";
+import { PomodoroTimer } from "./application/pomodoro-timer.js";
 import { SignInManager } from "./application/sign-in-manager.js";
 import { SignOutManager } from "./application/sign-out-manager.js";
 import configuration from "./configuration.json.js";
