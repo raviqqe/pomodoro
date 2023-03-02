@@ -1,3 +1,4 @@
+import { defaultImport } from "default-import";
 import { last } from "lodash";
 import { DateTime } from "luxon";
 import {
@@ -9,10 +10,12 @@ import {
   Bar,
   BarChart,
 } from "recharts";
-import styled from "styled-components";
+import defaultStyled from "styled-components";
 import { type IPerformanceGraph } from "../../application/performance-graph.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { white } from "./style/colors.js";
+
+const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   width: 80vw;
