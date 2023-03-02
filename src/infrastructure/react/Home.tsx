@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import defaultStyled from "styled-components";
 import {
   PerformanceGraph,
   type IProps as IPerformanceGraphProps,

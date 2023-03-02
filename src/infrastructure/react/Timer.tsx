@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import defaultStyled from "styled-components";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { TextButton } from "./TextButton.js";
 import { white } from "./style/colors.js";

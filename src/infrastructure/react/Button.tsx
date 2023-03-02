@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import defaultStyled from "styled-components";
 import { red, grey, white } from "./style/colors.js";
 import { boxShadow } from "./style/index.js";
 
