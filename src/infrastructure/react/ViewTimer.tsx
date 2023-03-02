@@ -1,4 +1,4 @@
-import { MdTimer } from "react-icons/md";
+import { MdTimer } from "react-icons/md/index.js";
 import { CircleButton } from "./CircleButton.js";
 
 interface IProps {

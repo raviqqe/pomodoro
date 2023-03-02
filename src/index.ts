@@ -6,7 +6,7 @@ import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper.js";
 import { PomodoroTimer } from "./application/pomodoro-timer.js";
 import { SignInManager } from "./application/sign-in-manager.js";
 import { SignOutManager } from "./application/sign-out-manager.js";
-import configuration from "./configuration.json.js";
+import configuration from "./configuration.json";
 import { AuthenticationPresenter } from "./infrastructure/authentication-presenter.js";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller.js";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer.js";
@@ -15,7 +15,7 @@ import { BuiltinNotificationController } from "./infrastructure/notification/bui
 import { BuiltinNotificationPresenter } from "./infrastructure/notification/builtin-notification-presenter.js";
 import { PerformanceGraphPresenter } from "./infrastructure/performance-graph-presenter.js";
 import { PomodoroTimerPresenter } from "./infrastructure/pomodoro-timer-presenter.js";
-import { ReactRenderer } from "./infrastructure/react.js";
+import { ReactRenderer } from "./infrastructure/react/index.js";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.

@@ -10,7 +10,7 @@ import { type SignInManager } from "../../application/sign-in-manager.js";
 import { type SignOutManager } from "../../application/sign-out-manager.js";
 import { type IRenderer, type IPomodoroTimer } from "../renderer.js";
 import { App, type IProps as IAppProps } from "./App.js";
-import { GlobalStyle } from "./style.js";
+import { GlobalStyle } from "./style/index.js";
 
 interface IPresenter {
   setRenderer(renderer: IRenderer): void;
