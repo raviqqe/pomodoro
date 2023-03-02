@@ -1,5 +1,5 @@
-import { INotificationInitializer } from "./notification-controller";
-import { PomodoroTimer } from "./pomodoro-timer";
+import { type INotificationInitializer } from "./notification-controller.js";
+import { type PomodoroTimer } from "./pomodoro-timer.js";
 
 export class PomodoroTimerStarter {
   constructor(

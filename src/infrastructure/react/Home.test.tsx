@@ -2,12 +2,12 @@ import {
   render,
   fireEvent,
   waitFor,
-  RenderResult,
+  type RenderResult,
   act,
 } from "@testing-library/react";
 import { expect, it } from "vitest";
-import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
-import { Home, IProps } from "./Home";
+import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
+import { Home, type IProps } from "./Home.js";
 
 const props: IProps = {
   performanceGraph: { data: [] },

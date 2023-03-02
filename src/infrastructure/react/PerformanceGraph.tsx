@@ -10,9 +10,9 @@ import {
   BarChart,
 } from "recharts";
 import styled from "styled-components";
-import { IPerformanceGraph } from "../../application/performance-graph";
-import { DateSerializer } from "../../domain/date-serializer";
-import { white } from "./style/colors";
+import { type IPerformanceGraph } from "../../application/performance-graph.js";
+import { DateSerializer } from "../../domain/date-serializer.js";
+import { white } from "./style/colors.js";
 
 const Container = styled.div`
   width: 80vw;

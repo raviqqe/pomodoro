@@ -1,4 +1,4 @@
-import { PomodoroTimer } from "./pomodoro-timer";
+import { type PomodoroTimer } from "./pomodoro-timer.js";
 
 export class PomodoroTimerStopper {
   constructor(private readonly pomodoroTimer: PomodoroTimer) {}

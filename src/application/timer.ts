@@ -1,4 +1,4 @@
-import { ITimerPresenter } from "./timer-presenter";
+import { type ITimerPresenter } from "./timer-presenter.js";
 
 export class Timer {
   private interval?: number;

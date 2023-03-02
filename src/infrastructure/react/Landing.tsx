@@ -1,7 +1,7 @@
-import { GoMarkGithub } from "react-icons/go";
+import { GoMarkGithub } from "react-icons/go/index.js";
 import styled from "styled-components";
-import { SignIn } from "./SignIn";
-import { blue, black } from "./style/colors";
+import { SignIn } from "./SignIn.js";
+import { blue, black } from "./style/colors.js";
 
 const Container = styled.div`
   height: 100vh;

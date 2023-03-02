@@ -1,7 +1,7 @@
 import { range } from "lodash";
-import { vi, beforeEach, it, expect, Mocked } from "vitest";
-import { IPerformanceRecordRepository } from "./performance-record-repository";
-import { PerformanceTracker } from "./performance-tracker";
+import { vi, beforeEach, it, expect, type Mocked } from "vitest";
+import { type IPerformanceRecordRepository } from "./performance-record-repository.js";
+import { PerformanceTracker } from "./performance-tracker.js";
 
 let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
 let tracker: PerformanceTracker;

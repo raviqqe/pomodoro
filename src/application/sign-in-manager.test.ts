@@ -1,6 +1,9 @@
 import { expect, it } from "vitest";
-import { SignInManager } from "./sign-in-manager";
-import { authenticationPresenter, authenticationController } from "./test";
+import { SignInManager } from "./sign-in-manager.js";
+import {
+  authenticationPresenter,
+  authenticationController,
+} from "./test/index.js";
 
 it("signs in", async () => {
   const signInManager = new SignInManager(

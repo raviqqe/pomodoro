@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 import { expect, it } from "vitest";
-import { DateSerializer } from "./date-serializer";
+import { DateSerializer } from "./date-serializer.js";
 
 it("deserializes a date", () => {
   expect(DateSerializer.deserialize("20190831").getTime()).toBe(

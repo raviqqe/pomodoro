@@ -1,6 +1,6 @@
 import { expect, it, vi } from "vitest";
-import { PomodoroTimer } from "./pomodoro-timer";
-import { PomodoroTimerStarter } from "./pomodoro-timer-starter";
+import { PomodoroTimerStarter } from "./pomodoro-timer-starter.js";
+import { type PomodoroTimer } from "./pomodoro-timer.js";
 
 it("starts a pomodoro timer", async () => {
   await new PomodoroTimerStarter(
