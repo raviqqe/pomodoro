@@ -1,25 +1,25 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders while running 1`] = `
 <div
-  class="sc-dkrFOg IsHIT"
+  class="sc-dmyDGi gpruqI"
 >
   <div
-    class="sc-eDvSVe dXemcg"
+    class="sc-eDLJxc iUwERV"
   >
     <span
-      class="sc-jSUZER"
+      class="sc-jTQDnj"
     >
       0
     </span>
     <span
-      class="sc-gKPRtg PXMhH"
+      class="sc-gLLvby hqUfbq"
     >
       42
     </span>
   </div>
   <button
-    class="sc-bcXHqe sc-gswNZR fmEPPj gCUrWJ"
+    class="sc-beySbM sc-guDLRT jNNPsS fHBXRy"
   >
     Stop
   </button>
@@ -28,15 +28,15 @@ exports[`renders while running 1`] = `
 
 exports[`renders with long break state 1`] = `
 <div
-  class="sc-dkrFOg IsHIT"
+  class="sc-dmyDGi gpruqI"
 >
   <div
-    class="sc-hLBbgP blDmMu"
+    class="sc-hLQRIN iySlGb"
   >
     🛌🛌
   </div>
   <button
-    class="sc-bcXHqe sc-gswNZR eTvdtE gCUrWJ"
+    class="sc-beySbM sc-guDLRT hqxQTF fHBXRy"
   >
     Start
   </button>
@@ -45,15 +45,15 @@ exports[`renders with long break state 1`] = `
 
 exports[`renders with pomodoro state 1`] = `
 <div
-  class="sc-dkrFOg IsHIT"
+  class="sc-dmyDGi gpruqI"
 >
   <div
-    class="sc-hLBbgP blDmMu"
+    class="sc-hLQRIN iySlGb"
   >
     🍅
   </div>
   <button
-    class="sc-bcXHqe sc-gswNZR eTvdtE gCUrWJ"
+    class="sc-beySbM sc-guDLRT hqxQTF fHBXRy"
   >
     Start
   </button>
@@ -62,15 +62,15 @@ exports[`renders with pomodoro state 1`] = `
 
 exports[`renders with short break state 1`] = `
 <div
-  class="sc-dkrFOg IsHIT"
+  class="sc-dmyDGi gpruqI"
 >
   <div
-    class="sc-hLBbgP blDmMu"
+    class="sc-hLQRIN iySlGb"
   >
     🛌
   </div>
   <button
-    class="sc-bcXHqe sc-gswNZR eTvdtE gCUrWJ"
+    class="sc-beySbM sc-guDLRT hqxQTF fHBXRy"
   >
     Start
   </button>
