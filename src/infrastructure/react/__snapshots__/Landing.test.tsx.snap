@@ -1,21 +1,21 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders 1`] = `
 <div
-  class="sc-dkrFOg eWzUII"
+  class="sc-dmyDGi jgbnbP"
 >
   <div
-    class="sc-hLBbgP fXRfsi"
+    class="sc-hLQRIN cBegCT"
   >
     P🍅m🍅d🍅r🍅
   </div>
   <button
-    class="sc-bcXHqe sc-gswNZR eTvdtE gCUrWJ"
+    class="sc-beySbM sc-guDLRT hqxQTF fHBXRy"
   >
     Sign in
   </button>
   <a
-    class="sc-eDvSVe bgImHA"
+    class="sc-eDLJxc cYZlfx"
     href=""
     target="_blank"
   >

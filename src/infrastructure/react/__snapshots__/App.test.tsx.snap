@@ -1,29 +1,29 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-jrcTuL oAwef"
+    class="sc-jsEegt fQwdrJ"
   >
     <div
-      class="sc-jSUZER kHYTGN"
+      class="sc-jTQDnj laMsFR"
     >
       <div
-        class="sc-gKPRtg lnxKjU"
+        class="sc-gLLvby jCIOpV"
       >
         🍅
       </div>
       <button
-        class="sc-dkrFOg sc-eDvSVe WIjJq inhsCX"
+        class="sc-dmyDGi sc-eDLJxc hCDmel gsYYQC"
       >
         Start
       </button>
     </div>
     <div
-      class="sc-kDvujY efZiSN"
+      class="sc-kFCsca dqLnYH"
     >
       <button
-        class="sc-dkrFOg sc-hLBbgP fTVsod ePeIcJ"
+        class="sc-dmyDGi sc-hLQRIN gQtpxa iLZRfc"
       >
         <svg
           fill="currentColor"
@@ -45,7 +45,7 @@ exports[`renders after a user signs in 1`] = `
       </button>
       <button
         aria-label="View Graph"
-        class="sc-dkrFOg sc-hLBbgP fTVsod ePeIcJ"
+        class="sc-dmyDGi sc-hLQRIN gQtpxa iLZRfc"
       >
         <svg
           fill="currentColor"
@@ -69,20 +69,20 @@ exports[`renders after a user signs in 1`] = `
 exports[`renders after a user signs out 1`] = `
 <div>
   <div
-    class="sc-ipEyDJ lfEopg"
+    class="sc-irLwvL hpjMKD"
   >
     <div
-      class="sc-csuSiG bcxrYZ"
+      class="sc-csKIKE cITatf"
     >
       P🍅m🍅d🍅r🍅
     </div>
     <button
-      class="sc-dkrFOg sc-eDvSVe WIjJq inhsCX"
+      class="sc-dmyDGi sc-eDLJxc hCDmel gsYYQC"
     >
       Sign in
     </button>
     <a
-      class="sc-eDWCr cSSSZI"
+      class="sc-eTNep cHkPZr"
       href=""
       target="_blank"
     >
@@ -108,7 +108,7 @@ exports[`renders after a user signs out 1`] = `
 exports[`renders before a user signs in 1`] = `
 <div>
   <div
-    class="sc-bqWxrE hKwzif"
+    class="sc-brSaZW jmWJjB"
   >
     <span
       style="display: inherit;"
