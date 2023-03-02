@@ -1,4 +1,4 @@
-import { type INotificationInitializer } from "../../application/notification-controller";
+import { type INotificationInitializer } from "../../application/notification-controller.js";
 
 export class BuiltinNotificationController implements INotificationInitializer {
   public async initialize(): Promise<void> {

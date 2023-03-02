@@ -1,5 +1,5 @@
-import { type IPerformanceGraph } from "../application/performance-graph";
-import { type PomodoroTimerState } from "../application/pomodoro-timer-state";
+import { type IPerformanceGraph } from "../application/performance-graph.js";
+import { type PomodoroTimerState } from "../application/pomodoro-timer-state.js";
 
 export interface IPomodoroTimer {
   seconds: number;

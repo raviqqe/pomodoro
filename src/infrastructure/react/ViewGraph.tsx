@@ -1,5 +1,5 @@
 import { IoMdStats } from "react-icons/io";
-import { CircleButton } from "./CircleButton";
+import { CircleButton } from "./CircleButton.js";
 
 interface IProps {
   viewGraph: () => void;

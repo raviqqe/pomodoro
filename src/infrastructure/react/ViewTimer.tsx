@@ -1,5 +1,5 @@
 import { MdTimer } from "react-icons/md";
-import { CircleButton } from "./CircleButton";
+import { CircleButton } from "./CircleButton.js";
 
 interface IProps {
   viewTimer: () => void;

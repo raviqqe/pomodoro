@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
-import { TextButton } from "./TextButton";
-import { white } from "./style/colors";
+import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
+import { TextButton } from "./TextButton.js";
+import { white } from "./style/colors.js";
 
 const Container = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import { it, vi } from "vitest";
-import { ApplicationInitializer } from "./application-initializer";
-import { type IAuthenticationController } from "./authentication-controller";
+import { ApplicationInitializer } from "./application-initializer.js";
+import { type IAuthenticationController } from "./authentication-controller.js";
 
 it("initializes", async () => {
   await new ApplicationInitializer(

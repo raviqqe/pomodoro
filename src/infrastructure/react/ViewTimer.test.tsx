@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { expect, it } from "vitest";
-import { ViewTimer } from "./ViewTimer";
+import { ViewTimer } from "./ViewTimer.js";
 
 it("renders", () => {
   expect(

@@ -1,10 +1,10 @@
 import { it, vi } from "vitest";
-import { type ApplicationInitializer } from "../../application/application-initializer";
-import { type PerformanceGraphViewer } from "../../application/performance-graph-viewer";
-import { type PomodoroTimerStarter } from "../../application/pomodoro-timer-starter";
-import { type PomodoroTimerStopper } from "../../application/pomodoro-timer-stopper";
-import { type SignInManager } from "../../application/sign-in-manager";
-import { type SignOutManager } from "../../application/sign-out-manager";
+import { type ApplicationInitializer } from "../../application/application-initializer.js";
+import { type PerformanceGraphViewer } from "../../application/performance-graph-viewer.js";
+import { type PomodoroTimerStarter } from "../../application/pomodoro-timer-starter.js";
+import { type PomodoroTimerStopper } from "../../application/pomodoro-timer-stopper.js";
+import { type SignInManager } from "../../application/sign-in-manager.js";
+import { type SignOutManager } from "../../application/sign-out-manager.js";
 import { ReactRenderer } from ".";
 
 it("renders", () => {

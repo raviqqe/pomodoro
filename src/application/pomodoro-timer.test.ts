@@ -1,12 +1,12 @@
 import { last, range } from "lodash";
 import { afterEach, vi, type Mocked, beforeEach, expect, it } from "vitest";
-import { type INotificationPresenter } from "./notification-presenter";
-import { type IPerformanceRecordRepository } from "./performance-record-repository";
-import { PerformanceTracker } from "./performance-tracker";
-import { PomodoroTimer } from "./pomodoro-timer";
-import { type IPomodoroTimerPresenter } from "./pomodoro-timer-presenter";
-import { PomodoroTimerState } from "./pomodoro-timer-state";
-import { Timer } from "./timer";
+import { type INotificationPresenter } from "./notification-presenter.js";
+import { type IPerformanceRecordRepository } from "./performance-record-repository.js";
+import { PerformanceTracker } from "./performance-tracker.js";
+import { PomodoroTimer } from "./pomodoro-timer.js";
+import { type IPomodoroTimerPresenter } from "./pomodoro-timer-presenter.js";
+import { PomodoroTimerState } from "./pomodoro-timer-state.js";
+import { Timer } from "./timer.js";
 
 let timerPresenter: Mocked<IPomodoroTimerPresenter>;
 let notificationPresenter: Mocked<INotificationPresenter>;

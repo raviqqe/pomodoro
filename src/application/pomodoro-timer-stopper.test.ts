@@ -1,6 +1,6 @@
 import { it, vi } from "vitest";
-import { type PomodoroTimer } from "./pomodoro-timer";
-import { PomodoroTimerStopper } from "./pomodoro-timer-stopper";
+import { type PomodoroTimer } from "./pomodoro-timer.js";
+import { PomodoroTimerStopper } from "./pomodoro-timer-stopper.js";
 
 it("stops a pomodoro timer", () => {
   new PomodoroTimerStopper({

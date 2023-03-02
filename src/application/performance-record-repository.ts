@@ -1,4 +1,4 @@
-import { type IPerformanceRecord } from "./performance-record";
+import { type IPerformanceRecord } from "./performance-record.js";
 
 export interface IPerformanceRecordRepository {
   create(record: IPerformanceRecord): Promise<void>;

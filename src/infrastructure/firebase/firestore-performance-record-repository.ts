@@ -12,8 +12,8 @@ import {
   setDoc,
   where,
 } from "firebase/firestore";
-import { type IPerformanceRecord } from "../../application/performance-record";
-import { type IPerformanceRecordRepository } from "../../application/performance-record-repository";
+import { type IPerformanceRecord } from "../../application/performance-record.js";
+import { type IPerformanceRecordRepository } from "../../application/performance-record-repository.js";
 
 export class FirestorePerformanceRecordRepository
   implements IPerformanceRecordRepository

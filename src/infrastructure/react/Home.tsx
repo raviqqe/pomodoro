@@ -3,11 +3,11 @@ import styled from "styled-components";
 import {
   PerformanceGraph,
   type IProps as IPerformanceGraphProps,
-} from "./PerformanceGraph";
-import { SignOut } from "./SignOut";
-import { Timer, type IProps as ITimerProps } from "./Timer";
-import { ViewGraph } from "./ViewGraph";
-import { ViewTimer } from "./ViewTimer";
+} from "./PerformanceGraph.js";
+import { SignOut } from "./SignOut.js";
+import { Timer, type IProps as ITimerProps } from "./Timer.js";
+import { ViewGraph } from "./ViewGraph.js";
+import { ViewTimer } from "./ViewTimer.js";
 
 const Container = styled.div`
   display: flex;

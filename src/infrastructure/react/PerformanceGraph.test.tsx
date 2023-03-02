@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { expect, it } from "vitest";
-import { DateSerializer } from "../../domain/date-serializer";
-import { PerformanceGraph } from "./PerformanceGraph";
+import { DateSerializer } from "../../domain/date-serializer.js";
+import { PerformanceGraph } from "./PerformanceGraph.js";
 
 it("renders with no data", () => {
   expect(

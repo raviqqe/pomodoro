@@ -6,8 +6,8 @@ import {
   act,
 } from "@testing-library/react";
 import { expect, it } from "vitest";
-import { PomodoroTimerState } from "../../application/pomodoro-timer-state";
-import { Home, type IProps } from "./Home";
+import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
+import { Home, type IProps } from "./Home.js";
 
 const props: IProps = {
   performanceGraph: { data: [] },
