@@ -24,11 +24,7 @@ it("renders while running", () => {
 it("renders with pomodoro state", () => {
   expect(
     render(
-      <Timer
-        {...commonProps}
-        state={PomodoroTimerState.Pomodoro}
-        stopped={true}
-      />
+      <Timer {...commonProps} state={PomodoroTimerState.Pomodoro} stopped />
     ).container.firstChild
   ).toMatchSnapshot();
 });
@@ -36,11 +32,7 @@ it("renders with pomodoro state", () => {
 it("renders with short break state", () => {
   expect(
     render(
-      <Timer
-        {...commonProps}
-        state={PomodoroTimerState.ShortBreak}
-        stopped={true}
-      />
+      <Timer {...commonProps} state={PomodoroTimerState.ShortBreak} stopped />
     ).container.firstChild
   ).toMatchSnapshot();
 });
@@ -48,11 +40,7 @@ it("renders with short break state", () => {
 it("renders with long break state", () => {
   expect(
     render(
-      <Timer
-        {...commonProps}
-        state={PomodoroTimerState.LongBreak}
-        stopped={true}
-      />
+      <Timer {...commonProps} state={PomodoroTimerState.LongBreak} stopped />
     ).container.firstChild
   ).toMatchSnapshot();
 });
