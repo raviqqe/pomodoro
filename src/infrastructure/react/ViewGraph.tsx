@@ -6,7 +6,7 @@ interface IProps {
 }
 
 export const ViewGraph = ({ viewGraph }: IProps): JSX.Element => (
-  <CircleButton aria-label="View Graph" onClick={viewGraph} secondary={true}>
+  <CircleButton aria-label="View Graph" onClick={viewGraph} secondary>
     <IoMdStats />
   </CircleButton>
 );

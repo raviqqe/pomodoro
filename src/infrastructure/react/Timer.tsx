@@ -65,7 +65,7 @@ export const Timer = ({
           <Minutes>{Math.floor(seconds / 60)}</Minutes>
           <Seconds>{seconds % 60}</Seconds>
         </Time>
-        <TextButton onClick={stopTimer} secondary={true}>
+        <TextButton onClick={stopTimer} secondary>
           Stop
         </TextButton>
       </>

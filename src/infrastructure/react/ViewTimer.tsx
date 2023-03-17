@@ -6,7 +6,7 @@ interface IProps {
 }
 
 export const ViewTimer = ({ viewTimer }: IProps): JSX.Element => (
-  <CircleButton aria-label="View Timer" onClick={viewTimer} secondary={true}>
+  <CircleButton aria-label="View Timer" onClick={viewTimer} secondary>
     <MdTimer />
   </CircleButton>
 );
