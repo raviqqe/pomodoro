@@ -42,7 +42,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "typescript": "^5.0.2",
     "vite": "^4.2.1",
-    "vite-plugin-pwa": "^0.14.5",
+    "vite-plugin-pwa": "^0.14.6",
     "vitest": "^0.29.7"
   }
 }
