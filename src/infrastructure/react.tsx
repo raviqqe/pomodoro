@@ -1,16 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { type ApplicationInitializer } from "../../application/application-initializer.js";
-import { type PerformanceGraphViewer } from "../../application/performance-graph-viewer.js";
-import { type IPerformanceGraph } from "../../application/performance-graph.js";
-import { type PomodoroTimerStarter } from "../../application/pomodoro-timer-starter.js";
-import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
-import { type PomodoroTimerStopper } from "../../application/pomodoro-timer-stopper.js";
-import { type SignInManager } from "../../application/sign-in-manager.js";
-import { type SignOutManager } from "../../application/sign-out-manager.js";
-import { type IRenderer, type IPomodoroTimer } from "../renderer.js";
-import { App, type IProps as IAppProps } from "./App.js";
-import { GlobalStyle } from "./style/index.js";
+import { type ApplicationInitializer } from "../application/application-initializer.js";
+import { type PerformanceGraphViewer } from "../application/performance-graph-viewer.js";
+import { type IPerformanceGraph } from "../application/performance-graph.js";
+import { type PomodoroTimerStarter } from "../application/pomodoro-timer-starter.js";
+import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
+import { type PomodoroTimerStopper } from "../application/pomodoro-timer-stopper.js";
+import { type SignInManager } from "../application/sign-in-manager.js";
+import { type SignOutManager } from "../application/sign-out-manager.js";
+import { App, type IProps as IAppProps } from "./react/App.js";
+import { GlobalStyle } from "./react/style.js";
+import { type IRenderer, type IPomodoroTimer } from "./renderer.js";
 
 interface IPresenter {
   setRenderer(renderer: IRenderer): void;

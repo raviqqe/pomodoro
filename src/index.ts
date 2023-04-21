@@ -15,7 +15,7 @@ import { BuiltinNotificationController } from "./infrastructure/notification/bui
 import { BuiltinNotificationPresenter } from "./infrastructure/notification/builtin-notification-presenter.js";
 import { PerformanceGraphPresenter } from "./infrastructure/performance-graph-presenter.js";
 import { PomodoroTimerPresenter } from "./infrastructure/pomodoro-timer-presenter.js";
-import { ReactRenderer } from "./infrastructure/react/index.js";
+import { ReactRenderer } from "./infrastructure/react.js";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
