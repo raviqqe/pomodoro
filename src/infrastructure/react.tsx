@@ -8,9 +8,9 @@ import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
 import { type PomodoroTimerStopper } from "../application/pomodoro-timer-stopper.js";
 import { type SignInManager } from "../application/sign-in-manager.js";
 import { type SignOutManager } from "../application/sign-out-manager.js";
-import { type IRenderer, type IPomodoroTimer } from "./renderer.js";
 import { App, type IProps as IAppProps } from "./react/App.js";
 import { GlobalStyle } from "./react/style.js";
+import { type IRenderer, type IPomodoroTimer } from "./renderer.js";
 
 interface IPresenter {
   setRenderer(renderer: IRenderer): void;
