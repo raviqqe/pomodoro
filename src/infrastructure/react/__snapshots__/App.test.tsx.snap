@@ -3,27 +3,27 @@
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-jsMahE gvrwAm"
+    class="sc-dcrmVg cAJuBb"
   >
     <div
-      class="sc-jTrPJq cZzYXQ"
+      class="sc-iVCKna cwBnAb"
     >
       <div
-        class="sc-gLDzan hcckMs"
+        class="sc-gxYJeL bzrNtH"
       >
         🍅
       </div>
       <button
-        class="sc-dmqHEX sc-eDDNvR ePKlUf eOTRrY"
+        class="sc-ewnqHT sc-dicizt kpoOSz bkgDCi"
       >
         Start
       </button>
     </div>
     <div
-      class="sc-kFuwaP fqPcfv"
+      class="sc-kuWgmH dGhibG"
     >
       <button
-        class="sc-dmqHEX sc-hLseeU iOHjYs gahFaL"
+        class="sc-ewnqHT sc-fFGjHI dJsccg ftpayd"
       >
         <svg
           fill="currentColor"
@@ -45,7 +45,7 @@ exports[`renders after a user signs in 1`] = `
       </button>
       <button
         aria-label="View Graph"
-        class="sc-dmqHEX sc-hLseeU iOHjYs gahFaL"
+        class="sc-ewnqHT sc-fFGjHI dJsccg ftpayd"
       >
         <svg
           fill="currentColor"
@@ -69,20 +69,20 @@ exports[`renders after a user signs in 1`] = `
 exports[`renders after a user signs out 1`] = `
 <div>
   <div
-    class="sc-irTswW kulRKQ"
+    class="sc-duSInm dYvIlQ"
   >
     <div
-      class="sc-csCMJt dltEoK"
+      class="sc-jrrXlR RIlXe"
     >
       P🍅m🍅d🍅r🍅
     </div>
     <button
-      class="sc-dmqHEX sc-eDDNvR ePKlUf eOTRrY"
+      class="sc-ewnqHT sc-dicizt kpoOSz bkgDCi"
     >
       Sign in
     </button>
     <a
-      class="sc-fbJfA crGetJ"
+      class="sc-crozmw fydWaq"
       href=""
       target="_blank"
     >
@@ -108,7 +108,7 @@ exports[`renders after a user signs out 1`] = `
 exports[`renders before a user signs in 1`] = `
 <div>
   <div
-    class="sc-brKeYL euComk"
+    class="sc-jJTsDX cmchms"
   >
     <span
       style="display: inherit;"
