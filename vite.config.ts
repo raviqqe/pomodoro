@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { UserConfigExport } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
@@ -24,4 +25,4 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "src/setupTests.ts",
   },
-});
+} satisfies UserConfigExport);
