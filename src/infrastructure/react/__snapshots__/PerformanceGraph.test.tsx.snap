@@ -2,7 +2,7 @@
 
 exports[`renders with data 1`] = `
 <div
-  class="sc-bdDrbm hFcVWp"
+  class="sc-bdvumH crXkKX"
 >
   <div
     class="recharts-responsive-container"
@@ -13,7 +13,7 @@ exports[`renders with data 1`] = `
 
 exports[`renders with no data 1`] = `
 <div
-  class="sc-gtcAbF kPKKSa"
+  class="sc-gsDKeI cGRacR"
 >
   No performance graph to show yet!
 </div>
