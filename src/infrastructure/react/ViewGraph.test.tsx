@@ -4,6 +4,6 @@ import { ViewGraph } from "./ViewGraph.js";
 
 it("renders", () => {
   expect(
-    render(<ViewGraph viewGraph={() => {}} />).container.firstChild
+    render(<ViewGraph viewGraph={() => {}} />).container.firstChild,
   ).toMatchSnapshot();
 });

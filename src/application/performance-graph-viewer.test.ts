@@ -18,7 +18,7 @@ beforeEach(() => {
   performanceGraphPresenter = { presentGraph: vi.fn() };
   viewer = new PerformanceGraphViewer(
     performanceRecordRepository,
-    performanceGraphPresenter
+    performanceGraphPresenter,
   );
 });
 

@@ -16,31 +16,31 @@ it("renders while running", () => {
         {...commonProps}
         state={PomodoroTimerState.Pomodoro}
         stopped={false}
-      />
-    ).container.firstChild
+      />,
+    ).container.firstChild,
   ).toMatchSnapshot();
 });
 
 it("renders with pomodoro state", () => {
   expect(
     render(
-      <Timer {...commonProps} state={PomodoroTimerState.Pomodoro} stopped />
-    ).container.firstChild
+      <Timer {...commonProps} state={PomodoroTimerState.Pomodoro} stopped />,
+    ).container.firstChild,
   ).toMatchSnapshot();
 });
 
 it("renders with short break state", () => {
   expect(
     render(
-      <Timer {...commonProps} state={PomodoroTimerState.ShortBreak} stopped />
-    ).container.firstChild
+      <Timer {...commonProps} state={PomodoroTimerState.ShortBreak} stopped />,
+    ).container.firstChild,
   ).toMatchSnapshot();
 });
 
 it("renders with long break state", () => {
   expect(
     render(
-      <Timer {...commonProps} state={PomodoroTimerState.LongBreak} stopped />
-    ).container.firstChild
+      <Timer {...commonProps} state={PomodoroTimerState.LongBreak} stopped />,
+    ).container.firstChild,
   ).toMatchSnapshot();
 });

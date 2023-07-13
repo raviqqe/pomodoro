@@ -36,7 +36,7 @@ export class ReactRenderer implements IRenderer {
     private readonly pomodoroTimerStopper: PomodoroTimerStopper,
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
-    private readonly repositoryUrl: string
+    private readonly repositoryUrl: string,
   ) {
     for (const presenter of presenters) {
       presenter.setRenderer(this);
@@ -77,7 +77,7 @@ export class ReactRenderer implements IRenderer {
           viewGraph={() => this.performanceGraphViewer.viewGraph()}
         />
         <GlobalStyle />
-      </StrictMode>
+      </StrictMode>,
     );
   }
 }

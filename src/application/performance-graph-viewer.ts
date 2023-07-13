@@ -7,7 +7,7 @@ import { type IPerformanceRecordRepository } from "./performance-record-reposito
 export class PerformanceGraphViewer {
   constructor(
     private readonly performanceRecordRepository: IPerformanceRecordRepository,
-    private readonly performanceGraphPresenter: IPerformanceGraphPresenter
+    private readonly performanceGraphPresenter: IPerformanceGraphPresenter,
   ) {}
 
   public async viewGraph(today: Date = new Date()): Promise<void> {
@@ -15,8 +15,8 @@ export class PerformanceGraphViewer {
       DateSerializer.serialize(
         DateTime.fromJSDate(today)
           .minus(Duration.fromObject({ months: 1 }))
-          .toJSDate()
-      )
+          .toJSDate(),
+      ),
     );
 
     const firstRecord = records[0];
@@ -26,10 +26,10 @@ export class PerformanceGraphViewer {
         ? range(
             DateSerializer.deserialize(firstRecord.date).getTime(),
             today.getTime() + 1,
-            Duration.fromObject({ days: 1 }).as("milliseconds")
+            Duration.fromObject({ days: 1 }).as("milliseconds"),
           ).map((milliseconds) => {
             const date: string = DateSerializer.serialize(
-              new Date(milliseconds)
+              new Date(milliseconds),
             );
             const record = records.find((record) => record.date === date);
 

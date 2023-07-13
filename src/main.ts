@@ -31,18 +31,18 @@ async function main() {
 
   const firebaseApp = await firebaseInitializer.initialize();
   const authenticationController = new FirebaseAuthenticationController(
-    firebaseApp
+    firebaseApp,
   );
   const authenticationPresenter = new AuthenticationPresenter();
 
   const performanceRecordRepository = new FirestorePerformanceRecordRepository(
-    firebaseApp
+    firebaseApp,
   );
   const pomodoroTimerPresenter = new PomodoroTimerPresenter();
   const pomodoroTimer = new PomodoroTimer(
     pomodoroTimerPresenter,
     new BuiltinNotificationPresenter(),
-    new PerformanceTracker(performanceRecordRepository)
+    new PerformanceTracker(performanceRecordRepository),
   );
 
   const graphPresenter = new PerformanceGraphPresenter();
@@ -52,17 +52,17 @@ async function main() {
     [authenticationPresenter, graphPresenter, pomodoroTimerPresenter],
     new ApplicationInitializer(
       authenticationController,
-      authenticationPresenter
+      authenticationPresenter,
     ),
     new PerformanceGraphViewer(performanceRecordRepository, graphPresenter),
     new PomodoroTimerStarter(
       pomodoroTimer,
-      new BuiltinNotificationController()
+      new BuiltinNotificationController(),
     ),
     new PomodoroTimerStopper(pomodoroTimer),
     new SignInManager(authenticationController, authenticationPresenter),
     new SignOutManager(authenticationController, authenticationPresenter),
-    configuration.repositoryUrl
+    configuration.repositoryUrl,
   ).render();
 }
 

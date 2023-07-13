@@ -4,7 +4,7 @@ import { type PomodoroTimer } from "./pomodoro-timer.js";
 export class PomodoroTimerStarter {
   constructor(
     private readonly pomodoroTimer: PomodoroTimer,
-    private readonly notificationController: INotificationInitializer
+    private readonly notificationController: INotificationInitializer,
   ) {}
 
   public async start(): Promise<void> {

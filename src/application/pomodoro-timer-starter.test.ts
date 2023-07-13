@@ -7,7 +7,7 @@ it("starts a pomodoro timer", async () => {
     {
       start: vi.fn(),
     } as unknown as PomodoroTimer,
-    { initialize: vi.fn() }
+    { initialize: vi.fn() },
   ).start();
 });
 
@@ -18,7 +18,7 @@ it("initializes notifications", async () => {
     {
       start: vi.fn(),
     } as unknown as PomodoroTimer,
-    notificationController
+    notificationController,
   ).start();
 
   expect(notificationController.initialize).toHaveBeenCalledTimes(1);

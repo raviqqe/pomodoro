@@ -47,11 +47,11 @@ export const PerformanceGraph = ({
             tickFormatter={(date: string): string => {
               const days: number = DateTime.fromJSDate(
                 DateSerializer.deserialize(
-                  (last(data) as { date: string }).date
-                )
+                  (last(data) as { date: string }).date,
+                ),
               ).diff(
                 DateTime.fromJSDate(DateSerializer.deserialize(date)),
-                "days"
+                "days",
               ).days;
 
               return days === 0 ? "Today" : `${days} days ago`;
