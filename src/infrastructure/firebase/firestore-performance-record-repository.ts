@@ -32,7 +32,7 @@ export class FirestorePerformanceRecordRepository
 
   public async findOne(date: string): Promise<IPerformanceRecord | null> {
     const snapshot = await getDocs(
-      query(this.collection(), where("date", "==", date))
+      query(this.collection(), where("date", "==", date)),
     );
     const documentSnapshot = snapshot.docs[0];
 
@@ -43,11 +43,11 @@ export class FirestorePerformanceRecordRepository
 
   public async findManySince(date: string): Promise<IPerformanceRecord[]> {
     const snapshot = await getDocs(
-      query(this.collection(), where("date", ">=", date), orderBy("date"))
+      query(this.collection(), where("date", ">=", date), orderBy("date")),
     );
 
     return snapshot.docs.map(
-      (snapshot) => snapshot.data() as IPerformanceRecord
+      (snapshot) => snapshot.data() as IPerformanceRecord,
     );
   }
 
@@ -68,7 +68,7 @@ export class FirestorePerformanceRecordRepository
 
     return collection(
       doc(collection(this.firestore, "users"), user.uid),
-      "performanceRecords"
+      "performanceRecords",
     );
   }
 }

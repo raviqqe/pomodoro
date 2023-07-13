@@ -17,6 +17,6 @@ it("renders", () => {
     {} as PomodoroTimerStopper,
     {} as SignInManager,
     {} as SignOutManager,
-    ""
+    "",
   ).render();
 });

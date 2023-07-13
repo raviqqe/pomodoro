@@ -12,7 +12,7 @@ export class PomodoroTimer {
   constructor(
     private readonly timerPresenter: IPomodoroTimerPresenter,
     private readonly notificationPresenter: INotificationPresenter,
-    private readonly performanceTracker: PerformanceTracker
+    private readonly performanceTracker: PerformanceTracker,
   ) {
     this.timer = new Timer(timerPresenter);
   }

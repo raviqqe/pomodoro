@@ -8,7 +8,7 @@ export class PerformanceTracker {
   private seconds = 0;
 
   constructor(
-    private readonly performanceRecordRepository: IPerformanceRecordRepository
+    private readonly performanceRecordRepository: IPerformanceRecordRepository,
   ) {}
 
   public async addSecond(): Promise<void> {

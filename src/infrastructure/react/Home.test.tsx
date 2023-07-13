@@ -31,14 +31,14 @@ it("views a performance graph", async () => {
 
   act(() => {
     fireEvent.click(
-      result?.container.querySelector('[aria-label="View Graph"]') as Element
+      result?.container.querySelector('[aria-label="View Graph"]')!,
     );
   });
 
   await waitFor(() =>
     expect(
-      result?.container.querySelector('[aria-label="View Timer"]')
-    ).toBeTruthy()
+      result?.container.querySelector('[aria-label="View Timer"]'),
+    ).toBeTruthy(),
   );
 
   expect(result?.container).toMatchSnapshot();
@@ -53,26 +53,26 @@ it("goes back to a timer view", async () => {
 
   act(() => {
     fireEvent.click(
-      result?.container.querySelector('[aria-label="View Graph"]') as Element
+      result?.container.querySelector('[aria-label="View Graph"]')!,
     );
   });
 
   await waitFor(() =>
     expect(
-      result?.container.querySelector('[aria-label="View Timer"]')
-    ).toBeTruthy()
+      result?.container.querySelector('[aria-label="View Timer"]'),
+    ).toBeTruthy(),
   );
 
   act(() => {
     fireEvent.click(
-      result?.container.querySelector('[aria-label="View Timer"]') as Element
+      result?.container.querySelector('[aria-label="View Timer"]')!,
     );
   });
 
   await waitFor(() =>
     expect(
-      result?.container.querySelector('[aria-label="View Graph"]')
-    ).toBeTruthy()
+      result?.container.querySelector('[aria-label="View Graph"]'),
+    ).toBeTruthy(),
   );
 
   expect(result?.container).toMatchSnapshot();

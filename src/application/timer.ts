@@ -10,7 +10,7 @@ export class Timer {
     callbacks: {
       tickCallback: () => void | Promise<void>;
       endCallback: () => void | Promise<void>;
-    }
+    },
   ): void {
     this.presenter.presentStopped(false);
     this.presenter.presentTime(duration);

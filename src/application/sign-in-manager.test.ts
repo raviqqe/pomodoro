@@ -5,7 +5,7 @@ import { authenticationPresenter, authenticationController } from "./test.js";
 it("signs in", async () => {
   const signInManager = new SignInManager(
     authenticationController,
-    authenticationPresenter
+    authenticationPresenter,
   );
 
   await signInManager.signIn();

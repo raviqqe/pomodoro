@@ -71,6 +71,6 @@ it("presents time", () => {
 
   expect(timerPresenter.presentStopped.mock.calls).toEqual([[false], [true]]);
   expect(timerPresenter.presentTime.mock.calls).toEqual(
-    range(42, -1, -1).map((seconds) => [seconds])
+    range(42, -1, -1).map((seconds) => [seconds]),
   );
 });

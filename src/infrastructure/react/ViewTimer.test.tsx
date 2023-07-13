@@ -4,6 +4,6 @@ import { ViewTimer } from "./ViewTimer.js";
 
 it("renders", () => {
   expect(
-    render(<ViewTimer viewTimer={() => {}} />).container.firstChild
+    render(<ViewTimer viewTimer={() => {}} />).container.firstChild,
   ).toMatchSnapshot();
 });

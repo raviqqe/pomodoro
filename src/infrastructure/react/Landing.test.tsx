@@ -5,6 +5,6 @@ import { Landing } from "./Landing.js";
 it("renders", () => {
   expect(
     render(<Landing repositoryUrl="" signIn={async () => {}} />).container
-      .firstChild
+      .firstChild,
   ).toMatchSnapshot();
 });

@@ -30,7 +30,7 @@ beforeEach(() => {
   pomodoroTimer = new PomodoroTimer(
     timerPresenter,
     notificationPresenter,
-    new PerformanceTracker(performanceRecordRepository)
+    new PerformanceTracker(performanceRecordRepository),
   );
 });
 
