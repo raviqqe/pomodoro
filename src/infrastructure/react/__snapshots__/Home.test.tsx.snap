@@ -3,36 +3,36 @@
 exports[`goes back to a timer view 1`] = `
 <div>
   <div
-    class="sc-jrcSnH dcXPTj"
+    class="sc-jrkPcm qugiF"
   >
     <div
-      class="sc-jSVbBN htDmhB"
+      class="sc-jSwlEQ jdQhOb"
     >
       <div
-        class="sc-iBYQGD jnsiEs"
+        class="sc-iBAaJG dyIoEv"
       >
         <span
-          class="sc-ftTHFa"
+          class="sc-ftLKQv"
         >
           0
         </span>
         <span
-          class="sc-pyfiu laaNyd"
+          class="sc-pqitP jLmqQL"
         >
           42
         </span>
       </div>
       <button
-        class="sc-dkrGVk sc-eDvSBu iMrLIa enYyxP"
+        class="sc-dkjKgF sc-eDnVMP gClLIz dqHizp"
       >
         Stop
       </button>
     </div>
     <div
-      class="sc-kDvvrc vaqM"
+      class="sc-kDnyCx cevRUs"
     >
       <button
-        class="sc-dkrGVk sc-hLBbCX iMrLIa eva-DXt"
+        class="sc-dkjKgF sc-hLclGa gClLIz iGtTVO"
       >
         <svg
           fill="currentColor"
@@ -54,7 +54,7 @@ exports[`goes back to a timer view 1`] = `
       </button>
       <button
         aria-label="View Graph"
-        class="sc-dkrGVk sc-hLBbCX iMrLIa eva-DXt"
+        class="sc-dkjKgF sc-hLclGa gClLIz iGtTVO"
       >
         <svg
           fill="currentColor"
@@ -77,36 +77,36 @@ exports[`goes back to a timer view 1`] = `
 
 exports[`renders 1`] = `
 <div
-  class="sc-jrcSnH dcXPTj"
+  class="sc-jrkPcm qugiF"
 >
   <div
-    class="sc-jSVbBN htDmhB"
+    class="sc-jSwlEQ jdQhOb"
   >
     <div
-      class="sc-iBYQGD jnsiEs"
+      class="sc-iBAaJG dyIoEv"
     >
       <span
-        class="sc-ftTHFa"
+        class="sc-ftLKQv"
       >
         0
       </span>
       <span
-        class="sc-pyfiu laaNyd"
+        class="sc-pqitP jLmqQL"
       >
         42
       </span>
     </div>
     <button
-      class="sc-dkrGVk sc-eDvSBu iMrLIa enYyxP"
+      class="sc-dkjKgF sc-eDnVMP gClLIz dqHizp"
     >
       Stop
     </button>
   </div>
   <div
-    class="sc-kDvvrc vaqM"
+    class="sc-kDnyCx cevRUs"
   >
     <button
-      class="sc-dkrGVk sc-hLBbCX iMrLIa eva-DXt"
+      class="sc-dkjKgF sc-hLclGa gClLIz iGtTVO"
     >
       <svg
         fill="currentColor"
@@ -128,7 +128,7 @@ exports[`renders 1`] = `
     </button>
     <button
       aria-label="View Graph"
-      class="sc-dkrGVk sc-hLBbCX iMrLIa eva-DXt"
+      class="sc-dkjKgF sc-hLclGa gClLIz iGtTVO"
     >
       <svg
         fill="currentColor"
@@ -151,18 +151,18 @@ exports[`renders 1`] = `
 exports[`views a performance graph 1`] = `
 <div>
   <div
-    class="sc-jrcSnH dcXPTj"
+    class="sc-jrkPcm qugiF"
   >
     <div
-      class="sc-gswPWN bpexcZ"
+      class="sc-grXZZQ kwJHFG"
     >
       No performance graph to show yet!
     </div>
     <div
-      class="sc-kDvvrc vaqM"
+      class="sc-kDnyCx cevRUs"
     >
       <button
-        class="sc-dkrGVk sc-hLBbCX iMrLIa eva-DXt"
+        class="sc-dkjKgF sc-hLclGa gClLIz iGtTVO"
       >
         <svg
           fill="currentColor"
@@ -184,7 +184,7 @@ exports[`views a performance graph 1`] = `
       </button>
       <button
         aria-label="View Timer"
-        class="sc-dkrGVk sc-hLBbCX iMrLIa eva-DXt"
+        class="sc-dkjKgF sc-hLclGa gClLIz iGtTVO"
       >
         <svg
           fill="currentColor"
