@@ -31,7 +31,7 @@
     "@testing-library/react": "^14.0.0",
     "@types/lodash": "^4.14.196",
     "@types/luxon": "^3.3.1",
-    "@types/react": "^18.2.18",
+    "@types/react": "^18.2.19",
     "@types/react-dom": "^18.2.7",
     "@types/recharts": "^2.0.0",
     "@types/styled-components": "^5.1.26",
