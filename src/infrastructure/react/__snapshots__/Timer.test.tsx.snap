@@ -2,24 +2,24 @@
 
 exports[`renders while running 1`] = `
 <div
-  class="sc-dkjKgF csAlHK"
+  class="sc-dmyDmy jsbLUa"
 >
   <div
-    class="sc-eDnVMP dGPQpJ"
+    class="sc-eDLKEg dxzole"
   >
     <span
-      class="sc-jSwlEQ"
+      class="sc-jTQDJr"
     >
       0
     </span>
     <span
-      class="sc-gKHVLF cDDjXv"
+      class="sc-gLLuHO flfJaR"
     >
       42
     </span>
   </div>
   <button
-    class="sc-bcPKhP sc-grXZZQ hvjmXi gOZdGR"
+    class="sc-beyTiQ sc-guDMob heAGpe jJSLzA"
   >
     Stop
   </button>
@@ -28,15 +28,15 @@ exports[`renders while running 1`] = `
 
 exports[`renders with long break state 1`] = `
 <div
-  class="sc-dkjKgF csAlHK"
+  class="sc-dmyDmy jsbLUa"
 >
   <div
-    class="sc-hLclGa bHNjQR"
+    class="sc-hLQTFJ krhgFG"
   >
     🛌🛌
   </div>
   <button
-    class="sc-bcPKhP sc-grXZZQ gobXA-d gOZdGR"
+    class="sc-beyTiQ sc-guDMob dFRMQp jJSLzA"
   >
     Start
   </button>
@@ -45,15 +45,15 @@ exports[`renders with long break state 1`] = `
 
 exports[`renders with pomodoro state 1`] = `
 <div
-  class="sc-dkjKgF csAlHK"
+  class="sc-dmyDmy jsbLUa"
 >
   <div
-    class="sc-hLclGa bHNjQR"
+    class="sc-hLQTFJ krhgFG"
   >
     🍅
   </div>
   <button
-    class="sc-bcPKhP sc-grXZZQ gobXA-d gOZdGR"
+    class="sc-beyTiQ sc-guDMob dFRMQp jJSLzA"
   >
     Start
   </button>
@@ -62,15 +62,15 @@ exports[`renders with pomodoro state 1`] = `
 
 exports[`renders with short break state 1`] = `
 <div
-  class="sc-dkjKgF csAlHK"
+  class="sc-dmyDmy jsbLUa"
 >
   <div
-    class="sc-hLclGa bHNjQR"
+    class="sc-hLQTFJ krhgFG"
   >
     🛌
   </div>
   <button
-    class="sc-bcPKhP sc-grXZZQ gobXA-d gOZdGR"
+    class="sc-beyTiQ sc-guDMob dFRMQp jJSLzA"
   >
     Start
   </button>
