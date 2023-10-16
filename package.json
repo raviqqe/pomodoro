@@ -22,7 +22,7 @@
     "react-icons": "^4.11.0",
     "react-spinners": "^0.13.8",
     "react-use": "^17.4.0",
-    "recharts": "^2.8.0",
+    "recharts": "^2.9.0",
     "styled-components": "^6.0.9"
   },
   "devDependencies": {
