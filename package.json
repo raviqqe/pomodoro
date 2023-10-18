@@ -29,7 +29,7 @@
     "@raviqqe/eslint-config": "^1.2.18",
     "@raviqqe/react-tsconfig": "^1.0.18",
     "@testing-library/react": "^14.0.0",
-    "@types/lodash": "^4.14.199",
+    "@types/lodash": "^4.14.200",
     "@types/luxon": "^3.3.3",
     "@types/react": "^18.2.29",
     "@types/react-dom": "^18.2.13",
