@@ -29,7 +29,7 @@ async function main() {
     throw new Error("no root element");
   }
 
-  const firebaseApp = await firebaseInitializer.initialize();
+  const firebaseApp = firebaseInitializer.initialize();
   const authenticationController = new FirebaseAuthenticationController(
     firebaseApp,
   );
