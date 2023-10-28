@@ -22,7 +22,7 @@ import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
 const firebaseInitializer = new FirebaseInitializer(configuration.firebase);
 const errorReporter = new SentryErrorReporter(configuration.sentry.dsn);
 
-async function main() {
+const main = () => {
   const element = document.getElementById("root");
 
   if (!element) {
@@ -64,6 +64,10 @@ async function main() {
     new SignOutManager(authenticationController, authenticationPresenter),
     configuration.repositoryUrl,
   ).render();
-}
+};
 
-main().catch((error: Error) => errorReporter.report(error));
+try {
+  main();
+} catch (error) {
+  errorReporter.report(error);
+}
