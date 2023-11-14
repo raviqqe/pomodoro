@@ -1,4 +1,4 @@
-import { range } from "lodash";
+import { map, range } from "@raviqqe/loscore";
 import { Duration, DateTime } from "luxon";
 import { DateSerializer } from "../domain/date-serializer.js";
 import { type IPerformanceGraphPresenter } from "./performance-graph-presenter.js";
@@ -23,21 +23,26 @@ export class PerformanceGraphViewer {
 
     this.performanceGraphPresenter.presentGraph({
       data: firstRecord
-        ? range(
-            DateSerializer.deserialize(firstRecord.date).getTime(),
-            today.getTime() + 1,
-            Duration.fromObject({ days: 1 }).as("milliseconds"),
-          ).map((milliseconds) => {
-            const date: string = DateSerializer.serialize(
-              new Date(milliseconds),
-            );
-            const record = records.find((record) => record.date === date);
+        ? [
+            ...map(
+              range(
+                DateSerializer.deserialize(firstRecord.date).getTime(),
+                today.getTime() + 1,
+                Duration.fromObject({ days: 1 }).as("milliseconds"),
+              ),
+              (milliseconds) => {
+                const date: string = DateSerializer.serialize(
+                  new Date(milliseconds),
+                );
+                const record = records.find((record) => record.date === date);
 
-            return {
-              date,
-              pomodoros: record ? record.seconds / 25 / 60 : 0,
-            };
-          })
+                return {
+                  date,
+                  pomodoros: record ? record.seconds / 25 / 60 : 0,
+                };
+              },
+            ),
+          ]
         : [],
     });
   }
