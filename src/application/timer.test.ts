@@ -1,4 +1,4 @@
-import { range } from "@raviqqe/loscore";
+import { map, range } from "@raviqqe/loscore";
 import { afterEach, beforeEach, it, vi, expect, type Mocked } from "vitest";
 import { type ITimerPresenter } from "./timer-presenter.js";
 import { Timer } from "./timer.js";
@@ -70,7 +70,7 @@ it("presents time", () => {
   }
 
   expect(timerPresenter.presentStopped.mock.calls).toEqual([[false], [true]]);
-  expect(timerPresenter.presentTime.mock.calls).toEqual(
-    range(42, -1, -1).map((seconds) => [seconds]),
-  );
+  expect(timerPresenter.presentTime.mock.calls).toEqual([
+    ...map(range(42, -1, -1), (seconds) => [seconds]),
+  ]);
 });
