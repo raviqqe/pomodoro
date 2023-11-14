@@ -1,5 +1,5 @@
 import { defaultImport } from "default-import";
-import { last } from "lodash";
+import { last } from "@raviqqe/loscore";
 import { DateTime } from "luxon";
 import {
   CartesianGrid,

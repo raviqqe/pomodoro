@@ -1,4 +1,4 @@
-import { range } from "lodash";
+import { range } from "@raviqqe/loscore";
 import { Duration, DateTime } from "luxon";
 import { DateSerializer } from "../domain/date-serializer.js";
 import { type IPerformanceGraphPresenter } from "./performance-graph-presenter.js";

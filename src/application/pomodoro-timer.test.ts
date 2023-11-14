@@ -1,4 +1,4 @@
-import { last, range } from "lodash";
+import { last, range } from "@raviqqe/loscore";
 import { afterEach, vi, type Mocked, beforeEach, expect, it } from "vitest";
 import { type INotificationPresenter } from "./notification-presenter.js";
 import { type IPerformanceRecordRepository } from "./performance-record-repository.js";

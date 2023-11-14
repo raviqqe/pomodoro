@@ -1,4 +1,4 @@
-import { range } from "lodash";
+import { range } from "@raviqqe/loscore";
 import { afterEach, beforeEach, it, vi, expect, type Mocked } from "vitest";
 import { type ITimerPresenter } from "./timer-presenter.js";
 import { Timer } from "./timer.js";
