@@ -12,6 +12,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "@raviqqe/loscore": "^0.1.6",
     "@sentry/browser": "^7.80.1",
     "default-import": "^1.1.5",
     "firebase": "^10.6.0",
