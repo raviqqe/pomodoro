@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@raviqqe/loscore": "^0.1.7",
-    "@sentry/browser": "^7.81.0",
+    "@sentry/browser": "^7.81.1",
     "default-import": "^1.1.5",
     "firebase": "^10.6.0",
     "luxon": "^3.4.4",
