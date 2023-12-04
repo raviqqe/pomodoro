@@ -2,6 +2,7 @@
   "ignorePaths": ["**/*.svg"],
   "words": [
     "codecov",
+    "darkgrey",
     "deserialize",
     "firestore",
     "loscore",
