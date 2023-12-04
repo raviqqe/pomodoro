@@ -2,18 +2,18 @@
   "ignorePaths": ["**/*.svg"],
   "words": [
     "codecov",
-    "darkturquoise",
+    "dimgray",
     "deserialize",
     "firestore",
     "loscore",
     "luxon",
-    "paleturquoise",
     "pomodoro",
     "pomodoros",
     "raviqqe",
     "rect",
     "restarter",
     "roboto",
+    "steelblue",
     "xlink",
     "xmlns"
   ]

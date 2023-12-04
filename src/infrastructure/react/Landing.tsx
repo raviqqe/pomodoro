@@ -2,7 +2,7 @@ import { defaultImport } from "default-import";
 import { FaGithub } from "react-icons/fa/index.js";
 import defaultStyled from "styled-components";
 import { SignIn } from "./SignIn.js";
-import { blue, black } from "./style/colors.js";
+import { white } from "./style/colors.js";
 
 const styled = defaultImport(defaultStyled);
 
@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  color: ${blue};
+  color: ${white};
   font-family: "Chelsea Market", sans-serif;
   font-size: 4em;
   font-weight: bold;
@@ -31,7 +31,7 @@ const Title = styled.div`
 const GitHubLink = styled.a`
   font-size: 2.5rem;
   margin: 1.5rem;
-  color: ${black};
+  color: ${white};
   display: block;
   position: fixed;
   bottom: 0em;
