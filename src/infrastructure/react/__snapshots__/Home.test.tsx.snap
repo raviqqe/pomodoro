@@ -23,7 +23,7 @@ exports[`goes back to a timer view 1`] = `
         </span>
       </div>
       <button
-        class="sc-dlfmHC sc-eCstZk hEVUfE fyRxWa"
+        class="sc-dlfmHC sc-eCstZk cpZOho fyRxWa"
       >
         Stop
       </button>
@@ -32,7 +32,7 @@ exports[`goes back to a timer view 1`] = `
       class="sc-kEjbdu jWxqDf"
     >
       <button
-        class="sc-dlfmHC sc-hKgKIp hEVUfE boteCO"
+        class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
       >
         <svg
           fill="currentColor"
@@ -54,7 +54,7 @@ exports[`goes back to a timer view 1`] = `
       </button>
       <button
         aria-label="View Graph"
-        class="sc-dlfmHC sc-hKgKIp hEVUfE boteCO"
+        class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
       >
         <svg
           fill="currentColor"
@@ -97,7 +97,7 @@ exports[`renders 1`] = `
       </span>
     </div>
     <button
-      class="sc-dlfmHC sc-eCstZk hEVUfE fyRxWa"
+      class="sc-dlfmHC sc-eCstZk cpZOho fyRxWa"
     >
       Stop
     </button>
@@ -106,7 +106,7 @@ exports[`renders 1`] = `
     class="sc-kEjbdu jWxqDf"
   >
     <button
-      class="sc-dlfmHC sc-hKgKIp hEVUfE boteCO"
+      class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
     >
       <svg
         fill="currentColor"
@@ -128,7 +128,7 @@ exports[`renders 1`] = `
     </button>
     <button
       aria-label="View Graph"
-      class="sc-dlfmHC sc-hKgKIp hEVUfE boteCO"
+      class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
     >
       <svg
         fill="currentColor"
@@ -162,7 +162,7 @@ exports[`views a performance graph 1`] = `
       class="sc-kEjbdu jWxqDf"
     >
       <button
-        class="sc-dlfmHC sc-hKgKIp hEVUfE boteCO"
+        class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
       >
         <svg
           fill="currentColor"
@@ -184,7 +184,7 @@ exports[`views a performance graph 1`] = `
       </button>
       <button
         aria-label="View Timer"
-        class="sc-dlfmHC sc-hKgKIp hEVUfE boteCO"
+        class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
       >
         <svg
           fill="currentColor"
