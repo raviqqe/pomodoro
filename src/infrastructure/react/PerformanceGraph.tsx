@@ -66,7 +66,7 @@ export const PerformanceGraph = ({
               value="Pomodoros"
             />
           </YAxis>
-          <Bar dataKey="pomodoros" fill="salmon" />
+          <Bar dataKey="pomodoros" fill="tomato" />
         </BarChart>
       </ResponsiveContainer>
     </Container>
