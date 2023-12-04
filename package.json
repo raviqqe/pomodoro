@@ -21,7 +21,7 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.12.0",
     "react-spinners": "^0.13.8",
-    "react-use": "^17.4.1",
+    "react-use": "^17.4.2",
     "recharts": "^2.10.3",
     "styled-components": "^6.1.1"
   },
