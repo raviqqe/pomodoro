@@ -13,7 +13,7 @@ import {
 import defaultStyled from "styled-components";
 import { type IPerformanceGraph } from "../../application/performance-graph.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
-import { white } from "./style/colors.js";
+import { grey, red, white } from "./style/colors.js";
 
 const styled = defaultImport(defaultStyled);
 
@@ -40,10 +40,10 @@ export const PerformanceGraph = ({
     <Container>
       <ResponsiveContainer>
         <BarChart data={data}>
-          <CartesianGrid fill="white" stroke="grey" strokeDasharray="3 3" />
+          <CartesianGrid fill={white} stroke={grey} strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
-            stroke="grey"
+            stroke={white}
             tickFormatter={(date: string): string => {
               const days: number = DateTime.fromJSDate(
                 DateSerializer.deserialize(
@@ -58,15 +58,15 @@ export const PerformanceGraph = ({
             }}
             tickMargin={10}
           />
-          <YAxis allowDecimals={false} stroke="grey" tickMargin={5}>
+          <YAxis allowDecimals={false} stroke={white} tickMargin={5}>
             <Label
               angle={-90}
               position="insideLeft"
-              style={{ fill: "grey" }}
+              style={{ fill: white }}
               value="Pomodoros"
             />
           </YAxis>
-          <Bar dataKey="pomodoros" fill="tomato" />
+          <Bar dataKey="pomodoros" fill={red} />
         </BarChart>
       </ResponsiveContainer>
     </Container>
