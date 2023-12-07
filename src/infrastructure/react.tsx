@@ -66,6 +66,7 @@ export class ReactRenderer implements IRenderer {
 
     this.root.render(
       <StrictMode>
+        <style>{globalStyle}</style>
         <App
           {...this.props}
           initialize={() => this.applicationInitializer.initialize()}
@@ -76,7 +77,6 @@ export class ReactRenderer implements IRenderer {
           stopTimer={() => this.pomodoroTimerStopper.stop()}
           viewGraph={() => this.performanceGraphViewer.viewGraph()}
         />
-        <style>{globalStyle}</style>
       </StrictMode>,
     );
   }
