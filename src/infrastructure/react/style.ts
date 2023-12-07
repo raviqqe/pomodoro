@@ -1,4 +1,4 @@
-import { styled } from "@linaria/react";
+import { css } from "linaria";
 import { black, lightBlue } from "./style/colors.js";
 
 export const GlobalStyle = createGlobalStyle`
