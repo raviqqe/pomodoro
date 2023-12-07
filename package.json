@@ -24,8 +24,7 @@
     "react-icons": "^4.12.0",
     "react-spinners": "^0.13.8",
     "react-use": "^17.4.2",
-    "recharts": "^2.10.3",
-    "styled-components": "^6.1.1"
+    "recharts": "^2.10.3"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.23.3",
