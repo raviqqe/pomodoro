@@ -2,24 +2,25 @@
 
 exports[`renders while running 1`] = `
 <div
-  class="sc-dlfmHC kBjrcq"
+  class="mocked-styled-2 csepmpo"
 >
   <div
-    class="sc-eCstZk kTNdDO"
+    class="mocked-styled-4 tzy8dto"
   >
     <span
-      class="sc-jSguLX"
+      class="mocked-styled-5 m1kjdx15"
     >
       0
     </span>
     <span
-      class="sc-gKsecS rVpVW"
+      class="mocked-styled-6 s10lyu4e"
     >
       42
     </span>
   </div>
   <button
-    class="sc-bdfCDU sc-gsTDqH cjJrSa fTjNcL"
+    class="mocked-styled-1 bunojaf tn2f353 bunojaf"
+    style="--bunojaf-0: dimgray;"
   >
     Stop
   </button>
@@ -28,15 +29,16 @@ exports[`renders while running 1`] = `
 
 exports[`renders with long break state 1`] = `
 <div
-  class="sc-dlfmHC kBjrcq"
+  class="mocked-styled-2 csepmpo"
 >
   <div
-    class="sc-hKgKIp egzvyV"
+    class="mocked-styled-3 s1oxn5sa"
   >
     🛌🛌
   </div>
   <button
-    class="sc-bdfCDU sc-gsTDqH bbePIP fTjNcL"
+    class="mocked-styled-1 bunojaf tn2f353 bunojaf"
+    style="--bunojaf-0: tomato;"
   >
     Start
   </button>
@@ -45,15 +47,16 @@ exports[`renders with long break state 1`] = `
 
 exports[`renders with pomodoro state 1`] = `
 <div
-  class="sc-dlfmHC kBjrcq"
+  class="mocked-styled-2 csepmpo"
 >
   <div
-    class="sc-hKgKIp egzvyV"
+    class="mocked-styled-3 s1oxn5sa"
   >
     🍅
   </div>
   <button
-    class="sc-bdfCDU sc-gsTDqH bbePIP fTjNcL"
+    class="mocked-styled-1 bunojaf tn2f353 bunojaf"
+    style="--bunojaf-0: tomato;"
   >
     Start
   </button>
@@ -62,15 +65,16 @@ exports[`renders with pomodoro state 1`] = `
 
 exports[`renders with short break state 1`] = `
 <div
-  class="sc-dlfmHC kBjrcq"
+  class="mocked-styled-2 csepmpo"
 >
   <div
-    class="sc-hKgKIp egzvyV"
+    class="mocked-styled-3 s1oxn5sa"
   >
     🛌
   </div>
   <button
-    class="sc-bdfCDU sc-gsTDqH bbePIP fTjNcL"
+    class="mocked-styled-1 bunojaf tn2f353 bunojaf"
+    style="--bunojaf-0: tomato;"
   >
     Start
   </button>
