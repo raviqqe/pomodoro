@@ -10,7 +10,7 @@ import {
   Bar,
   BarChart,
 } from "recharts";
-import defaultStyled from "styled-components";
+import { styled } from "@linaria/react";
 import { type IPerformanceGraph } from "../../application/performance-graph.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { grey, red, white } from "./style/colors.js";

@@ -1,6 +1,6 @@
 import { defaultImport } from "default-import";
 import { useState } from "react";
-import defaultStyled from "styled-components";
+import { styled } from "@linaria/react";
 import {
   PerformanceGraph,
   type IProps as IPerformanceGraphProps,
