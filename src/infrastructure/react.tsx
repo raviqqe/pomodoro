@@ -9,7 +9,7 @@ import { type PomodoroTimerStopper } from "../application/pomodoro-timer-stopper
 import { type SignInManager } from "../application/sign-in-manager.js";
 import { type SignOutManager } from "../application/sign-out-manager.js";
 import { App, type IProps as IAppProps } from "./react/App.js";
-import { GlobalStyle } from "./react/style.js";
+import { globalStyle } from "./react/style.js";
 import { type IRenderer, type IPomodoroTimer } from "./renderer.js";
 
 interface IPresenter {
@@ -76,7 +76,7 @@ export class ReactRenderer implements IRenderer {
           stopTimer={() => this.pomodoroTimerStopper.stop()}
           viewGraph={() => this.performanceGraphViewer.viewGraph()}
         />
-        <GlobalStyle />
+        <style>{globalStyle}</style>
       </StrictMode>,
     );
   }

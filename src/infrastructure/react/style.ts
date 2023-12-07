@@ -1,7 +1,7 @@
 import { css } from "linaria";
 import { black, lightBlue } from "./style/colors.js";
 
-export const GlobalStyle = createGlobalStyle`
+export const globalStyle = css`
   body {
     background: ${lightBlue};
     margin: 0;
