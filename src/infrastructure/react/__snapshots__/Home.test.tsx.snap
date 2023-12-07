@@ -3,36 +3,38 @@
 exports[`goes back to a timer view 1`] = `
 <div>
   <div
-    class="sc-jrAGKZ kvMgAs"
+    class="mocked-styled-10 c2c63xu"
   >
     <div
-      class="sc-jSguLX ecXudd"
+      class="mocked-styled-5 csepmpo"
     >
       <div
-        class="sc-iBPTVF eNHUph"
+        class="mocked-styled-7 tzy8dto"
       >
         <span
-          class="sc-fubDmA"
+          class="mocked-styled-8 m1kjdx15"
         >
           0
         </span>
         <span
-          class="sc-pGaPU gFOzgn"
+          class="mocked-styled-9 s10lyu4e"
         >
           42
         </span>
       </div>
       <button
-        class="sc-dlfmHC sc-eCstZk cpZOho fyRxWa"
+        class="mocked-styled-4 bunojaf tn2f353 bunojaf"
+        style="--bunojaf-0: dimgray;"
       >
         Stop
       </button>
     </div>
     <div
-      class="sc-kEjbdu jWxqDf"
+      class="mocked-styled-11 b7s45km"
     >
       <button
-        class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
+        class="mocked-styled-3 bunojaf cki2aja bunojaf"
+        style="--bunojaf-0: dimgray;"
       >
         <svg
           fill="currentColor"
@@ -54,7 +56,8 @@ exports[`goes back to a timer view 1`] = `
       </button>
       <button
         aria-label="View Graph"
-        class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
+        class="mocked-styled-3 bunojaf cki2aja bunojaf"
+        style="--bunojaf-0: dimgray;"
       >
         <svg
           fill="currentColor"
@@ -77,36 +80,38 @@ exports[`goes back to a timer view 1`] = `
 
 exports[`renders 1`] = `
 <div
-  class="sc-jrAGKZ kvMgAs"
+  class="mocked-styled-10 c2c63xu"
 >
   <div
-    class="sc-jSguLX ecXudd"
+    class="mocked-styled-5 csepmpo"
   >
     <div
-      class="sc-iBPTVF eNHUph"
+      class="mocked-styled-7 tzy8dto"
     >
       <span
-        class="sc-fubDmA"
+        class="mocked-styled-8 m1kjdx15"
       >
         0
       </span>
       <span
-        class="sc-pGaPU gFOzgn"
+        class="mocked-styled-9 s10lyu4e"
       >
         42
       </span>
     </div>
     <button
-      class="sc-dlfmHC sc-eCstZk cpZOho fyRxWa"
+      class="mocked-styled-4 bunojaf tn2f353 bunojaf"
+      style="--bunojaf-0: dimgray;"
     >
       Stop
     </button>
   </div>
   <div
-    class="sc-kEjbdu jWxqDf"
+    class="mocked-styled-11 b7s45km"
   >
     <button
-      class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
+      class="mocked-styled-3 bunojaf cki2aja bunojaf"
+      style="--bunojaf-0: dimgray;"
     >
       <svg
         fill="currentColor"
@@ -128,7 +133,8 @@ exports[`renders 1`] = `
     </button>
     <button
       aria-label="View Graph"
-      class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
+      class="mocked-styled-3 bunojaf cki2aja bunojaf"
+      style="--bunojaf-0: dimgray;"
     >
       <svg
         fill="currentColor"
@@ -151,18 +157,19 @@ exports[`renders 1`] = `
 exports[`views a performance graph 1`] = `
 <div>
   <div
-    class="sc-jrAGKZ kvMgAs"
+    class="mocked-styled-10 c2c63xu"
   >
     <div
-      class="sc-gsTDqH igCYoI"
+      class="mocked-styled-1 mj1zets"
     >
       No performance graph to show yet!
     </div>
     <div
-      class="sc-kEjbdu jWxqDf"
+      class="mocked-styled-11 b7s45km"
     >
       <button
-        class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
+        class="mocked-styled-3 bunojaf cki2aja bunojaf"
+        style="--bunojaf-0: dimgray;"
       >
         <svg
           fill="currentColor"
@@ -184,7 +191,8 @@ exports[`views a performance graph 1`] = `
       </button>
       <button
         aria-label="View Timer"
-        class="sc-dlfmHC sc-hKgKIp cpZOho boteCO"
+        class="mocked-styled-3 bunojaf cki2aja bunojaf"
+        style="--bunojaf-0: dimgray;"
       >
         <svg
           fill="currentColor"

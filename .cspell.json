@@ -5,6 +5,7 @@
     "dimgray",
     "deserialize",
     "firestore",
+    "linaria",
     "loscore",
     "luxon",
     "pomodoro",

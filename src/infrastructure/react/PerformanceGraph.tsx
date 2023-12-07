@@ -1,5 +1,5 @@
+import { styled } from "@linaria/react";
 import { last } from "@raviqqe/loscore";
-import { defaultImport } from "default-import";
 import { DateTime } from "luxon";
 import {
   CartesianGrid,
@@ -10,12 +10,9 @@ import {
   Bar,
   BarChart,
 } from "recharts";
-import defaultStyled from "styled-components";
 import { type IPerformanceGraph } from "../../application/performance-graph.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { grey, red, white } from "./style/colors.js";
-
-const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   width: 80vw;

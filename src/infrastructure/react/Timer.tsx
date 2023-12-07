@@ -1,10 +1,7 @@
-import { defaultImport } from "default-import";
-import defaultStyled from "styled-components";
+import { styled } from "@linaria/react";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { TextButton } from "./TextButton.js";
 import { white } from "./style/colors.js";
-
-const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;
@@ -54,8 +51,8 @@ export const Timer = ({
           {state === PomodoroTimerState.Pomodoro
             ? "🍅"
             : state === PomodoroTimerState.ShortBreak
-            ? "🛌"
-            : "🛌🛌"}
+              ? "🛌"
+              : "🛌🛌"}
         </State>
         <TextButton onClick={startTimer}>Start</TextButton>
       </>
