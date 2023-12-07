@@ -1,11 +1,18 @@
+import linaria from "@linaria/vite";
+import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { UserConfigExport } from "vitest/config";
-import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
     react(),
+    linaria({
+      include: ["src/**/*.{ts,tsx}"],
+      babelOptions: {
+        presets: ["@babel/preset-typescript", "@babel/preset-react"],
+      },
+    }),
     VitePWA({
       manifest: {
         short_name: "Pomodoro",
