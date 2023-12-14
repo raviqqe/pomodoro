@@ -1,7 +1,7 @@
 import { type PomodoroTimerState } from "./pomodoro-timer-state.js";
-import { type ITimerPresenter } from "./timer-presenter.js";
+import { type TimerPresenter } from "./timer-presenter.js";
 
-export interface IPomodoroTimerPresenter extends ITimerPresenter {
+export interface PomodoroTimerPresenter extends TimerPresenter {
   presentTime(seconds: number): void;
   presentState(state: PomodoroTimerState): void;
 }

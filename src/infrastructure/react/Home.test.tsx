@@ -7,9 +7,9 @@ import {
 } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
-import { Home, type IProps } from "./Home.js";
+import { Home, type Props } from "./Home.js";
 
-const props: IProps = {
+const props: Props = {
   performanceGraph: { data: [] },
   signOut: async () => {},
   startTimer: async () => {},

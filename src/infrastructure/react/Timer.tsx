@@ -29,7 +29,7 @@ const Seconds = styled.span`
   margin-left: 0.2ex;
 `;
 
-export interface IProps {
+export interface Props {
   seconds: number;
   startTimer: () => void;
   state: PomodoroTimerState;
@@ -43,7 +43,7 @@ export const Timer = ({
   state,
   stopTimer,
   stopped,
-}: IProps): JSX.Element => (
+}: Props): JSX.Element => (
   <Container>
     {stopped ? (
       <>

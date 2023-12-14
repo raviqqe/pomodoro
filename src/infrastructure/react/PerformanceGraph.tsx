@@ -10,7 +10,7 @@ import {
   Bar,
   BarChart,
 } from "recharts";
-import { type IPerformanceGraph } from "../../application/performance-graph.js";
+import { type PerformanceGraph } from "../../application/performance-graph.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { grey, red, white } from "./style/colors.js";
 
@@ -24,13 +24,13 @@ const Message = styled.div`
   font-size: 1.5em;
 `;
 
-export interface IProps {
-  performanceGraph: IPerformanceGraph;
+export interface Props {
+  performanceGraph: PerformanceGraph;
 }
 
 export const PerformanceGraph = ({
   performanceGraph: { data },
-}: IProps): JSX.Element =>
+}: Props): JSX.Element =>
   data.length === 0 ? (
     <Message>No performance graph to show yet!</Message>
   ) : (

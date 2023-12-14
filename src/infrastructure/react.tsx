@@ -2,26 +2,26 @@ import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { type ApplicationInitializer } from "../application/application-initializer.js";
 import { type PerformanceGraphViewer } from "../application/performance-graph-viewer.js";
-import { type IPerformanceGraph } from "../application/performance-graph.js";
+import { type PerformanceGraph } from "../application/performance-graph.js";
 import { type PomodoroTimerStarter } from "../application/pomodoro-timer-starter.js";
 import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
 import { type PomodoroTimerStopper } from "../application/pomodoro-timer-stopper.js";
 import { type SignInManager } from "../application/sign-in-manager.js";
 import { type SignOutManager } from "../application/sign-out-manager.js";
-import { App, type IProps as IAppProps } from "./react/App.js";
+import { App, type Props as AppProps } from "./react/App.js";
 import { globalStyle } from "./react/style.js";
-import { type IRenderer, type IPomodoroTimer } from "./renderer.js";
+import { type Renderer, type PomodoroTimer } from "./renderer.js";
 
-interface IPresenter {
-  setRenderer(renderer: IRenderer): void;
+interface Presenter {
+  setRenderer(renderer: Renderer): void;
 }
 
-interface IProps
-  extends Pick<IAppProps, "performanceGraph" | "signedIn" | "timer"> {}
+interface Props
+  extends Pick<AppProps, "performanceGraph" | "signedIn" | "timer"> {}
 
-export class ReactRenderer implements IRenderer {
+export class ReactRenderer implements Renderer {
   private readonly root: Root;
-  private props: IProps = {
+  private props: Props = {
     performanceGraph: { data: [] },
     signedIn: null,
     timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
@@ -29,7 +29,7 @@ export class ReactRenderer implements IRenderer {
 
   constructor(
     element: HTMLElement,
-    presenters: IPresenter[],
+    presenters: Presenter[],
     private readonly applicationInitializer: ApplicationInitializer,
     private readonly performanceGraphViewer: PerformanceGraphViewer,
     private readonly pomodoroTimerStarter: PomodoroTimerStarter,
@@ -49,7 +49,7 @@ export class ReactRenderer implements IRenderer {
     this.renderProps({});
   }
 
-  public renderPerformanceGraph(performanceGraph: IPerformanceGraph): void {
+  public renderPerformanceGraph(performanceGraph: PerformanceGraph): void {
     this.renderProps({ performanceGraph });
   }
 
@@ -57,11 +57,11 @@ export class ReactRenderer implements IRenderer {
     this.renderProps({ signedIn });
   }
 
-  public renderTimer(timer: IPomodoroTimer): void {
+  public renderTimer(timer: PomodoroTimer): void {
     this.renderProps({ timer });
   }
 
-  private renderProps(props: Partial<IProps>): void {
+  private renderProps(props: Partial<Props>): void {
     this.props = { ...this.props, ...props };
 
     this.root.render(

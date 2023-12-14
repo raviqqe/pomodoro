@@ -1,6 +1,6 @@
 import { map, range } from "@raviqqe/loscore";
 import { afterEach, beforeEach, it, vi, expect, type Mocked } from "vitest";
-import { type ITimerPresenter } from "./timer-presenter.js";
+import { type TimerPresenter } from "./timer-presenter.js";
 import { Timer } from "./timer.js";
 
 const dummyCallbacks = {
@@ -8,7 +8,7 @@ const dummyCallbacks = {
   tickCallback: async () => {},
 };
 
-let timerPresenter: Mocked<ITimerPresenter>;
+let timerPresenter: Mocked<TimerPresenter>;
 let timer: Timer;
 
 beforeEach(() => {

@@ -36,12 +36,12 @@ const GitHubLink = styled.a`
   line-height: 0ex;
 `;
 
-export interface IProps {
+export interface Props {
   repositoryUrl: string;
   signIn: () => void;
 }
 
-export const Landing = ({ repositoryUrl, signIn }: IProps): JSX.Element => (
+export const Landing = ({ repositoryUrl, signIn }: Props): JSX.Element => (
   <Container>
     <Title>P🍅m🍅d🍅r🍅</Title>
     <SignIn signIn={signIn} />

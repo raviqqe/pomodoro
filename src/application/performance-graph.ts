@@ -1,3 +1,3 @@
-export interface IPerformanceGraph {
+export interface PerformanceGraph {
   data: { date: string; pomodoros: number }[];
 }

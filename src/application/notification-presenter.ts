@@ -1,3 +1,3 @@
-export interface INotificationPresenter {
+export interface NotificationPresenter {
   presentNotification(message: string): void;
 }

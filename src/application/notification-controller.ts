@@ -1,3 +1,3 @@
-export interface INotificationInitializer {
+export interface NotificationInitializer {
   initialize(): Promise<void>;
 }

@@ -1,13 +1,13 @@
 import { map, range } from "@raviqqe/loscore";
 import { Duration, DateTime } from "luxon";
 import { DateSerializer } from "../domain/date-serializer.js";
-import { type IPerformanceGraphPresenter } from "./performance-graph-presenter.js";
-import { type IPerformanceRecordRepository } from "./performance-record-repository.js";
+import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
+import { type PerformanceRecordRepository } from "./performance-record-repository.js";
 
 export class PerformanceGraphViewer {
   constructor(
-    private readonly performanceRecordRepository: IPerformanceRecordRepository,
-    private readonly performanceGraphPresenter: IPerformanceGraphPresenter,
+    private readonly performanceRecordRepository: PerformanceRecordRepository,
+    private readonly performanceGraphPresenter: PerformanceGraphPresenter,
   ) {}
 
   public async viewGraph(today: Date = new Date()): Promise<void> {

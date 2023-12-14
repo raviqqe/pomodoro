@@ -1,11 +1,11 @@
 import { type Mocked, expect, it, vi, beforeEach } from "vitest";
 import { DateSerializer } from "../domain/date-serializer.js";
-import { type IPerformanceGraphPresenter } from "./performance-graph-presenter.js";
+import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
 import { PerformanceGraphViewer } from "./performance-graph-viewer.js";
-import { type IPerformanceRecordRepository } from "./performance-record-repository.js";
+import { type PerformanceRecordRepository } from "./performance-record-repository.js";
 
-let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
-let performanceGraphPresenter: Mocked<IPerformanceGraphPresenter>;
+let performanceRecordRepository: Mocked<PerformanceRecordRepository>;
+let performanceGraphPresenter: Mocked<PerformanceGraphPresenter>;
 let viewer: PerformanceGraphViewer;
 
 beforeEach(() => {

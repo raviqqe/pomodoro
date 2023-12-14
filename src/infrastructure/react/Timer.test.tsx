@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
-import { Timer, type IProps } from "./Timer.js";
+import { Timer, type Props } from "./Timer.js";
 
-const commonProps: Omit<IProps, "state" | "stopped"> = {
+const commonProps: Omit<Props, "state" | "stopped"> = {
   seconds: 42,
   startTimer: async () => {},
   stopTimer: async () => {},

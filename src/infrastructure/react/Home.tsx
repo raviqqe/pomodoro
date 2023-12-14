@@ -2,10 +2,10 @@ import { styled } from "@linaria/react";
 import { useState } from "react";
 import {
   PerformanceGraph,
-  type IProps as IPerformanceGraphProps,
+  type Props as PerformanceGraphProps,
 } from "./PerformanceGraph.js";
 import { SignOut } from "./SignOut.js";
-import { Timer, type IProps as ITimerProps } from "./Timer.js";
+import { Timer, type Props as TimerProps } from "./Timer.js";
 import { ViewGraph } from "./ViewGraph.js";
 import { ViewTimer } from "./ViewTimer.js";
 
@@ -26,11 +26,11 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-export interface IProps
-  extends Omit<ITimerProps, "seconds" | "state" | "stopped">,
-    IPerformanceGraphProps {
+export interface Props
+  extends Omit<TimerProps, "seconds" | "state" | "stopped">,
+    PerformanceGraphProps {
   signOut: () => void;
-  timer: Pick<ITimerProps, "seconds" | "state" | "stopped">;
+  timer: Pick<TimerProps, "seconds" | "state" | "stopped">;
   viewGraph: () => Promise<void>;
 }
 
@@ -40,7 +40,7 @@ export const Home = ({
   timer,
   viewGraph,
   ...restProps
-}: IProps): JSX.Element => {
+}: Props): JSX.Element => {
   const [graphViewed, setGraphViewed] = useState(false);
 
   return (

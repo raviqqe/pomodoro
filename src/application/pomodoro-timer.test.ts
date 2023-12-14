@@ -1,16 +1,16 @@
 import { last, range } from "@raviqqe/loscore";
 import { afterEach, vi, type Mocked, beforeEach, expect, it } from "vitest";
-import { type INotificationPresenter } from "./notification-presenter.js";
-import { type IPerformanceRecordRepository } from "./performance-record-repository.js";
+import { type NotificationPresenter } from "./notification-presenter.js";
+import { type PerformanceRecordRepository } from "./performance-record-repository.js";
 import { PerformanceTracker } from "./performance-tracker.js";
-import { type IPomodoroTimerPresenter } from "./pomodoro-timer-presenter.js";
+import { type PomodoroTimerPresenter } from "./pomodoro-timer-presenter.js";
 import { PomodoroTimerState } from "./pomodoro-timer-state.js";
 import { PomodoroTimer } from "./pomodoro-timer.js";
 import { Timer } from "./timer.js";
 
-let timerPresenter: Mocked<IPomodoroTimerPresenter>;
-let notificationPresenter: Mocked<INotificationPresenter>;
-let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
+let timerPresenter: Mocked<PomodoroTimerPresenter>;
+let notificationPresenter: Mocked<NotificationPresenter>;
+let performanceRecordRepository: Mocked<PerformanceRecordRepository>;
 let pomodoroTimer: PomodoroTimer;
 
 beforeEach(() => {
