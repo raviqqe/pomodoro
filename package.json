@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@linaria/react": "^6.0.0",
-    "@raviqqe/loscore": "^0.1.11",
+    "@raviqqe/loscore": "^0.2.0",
     "@sentry/browser": "^7.87.0",
     "default-import": "^1.1.5",
     "firebase": "^10.7.1",
