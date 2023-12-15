@@ -1,9 +1,9 @@
 import { range } from "@raviqqe/loscore";
 import { vi, beforeEach, it, expect, type Mocked } from "vitest";
-import { type IPerformanceRecordRepository } from "./performance-record-repository.js";
+import { type PerformanceRecordRepository } from "./performance-record-repository.js";
 import { PerformanceTracker } from "./performance-tracker.js";
 
-let performanceRecordRepository: Mocked<IPerformanceRecordRepository>;
+let performanceRecordRepository: Mocked<PerformanceRecordRepository>;
 let tracker: PerformanceTracker;
 
 beforeEach(() => {

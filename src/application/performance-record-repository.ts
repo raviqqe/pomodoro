@@ -1,8 +1,8 @@
-import { type IPerformanceRecord } from "./performance-record.js";
+import { type PerformanceRecord } from "./performance-record.js";
 
-export interface IPerformanceRecordRepository {
-  create(record: IPerformanceRecord): Promise<void>;
-  findOne(date: string): Promise<IPerformanceRecord | null>;
-  findManySince(date: string): Promise<IPerformanceRecord[]>;
-  update(record: IPerformanceRecord): Promise<void>;
+export interface PerformanceRecordRepository {
+  create(record: PerformanceRecord): Promise<void>;
+  findOne(date: string): Promise<PerformanceRecord | null>;
+  findManySince(date: string): Promise<PerformanceRecord[]>;
+  update(record: PerformanceRecord): Promise<void>;
 }

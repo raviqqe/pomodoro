@@ -1,9 +1,9 @@
-import { type ITimerPresenter } from "./timer-presenter.js";
+import { type TimerPresenter } from "./timer-presenter.js";
 
 export class Timer {
   private interval?: number;
 
-  constructor(private readonly presenter: ITimerPresenter) {}
+  constructor(private readonly presenter: TimerPresenter) {}
 
   public start(
     duration: number,

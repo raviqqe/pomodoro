@@ -12,11 +12,11 @@ import {
   setDoc,
   where,
 } from "firebase/firestore";
-import { type IPerformanceRecordRepository } from "../../application/performance-record-repository.js";
-import { type IPerformanceRecord } from "../../application/performance-record.js";
+import { type PerformanceRecordRepository } from "../../application/performance-record-repository.js";
+import { type PerformanceRecord } from "../../application/performance-record.js";
 
 export class FirestorePerformanceRecordRepository
-  implements IPerformanceRecordRepository
+  implements PerformanceRecordRepository
 {
   private readonly auth: Auth;
   private readonly firestore: Firestore;
@@ -26,36 +26,36 @@ export class FirestorePerformanceRecordRepository
     this.firestore = getFirestore(app);
   }
 
-  public async create(record: IPerformanceRecord): Promise<void> {
+  public async create(record: PerformanceRecord): Promise<void> {
     await this.createOrUpdate(record);
   }
 
-  public async findOne(date: string): Promise<IPerformanceRecord | null> {
+  public async findOne(date: string): Promise<PerformanceRecord | null> {
     const snapshot = await getDocs(
       query(this.collection(), where("date", "==", date)),
     );
     const documentSnapshot = snapshot.docs[0];
 
     return documentSnapshot
-      ? (documentSnapshot.data() as IPerformanceRecord)
+      ? (documentSnapshot.data() as PerformanceRecord)
       : null;
   }
 
-  public async findManySince(date: string): Promise<IPerformanceRecord[]> {
+  public async findManySince(date: string): Promise<PerformanceRecord[]> {
     const snapshot = await getDocs(
       query(this.collection(), where("date", ">=", date), orderBy("date")),
     );
 
     return snapshot.docs.map(
-      (snapshot) => snapshot.data() as IPerformanceRecord,
+      (snapshot) => snapshot.data() as PerformanceRecord,
     );
   }
 
-  public async update(record: IPerformanceRecord): Promise<void> {
+  public async update(record: PerformanceRecord): Promise<void> {
     await this.createOrUpdate(record);
   }
 
-  public async createOrUpdate(record: IPerformanceRecord): Promise<void> {
+  public async createOrUpdate(record: PerformanceRecord): Promise<void> {
     await setDoc(doc(this.collection(), record.date), record);
   }
 

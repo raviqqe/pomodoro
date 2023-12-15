@@ -1,5 +1,5 @@
-import { type IPerformanceGraph } from "./performance-graph.js";
+import { type PerformanceGraph } from "./performance-graph.js";
 
-export interface IPerformanceGraphPresenter {
-  presentGraph(graph: IPerformanceGraph): void;
+export interface PerformanceGraphPresenter {
+  presentGraph(graph: PerformanceGraph): void;
 }

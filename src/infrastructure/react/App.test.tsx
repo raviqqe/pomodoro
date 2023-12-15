@@ -6,7 +6,7 @@ import {
 } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
-import { App, type IProps } from "./App.js";
+import { App, type Props } from "./App.js";
 
 const initialize = vi.fn();
 
@@ -16,7 +16,7 @@ beforeEach(() => {
   initialize.mockReset().mockResolvedValue(undefined);
 });
 
-const props: IProps = {
+const props: Props = {
   initialize,
   performanceGraph: { data: [] },
   repositoryUrl: "",

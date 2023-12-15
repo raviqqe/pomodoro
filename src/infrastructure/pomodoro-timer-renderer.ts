@@ -1,16 +1,16 @@
-import { type IPomodoroTimerPresenter } from "../application/pomodoro-timer-presenter.js";
+import { type PomodoroTimerPresenter } from "../application/pomodoro-timer-presenter.js";
 import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
-import { type IRenderer, type IPomodoroTimer } from "./renderer.js";
+import { type Renderer, type PomodoroTimer } from "./renderer.js";
 
-export class PomodoroTimerPresenter implements IPomodoroTimerPresenter {
-  private renderer: IRenderer | null = null;
-  private timer: IPomodoroTimer = {
+export class PomodoroTimerRenderer implements PomodoroTimerPresenter {
+  private renderer: Renderer | null = null;
+  private timer: PomodoroTimer = {
     seconds: 0,
     state: PomodoroTimerState.Pomodoro,
     stopped: true,
   };
 
-  public setRenderer(renderer: IRenderer): void {
+  public setRenderer(renderer: Renderer): void {
     this.renderer = renderer;
   }
 
@@ -26,7 +26,7 @@ export class PomodoroTimerPresenter implements IPomodoroTimerPresenter {
     this.renderTimer({ stopped });
   }
 
-  private renderTimer(timer: Partial<IPomodoroTimer>): void {
+  private renderTimer(timer: Partial<PomodoroTimer>): void {
     this.timer = { ...this.timer, ...timer };
 
     this.renderer?.renderTimer(this.timer);
