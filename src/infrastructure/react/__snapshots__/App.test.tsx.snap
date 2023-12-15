@@ -3,27 +3,29 @@
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="mocked-styled-10"
+    class="mocked-styled-10 c2c63xu"
   >
     <div
-      class="mocked-styled-5"
+      class="mocked-styled-5 csepmpo"
     >
       <div
-        class="mocked-styled-6"
+        class="mocked-styled-6 s1oxn5sa"
       >
         🍅
       </div>
       <button
-        class="mocked-styled-4 mocked-styled-2"
+        class="mocked-styled-4 bunojaf tn2f353 bunojaf"
+        style="--bunojaf-0: tomato;"
       >
         Start
       </button>
     </div>
     <div
-      class="mocked-styled-11"
+      class="mocked-styled-11 b7s45km"
     >
       <button
-        class="mocked-styled-3 mocked-styled-2"
+        class="mocked-styled-3 bunojaf cki2aja bunojaf"
+        style="--bunojaf-0: dimgray;"
       >
         <svg
           fill="currentColor"
@@ -45,7 +47,8 @@ exports[`renders after a user signs in 1`] = `
       </button>
       <button
         aria-label="View Graph"
-        class="mocked-styled-3 mocked-styled-2"
+        class="mocked-styled-3 bunojaf cki2aja bunojaf"
+        style="--bunojaf-0: dimgray;"
       >
         <svg
           fill="currentColor"
@@ -69,20 +72,21 @@ exports[`renders after a user signs in 1`] = `
 exports[`renders after a user signs out 1`] = `
 <div>
   <div
-    class="mocked-styled-12"
+    class="mocked-styled-12 c3ap7hf"
   >
     <div
-      class="mocked-styled-13"
+      class="mocked-styled-13 t1xgehma"
     >
       P🍅m🍅d🍅r🍅
     </div>
     <button
-      class="mocked-styled-4 mocked-styled-2"
+      class="mocked-styled-4 bunojaf tn2f353 bunojaf"
+      style="--bunojaf-0: tomato;"
     >
       Sign in
     </button>
     <a
-      class="mocked-styled-14"
+      class="mocked-styled-14 gim0e6u"
       href=""
       target="_blank"
     >
@@ -107,7 +111,7 @@ exports[`renders after a user signs out 1`] = `
 exports[`renders before a user signs in 1`] = `
 <div>
   <div
-    class="mocked-styled-15"
+    class="mocked-styled-15 lmlxdpd"
   >
     <span
       style="display: inherit;"

@@ -1,4 +1,4 @@
-import { css } from "linaria";
+import { css } from "@linaria/core";
 import { black, lightBlue } from "./style/colors.js";
 
 export const globalStyle = css`

@@ -1,4 +1,4 @@
-import linaria from "@linaria/vite";
+import linaria from "@wyw-in-js/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { UserConfigExport } from "vitest/config";
