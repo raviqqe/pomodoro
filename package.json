@@ -28,7 +28,6 @@
   "devDependencies": {
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@linaria/vite": "^5.0.4",
     "@raviqqe/eslint-config": "^2.0.3",
     "@raviqqe/react-tsconfig": "^1.0.19",
     "@testing-library/react": "^14.1.2",
@@ -38,6 +37,7 @@
     "@types/recharts": "^2.0.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.0.4",
+    "@wyw-in-js/vite": "^5.0.4",
     "firebase-tools": "^13.0.1",
     "jsdom": "^23.0.1",
     "resize-observer-polyfill": "^1.5.1",
