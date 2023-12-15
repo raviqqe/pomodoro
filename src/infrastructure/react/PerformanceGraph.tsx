@@ -10,7 +10,7 @@ import {
   Bar,
   BarChart,
 } from "recharts";
-import { type PerformanceGraph } from "../../application/performance-graph.js";
+import type * as application from "../../application.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { grey, red, white } from "./style/colors.js";
 
@@ -25,7 +25,7 @@ const Message = styled.div`
 `;
 
 export interface Props {
-  performanceGraph: PerformanceGraph;
+  performanceGraph: application.PerformanceGraph;
 }
 
 export const PerformanceGraph = ({

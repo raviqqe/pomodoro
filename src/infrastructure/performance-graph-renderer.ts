@@ -2,7 +2,7 @@ import { type PerformanceGraphPresenter } from "../application/performance-graph
 import { type PerformanceGraph } from "../application/performance-graph.js";
 import { type Renderer } from "./renderer.js";
 
-export class PerformanceGraphPresenter implements PerformanceGraphPresenter {
+export class PerformanceGraphRenderer implements PerformanceGraphPresenter {
   private renderer: Renderer | null = null;
 
   public setRenderer(renderer: Renderer): void {
