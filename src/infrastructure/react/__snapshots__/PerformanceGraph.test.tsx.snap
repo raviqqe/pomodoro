@@ -2,7 +2,7 @@
 
 exports[`renders with data 1`] = `
 <div
-  class="mocked-styled-0"
+  class="mocked-styled-0 c18md0o3"
 >
   <div
     class="recharts-responsive-container"
@@ -13,7 +13,7 @@ exports[`renders with data 1`] = `
 
 exports[`renders with no data 1`] = `
 <div
-  class="mocked-styled-1"
+  class="mocked-styled-1 mj1zets"
 >
   No performance graph to show yet!
 </div>
