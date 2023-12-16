@@ -1,20 +1,19 @@
-import { css } from "@linaria/core";
+import css from "noop-tag";
 import { black, lightBlue } from "./style/colors.js";
 
+// TODO Use a `css` tag from `@linaria/core`.
 export const globalStyle = css`
-  :global() {
-    body {
-      background: ${lightBlue};
-      margin: 0;
-      padding: 0;
-      color: ${black};
-      font-family: Roboto, sans-serif;
-      line-height: 1.4;
-      font-size: 16px;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-    }
+  body {
+    background: ${lightBlue};
+    margin: 0;
+    padding: 0;
+    color: ${black};
+    font-family: Roboto, sans-serif;
+    line-height: 1.4;
+    font-size: 16px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
   }
 `;
 
