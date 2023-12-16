@@ -1,20 +1,18 @@
-import { css } from "@linaria/core";
 import { black, lightBlue } from "./style/colors.js";
 
-export const globalStyle = css`
-  :global() {
-    body {
-      background: ${lightBlue};
-      margin: 0;
-      padding: 0;
-      color: ${black};
-      font-family: Roboto, sans-serif;
-      line-height: 1.4;
-      font-size: 16px;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-    }
+// TODO Use a `css` tag.
+export const globalStyle = `
+  body {
+    background: ${lightBlue};
+    margin: 0;
+    padding: 0;
+    color: ${black};
+    font-family: Roboto, sans-serif;
+    line-height: 1.4;
+    font-size: 16px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
   }
 `;
 
