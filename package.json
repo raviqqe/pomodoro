@@ -14,8 +14,8 @@
   "dependencies": {
     "@linaria/core": "^6.0.0",
     "@linaria/react": "^6.0.0",
-    "@raviqqe/loscore": "^0.2.0",
-    "@sentry/browser": "^7.87.0",
+    "@raviqqe/loscore": "^0.2.1",
+    "@sentry/browser": "^7.88.0",
     "default-import": "^1.1.5",
     "firebase": "^10.7.1",
     "luxon": "^3.4.4",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@raviqqe/eslint-config": "^2.0.3",
+    "@raviqqe/eslint-config": "^2.0.4",
     "@raviqqe/react-tsconfig": "^1.0.19",
     "@testing-library/react": "^14.1.2",
     "@types/luxon": "^3.3.7",
@@ -40,11 +40,11 @@
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.0.4",
     "@wyw-in-js/vite": "^0.2.2",
-    "firebase-tools": "^13.0.1",
+    "firebase-tools": "^13.0.2",
     "jsdom": "^23.0.1",
     "resize-observer-polyfill": "^1.5.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.8",
+    "vite": "^5.0.9",
     "vite-plugin-pwa": "^0.17.4",
     "vitest": "^1.0.4"
   }

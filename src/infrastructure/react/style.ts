@@ -1,4 +1,4 @@
-import css from "noop-tag";
+import { css } from "@linaria/core";
 import { black, lightBlue } from "./style/colors.js";
 
 // TODO Use a `css` tag from `@linaria/core`.
