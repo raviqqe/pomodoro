@@ -1,6 +1,6 @@
 import { black, lightBlue } from "./style/colors.js";
 
-// TODO Use a `css` tag.
+// TODO Use a `css` tag from `@linaria/core`.
 export const globalStyle = `
   body {
     background: ${lightBlue};
