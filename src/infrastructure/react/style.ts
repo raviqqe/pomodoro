@@ -1,7 +1,8 @@
+import css from "noop-tag";
 import { black, lightBlue } from "./style/colors.js";
 
 // TODO Use a `css` tag from `@linaria/core`.
-export const globalStyle = `
+export const globalStyle = css`
   body {
     background: ${lightBlue};
     margin: 0;
