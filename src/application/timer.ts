@@ -1,7 +1,7 @@
 import { type TimerPresenter } from "./timer-presenter.js";
 
 export class Timer {
-  private interval?: number;
+  private interval?: NodeJS.Timeout;
 
   constructor(private readonly presenter: TimerPresenter) {}
 
@@ -16,7 +16,7 @@ export class Timer {
     this.presenter.presentTime(duration);
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    this.interval = window.setInterval(async () => {
+    this.interval = setInterval(async () => {
       duration--;
 
       if (duration < 0) {
