@@ -7,7 +7,7 @@ import {
   type User,
 } from "firebase/auth";
 import { type AuthenticationController } from "../../application/authentication-controller.js";
-import { sleep } from "../../domain/utilities.js";
+import { sleep } from "@raviqqe/loscore/async";
 
 export class FirebaseAuthenticationController
   implements AuthenticationController
