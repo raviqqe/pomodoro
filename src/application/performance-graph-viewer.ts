@@ -1,8 +1,8 @@
 import { map, range } from "@raviqqe/loscore";
-import { Duration, DateTime } from "luxon";
 import { DateSerializer } from "../domain/date-serializer.js";
 import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
 import { type PerformanceRecordRepository } from "./performance-record-repository.js";
+import { milliseconds, subMonths } from "date-fns";
 
 export class PerformanceGraphViewer {
   constructor(
@@ -12,11 +12,7 @@ export class PerformanceGraphViewer {
 
   public async viewGraph(today: Date = new Date()): Promise<void> {
     const records = await this.performanceRecordRepository.findManySince(
-      DateSerializer.serialize(
-        DateTime.fromJSDate(today)
-          .minus(Duration.fromObject({ months: 1 }))
-          .toJSDate(),
-      ),
+      DateSerializer.serialize(subMonths(new Date(today), 1)),
     );
 
     const firstRecord = records[0];
@@ -28,7 +24,7 @@ export class PerformanceGraphViewer {
               range(
                 DateSerializer.deserialize(firstRecord.date).getTime(),
                 today.getTime() + 1,
-                Duration.fromObject({ days: 1 }).as("milliseconds"),
+                milliseconds({ days: 1 }),
               ),
               (milliseconds) => {
                 const date: string = DateSerializer.serialize(
