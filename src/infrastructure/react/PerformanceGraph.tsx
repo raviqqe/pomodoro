@@ -1,5 +1,6 @@
 import { styled } from "@linaria/react";
 import { last } from "@raviqqe/loscore";
+import { differenceInDays } from "date-fns";
 import {
   CartesianGrid,
   ResponsiveContainer,
@@ -12,7 +13,6 @@ import {
 import type * as application from "../../application.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { grey, red, white } from "./style/colors.js";
-import { differenceInDays } from "date-fns";
 
 const Container = styled.div`
   width: 80vw;

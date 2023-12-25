@@ -1,8 +1,8 @@
 import { map, range } from "@raviqqe/loscore";
+import { milliseconds, subMonths } from "date-fns";
 import { DateSerializer } from "../domain/date-serializer.js";
 import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
 import { type PerformanceRecordRepository } from "./performance-record-repository.js";
-import { milliseconds, subMonths } from "date-fns";
 
 export class PerformanceGraphViewer {
   constructor(
