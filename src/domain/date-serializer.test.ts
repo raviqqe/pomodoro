@@ -1,21 +1,18 @@
-import { DateTime } from "luxon";
 import { expect, it } from "vitest";
 import { DateSerializer } from "./date-serializer.js";
 
 it("deserializes a date", () => {
   expect(DateSerializer.deserialize("20190831").getTime()).toBe(
-    DateTime.local(2019, 8, 31).toJSDate().getTime(),
+    new Date(2019, 7, 31).getTime(),
   );
 });
 
 it("serializes a date", () => {
-  expect(DateSerializer.serialize(DateTime.local(2019, 8, 31).toJSDate())).toBe(
-    "20190831",
-  );
+  expect(DateSerializer.serialize(new Date(2019, 7, 31))).toBe("20190831");
 });
 
 it("keeps equivalence", () => {
-  const date = DateTime.local(2019, 8, 31).toJSDate();
+  const date = new Date(2019, 8, 31);
 
   expect(
     DateSerializer.deserialize(DateSerializer.serialize(date)).getTime(),

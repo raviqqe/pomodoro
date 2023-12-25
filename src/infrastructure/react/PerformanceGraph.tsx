@@ -1,6 +1,6 @@
 import { styled } from "@linaria/react";
 import { last } from "@raviqqe/loscore";
-import { DateTime } from "luxon";
+import { differenceInDays } from "date-fns";
 import {
   CartesianGrid,
   ResponsiveContainer,
@@ -29,27 +29,23 @@ export interface Props {
 }
 
 export const PerformanceGraph = ({
-  performanceGraph: { data },
-}: Props): JSX.Element =>
-  data.length === 0 ? (
-    <Message>No performance graph to show yet!</Message>
-  ) : (
+  performanceGraph: { data: points },
+}: Props): JSX.Element => {
+  const lastPoint = last(points);
+
+  return lastPoint ? (
     <Container>
       <ResponsiveContainer>
-        <BarChart data={data}>
+        <BarChart data={points}>
           <CartesianGrid fill={white} stroke={grey} strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
             stroke={white}
             tickFormatter={(date: string): string => {
-              const days: number = DateTime.fromJSDate(
-                DateSerializer.deserialize(
-                  (last(data) as { date: string }).date,
-                ),
-              ).diff(
-                DateTime.fromJSDate(DateSerializer.deserialize(date)),
-                "days",
-              ).days;
+              const days: number = differenceInDays(
+                DateSerializer.deserialize(lastPoint.date),
+                DateSerializer.deserialize(date),
+              );
 
               return days === 0 ? "Today" : `${days} days ago`;
             }}
@@ -67,4 +63,7 @@ export const PerformanceGraph = ({
         </BarChart>
       </ResponsiveContainer>
     </Container>
+  ) : (
+    <Message>No performance graph to show yet!</Message>
   );
+};
