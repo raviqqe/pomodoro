@@ -1,4 +1,4 @@
-import { IoMdStats } from "react-icons/io/index.js";
+import { IoMdStats } from "react-icons/io";
 import { CircleButton } from "./CircleButton.js";
 
 interface Props {
