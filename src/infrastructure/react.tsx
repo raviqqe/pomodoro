@@ -66,7 +66,7 @@ export class ReactRenderer implements Renderer {
 
     this.root.render(
       <StrictMode>
-        <style>{globalStyle}</style>
+        <style className={globalStyle} />
         <App
           {...this.props}
           initialize={() => this.applicationInitializer.initialize()}
