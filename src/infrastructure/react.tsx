@@ -16,8 +16,7 @@ interface Presenter {
   setRenderer(renderer: Renderer): void;
 }
 
-interface Props
-  extends Pick<AppProps, "performanceGraph" | "signedIn" | "timer"> {}
+type Props = Pick<AppProps, "performanceGraph" | "signedIn" | "timer">;
 
 export class ReactRenderer implements Renderer {
   private readonly root: Root;
