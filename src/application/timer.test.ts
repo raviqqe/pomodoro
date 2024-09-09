@@ -1,5 +1,5 @@
 import { map, range } from "@raviqqe/loscore";
-import { afterEach, beforeEach, it, vi, expect, type Mocked } from "vitest";
+import { afterEach, beforeEach, expect, it, type Mocked, vi } from "vitest";
 import { type TimerPresenter } from "./timer-presenter.js";
 import { Timer } from "./timer.js";
 

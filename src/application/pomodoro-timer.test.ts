@@ -1,5 +1,5 @@
 import { last, range } from "@raviqqe/loscore";
-import { afterEach, vi, type Mocked, beforeEach, expect, it } from "vitest";
+import { afterEach, beforeEach, expect, it, type Mocked, vi } from "vitest";
 import { type NotificationPresenter } from "./notification-presenter.js";
 import { type PerformanceRecordRepository } from "./performance-record-repository.js";
 import { PerformanceTracker } from "./performance-tracker.js";

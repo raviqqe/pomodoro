@@ -1,4 +1,4 @@
-import { type Mocked, expect, it, vi, beforeEach } from "vitest";
+import { beforeEach, expect, it, type Mocked, vi } from "vitest";
 import { DateSerializer } from "../domain/date-serializer.js";
 import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
 import { PerformanceGraphViewer } from "./performance-graph-viewer.js";

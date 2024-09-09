@@ -8,8 +8,8 @@ export class Timer {
   public start(
     duration: number,
     callbacks: {
-      tickCallback: () => void | Promise<void>;
-      endCallback: () => void | Promise<void>;
+      endCallback: () => Promise<void> | void;
+      tickCallback: () => Promise<void> | void;
     },
   ): void {
     this.presenter.presentStopped(false);

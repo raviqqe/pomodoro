@@ -1,9 +1,9 @@
 import {
-  render,
-  fireEvent,
-  waitFor,
-  type RenderResult,
   act,
+  fireEvent,
+  render,
+  type RenderResult,
+  waitFor,
 } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
