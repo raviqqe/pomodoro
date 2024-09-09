@@ -33,16 +33,16 @@ export interface Props {
   seconds: number;
   startTimer: () => void;
   state: PomodoroTimerState;
-  stopTimer: () => void;
   stopped: boolean;
+  stopTimer: () => void;
 }
 
 export const Timer = ({
   seconds,
   startTimer,
   state,
-  stopTimer,
   stopped,
+  stopTimer,
 }: Props): JSX.Element => (
   <Container>
     {stopped ? (

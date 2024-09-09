@@ -10,7 +10,7 @@ import { type SignInManager } from "../application/sign-in-manager.js";
 import { type SignOutManager } from "../application/sign-out-manager.js";
 import { App, type Props as AppProps } from "./react/App.js";
 import { globalStyle } from "./react/style.js";
-import { type Renderer, type PomodoroTimer } from "./renderer.js";
+import { type PomodoroTimer, type Renderer } from "./renderer.js";
 
 interface Presenter {
   setRenderer(renderer: Renderer): void;

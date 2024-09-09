@@ -2,13 +2,13 @@ import { styled } from "@linaria/react";
 import { last } from "@raviqqe/loscore";
 import { differenceInDays } from "date-fns";
 import {
+  Bar,
+  BarChart,
   CartesianGrid,
+  Label,
   ResponsiveContainer,
   XAxis,
   YAxis,
-  Label,
-  Bar,
-  BarChart,
 } from "recharts";
 import type * as application from "../../application.js";
 import { DateSerializer } from "../../domain/date-serializer.js";

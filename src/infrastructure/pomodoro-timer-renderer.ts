@@ -1,6 +1,6 @@
 import { type PomodoroTimerPresenter } from "../application/pomodoro-timer-presenter.js";
 import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
-import { type Renderer, type PomodoroTimer } from "./renderer.js";
+import { type PomodoroTimer, type Renderer } from "./renderer.js";
 
 export class PomodoroTimerRenderer implements PomodoroTimerPresenter {
   private renderer: Renderer | null = null;
