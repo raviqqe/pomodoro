@@ -26,7 +26,7 @@
     "react-spinners": "^0.14.1",
     "react-use": "^17.5.1",
     "recharts": "^2.13.2",
-    "worker-timers": "^8.0.10"
+    "worker-timers": "^8.0.11"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.25.9",
