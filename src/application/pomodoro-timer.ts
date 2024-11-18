@@ -45,8 +45,8 @@ export class PomodoroTimer {
     return this.pomodoro
       ? PomodoroTimerState.Pomodoro
       : (this.breakCount + 1) % 4 === 0
-      ? PomodoroTimerState.LongBreak
-      : PomodoroTimerState.ShortBreak;
+        ? PomodoroTimerState.LongBreak
+        : PomodoroTimerState.ShortBreak;
   }
 
   private startPomodoro(): void {
