@@ -19,14 +19,14 @@ export class PomodoroTimer {
 
   public start(): void {
     switch (this.state()) {
+      case PomodoroTimerState.LongBreak:
+        this.startBreak(15 * 60);
+        break;
       case PomodoroTimerState.Pomodoro:
         this.startPomodoro();
         break;
       case PomodoroTimerState.ShortBreak:
         this.startBreak(5 * 60);
-        break;
-      case PomodoroTimerState.LongBreak:
-        this.startBreak(15 * 60);
         break;
       default:
         throw new Error("unreachable");
