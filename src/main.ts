@@ -6,7 +6,7 @@ import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper.js";
 import { PomodoroTimer } from "./application/pomodoro-timer.js";
 import { SignInManager } from "./application/sign-in-manager.js";
 import { SignOutManager } from "./application/sign-out-manager.js";
-import configuration from "./configuration.json";
+import configuration from "./configuration.json" with { type: "json" };
 import { AuthenticationRenderer } from "./infrastructure/authentication-renderer.js";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller.js";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer.js";

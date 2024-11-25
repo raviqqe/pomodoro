@@ -10,6 +10,7 @@ export default defineConfig({
     linaria({
       include: ["src/**/*.{ts,tsx}"],
       babelOptions: {
+        plugins: ["@babel/plugin-syntax-import-attributes"],
         presets: ["@babel/preset-typescript", "@babel/preset-react"],
       },
     }),
