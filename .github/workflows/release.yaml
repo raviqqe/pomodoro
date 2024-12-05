@@ -12,5 +12,5 @@ jobs:
           node-version: latest
       - run: npm ci
       - run: npm run build
-      - run: echo GOOGLE_APPLICATION_CREDENTIALS=(echo $GOOGLE_APPLICATION_CREDENTIALS | base64 -d) > ${{ github.env }}
+      - run: echo GOOGLE_APPLICATION_CREDENTIALS=$(echo $GOOGLE_APPLICATION_CREDENTIALS | base64 -d) > ${{ github.env }}
       - run: npm run deploy
