@@ -5,6 +5,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     environment: production
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -12,8 +13,6 @@ jobs:
           node-version: latest
       - run: npm ci
       - run: npm run build
-      - run: echo "$GOOGLE_APPLICATION_CREDENTIALS" > /tmp/key.json
       - run: npm run deploy
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: /tmp/key.json
-        if: github.ref == 'refs/heads/main'
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
