@@ -1,0 +1,20 @@
+name: release
+on:
+  - push
+environments:
+  - production
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+      - run: npm ci
+      - run: npm run build
+      - run: npm run --silent deploy -- --token $FIREBASE_TOKEN
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.FIREBASE_TOKEN }}
+        if: github.ref == 'refs/heads/main'
