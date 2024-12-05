@@ -5,6 +5,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     environment: production
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,4 +17,3 @@ jobs:
       - run: npm run deploy
         env:
           GOOGLE_APPLICATION_CREDENTIALS: /tmp/key.json
-        if: github.ref == 'refs/heads/main'
