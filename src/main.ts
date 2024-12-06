@@ -1,3 +1,5 @@
+import "@fontsource/chelsea-market";
+import "@fontsource/roboto";
 import { ApplicationInitializer } from "./application/application-initializer.js";
 import { PerformanceGraphViewer } from "./application/performance-graph-viewer.js";
 import { PerformanceTracker } from "./application/performance-tracker.js";
