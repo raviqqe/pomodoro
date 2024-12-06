@@ -1,75 +1,40 @@
 import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
-import { ApplicationInitializer } from "./application/application-initializer.js";
-import { PerformanceGraphViewer } from "./application/performance-graph-viewer.js";
-import { PerformanceTracker } from "./application/performance-tracker.js";
-import { PomodoroTimerStarter } from "./application/pomodoro-timer-starter.js";
-import { PomodoroTimerStopper } from "./application/pomodoro-timer-stopper.js";
-import { PomodoroTimer } from "./application/pomodoro-timer.js";
-import { SignInManager } from "./application/sign-in-manager.js";
-import { SignOutManager } from "./application/sign-out-manager.js";
 import configuration from "./configuration.json" with { type: "json" };
-import { AuthenticationRenderer } from "./infrastructure/authentication-renderer.js";
-import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller.js";
-import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer.js";
-import { FirestorePerformanceRecordRepository } from "./infrastructure/firebase/firestore-performance-record-repository.js";
-import { BuiltinNotificationController } from "./infrastructure/notification/builtin-notification-controller.js";
-import { BuiltinNotificationPresenter } from "./infrastructure/notification/builtin-notification-presenter.js";
-import { PerformanceGraphRenderer } from "./infrastructure/performance-graph-renderer.js";
-import { PomodoroTimerRenderer } from "./infrastructure/pomodoro-timer-renderer.js";
 import { ReactRenderer } from "./infrastructure/react.js";
-import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
+import { applicationInitializer } from "./main/application-initializer.js";
+import { authenticationPresenter } from "./main/authentication-presenter.js";
+import { errorReporter } from "./main/error-reporter.js";
+import { performanceGraphPresenter } from "./main/performance-graph-presenter.js";
+import { performanceGraphViewer } from "./main/performance-graph-viewer.js";
+import { pomodoroTimerPresenter } from "./main/pomodoro-timer-presenter.js";
+import { pomodoroTimerStarter } from "./main/pomodoro-timer-starter.js";
+import { pomodoroTimerStopper } from "./main/pomodoro-timer-stopper.js";
+import { signInManager } from "./main/sign-in-manager.js";
+import { signOutManager } from "./main/sign-out-manager.js";
 
-// Instantiate this at the very beginning to initialize Firebase's default app.
-const firebaseInitializer = new FirebaseInitializer(configuration.firebase);
-const errorReporter = new SentryErrorReporter(configuration.sentry.dsn);
-
-const main = () => {
+try {
   const element = document.getElementById("root");
 
   if (!element) {
     throw new Error("no root element");
   }
 
-  const firebaseApp = firebaseInitializer.initialize();
-  const authenticationController = new FirebaseAuthenticationController(
-    firebaseApp,
-  );
-  const authenticationPresenter = new AuthenticationRenderer();
-
-  const performanceRecordRepository = new FirestorePerformanceRecordRepository(
-    firebaseApp,
-  );
-  const pomodoroTimerPresenter = new PomodoroTimerRenderer();
-  const pomodoroTimer = new PomodoroTimer(
-    pomodoroTimerPresenter,
-    new BuiltinNotificationPresenter(),
-    new PerformanceTracker(performanceRecordRepository),
-  );
-
-  const graphPresenter = new PerformanceGraphRenderer();
-
   new ReactRenderer(
     element,
-    [authenticationPresenter, graphPresenter, pomodoroTimerPresenter],
-    new ApplicationInitializer(
-      authenticationController,
+    [
       authenticationPresenter,
-    ),
-    new PerformanceGraphViewer(performanceRecordRepository, graphPresenter),
-    new PomodoroTimerStarter(
-      pomodoroTimer,
-      new BuiltinNotificationController(),
-    ),
-    new PomodoroTimerStopper(pomodoroTimer),
-    new SignInManager(authenticationController, authenticationPresenter),
-    new SignOutManager(authenticationController, authenticationPresenter),
+      performanceGraphPresenter,
+      pomodoroTimerPresenter,
+    ],
+    applicationInitializer,
+    performanceGraphViewer,
+    pomodoroTimerStarter,
+    pomodoroTimerStopper,
+    signInManager,
+    signOutManager,
     configuration.repositoryUrl,
   ).render();
-};
-
-try {
-  main();
 } catch (error) {
   errorReporter.report(error);
 }
