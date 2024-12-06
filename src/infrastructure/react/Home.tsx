@@ -1,5 +1,6 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
+import { signOutManager } from "../../main/sign-out-manager.js";
 import {
   PerformanceGraph,
   type Props as PerformanceGraphProps,
@@ -29,14 +30,12 @@ const ButtonsContainer = styled.div`
 export interface Props
   extends Omit<TimerProps, "seconds" | "state" | "stopped">,
     PerformanceGraphProps {
-  signOut: () => void;
   timer: Pick<TimerProps, "seconds" | "state" | "stopped">;
   viewGraph: () => Promise<void>;
 }
 
 export const Home = ({
   performanceGraph,
-  signOut,
   timer,
   viewGraph,
   ...restProps
@@ -51,7 +50,7 @@ export const Home = ({
         <Timer {...timer} {...restProps} />
       )}
       <ButtonsContainer>
-        <SignOut signOut={signOut} />
+        <SignOut signOut={() => signOutManager.signOut()} />
         {graphViewed ? (
           <ViewTimer viewTimer={() => setGraphViewed(false)} />
         ) : (

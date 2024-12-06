@@ -6,23 +6,21 @@ import {
 } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
+import { applicationInitializer } from "../../main/application-initializer.js";
 import { App, type Props } from "./App.js";
 
-const initialize = vi.fn();
-
-const wait = () => waitFor(() => expect(initialize).toHaveBeenCalled());
+let wait = async () => {};
 
 beforeEach(() => {
-  initialize.mockReset().mockResolvedValue(undefined);
+  const initialize = vi
+    .spyOn(applicationInitializer, "initialize")
+    .mockResolvedValue(undefined);
+  wait = () => waitFor(() => expect(initialize).toHaveBeenCalled());
 });
 
 const props: Props = {
-  initialize,
   performanceGraph: { data: [] },
-  repositoryUrl: "",
   signedIn: null,
-  signIn: async () => {},
-  signOut: async () => {},
   startTimer: async () => {},
   stopTimer: async () => {},
   timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
