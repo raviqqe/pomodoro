@@ -16,7 +16,7 @@ exports[`renders 1`] = `
   </button>
   <a
     class="mocked-styled-4"
-    href=""
+    href="https://github.com/raviqqe/pomodoro"
     target="_blank"
   >
     <svg

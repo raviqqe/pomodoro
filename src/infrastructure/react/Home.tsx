@@ -1,5 +1,6 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
+import { signOutManager } from "../../main/sign-out-manager.js";
 import {
   PerformanceGraph,
   type Props as PerformanceGraphProps,
@@ -8,7 +9,6 @@ import { SignOut } from "./SignOut.js";
 import { Timer, type Props as TimerProps } from "./Timer.js";
 import { ViewGraph } from "./ViewGraph.js";
 import { ViewTimer } from "./ViewTimer.js";
-import { signOutManager } from "../../main/sign-out-manager.js";
 
 const Container = styled.div`
   display: flex;
