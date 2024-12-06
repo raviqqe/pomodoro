@@ -17,12 +17,8 @@ beforeEach(() => {
 });
 
 const props: Props = {
-  initialize,
   performanceGraph: { data: [] },
-  repositoryUrl: "",
   signedIn: null,
-  signIn: async () => {},
-  signOut: async () => {},
   startTimer: async () => {},
   stopTimer: async () => {},
   timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },

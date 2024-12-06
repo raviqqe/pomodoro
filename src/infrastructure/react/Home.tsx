@@ -8,6 +8,7 @@ import { SignOut } from "./SignOut.js";
 import { Timer, type Props as TimerProps } from "./Timer.js";
 import { ViewGraph } from "./ViewGraph.js";
 import { ViewTimer } from "./ViewTimer.js";
+import { signOutManager } from "../../main/sign-out-manager.js";
 
 const Container = styled.div`
   display: flex;
@@ -29,14 +30,12 @@ const ButtonsContainer = styled.div`
 export interface Props
   extends Omit<TimerProps, "seconds" | "state" | "stopped">,
     PerformanceGraphProps {
-  signOut: () => void;
   timer: Pick<TimerProps, "seconds" | "state" | "stopped">;
   viewGraph: () => Promise<void>;
 }
 
 export const Home = ({
   performanceGraph,
-  signOut,
   timer,
   viewGraph,
   ...restProps
@@ -51,7 +50,7 @@ export const Home = ({
         <Timer {...timer} {...restProps} />
       )}
       <ButtonsContainer>
-        <SignOut signOut={signOut} />
+        <SignOut signOut={() => signOutManager.signOut()} />
         {graphViewed ? (
           <ViewTimer viewTimer={() => setGraphViewed(false)} />
         ) : (

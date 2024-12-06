@@ -2,8 +2,9 @@ import { styled } from "@linaria/react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import { Home, type Props as HomeProps } from "./Home.js";
-import { Landing, type Props as LandingProps } from "./Landing.js";
+import { Landing } from "./Landing.js";
 import { white } from "./style/colors.js";
+import { applicationInitializer } from "../../main/application-initializer.js";
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -13,19 +14,12 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-export interface Props extends HomeProps, LandingProps {
-  initialize: () => Promise<void>;
+export interface Props extends HomeProps {
   signedIn: boolean | null;
 }
 
-export const App = ({
-  initialize,
-  repositoryUrl,
-  signedIn,
-  signIn,
-  ...homeProps
-}: Props): JSX.Element => {
-  useAsync(initialize, []);
+export const App = ({ signedIn, ...homeProps }: Props): JSX.Element => {
+  useAsync(() => applicationInitializer.initialize(), []);
 
   return signedIn === null ? (
     <LoaderContainer>
@@ -34,6 +28,6 @@ export const App = ({
   ) : signedIn ? (
     <Home {...homeProps} />
   ) : (
-    <Landing repositoryUrl={repositoryUrl} signIn={signIn} />
+    <Landing />
   );
 };

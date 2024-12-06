@@ -3,8 +3,5 @@ import { expect, it } from "vitest";
 import { Landing } from "./Landing.js";
 
 it("renders", () => {
-  expect(
-    render(<Landing repositoryUrl="" signIn={async () => {}} />).container
-      .firstChild,
-  ).toMatchSnapshot();
+  expect(render(<Landing />).container.firstChild).toMatchSnapshot();
 });
