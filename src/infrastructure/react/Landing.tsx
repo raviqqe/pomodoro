@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { SignIn } from "./SignIn.js";
 import { white } from "./style/colors.js";
 import { signInManager } from "../../main/sign-in-manager.js";
-import configuration from "../../configuration.json" with { type: "json" };
+import { configuration } from "../../configuration.js";
 
 const Container = styled.div`
   height: 100vh;
