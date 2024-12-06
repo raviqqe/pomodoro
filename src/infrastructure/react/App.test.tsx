@@ -6,8 +6,8 @@ import {
 } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
-import { App, type Props } from "./App.js";
 import { applicationInitializer } from "../../main/application-initializer.js";
+import { App, type Props } from "./App.js";
 
 let wait = async () => {};
 
