@@ -1,7 +1,6 @@
 import linaria from "@wyw-in-js/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import { UserConfigExport } from "vitest/config";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
@@ -28,9 +27,4 @@ export default defineConfig({
       },
     }),
   ],
-  test: {
-    environment: "jsdom",
-    include: ["src/**/*.test.ts{,x}"],
-    setupFiles: "src/test.ts",
-  },
-} satisfies UserConfigExport);
+});
