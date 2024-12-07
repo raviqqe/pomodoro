@@ -1,8 +1,8 @@
 import { act, fireEvent, render, waitFor } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
-import { Home, type Props } from "./Home.js";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
+import { Home, type Props } from "./Home.js";
 
 const props: Props = {
   performanceGraph: { data: [] },
