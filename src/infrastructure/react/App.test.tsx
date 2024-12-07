@@ -21,10 +21,7 @@ beforeEach(() => {
 const props: Props = {
   performanceGraph: { data: [] },
   signedIn: null,
-  startTimer: async () => {},
-  stopTimer: async () => {},
   timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
-  viewGraph: async () => {},
 };
 
 it("renders before a user signs in", async () => {

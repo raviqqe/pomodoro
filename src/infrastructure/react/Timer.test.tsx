@@ -5,8 +5,6 @@ import { type Props, Timer } from "./Timer.js";
 
 const commonProps: Omit<Props, "state" | "stopped"> = {
   seconds: 42,
-  startTimer: async () => {},
-  stopTimer: async () => {},
 };
 
 it("renders while running", () => {

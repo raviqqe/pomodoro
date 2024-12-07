@@ -11,10 +11,7 @@ import { Home, type Props } from "./Home.js";
 
 const props: Props = {
   performanceGraph: { data: [] },
-  startTimer: async () => {},
-  stopTimer: async () => {},
   timer: { seconds: 42, state: PomodoroTimerState.Pomodoro, stopped: false },
-  viewGraph: async () => {},
 };
 
 it("renders", () => {
