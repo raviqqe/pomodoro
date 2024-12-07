@@ -1,5 +1,6 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
+import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
 import { signOutManager } from "../../main/sign-out-manager.js";
 import {
   PerformanceGraph,
@@ -31,13 +32,11 @@ export interface Props
   extends Omit<TimerProps, "seconds" | "state" | "stopped">,
     PerformanceGraphProps {
   timer: Pick<TimerProps, "seconds" | "state" | "stopped">;
-  viewGraph: () => Promise<void>;
 }
 
 export const Home = ({
   performanceGraph,
   timer,
-  viewGraph,
   ...restProps
 }: Props): JSX.Element => {
   const [graphViewed, setGraphViewed] = useState(false);
@@ -56,7 +55,7 @@ export const Home = ({
         ) : (
           <ViewGraph
             viewGraph={async () => {
-              await viewGraph();
+              await performanceGraphViewer.viewGraph();
               setGraphViewed(true);
             }}
           />

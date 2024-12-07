@@ -1,10 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { type PerformanceGraphViewer } from "../application/performance-graph-viewer.js";
 import { type PerformanceGraph } from "../application/performance-graph.js";
-import { type PomodoroTimerStarter } from "../application/pomodoro-timer-starter.js";
 import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
-import { type PomodoroTimerStopper } from "../application/pomodoro-timer-stopper.js";
 import { App, type Props as AppProps } from "./react/App.js";
 import { globalStyle } from "./react/style.js";
 import { type PomodoroTimer, type Renderer } from "./renderer.js";
@@ -23,13 +20,7 @@ export class ReactRenderer implements Renderer {
     timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
   };
 
-  constructor(
-    element: HTMLElement,
-    presenters: Presenter[],
-    private readonly performanceGraphViewer: PerformanceGraphViewer,
-    private readonly pomodoroTimerStarter: PomodoroTimerStarter,
-    private readonly pomodoroTimerStopper: PomodoroTimerStopper,
-  ) {
+  constructor(element: HTMLElement, presenters: Presenter[]) {
     for (const presenter of presenters) {
       presenter.setRenderer(this);
     }
@@ -59,12 +50,7 @@ export class ReactRenderer implements Renderer {
     this.root.render(
       <StrictMode>
         <style className={globalStyle} />
-        <App
-          {...this.props}
-          startTimer={() => this.pomodoroTimerStarter.start()}
-          stopTimer={() => this.pomodoroTimerStopper.stop()}
-          viewGraph={() => this.performanceGraphViewer.viewGraph()}
-        />
+        <App {...this.props} />
       </StrictMode>,
     );
   }

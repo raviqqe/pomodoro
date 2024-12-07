@@ -1,5 +1,7 @@
 import { styled } from "@linaria/react";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
+import { pomodoroTimerStarter } from "../../main/pomodoro-timer-starter.js";
+import { pomodoroTimerStopper } from "../../main/pomodoro-timer-stopper.js";
 import { TextButton } from "./TextButton.js";
 import { white } from "./style/colors.js";
 
@@ -31,19 +33,11 @@ const Seconds = styled.span`
 
 export interface Props {
   seconds: number;
-  startTimer: () => void;
   state: PomodoroTimerState;
   stopped: boolean;
-  stopTimer: () => void;
 }
 
-export const Timer = ({
-  seconds,
-  startTimer,
-  state,
-  stopped,
-  stopTimer,
-}: Props): JSX.Element => (
+export const Timer = ({ seconds, state, stopped }: Props): JSX.Element => (
   <Container>
     {stopped ? (
       <>
@@ -54,7 +48,9 @@ export const Timer = ({
               ? "🛌"
               : "🛌🛌"}
         </State>
-        <TextButton onClick={startTimer}>Start</TextButton>
+        <TextButton onClick={() => pomodoroTimerStarter.start()}>
+          Start
+        </TextButton>
       </>
     ) : (
       <>
@@ -62,7 +58,7 @@ export const Timer = ({
           <Minutes>{Math.floor(seconds / 60)}</Minutes>
           <Seconds>{seconds % 60}</Seconds>
         </Time>
-        <TextButton onClick={stopTimer} secondary>
+        <TextButton onClick={() => pomodoroTimerStopper.stop()} secondary>
           Stop
         </TextButton>
       </>
