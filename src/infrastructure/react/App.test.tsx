@@ -25,37 +25,31 @@ const props: Props = {
 };
 
 it("renders before a user signs in", async () => {
-  let result: RenderResult | undefined;
-
-  act(() => {
-    result = render(<App {...props} signedIn={null} />);
+  const result = await act(async () => {
+    return render(<App {...props} signedIn={null} />);
   });
 
-  expect(result?.container).toMatchSnapshot();
+  expect(result.container).toMatchSnapshot();
 
   await wait();
 });
 
 it("renders after a user signs in", async () => {
-  let result: RenderResult | undefined;
-
-  act(() => {
-    result = render(<App {...props} signedIn />);
+  const result = await act(async () => {
+    return render(<App {...props} signedIn />);
   });
 
-  expect(result?.container).toMatchSnapshot();
+  expect(result.container).toMatchSnapshot();
 
   await wait();
 });
 
 it("renders after a user signs out", async () => {
-  let result: RenderResult | undefined;
-
-  act(() => {
-    result = render(<App {...props} signedIn={false} />);
+  const result = await act(async () => {
+    return render(<App {...props} signedIn={false} />);
   });
 
-  expect(result?.container).toMatchSnapshot();
+  expect(result.container).toMatchSnapshot();
 
   await wait();
 });
