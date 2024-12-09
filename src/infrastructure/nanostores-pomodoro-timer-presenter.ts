@@ -1,24 +1,23 @@
-import { map } from "nanostores";
+import { atom } from "nanostores";
 import { type PomodoroTimerPresenter } from "../application/pomodoro-timer-presenter.js";
 import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
-import { type PomodoroTimer } from "./renderer.js";
 
-export class NanostoresPomodoroTimerPresenter implements PomodoroTimerPresenter {
-  public readonly timer = map<PomodoroTimer>({
-    seconds: 0,
-    state: PomodoroTimerState.Pomodoro,
-    stopped: true,
-  });
+export class NanostoresPomodoroTimerPresenter
+  implements PomodoroTimerPresenter
+{
+  public readonly seconds = atom(0);
+  public readonly state = atom(PomodoroTimerState.Pomodoro);
+  public readonly stopped = atom(true);
 
   public presentTime(seconds: number): void {
-    this.timer.setKey("seconds", seconds);
+    this.seconds.set(seconds);
   }
 
   public presentState(state: PomodoroTimerState): void {
-    this.timer.setKey("state", state);
+    this.state.set(state);
   }
 
   public presentStopped(stopped: boolean): void {
-    this.timer.setKey("stopped", stopped);
+    this.stopped.set(stopped);
   }
 }

@@ -2,12 +2,9 @@ import { styled } from "@linaria/react";
 import { useState } from "react";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
 import { signOutManager } from "../../main/sign-out-manager.js";
-import {
-  PerformanceGraph,
-  type Props as PerformanceGraphProps,
-} from "./PerformanceGraph.js";
+import { PerformanceGraph } from "./PerformanceGraph.js";
 import { SignOut } from "./SignOut.js";
-import { Timer, type Props as TimerProps } from "./Timer.js";
+import { Timer } from "./Timer.js";
 import { ViewGraph } from "./ViewGraph.js";
 import { ViewTimer } from "./ViewTimer.js";
 
@@ -28,26 +25,12 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-export interface Props
-  extends Omit<TimerProps, "seconds" | "state" | "stopped">,
-    PerformanceGraphProps {
-  timer: Pick<TimerProps, "seconds" | "state" | "stopped">;
-}
-
-export const Home = ({
-  performanceGraph,
-  timer,
-  ...restProps
-}: Props): JSX.Element => {
+export const Home = (): JSX.Element => {
   const [graphViewed, setGraphViewed] = useState(false);
 
   return (
     <Container>
-      {graphViewed ? (
-        <PerformanceGraph performanceGraph={performanceGraph} />
-      ) : (
-        <Timer {...timer} {...restProps} />
-      )}
+      {graphViewed ? <PerformanceGraph /> : <Timer />}
       <ButtonsContainer>
         <SignOut signOut={() => signOutManager.signOut()} />
         {graphViewed ? (

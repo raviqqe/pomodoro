@@ -1,7 +1,7 @@
 import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
-import { ReactRenderer } from "./infrastructure/react.js";
 import { errorReporter } from "./main/error-reporter.js";
+import { render } from "./infrastructure/react.js";
 
 try {
   const element = document.getElementById("root");
@@ -10,7 +10,7 @@ try {
     throw new Error("no root element");
   }
 
-  new ReactRenderer(element, []).render();
+  render(element);
 } catch (error) {
   errorReporter.report(error);
 }
