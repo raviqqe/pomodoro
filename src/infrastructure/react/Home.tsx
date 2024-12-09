@@ -1,7 +1,6 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
-import { signOutManager } from "../../main/sign-out-manager.js";
 import { PerformanceGraph } from "./PerformanceGraph.js";
 import { SignOut } from "./SignOut.js";
 import { Timer } from "./Timer.js";
@@ -32,12 +31,12 @@ export const Home = (): JSX.Element => {
     <Container>
       {graphViewed ? <PerformanceGraph /> : <Timer />}
       <ButtonsContainer>
-        <SignOut signOut={() => signOutManager.signOut()} />
+        <SignOut />
         {graphViewed ? (
-          <ViewTimer viewTimer={() => setGraphViewed(false)} />
+          <ViewTimer onClick={() => setGraphViewed(false)} />
         ) : (
           <ViewGraph
-            viewGraph={async () => {
+            onClick={async () => {
               await performanceGraphViewer.viewGraph();
               setGraphViewed(true);
             }}
