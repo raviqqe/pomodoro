@@ -2,8 +2,6 @@ import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
 import { ReactRenderer } from "./infrastructure/react.js";
 import { errorReporter } from "./main/error-reporter.js";
-import { performanceGraphPresenter } from "./main/performance-graph-presenter.js";
-import { pomodoroTimerPresenter } from "./main/pomodoro-timer-presenter.js";
 
 try {
   const element = document.getElementById("root");
@@ -12,10 +10,7 @@ try {
     throw new Error("no root element");
   }
 
-  new ReactRenderer(element, [
-    performanceGraphPresenter,
-    pomodoroTimerPresenter,
-  ]).render();
+  new ReactRenderer(element, []).render();
 } catch (error) {
   errorReporter.report(error);
 }
