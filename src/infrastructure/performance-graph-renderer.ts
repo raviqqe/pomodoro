@@ -1,15 +1,11 @@
+import { atom } from "nanostores";
 import { type PerformanceGraphPresenter } from "../application/performance-graph-presenter.js";
 import { type PerformanceGraph } from "../application/performance-graph.js";
-import { type Renderer } from "./renderer.js";
 
 export class PerformanceGraphRenderer implements PerformanceGraphPresenter {
-  private renderer: Renderer | null = null;
-
-  public setRenderer(renderer: Renderer): void {
-    this.renderer = renderer;
-  }
+  public readonly graph = atom<PerformanceGraph | null>(null);
 
   public presentGraph(graph: PerformanceGraph): void {
-    this.renderer?.renderPerformanceGraph(graph);
+    this.graph.set(graph);
   }
 }
