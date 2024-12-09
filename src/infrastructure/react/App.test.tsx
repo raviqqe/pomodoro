@@ -1,10 +1,10 @@
 import { act, render, waitFor } from "@testing-library/react";
+import { atom } from "nanostores";
 import { beforeEach, expect, it, vi } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { applicationInitializer } from "../../main/application-initializer.js";
-import { App, type Props } from "./App.js";
 import { authenticationPresenter } from "../../main/authentication-presenter.js";
-import { atom } from "nanostores";
+import { App, type Props } from "./App.js";
 
 let wait = async () => {};
 
