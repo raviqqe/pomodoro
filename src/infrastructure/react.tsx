@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { App } from "./react/App.js";
 import { globalStyle } from "./react/style.js";
 
-export const render = (element: HTMLElement) => {
+export const render = (element: HTMLElement): void => {
   const root = createRoot(element);
 
   root.render(

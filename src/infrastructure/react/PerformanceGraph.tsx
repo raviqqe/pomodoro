@@ -1,4 +1,5 @@
 import { styled } from "@linaria/react";
+import { useStore } from "@nanostores/react";
 import { last } from "@raviqqe/loscore";
 import { differenceInDays } from "date-fns";
 import {
@@ -12,9 +13,8 @@ import {
 } from "recharts";
 import type * as application from "../../application.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
-import { grey, red, white } from "./style/colors.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
-import { useStore } from "@nanostores/react";
+import { grey, red, white } from "./style/colors.js";
 
 const Container = styled.div`
   width: 80vw;

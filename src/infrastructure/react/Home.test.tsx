@@ -1,9 +1,9 @@
 import { act, fireEvent, render, waitFor } from "@testing-library/react";
+import { atom } from "nanostores";
 import { beforeEach, expect, it, vi } from "vitest";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
-import { Home } from "./Home.js";
-import { atom } from "nanostores";
 import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
+import { Home } from "./Home.js";
 
 beforeEach(() => {
   vi.spyOn(performanceGraphViewer, "viewGraph").mockResolvedValue();

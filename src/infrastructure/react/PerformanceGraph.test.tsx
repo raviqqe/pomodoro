@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
+import { atom } from "nanostores";
 import { expect, it, vi } from "vitest";
 import { DateSerializer } from "../../domain/date-serializer.js";
-import { PerformanceGraph } from "./PerformanceGraph.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
-import { atom } from "nanostores";
+import { PerformanceGraph } from "./PerformanceGraph.js";
 
 it("renders with no data", () => {
   expect(render(<PerformanceGraph />).container.firstChild).toMatchSnapshot();

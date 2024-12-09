@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
-import { beforeEach, expect, it, vi } from "vitest";
-import { Timer } from "./Timer.js";
-import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
-import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { atom } from "nanostores";
+import { beforeEach, expect, it, vi } from "vitest";
+import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
+import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
+import { Timer } from "./Timer.js";
 
 beforeEach(() => {
   vi.spyOn(pomodoroTimerPresenter, "seconds", "get").mockReturnValue(atom(42));

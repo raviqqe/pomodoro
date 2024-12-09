@@ -1,11 +1,11 @@
 import { styled } from "@linaria/react";
+import { useStore } from "@nanostores/react";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
+import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
 import { pomodoroTimerStarter } from "../../main/pomodoro-timer-starter.js";
 import { pomodoroTimerStopper } from "../../main/pomodoro-timer-stopper.js";
 import { TextButton } from "./TextButton.js";
 import { white } from "./style/colors.js";
-import { useStore } from "@nanostores/react";
-import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
 
 const Container = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
-import { errorReporter } from "./main/error-reporter.js";
 import { render } from "./infrastructure/react.js";
+import { errorReporter } from "./main/error-reporter.js";
 
 try {
   const element = document.getElementById("root");
