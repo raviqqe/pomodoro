@@ -2,12 +2,13 @@
   "ignorePaths": ["**/*.svg"],
   "words": [
     "codecov",
-    "dimgray",
     "deserialize",
+    "dimgray",
     "firestore",
     "linaria",
     "loscore",
     "luxon",
+    "nanostores",
     "pomodoro",
     "pomodoros",
     "raviqqe",
@@ -15,7 +16,6 @@
     "restarter",
     "roboto",
     "steelblue",
-    "xlink",
     "xmlns"
   ]
 }
