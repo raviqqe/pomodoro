@@ -32,9 +32,9 @@ export interface Props {
 
 export const PerformanceGraph = (): JSX.Element => {
   const { data } = useStore(performanceGraphPresenter.graph);
-  const lastPoint = last(data);
+  const lastDatum = last(data);
 
-  return lastPoint ? (
+  return lastDatum ? (
     <Container>
       <ResponsiveContainer>
         <BarChart data={data}>
@@ -44,7 +44,7 @@ export const PerformanceGraph = (): JSX.Element => {
             stroke={white}
             tickFormatter={(date: string): string => {
               const days: number = differenceInDays(
-                DateSerializer.deserialize(lastPoint.date),
+                DateSerializer.deserialize(lastDatum.date),
                 DateSerializer.deserialize(date),
               );
 
