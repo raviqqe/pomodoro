@@ -3,6 +3,8 @@ import { beforeEach, expect, it, vi } from "vitest";
 import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { applicationInitializer } from "../../main/application-initializer.js";
 import { App, type Props } from "./App.js";
+import { authenticationPresenter } from "../../main/authentication-presenter.js";
+import { atom } from "nanostores";
 
 let wait = async () => {};
 
@@ -15,14 +17,14 @@ beforeEach(() => {
 
 const props: Props = {
   performanceGraph: { data: [] },
-  signedIn: null,
   timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
 };
 
 it("renders before a user signs in", async () => {
-  const result = await act(async () =>
-    render(<App {...props} signedIn={null} />),
+  vi.spyOn(authenticationPresenter, "signedIn", "get").mockReturnValue(
+    atom(null),
   );
+  const result = await act(async () => render(<App {...props} />));
 
   expect(result.container).toMatchSnapshot();
 
@@ -30,7 +32,10 @@ it("renders before a user signs in", async () => {
 });
 
 it("renders after a user signs in", async () => {
-  const result = await act(async () => render(<App {...props} signedIn />));
+  vi.spyOn(authenticationPresenter, "signedIn", "get").mockReturnValue(
+    atom(true),
+  );
+  const result = await act(async () => render(<App {...props} />));
 
   expect(result.container).toMatchSnapshot();
 
@@ -38,9 +43,10 @@ it("renders after a user signs in", async () => {
 });
 
 it("renders after a user signs out", async () => {
-  const result = await act(async () =>
-    render(<App {...props} signedIn={false} />),
+  vi.spyOn(authenticationPresenter, "signedIn", "get").mockReturnValue(
+    atom(false),
   );
+  const result = await act(async () => render(<App {...props} />));
 
   expect(result.container).toMatchSnapshot();
 

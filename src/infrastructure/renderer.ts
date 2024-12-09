@@ -9,6 +9,5 @@ export interface PomodoroTimer {
 
 export interface Renderer {
   renderPerformanceGraph(graph: PerformanceGraph): void;
-  renderSignedIn(signedIn: boolean): void;
   renderTimer(timer: PomodoroTimer): void;
 }

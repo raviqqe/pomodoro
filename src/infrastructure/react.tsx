@@ -10,13 +10,12 @@ interface Presenter {
   setRenderer(renderer: Renderer): void;
 }
 
-type Props = Pick<AppProps, "performanceGraph" | "signedIn" | "timer">;
+type Props = Pick<AppProps, "performanceGraph" | "timer">;
 
 export class ReactRenderer implements Renderer {
   private readonly root: Root;
   private props: Props = {
     performanceGraph: { data: [] },
-    signedIn: null,
     timer: { seconds: 0, state: PomodoroTimerState.Pomodoro, stopped: true },
   };
 
@@ -34,10 +33,6 @@ export class ReactRenderer implements Renderer {
 
   public renderPerformanceGraph(performanceGraph: PerformanceGraph): void {
     this.renderProps({ performanceGraph });
-  }
-
-  public renderSignedIn(signedIn: boolean): void {
-    this.renderProps({ signedIn });
   }
 
   public renderTimer(timer: PomodoroTimer): void {
