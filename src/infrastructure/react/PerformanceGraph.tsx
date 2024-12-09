@@ -1,4 +1,5 @@
 import { styled } from "@linaria/react";
+import { useStore } from "@nanostores/react";
 import { last } from "@raviqqe/loscore";
 import { differenceInDays } from "date-fns";
 import {
@@ -12,6 +13,7 @@ import {
 } from "recharts";
 import type * as application from "../../application.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
+import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
 import { grey, red, white } from "./style/colors.js";
 
 const Container = styled.div`
@@ -28,22 +30,21 @@ export interface Props {
   performanceGraph: application.PerformanceGraph;
 }
 
-export const PerformanceGraph = ({
-  performanceGraph: { data: points },
-}: Props): JSX.Element => {
-  const lastPoint = last(points);
+export const PerformanceGraph = (): JSX.Element => {
+  const { data } = useStore(performanceGraphPresenter.graph);
+  const lastDatum = last(data);
 
-  return lastPoint ? (
+  return lastDatum ? (
     <Container>
       <ResponsiveContainer>
-        <BarChart data={points}>
+        <BarChart data={data}>
           <CartesianGrid fill={white} stroke={grey} strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
             stroke={white}
             tickFormatter={(date: string): string => {
               const days: number = differenceInDays(
-                DateSerializer.deserialize(lastPoint.date),
+                DateSerializer.deserialize(lastDatum.date),
                 DateSerializer.deserialize(date),
               );
 

@@ -1,24 +1,24 @@
 import { act, fireEvent, render, waitFor } from "@testing-library/react";
+import { atom } from "nanostores";
 import { beforeEach, expect, it, vi } from "vitest";
-import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
-import { Home, type Props } from "./Home.js";
-
-const props: Props = {
-  performanceGraph: { data: [] },
-  timer: { seconds: 42, state: PomodoroTimerState.Pomodoro, stopped: false },
-};
+import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
+import { Home } from "./Home.js";
 
 beforeEach(() => {
   vi.spyOn(performanceGraphViewer, "viewGraph").mockResolvedValue();
+  vi.spyOn(pomodoroTimerPresenter, "seconds", "get").mockReturnValue(atom(42));
+  vi.spyOn(pomodoroTimerPresenter, "stopped", "get").mockReturnValue(
+    atom(false),
+  );
 });
 
 it("renders", () => {
-  expect(render(<Home {...props} />).container.firstChild).toMatchSnapshot();
+  expect(render(<Home />).container.firstChild).toMatchSnapshot();
 });
 
 it("views a performance graph", async () => {
-  const result = await act(async () => render(<Home {...props} />));
+  const result = await act(async () => render(<Home />));
 
   act(() => {
     fireEvent.click(
@@ -36,7 +36,7 @@ it("views a performance graph", async () => {
 });
 
 it("goes back to a timer view", async () => {
-  const result = await act(async () => render(<Home {...props} />));
+  const result = await act(async () => render(<Home />));
 
   act(() => {
     fireEvent.click(
