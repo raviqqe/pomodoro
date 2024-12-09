@@ -3,7 +3,7 @@ import { type PomodoroTimerPresenter } from "../application/pomodoro-timer-prese
 import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
 import { type PomodoroTimer } from "./renderer.js";
 
-export class PomodoroTimerRenderer implements PomodoroTimerPresenter {
+export class NanostoresPomodoroTimerPresenter implements PomodoroTimerPresenter {
   public readonly timer = map<PomodoroTimer>({
     seconds: 0,
     state: PomodoroTimerState.Pomodoro,

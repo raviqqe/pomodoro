@@ -1,3 +1,3 @@
-import { PomodoroTimerRenderer } from "../infrastructure/pomodoro-timer-renderer.js";
+import { NanostoresPomodoroTimerPresenter } from "../infrastructure/nanostores-pomodoro-timer-presenter.js";
 
-export const pomodoroTimerPresenter = new PomodoroTimerRenderer();
+export const pomodoroTimerPresenter = new NanostoresPomodoroTimerPresenter();
