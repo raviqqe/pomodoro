@@ -1,3 +1,3 @@
-import { PerformanceGraphRenderer } from "../infrastructure/performance-graph-renderer.js";
+import { NanostoresPerformanceGraphPresenter } from "../infrastructure/nanostores-performance-graph-presenter.js";
 
-export const performanceGraphPresenter = new PerformanceGraphRenderer();
+export const performanceGraphPresenter = new NanostoresPerformanceGraphPresenter();
