@@ -3,7 +3,7 @@ import { SignOut } from "../components/SignOut.js";
 import { Timer } from "../components/Timer.js";
 import { ViewGraphButton } from "../components/ViewGraphButton.js";
 import { ViewTimerButton } from "../components/ViewTimerButton.js";
-import { Route, Routes } from "react-router";
+import { useLocation } from "react-router";
 
 const Container = styled.div`
   display: flex;
@@ -23,19 +23,14 @@ const Buttons = styled.div`
 `;
 
 export default (): JSX.Element => {
+  const { pathname } = useLocation();
+
   return (
     <Container>
       <Timer />
       <Buttons>
         <SignOut />
-        <Routes>
-          <Route path="/timer">
-            <ViewGraphButton />
-          </Route>
-          <Route path="/performance">
-            <ViewTimerButton />
-          </Route>
-        </Routes>
+        {pathname === "/timer" ? <ViewGraphButton /> : <ViewTimerButton />}
       </Buttons>
     </Container>
   );
