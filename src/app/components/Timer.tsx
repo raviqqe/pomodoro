@@ -33,12 +33,6 @@ const Seconds = styled.span`
   margin-left: 0.2ex;
 `;
 
-export interface Props {
-  seconds: number;
-  state: PomodoroTimerState;
-  stopped: boolean;
-}
-
 export const Timer = (): JSX.Element => {
   const stopped = useStore(pomodoroTimerPresenter.stopped);
   const state = useStore(pomodoroTimerPresenter.state);
