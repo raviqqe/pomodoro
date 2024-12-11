@@ -1,6 +1,7 @@
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { last } from "@raviqqe/loscore";
+import { useAsync } from "@raviqqe/react-hooks";
 import { differenceInDays } from "date-fns";
 import {
   Bar,
@@ -13,6 +14,8 @@ import {
 } from "recharts";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
+import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
+import { Loader } from "../components/Loader.js";
 import { grey, red, white } from "../style.js";
 
 const Container = styled.div`
@@ -26,13 +29,19 @@ const Message = styled.div`
 `;
 
 export default (): JSX.Element => {
-  const { data } = useStore(performanceGraphPresenter.graph);
-  const lastDatum = last(data);
+  useAsync(() => performanceGraphViewer.viewGraph(), []);
+  const graph = useStore(performanceGraphPresenter.graph);
+
+  if (!graph) {
+    return <Loader />;
+  }
+
+  const lastDatum = last(graph.data);
 
   return lastDatum ? (
     <Container>
       <ResponsiveContainer>
-        <BarChart data={data}>
+        <BarChart data={graph.data}>
           <CartesianGrid fill={white} stroke={grey} strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
