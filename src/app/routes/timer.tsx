@@ -1,11 +1,9 @@
 import { styled } from "@linaria/react";
-import { useState } from "react";
-import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
-import { PerformanceGraph } from "../components/PerformanceGraph.js";
 import { SignOut } from "../components/SignOut.js";
 import { Timer } from "../components/Timer.js";
-import { ViewGraph } from "../components/ViewGraph.js";
-import { ViewTimer } from "../components/ViewTimer.js";
+import { ViewGraphButton } from "../components/ViewGraphButton.js";
+import { ViewTimerButton } from "../components/ViewTimerButton.js";
+import { Route, Routes } from "react-router";
 
 const Container = styled.div`
   display: flex;
@@ -25,23 +23,19 @@ const Buttons = styled.div`
 `;
 
 export default (): JSX.Element => {
-  const [graphViewed, setGraphViewed] = useState(false);
-
   return (
     <Container>
-      {graphViewed ? <PerformanceGraph /> : <Timer />}
+      <Timer />
       <Buttons>
         <SignOut />
-        {graphViewed ? (
-          <ViewTimer onClick={() => setGraphViewed(false)} />
-        ) : (
-          <ViewGraph
-            onClick={async () => {
-              await performanceGraphViewer.viewGraph();
-              setGraphViewed(true);
-            }}
-          />
-        )}
+        <Routes>
+          <Route path="/timer">
+            <ViewGraphButton />
+          </Route>
+          <Route path="/performance">
+            <ViewTimerButton />
+          </Route>
+        </Routes>
       </Buttons>
     </Container>
   );
