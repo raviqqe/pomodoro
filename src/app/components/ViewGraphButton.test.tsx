@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
-import { ViewGraphButton } from "./ViewGraphButton.js";
 import { renderRouter } from "../test.js";
+import { ViewGraphButton } from "./ViewGraphButton.js";
 
 it("renders", () => {
   expect(

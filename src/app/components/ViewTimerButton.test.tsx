@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
-import { ViewTimerButton } from "./ViewTimerButton.js";
 import { renderRouter } from "../test.js";
+import { ViewTimerButton } from "./ViewTimerButton.js";
 
 it("renders", () => {
   expect(
