@@ -5,8 +5,8 @@ import { PomodoroTimerState } from "./pomodoro-timer-state.js";
 import { type Timer } from "./timer.js";
 
 export class PomodoroTimer {
-  private pomodoro: boolean = true;
-  private breakCount: number = 0;
+  private pomodoro = true;
+  private breakCount = 0;
 
   constructor(
     private readonly timer: Timer,
