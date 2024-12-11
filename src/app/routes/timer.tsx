@@ -33,7 +33,7 @@ const Seconds = styled.span`
   margin-left: 0.2ex;
 `;
 
-export const Timer = (): JSX.Element => {
+export default (): JSX.Element => {
   const stopped = useStore(pomodoroTimerPresenter.stopped);
   const state = useStore(pomodoroTimerPresenter.state);
   const seconds = useStore(pomodoroTimerPresenter.seconds);
