@@ -1,4 +1,4 @@
-import { sleep } from "@raviqqe/loscore/async";
+import { sleep } from "es-toolkit/async";
 import { type FirebaseApp } from "firebase/app";
 import {
   type Auth,

@@ -1,4 +1,4 @@
-import { map, range } from "@raviqqe/loscore";
+import { map, range } from "es-toolkit";
 import { milliseconds, subMonths } from "date-fns";
 import { DateSerializer } from "../domain/date-serializer.js";
 import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";

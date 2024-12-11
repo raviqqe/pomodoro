@@ -1,4 +1,4 @@
-import { range } from "@raviqqe/loscore";
+import { range } from "es-toolkit";
 import { beforeEach, expect, it, type Mocked, vi } from "vitest";
 import { type PerformanceRecordRepository } from "./performance-record-repository.js";
 import { PerformanceTracker } from "./performance-tracker.js";
