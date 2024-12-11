@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { App } from "./react/App.js";
-import { globalStyle } from "./react/style.js";
+import { App } from "./components/App.js";
+import { globalStyle } from "./style.js";
 
 export const render = (element: HTMLElement): void =>
   createRoot(element).render(

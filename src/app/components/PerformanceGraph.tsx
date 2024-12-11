@@ -11,10 +11,9 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import type * as application from "../../application.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
-import { grey, red, white } from "./style/colors.js";
+import { grey, red, white } from "../style.js";
 
 const Container = styled.div`
   width: 80vw;
@@ -25,10 +24,6 @@ const Message = styled.div`
   color: ${white};
   font-size: 1.5em;
 `;
-
-export interface Props {
-  performanceGraph: application.PerformanceGraph;
-}
 
 export const PerformanceGraph = (): JSX.Element => {
   const { data } = useStore(performanceGraphPresenter.graph);
