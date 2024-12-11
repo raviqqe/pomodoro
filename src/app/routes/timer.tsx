@@ -14,12 +14,12 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-const ButtonsContainer = styled.div`
+const Buttons = styled.div`
   position: fixed;
   top: 0.5em;
   right: 0.5em;
 
-  > *:not(:last-child) {
+  > :not(:last-child) {
     margin-bottom: 0.5em;
   }
 `;
@@ -30,7 +30,7 @@ export default (): JSX.Element => {
   return (
     <Container>
       {graphViewed ? <PerformanceGraph /> : <Timer />}
-      <ButtonsContainer>
+      <Buttons>
         <SignOut />
         {graphViewed ? (
           <ViewTimer onClick={() => setGraphViewed(false)} />
@@ -42,7 +42,7 @@ export default (): JSX.Element => {
             }}
           />
         )}
-      </ButtonsContainer>
+      </Buttons>
     </Container>
   );
 };
