@@ -5,7 +5,7 @@ export class Timer {
 
   constructor(
     private readonly setInterval: (
-      callback: () => Promise<void>,
+      callback: () => void,
       interval: number,
     ) => number,
     private readonly clearInterval: (id: number) => void,
