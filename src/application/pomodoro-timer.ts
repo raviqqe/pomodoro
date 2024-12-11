@@ -26,8 +26,6 @@ export class PomodoroTimer {
       case PomodoroTimerState.ShortBreak:
         this.startBreak(5 * 60);
         break;
-      default:
-        throw new Error("unreachable");
     }
   }
 
