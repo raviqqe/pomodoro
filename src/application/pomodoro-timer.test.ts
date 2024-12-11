@@ -28,6 +28,7 @@ beforeEach(() => {
   };
 
   pomodoroTimer = new PomodoroTimer(
+    new Timer(window.setInterval, window.clearInterval, timerPresenter),
     timerPresenter,
     notificationPresenter,
     new PerformanceTracker(performanceRecordRepository),
