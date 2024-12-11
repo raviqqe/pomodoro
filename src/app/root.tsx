@@ -115,7 +115,6 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
           defer
           src="https://plausible.io/js/script.js"
         ></script>
-        <base target="_blank" />
       </head>
       <Body>
         {location || signedIn === null ? (
