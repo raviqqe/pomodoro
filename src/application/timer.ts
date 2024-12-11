@@ -14,10 +14,13 @@ export class Timer {
 
   public start(
     duration: number,
-    callbacks: {
-      endCallback: () => Promise<void> | void;
-      tickCallback: () => Promise<void> | void;
-    },
+    {
+      onEnd,
+      onTick,
+    }: {
+      onEnd?: () => Promise<void> | void;
+      onTick?: () => Promise<void> | void;
+    } = {},
   ): void {
     this.presenter.presentStopped(false);
     this.presenter.presentTime(duration);
@@ -34,10 +37,10 @@ export class Timer {
         }
 
         this.clearInterval(this.interval);
-        await callbacks.endCallback();
+        await onEnd?.();
       } else {
         this.presenter.presentTime(duration);
-        await callbacks.tickCallback();
+        await onTick?.();
       }
     }, 1000);
   }

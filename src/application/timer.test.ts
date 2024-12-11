@@ -4,8 +4,8 @@ import { timerPresenter } from "./test/timer-presenter.js";
 import { Timer } from "./timer.js";
 
 const dummyCallbacks = {
-  endCallback: async () => {},
-  tickCallback: async () => {},
+  onEnd: async () => {},
+  onTick: async () => {},
 };
 
 let timer: Timer;
@@ -37,7 +37,7 @@ it("calls a tick callback", () => {
   const spy = vi.spyOn(window, "setInterval");
   const tickCallback = vi.fn();
 
-  timer.start(42, { ...dummyCallbacks, tickCallback });
+  timer.start(42, { ...dummyCallbacks, onTick: tickCallback });
 
   for (const _ of range(43)) {
     (spy.mock.calls[0]?.[0] as () => void)();
@@ -48,15 +48,15 @@ it("calls a tick callback", () => {
 
 it("calls an end callback when time is up", () => {
   const spy = vi.spyOn(window, "setInterval");
-  const endCallback = vi.fn();
+  const end = vi.fn();
 
-  timer.start(42, { ...dummyCallbacks, endCallback });
+  timer.start(42, { ...dummyCallbacks, onEnd: end });
 
   for (const _ of range(43)) {
     (spy.mock.calls[0]?.[0] as () => void)();
   }
 
-  expect(endCallback).toHaveBeenCalledTimes(1);
+  expect(end).toHaveBeenCalledTimes(1);
 });
 
 it("presents time", () => {
