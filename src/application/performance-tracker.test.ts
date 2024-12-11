@@ -1,18 +1,11 @@
 import { range } from "es-toolkit";
-import { beforeEach, expect, it, type Mocked, vi } from "vitest";
-import { type PerformanceRecordRepository } from "./performance-record-repository.js";
+import { beforeEach, expect, it } from "vitest";
 import { PerformanceTracker } from "./performance-tracker.js";
+import { performanceRecordRepository } from "./test/performance-record-repository.js";
 
-let performanceRecordRepository: Mocked<PerformanceRecordRepository>;
 let tracker: PerformanceTracker;
 
 beforeEach(() => {
-  performanceRecordRepository = {
-    create: vi.fn(),
-    findManySince: vi.fn(),
-    findOne: vi.fn(),
-    update: vi.fn(),
-  };
   tracker = new PerformanceTracker(performanceRecordRepository);
 });
 
