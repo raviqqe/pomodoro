@@ -1,39 +1,24 @@
 import { last, range } from "es-toolkit";
-import { afterEach, beforeEach, expect, it, type Mocked, vi } from "vitest";
-import { type NotificationPresenter } from "./notification-presenter.js";
-import { type PerformanceRecordRepository } from "./performance-record-repository.js";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { PerformanceTracker } from "./performance-tracker.js";
-import { type PomodoroTimerPresenter } from "./pomodoro-timer-presenter.js";
 import { PomodoroTimerState } from "./pomodoro-timer-state.js";
 import { PomodoroTimer } from "./pomodoro-timer.js";
 import { Timer } from "./timer.js";
+import { timerPresenter } from "./test/timer-presenter.js";
+import { notificationPresenter } from "./test/notification-presenter.js";
+import { performanceRecordRepository } from "./test/performance-record-repository.js";
+import { pomodoroTimerPresenter } from "./test/pomodoro-timer-presenter.js";
 
-let timerPresenter: Mocked<PomodoroTimerPresenter>;
-let notificationPresenter: Mocked<NotificationPresenter>;
-let performanceRecordRepository: Mocked<PerformanceRecordRepository>;
 let pomodoroTimer: PomodoroTimer;
 
 beforeEach(() => {
-  timerPresenter = {
-    presentState: vi.fn(),
-    presentStopped: vi.fn(),
-    presentTime: vi.fn(),
-  };
-  notificationPresenter = { presentNotification: vi.fn() };
-  performanceRecordRepository = {
-    create: vi.fn(),
-    findManySince: vi.fn(),
-    findOne: vi.fn(),
-    update: vi.fn(),
-  };
-
   pomodoroTimer = new PomodoroTimer(
     new Timer(
       (callback, interval) => window.setInterval(callback, interval),
       (id) => window.clearInterval(id),
       timerPresenter,
     ),
-    timerPresenter,
+    pomodoroTimerPresenter,
     notificationPresenter,
     new PerformanceTracker(performanceRecordRepository),
   );
@@ -51,7 +36,7 @@ it("stops", () => {
   pomodoroTimer.start();
   pomodoroTimer.stop();
 
-  expect(timerPresenter.presentState.mock.calls).toEqual([
+  expect(pomodoroTimerPresenter.presentState.mock.calls).toEqual([
     [PomodoroTimerState.Pomodoro],
   ]);
 });
@@ -64,7 +49,7 @@ it("changes its state", async () => {
     await last(spy.mock.calls)?.[1].endCallback();
   }
 
-  expect(timerPresenter.presentState.mock.calls).toEqual([
+  expect(pomodoroTimerPresenter.presentState.mock.calls).toEqual([
     [PomodoroTimerState.ShortBreak],
     [PomodoroTimerState.Pomodoro],
     [PomodoroTimerState.ShortBreak],
