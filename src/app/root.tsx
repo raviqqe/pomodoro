@@ -101,7 +101,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
 
   useAsync(async () => {
     if (typeof signedIn === "boolean") {
-      await navigate(signedIn ? "/documents" : "/");
+      await navigate(signedIn ? "/timer" : "/");
     }
   }, [signedIn]);
 
