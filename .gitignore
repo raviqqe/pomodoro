@@ -3,6 +3,7 @@
 .eslintcache
 .firebase
 .react-router
+build
 dist
 coverage
 node_modules
