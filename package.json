@@ -18,6 +18,7 @@
     "@linaria/react": "^6.2.1",
     "@nanostores/react": "^0.8.2",
     "@raviqqe/loscore": "^0.2.10",
+    "@raviqqe/react-hooks": "^0.5.4",
     "@react-router/node": "^7.0.2",
     "@sentry/browser": "^8.43.0",
     "date-fns": "^4.1.0",
