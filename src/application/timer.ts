@@ -29,9 +29,11 @@ export class Timer {
       if (duration < 0) {
         this.presenter.presentStopped(true);
 
-        if (this.interval !== undefined) {
-          this.clearInterval(this.interval);
+        if (this.interval === undefined) {
+          throw new Error("Timer not started");
         }
+
+        this.clearInterval(this.interval);
         await callbacks.endCallback();
       } else {
         this.presenter.presentTime(duration);
@@ -41,10 +43,11 @@ export class Timer {
   }
 
   public stop(): void {
-    if (this.interval !== undefined) {
-      this.clearInterval(this.interval);
+    if (this.interval === undefined) {
+      throw new Error("Timer not started");
     }
 
+    this.clearInterval(this.interval);
     this.presenter.presentStopped(true);
   }
 }
