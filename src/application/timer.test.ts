@@ -1,6 +1,6 @@
 import { range } from "es-toolkit";
-import { afterEach, beforeEach, expect, it, type Mocked, vi } from "vitest";
-import { type TimerPresenter } from "./timer-presenter.js";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { timerPresenter } from "./test/timer-presenter.js";
 import { Timer } from "./timer.js";
 
 const dummyCallbacks = {
@@ -8,14 +8,9 @@ const dummyCallbacks = {
   tickCallback: async () => {},
 };
 
-let timerPresenter: Mocked<TimerPresenter>;
 let timer: Timer;
 
 beforeEach(() => {
-  timerPresenter = {
-    presentStopped: vi.fn(),
-    presentTime: vi.fn(),
-  };
   timer = new Timer(
     (callback, interval) => window.setInterval(callback, interval),
     (id) => window.clearInterval(id),
