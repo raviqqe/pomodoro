@@ -1,9 +1,16 @@
 import { type TimerPresenter } from "./timer-presenter.js";
 
 export class Timer {
-  private interval?: NodeJS.Timeout;
+  private interval?: number;
 
-  constructor(private readonly presenter: TimerPresenter) {}
+  constructor(
+    private readonly setInterval: (
+      callback: () => void,
+      interval: number,
+    ) => number,
+    private readonly clearInterval: (id: number) => void,
+    private readonly presenter: TimerPresenter,
+  ) {}
 
   public start(
     duration: number,
@@ -16,12 +23,17 @@ export class Timer {
     this.presenter.presentTime(duration);
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    this.interval = setInterval(async () => {
+    this.interval = this.setInterval(async () => {
       duration--;
 
       if (duration < 0) {
         this.presenter.presentStopped(true);
-        clearInterval(this.interval);
+
+        if (this.interval === undefined) {
+          throw new Error("Timer not started");
+        }
+
+        this.clearInterval(this.interval);
         await callbacks.endCallback();
       } else {
         this.presenter.presentTime(duration);
@@ -31,7 +43,11 @@ export class Timer {
   }
 
   public stop(): void {
-    clearInterval(this.interval);
+    if (this.interval === undefined) {
+      throw new Error("Timer not started");
+    }
+
+    this.clearInterval(this.interval);
     this.presenter.presentStopped(true);
   }
 }

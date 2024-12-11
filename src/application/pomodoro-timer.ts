@@ -2,20 +2,18 @@ import { type NotificationPresenter } from "./notification-presenter.js";
 import { type PerformanceTracker } from "./performance-tracker.js";
 import { type PomodoroTimerPresenter } from "./pomodoro-timer-presenter.js";
 import { PomodoroTimerState } from "./pomodoro-timer-state.js";
-import { Timer } from "./timer.js";
+import { type Timer } from "./timer.js";
 
 export class PomodoroTimer {
-  private readonly timer: Timer;
   private pomodoro = true;
   private breakCount = 0;
 
   constructor(
+    private readonly timer: Timer,
     private readonly timerPresenter: PomodoroTimerPresenter,
     private readonly notificationPresenter: NotificationPresenter,
     private readonly performanceTracker: PerformanceTracker,
-  ) {
-    this.timer = new Timer(timerPresenter);
-  }
+  ) {}
 
   public start(): void {
     switch (this.state()) {

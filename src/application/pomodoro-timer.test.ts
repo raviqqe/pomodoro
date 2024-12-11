@@ -28,6 +28,11 @@ beforeEach(() => {
   };
 
   pomodoroTimer = new PomodoroTimer(
+    new Timer(
+      (callback, interval) => window.setInterval(callback, interval),
+      (id) => window.clearInterval(id),
+      timerPresenter,
+    ),
     timerPresenter,
     notificationPresenter,
     new PerformanceTracker(performanceRecordRepository),
