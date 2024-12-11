@@ -11,7 +11,7 @@ import {
   query,
   setDoc,
   where,
-} from "firebase/firestore";
+} from "firebase/firestore/lite";
 import { type PerformanceRecordRepository } from "../../application/performance-record-repository.js";
 import { type PerformanceRecord } from "../../application/performance-record.js";
 
