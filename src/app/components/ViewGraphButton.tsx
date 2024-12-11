@@ -1,8 +1,8 @@
-import { IoMdStats } from "react-icons/io";
-import { CircleButton } from "./CircleButton.js";
 import { type JSX } from "react";
+import { IoMdStats } from "react-icons/io";
 import { useNavigate } from "react-router";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
+import { CircleButton } from "./CircleButton.js";
 
 export const ViewGraphButton = (): JSX.Element => {
   const navigate = useNavigate();

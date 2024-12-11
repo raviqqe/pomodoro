@@ -1,8 +1,8 @@
 import { styled } from "@linaria/react";
+import { Outlet, useLocation } from "react-router";
 import { SignOut } from "../components/SignOut.js";
 import { ViewGraphButton } from "../components/ViewGraphButton.js";
 import { ViewTimerButton } from "../components/ViewTimerButton.js";
-import { Outlet, useLocation } from "react-router";
 
 const Container = styled.div`
   display: flex;
