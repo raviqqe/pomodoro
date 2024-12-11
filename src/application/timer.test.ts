@@ -37,7 +37,7 @@ it("calls a tick callback", () => {
   const spy = vi.spyOn(window, "setInterval");
   const tickCallback = vi.fn();
 
-  timer.start(42, { ...dummyCallbacks, tickCallback });
+  timer.start(42, { ...dummyCallbacks, onTick: tickCallback });
 
   for (const _ of range(43)) {
     (spy.mock.calls[0]?.[0] as () => void)();
@@ -55,7 +55,7 @@ it("calls an end callback when time is up", () => {
   for (const _ of range(43)) {
     (spy.mock.calls[0]?.[0] as () => void)();
   }
-
+  onEnd: endCallback;
   expect(endCallback).toHaveBeenCalledTimes(1);
 });
 
