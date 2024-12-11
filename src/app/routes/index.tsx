@@ -1,9 +1,10 @@
 import { styled } from "@linaria/react";
+import { type JSX } from "react";
 import { FaGithub } from "react-icons/fa";
 import { configuration } from "../../configuration.js";
 import { signInManager } from "../../main/sign-in-manager.js";
-import { white } from "../style.js";
 import { SignIn } from "../components/SignIn.js";
+import { white } from "../style.js";
 
 const Container = styled.div`
   height: 100vh;
@@ -38,7 +39,7 @@ const GitHubLink = styled.a`
   line-height: 0ex;
 `;
 
-export const Landing = (): JSX.Element => (
+export default (): JSX.Element => (
   <Container>
     <Title>P🍅m🍅d🍅r🍅</Title>
     <SignIn signIn={() => signInManager.signIn()} />
