@@ -24,7 +24,7 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-export const Home = (): JSX.Element => {
+export default (): JSX.Element => {
   const [graphViewed, setGraphViewed] = useState(false);
 
   return (
