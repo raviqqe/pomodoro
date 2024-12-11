@@ -1,9 +1,9 @@
 import { expect, it } from "vitest";
 import { SignOutManager } from "./sign-out-manager.js";
 import {
-  performanceGraphPresenter,
   authenticationController,
   authenticationPresenter,
+  performanceGraphPresenter,
 } from "./test.js";
 
 it("signs out", async () => {

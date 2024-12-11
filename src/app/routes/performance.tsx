@@ -1,6 +1,7 @@
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { last } from "@raviqqe/loscore";
+import { useAsync } from "@raviqqe/react-hooks";
 import { differenceInDays } from "date-fns";
 import {
   Bar,
@@ -13,10 +14,9 @@ import {
 } from "recharts";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
-import { grey, red, white } from "../style.js";
-import { Loader } from "../components/Loader.js";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
-import { useAsync } from "@raviqqe/react-hooks";
+import { Loader } from "../components/Loader.js";
+import { grey, red, white } from "../style.js";
 
 const Container = styled.div`
   width: 80vw;

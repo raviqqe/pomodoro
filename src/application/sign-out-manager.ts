@@ -1,6 +1,6 @@
 import { type AuthenticationController } from "./authentication-controller.js";
 import { type AuthenticationPresenter } from "./authentication-presenter.js";
-import { PerformanceGraphPresenter } from "./performance-graph-presenter.js";
+import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
 
 export class SignOutManager {
   constructor(
