@@ -1,12 +1,11 @@
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
-import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import { applicationInitializer } from "../../main/application-initializer.js";
 import { authenticationPresenter } from "../../main/authentication-presenter.js";
-import { white } from "../style.js";
 import { Home } from "./Home.js";
 import { Landing } from "./Landing.js";
+import { Loader } from "./Loader.js";
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -22,7 +21,7 @@ export const App = (): JSX.Element => {
 
   return signedIn === null ? (
     <LoaderContainer>
-      <PulseLoader color={white} />
+      <Loader />
     </LoaderContainer>
   ) : signedIn ? (
     <Home />
