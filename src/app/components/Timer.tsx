@@ -5,7 +5,7 @@ import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
 import { pomodoroTimerStarter } from "../../main/pomodoro-timer-starter.js";
 import { pomodoroTimerStopper } from "../../main/pomodoro-timer-stopper.js";
 import { TextButton } from "./TextButton.js";
-import { white } from "./style/colors.js";
+import { white } from "../style.js";
 
 const Container = styled.div`
   display: flex;

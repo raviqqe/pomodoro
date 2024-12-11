@@ -14,7 +14,7 @@ import {
 import type * as application from "../../application.js";
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
-import { grey, red, white } from "./style/colors.js";
+import { grey, red, white } from "../style.js";
 
 const Container = styled.div`
   width: 80vw;
