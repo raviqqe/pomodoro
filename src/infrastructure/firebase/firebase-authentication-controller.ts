@@ -1,4 +1,4 @@
-import { sleep } from "es-toolkit/async";
+import { delay } from "es-toolkit";
 import { type FirebaseApp } from "firebase/app";
 import {
   type Auth,
@@ -32,7 +32,7 @@ export class FirebaseAuthenticationController
 
   public async isSignedIn(): Promise<boolean> {
     while (this.signedIn === null) {
-      await sleep(10);
+      await delay(10);
     }
 
     return this.signedIn;
