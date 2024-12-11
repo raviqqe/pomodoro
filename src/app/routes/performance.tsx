@@ -15,6 +15,8 @@ import { DateSerializer } from "../../domain/date-serializer.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
 import { grey, red, white } from "../style.js";
 import { Loader } from "../components/Loader.js";
+import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
+import { useAsync } from "@raviqqe/react-hooks";
 
 const Container = styled.div`
   width: 80vw;
@@ -27,6 +29,7 @@ const Message = styled.div`
 `;
 
 export default (): JSX.Element => {
+  useAsync(() => performanceGraphViewer.viewGraph(), []);
   const graph = useStore(performanceGraphPresenter.graph);
 
   if (!graph) {
