@@ -2,6 +2,7 @@
 *.png
 .eslintcache
 .firebase
+.react-router
 dist
 coverage
 node_modules
