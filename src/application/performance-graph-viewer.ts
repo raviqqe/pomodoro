@@ -1,5 +1,5 @@
-import { map, range } from "@raviqqe/loscore";
 import { milliseconds, subMonths } from "date-fns";
+import { range } from "es-toolkit";
 import { DateSerializer } from "../domain/date-serializer.js";
 import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
 import { type PerformanceRecordRepository } from "./performance-record-repository.js";
@@ -19,26 +19,21 @@ export class PerformanceGraphViewer {
 
     this.performanceGraphPresenter.presentGraph({
       data: firstRecord
-        ? [
-            ...map(
-              range(
-                DateSerializer.deserialize(firstRecord.date).getTime(),
-                today.getTime() + 1,
-                milliseconds({ days: 1 }),
-              ),
-              (milliseconds) => {
-                const date: string = DateSerializer.serialize(
-                  new Date(milliseconds),
-                );
-                const record = records.find((record) => record.date === date);
+        ? range(
+            DateSerializer.deserialize(firstRecord.date).getTime(),
+            today.getTime() + 1,
+            milliseconds({ days: 1 }),
+          ).map((milliseconds) => {
+            const date: string = DateSerializer.serialize(
+              new Date(milliseconds),
+            );
+            const record = records.find((record) => record.date === date);
 
-                return {
-                  date,
-                  pomodoros: record ? record.seconds / 25 / 60 : 0,
-                };
-              },
-            ),
-          ]
+            return {
+              date,
+              pomodoros: record ? record.seconds / 25 / 60 : 0,
+            };
+          })
         : [],
     });
   }

@@ -1,8 +1,8 @@
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
-import { last } from "@raviqqe/loscore";
 import { useAsync } from "@raviqqe/react-hooks";
 import { differenceInDays } from "date-fns";
+import { last } from "es-toolkit";
 import {
   Bar,
   BarChart,
