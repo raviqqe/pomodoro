@@ -1,4 +1,7 @@
 {
+  "title": "Pomodoro",
+  "description": "Pomodoro timer app",
+  "domain": "pomodoro.code2d.org",
   "firebase": {
     "apiKey": "AIzaSyAjphF5K4I2_TMFCXgTWpyiAuKWjwzRTXM",
     "authDomain": "pomodoro-b3526.firebaseapp.com",
