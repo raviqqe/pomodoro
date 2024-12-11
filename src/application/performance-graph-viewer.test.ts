@@ -1,8 +1,8 @@
 import { beforeEach, expect, it } from "vitest";
 import { DateSerializer } from "../domain/date-serializer.js";
 import { PerformanceGraphViewer } from "./performance-graph-viewer.js";
-import { performanceRecordRepository } from "./test/performance-record-repository.js";
 import { performanceGraphPresenter } from "./test/performance-graph-presenter.js";
+import { performanceRecordRepository } from "./test/performance-record-repository.js";
 
 let viewer: PerformanceGraphViewer;
 

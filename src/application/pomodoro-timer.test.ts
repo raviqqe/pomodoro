@@ -3,11 +3,11 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { PerformanceTracker } from "./performance-tracker.js";
 import { PomodoroTimerState } from "./pomodoro-timer-state.js";
 import { PomodoroTimer } from "./pomodoro-timer.js";
-import { Timer } from "./timer.js";
-import { timerPresenter } from "./test/timer-presenter.js";
 import { notificationPresenter } from "./test/notification-presenter.js";
 import { performanceRecordRepository } from "./test/performance-record-repository.js";
 import { pomodoroTimerPresenter } from "./test/pomodoro-timer-presenter.js";
+import { timerPresenter } from "./test/timer-presenter.js";
+import { Timer } from "./timer.js";
 
 let pomodoroTimer: PomodoroTimer;
 

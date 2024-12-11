@@ -1,7 +1,7 @@
 import { range } from "es-toolkit";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { Timer } from "./timer.js";
 import { timerPresenter } from "./test/timer-presenter.js";
+import { Timer } from "./timer.js";
 
 const dummyCallbacks = {
   endCallback: async () => {},
