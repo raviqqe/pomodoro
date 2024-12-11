@@ -16,7 +16,11 @@ beforeEach(() => {
     presentStopped: vi.fn(),
     presentTime: vi.fn(),
   };
-  timer = new Timer(window.setInterval, window.clearInterval, timerPresenter);
+  timer = new Timer(
+    (callback, interval) => window.setInterval(callback, interval),
+    (id) => window.clearInterval(id),
+    timerPresenter,
+  );
 });
 
 afterEach(() => {
