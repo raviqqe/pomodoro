@@ -1,7 +1,8 @@
 import { type TimerPresenter } from "./timer-presenter.js";
+import { clearInterval, setInterval } from "worker-timers";
 
 export class Timer {
-  private interval?: NodeJS.Timeout;
+  private interval?: number;
 
   constructor(private readonly presenter: TimerPresenter) {}
 
@@ -21,7 +22,10 @@ export class Timer {
 
       if (duration < 0) {
         this.presenter.presentStopped(true);
-        clearInterval(this.interval);
+
+        if (this.interval !== undefined) {
+          clearInterval(this.interval);
+        }
         await callbacks.endCallback();
       } else {
         this.presenter.presentTime(duration);
@@ -31,7 +35,10 @@ export class Timer {
   }
 
   public stop(): void {
-    clearInterval(this.interval);
+    if (this.interval !== undefined) {
+      clearInterval(this.interval);
+    }
+
     this.presenter.presentStopped(true);
   }
 }
