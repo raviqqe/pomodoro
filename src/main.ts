@@ -1,6 +1,6 @@
 import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
-import { render } from "./infrastructure/react.js";
+import { render } from "./app/render.js";
 import { errorReporter } from "./main/error-reporter.js";
 
 try {

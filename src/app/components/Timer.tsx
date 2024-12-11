@@ -4,8 +4,8 @@ import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
 import { pomodoroTimerStarter } from "../../main/pomodoro-timer-starter.js";
 import { pomodoroTimerStopper } from "../../main/pomodoro-timer-stopper.js";
+import { white } from "../style.js";
 import { TextButton } from "./TextButton.js";
-import { white } from "./style/colors.js";
 
 const Container = styled.div`
   display: flex;
@@ -32,12 +32,6 @@ const Seconds = styled.span`
   font-size: 0.6em;
   margin-left: 0.2ex;
 `;
-
-export interface Props {
-  seconds: number;
-  state: PomodoroTimerState;
-  stopped: boolean;
-}
 
 export const Timer = (): JSX.Element => {
   const stopped = useStore(pomodoroTimerPresenter.stopped);
