@@ -64,7 +64,6 @@ export class PomodoroTimer {
         this.presentState();
         this.notificationPresenter.presentNotification("Break finished!");
       },
-      onTick: () => undefined,
     });
   }
 
