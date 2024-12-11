@@ -14,6 +14,7 @@ import {
 import { DateSerializer } from "../../domain/date-serializer.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
 import { grey, red, white } from "../style.js";
+import { Loader } from "../components/Loader.js";
 
 const Container = styled.div`
   width: 80vw;
@@ -26,13 +27,18 @@ const Message = styled.div`
 `;
 
 export default (): JSX.Element => {
-  const { data } = useStore(performanceGraphPresenter.graph);
-  const lastDatum = last(data);
+  const graph = useStore(performanceGraphPresenter.graph);
+
+  if (!graph) {
+    return <Loader />;
+  }
+
+  const lastDatum = last(graph.data);
 
   return lastDatum ? (
     <Container>
       <ResponsiveContainer>
-        <BarChart data={data}>
+        <BarChart data={graph.data}>
           <CartesianGrid fill={white} stroke={grey} strokeDasharray="3 3" />
           <XAxis
             dataKey="date"
