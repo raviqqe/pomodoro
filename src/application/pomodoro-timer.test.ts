@@ -46,7 +46,7 @@ it("changes its state", async () => {
 
   for (const _ of range(8)) {
     pomodoroTimer.start();
-    await last(spy.mock.calls)?.[1].onEnd();
+    await last(spy.mock.calls)?.[1]?.onEnd?.();
   }
 
   expect(pomodoroTimerPresenter.presentState.mock.calls).toEqual([
@@ -65,9 +65,9 @@ it("notifies the end of pomodoros and breaks", async () => {
   const spy = vi.spyOn(Timer.prototype, "start");
 
   pomodoroTimer.start();
-  await last(spy.mock.calls)?.[1].onEnd();
+  await last(spy.mock.calls)?.[1]?.onEnd?.();
   pomodoroTimer.start();
-  await last(spy.mock.calls)?.[1].onEnd();
+  await last(spy.mock.calls)?.[1]?.onEnd?.();
 
   expect(notificationPresenter.presentNotification.mock.calls).toEqual([
     ["Pomodoro finished!"],
