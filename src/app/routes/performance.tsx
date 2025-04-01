@@ -3,6 +3,7 @@ import { useStore } from "@nanostores/react";
 import { useAsync } from "@raviqqe/react-hooks";
 import { differenceInDays } from "date-fns";
 import { last } from "es-toolkit";
+import { type JSX } from "react";
 import {
   Bar,
   BarChart,
