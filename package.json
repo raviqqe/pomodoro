@@ -34,7 +34,7 @@
     "worker-timers": "^8.0.20"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
     "@raviqqe/eslint-config": "^4.1.16",
     "@raviqqe/react-tsconfig": "^1.2.0",
