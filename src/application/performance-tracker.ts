@@ -5,11 +5,12 @@ import { type PerformanceRecord } from "./performance-record.js";
 const MINUTE = 60;
 
 export class PerformanceTracker {
+  private readonly performanceRecordRepository: PerformanceRecordRepository;
   private seconds = 0;
 
-  constructor(
-    private readonly performanceRecordRepository: PerformanceRecordRepository,
-  ) {}
+  constructor(performanceRecordRepository: PerformanceRecordRepository) {
+    this.performanceRecordRepository = performanceRecordRepository;
+  }
 
   public async addSecond(): Promise<void> {
     this.seconds++;

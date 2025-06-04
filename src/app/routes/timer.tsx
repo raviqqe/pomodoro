@@ -1,7 +1,6 @@
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { type JSX } from "react";
-import { PomodoroTimerState } from "../../application/pomodoro-timer-state.js";
 import { pomodoroTimerPresenter } from "../../main/pomodoro-timer-presenter.js";
 import { pomodoroTimerStarter } from "../../main/pomodoro-timer-starter.js";
 import { pomodoroTimerStopper } from "../../main/pomodoro-timer-stopper.js";
@@ -44,9 +43,9 @@ export default (): JSX.Element => {
       {stopped ? (
         <>
           <State>
-            {state === PomodoroTimerState.Pomodoro
+            {state === "pomodoro"
               ? "🍅"
-              : state === PomodoroTimerState.ShortBreak
+              : state === "shortBreak"
                 ? "🛌"
                 : "🛌🛌"}
           </State>

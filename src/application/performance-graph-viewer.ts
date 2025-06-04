@@ -5,10 +5,16 @@ import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js
 import { type PerformanceRecordRepository } from "./performance-record-repository.js";
 
 export class PerformanceGraphViewer {
+  private readonly performanceRecordRepository: PerformanceRecordRepository;
+  private readonly performanceGraphPresenter: PerformanceGraphPresenter;
+
   constructor(
-    private readonly performanceRecordRepository: PerformanceRecordRepository,
-    private readonly performanceGraphPresenter: PerformanceGraphPresenter,
-  ) {}
+    performanceRecordRepository: PerformanceRecordRepository,
+    performanceGraphPresenter: PerformanceGraphPresenter,
+  ) {
+    this.performanceRecordRepository = performanceRecordRepository;
+    this.performanceGraphPresenter = performanceGraphPresenter;
+  }
 
   public async viewGraph(today: Date = new Date()): Promise<void> {
     const records = await this.performanceRecordRepository.findManySince(

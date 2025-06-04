@@ -1,5 +1,1 @@
-export enum PomodoroTimerState {
-  Pomodoro,
-  ShortBreak,
-  LongBreak,
-}
+export type PomodoroTimerState = "longBreak" | "pomodoro" | "shortBreak";
