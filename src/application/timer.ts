@@ -5,6 +5,7 @@ export class Timer {
     callback: () => void,
     interval: number,
   ) => number;
+
   private readonly clearInterval: (id: number) => void;
   private readonly presenter: TimerPresenter;
   private interval?: number;

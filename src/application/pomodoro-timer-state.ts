@@ -1,1 +1,1 @@
-export type PomodoroTimerState = "pomodoro" | "shortBreak" | "longBreak";
+export type PomodoroTimerState = "longBreak" | "pomodoro" | "shortBreak";
