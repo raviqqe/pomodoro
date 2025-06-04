@@ -1,6 +1,6 @@
 import { atom } from "nanostores";
 import { type PomodoroTimerPresenter } from "../application/pomodoro-timer-presenter.js";
-import { PomodoroTimerState } from "../application/pomodoro-timer-state.js";
+import { type PomodoroTimerState } from "../application/pomodoro-timer-state.js";
 
 export class NanostoresPomodoroTimerPresenter
   implements PomodoroTimerPresenter
