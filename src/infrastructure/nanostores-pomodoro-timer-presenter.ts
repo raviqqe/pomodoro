@@ -6,7 +6,7 @@ export class NanostoresPomodoroTimerPresenter
   implements PomodoroTimerPresenter
 {
   public readonly seconds = atom(0);
-  public readonly state = atom(PomodoroTimerState.Pomodoro);
+  public readonly state = atom("pomodoro");
   public readonly stopped = atom(true);
 
   public presentTime(seconds: number): void {

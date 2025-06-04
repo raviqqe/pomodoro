@@ -1,16 +1,23 @@
 import { type TimerPresenter } from "./timer-presenter.js";
 
 export class Timer {
+  private readonly setInterval: (
+    callback: () => void,
+    interval: number,
+  ) => number;
+  private readonly clearInterval: (id: number) => void;
+  private readonly presenter: TimerPresenter;
   private interval?: number;
 
   constructor(
-    private readonly setInterval: (
-      callback: () => void,
-      interval: number,
-    ) => number,
-    private readonly clearInterval: (id: number) => void,
-    private readonly presenter: TimerPresenter,
-  ) {}
+    setInterval: (callback: () => void, interval: number) => number,
+    clearInterval: (id: number) => void,
+    presenter: TimerPresenter,
+  ) {
+    this.setInterval = setInterval;
+    this.clearInterval = clearInterval;
+    this.presenter = presenter;
+  }
 
   public start(
     duration: number,

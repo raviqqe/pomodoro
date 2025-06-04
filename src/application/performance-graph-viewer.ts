@@ -5,10 +5,16 @@ import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js
 import { type PerformanceRecordRepository } from "./performance-record-repository.js";
 
 export class PerformanceGraphViewer {
+  private readonly performanceRecordRepository: PerformanceRecordRepository;
+  private readonly performanceGraphPresenter: PerformanceGraphPresenter;
+
   constructor(
-    private readonly performanceRecordRepository: PerformanceRecordRepository,
-    private readonly performanceGraphPresenter: PerformanceGraphPresenter,
-  ) {}
+    performanceRecordRepository: PerformanceRecordRepository,
+    performanceGraphPresenter: PerformanceGraphPresenter,
+  ) {
+    this.performanceRecordRepository = performanceRecordRepository;
+    this.performanceGraphPresenter = performanceGraphPresenter;
+  }
 
   public async viewGraph(today: Date = new Date()): Promise<void> {
     const records = await this.performanceRecordRepository.findManySince(
@@ -20,20 +26,20 @@ export class PerformanceGraphViewer {
     this.performanceGraphPresenter.presentGraph({
       data: firstRecord
         ? range(
-            DateSerializer.deserialize(firstRecord.date).getTime(),
-            today.getTime() + 1,
-            milliseconds({ days: 1 }),
-          ).map((milliseconds) => {
-            const date: string = DateSerializer.serialize(
-              new Date(milliseconds),
-            );
-            const record = records.find((record) => record.date === date);
+          DateSerializer.deserialize(firstRecord.date).getTime(),
+          today.getTime() + 1,
+          milliseconds({ days: 1 }),
+        ).map((milliseconds) => {
+          const date: string = DateSerializer.serialize(
+            new Date(milliseconds),
+          );
+          const record = records.find((record) => record.date === date);
 
-            return {
-              date,
-              pomodoros: record ? record.seconds / 25 / 60 : 0,
-            };
-          })
+          return {
+            date,
+            pomodoros: record ? record.seconds / 25 / 60 : 0,
+          };
+        })
         : [],
     });
   }

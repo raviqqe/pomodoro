@@ -5,25 +5,34 @@ import { PomodoroTimerState } from "./pomodoro-timer-state.js";
 import { type Timer } from "./timer.js";
 
 export class PomodoroTimer {
+  private readonly timer: Timer;
+  private readonly timerPresenter: PomodoroTimerPresenter;
+  private readonly notificationPresenter: NotificationPresenter;
+  private readonly performanceTracker: PerformanceTracker;
   private pomodoro = true;
   private breakCount = 0;
 
   constructor(
-    private readonly timer: Timer,
-    private readonly timerPresenter: PomodoroTimerPresenter,
-    private readonly notificationPresenter: NotificationPresenter,
-    private readonly performanceTracker: PerformanceTracker,
-  ) {}
+    timer: Timer,
+    timerPresenter: PomodoroTimerPresenter,
+    notificationPresenter: NotificationPresenter,
+    performanceTracker: PerformanceTracker,
+  ) {
+    this.timer = timer;
+    this.timerPresenter = timerPresenter;
+    this.notificationPresenter = notificationPresenter;
+    this.performanceTracker = performanceTracker;
+  }
 
   public start(): void {
     switch (this.state()) {
-      case PomodoroTimerState.LongBreak:
+      case "longBreak":
         this.startBreak(15 * 60);
         break;
-      case PomodoroTimerState.Pomodoro:
+      case "pomodoro":
         this.startPomodoro();
         break;
-      case PomodoroTimerState.ShortBreak:
+      case "shortBreak":
         this.startBreak(5 * 60);
         break;
     }
@@ -39,10 +48,10 @@ export class PomodoroTimer {
 
   private state(): PomodoroTimerState {
     return this.pomodoro
-      ? PomodoroTimerState.Pomodoro
+      ? "pomodoro"
       : (this.breakCount + 1) % 4 === 0
-        ? PomodoroTimerState.LongBreak
-        : PomodoroTimerState.ShortBreak;
+        ? "longBreak"
+        : "shortBreak";
   }
 
   private startPomodoro(): void {

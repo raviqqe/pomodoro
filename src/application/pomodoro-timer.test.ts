@@ -1,7 +1,6 @@
 import { last, range } from "es-toolkit";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { PerformanceTracker } from "./performance-tracker.js";
-import { PomodoroTimerState } from "./pomodoro-timer-state.js";
 import { PomodoroTimer } from "./pomodoro-timer.js";
 import { notificationPresenter } from "./test/notification-presenter.js";
 import { performanceRecordRepository } from "./test/performance-record-repository.js";
@@ -37,7 +36,7 @@ it("stops", () => {
   pomodoroTimer.stop();
 
   expect(pomodoroTimerPresenter.presentState.mock.calls).toEqual([
-    [PomodoroTimerState.Pomodoro],
+    ["pomodoro"],
   ]);
 });
 
@@ -50,14 +49,14 @@ it("changes its state", async () => {
   }
 
   expect(pomodoroTimerPresenter.presentState.mock.calls).toEqual([
-    [PomodoroTimerState.ShortBreak],
-    [PomodoroTimerState.Pomodoro],
-    [PomodoroTimerState.ShortBreak],
-    [PomodoroTimerState.Pomodoro],
-    [PomodoroTimerState.ShortBreak],
-    [PomodoroTimerState.Pomodoro],
-    [PomodoroTimerState.LongBreak],
-    [PomodoroTimerState.Pomodoro],
+    ["shortBreak"],
+    ["pomodoro"],
+    ["shortBreak"],
+    ["pomodoro"],
+    ["shortBreak"],
+    ["pomodoro"],
+    ["longBreak"],
+    ["pomodoro"],
   ]);
 });
 

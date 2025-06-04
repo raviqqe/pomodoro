@@ -44,9 +44,9 @@ export default (): JSX.Element => {
       {stopped ? (
         <>
           <State>
-            {state === PomodoroTimerState.Pomodoro
+            {state === "pomodoro"
               ? "🍅"
-              : state === PomodoroTimerState.ShortBreak
+              : state === "shortBreak"
                 ? "🛌"
                 : "🛌🛌"}
           </State>
