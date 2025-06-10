@@ -19,7 +19,12 @@ it("tracks performance by a minute", async () => {
   }
 
   expect(performanceRecordRepository.create.mock.calls).toEqual([
-    [expect.objectContaining({ date: expect.any(String), seconds: 60 })],
+    [
+      expect.objectContaining({
+        date: expect.any(String) as unknown,
+        seconds: 60,
+      }),
+    ],
   ]);
 });
 
@@ -35,9 +40,19 @@ it("updates an existing performance record", async () => {
   }
 
   expect(performanceRecordRepository.create.mock.calls).toEqual([
-    [expect.objectContaining({ date: expect.any(String), seconds: 60 })],
+    [
+      expect.objectContaining({
+        date: expect.any(String) as unknown,
+        seconds: 60,
+      }),
+    ],
   ]);
   expect(performanceRecordRepository.update.mock.calls).toEqual([
-    [expect.objectContaining({ date: expect.any(String), seconds: 120 })],
+    [
+      expect.objectContaining({
+        date: expect.any(String) as unknown,
+        seconds: 120,
+      }),
+    ],
   ]);
 });
