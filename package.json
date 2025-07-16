@@ -41,7 +41,7 @@
     "@react-router/dev": "^7.6.3",
     "@testing-library/react": "^16.3.0",
     "@types/react": "^19.1.8",
-    "@types/recharts": "^2.0.0",
+    "@types/recharts": "^2.0.1",
     "@vitejs/plugin-react": "^4.6.0",
     "@vitest/coverage-v8": "^3.2.4",
     "@wyw-in-js/vite": "^0.7.0",
