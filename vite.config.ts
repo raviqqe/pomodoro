@@ -20,6 +20,7 @@ export default defineConfig({
     }),
     VitePWA({
       manifest: {
+        // biome-ignore-start lint/style/useNamingConvention: External API
         background_color: "steelblue",
         display: "standalone",
         icons: [{ sizes: "any", src: "icon.svg" }],
@@ -27,6 +28,7 @@ export default defineConfig({
         short_name: "Pomodoro",
         start_url: ".",
         theme_color: "steelblue",
+        // biome-ignore-end lint/style/useNamingConvention: External API
       },
       workbox: {
         navigateFallbackDenylist: [/^\/__/],
