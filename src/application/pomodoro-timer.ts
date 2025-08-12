@@ -12,7 +12,7 @@ export class PomodoroTimer {
   private pomodoro = true;
   private breakCount = 0;
 
-  constructor(
+  public constructor(
     timer: Timer,
     timerPresenter: PomodoroTimerPresenter,
     notificationPresenter: NotificationPresenter,

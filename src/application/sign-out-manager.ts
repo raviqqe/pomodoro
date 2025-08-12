@@ -7,7 +7,7 @@ export class SignOutManager {
   private readonly authenticationPresenter: AuthenticationPresenter;
   private readonly performanceGraphPresenter: PerformanceGraphPresenter;
 
-  constructor(
+  public constructor(
     authenticationController: AuthenticationController,
     authenticationPresenter: AuthenticationPresenter,
     performanceGraphPresenter: PerformanceGraphPresenter,

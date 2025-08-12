@@ -21,7 +21,7 @@ export class FirestorePerformanceRecordRepository
   private readonly auth: Auth;
   private readonly firestore: Firestore;
 
-  constructor(app: FirebaseApp) {
+  public constructor(app: FirebaseApp) {
     this.auth = getAuth(app);
     this.firestore = getFirestore(app);
   }

@@ -5,7 +5,7 @@ export class PomodoroTimerStarter {
   private readonly pomodoroTimer: PomodoroTimer;
   private readonly notificationController: NotificationInitializer;
 
-  constructor(
+  public constructor(
     pomodoroTimer: PomodoroTimer,
     notificationController: NotificationInitializer,
   ) {

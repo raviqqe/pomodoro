@@ -8,7 +8,7 @@ export class PerformanceTracker {
   private readonly performanceRecordRepository: PerformanceRecordRepository;
   private seconds = 0;
 
-  constructor(performanceRecordRepository: PerformanceRecordRepository) {
+  public constructor(performanceRecordRepository: PerformanceRecordRepository) {
     this.performanceRecordRepository = performanceRecordRepository;
   }
 

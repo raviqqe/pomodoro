@@ -15,7 +15,7 @@ export class FirebaseAuthenticationController
   private readonly auth: Auth;
   private signedIn: boolean | null = null;
 
-  constructor(app: FirebaseApp) {
+  public constructor(app: FirebaseApp) {
     this.auth = getAuth(app);
     this.auth.onAuthStateChanged((user: User | null): void => {
       this.signedIn = !!user;

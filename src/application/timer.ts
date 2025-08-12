@@ -10,7 +10,7 @@ export class Timer {
   private readonly presenter: TimerPresenter;
   private interval?: number;
 
-  constructor(
+  public constructor(
     setInterval: (callback: () => void, interval: number) => number,
     clearInterval: (id: number) => void,
     presenter: TimerPresenter,

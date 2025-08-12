@@ -8,7 +8,7 @@ export class PerformanceGraphViewer {
   private readonly performanceRecordRepository: PerformanceRecordRepository;
   private readonly performanceGraphPresenter: PerformanceGraphPresenter;
 
-  constructor(
+  public constructor(
     performanceRecordRepository: PerformanceRecordRepository,
     performanceGraphPresenter: PerformanceGraphPresenter,
   ) {
