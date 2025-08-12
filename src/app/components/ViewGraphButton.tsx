@@ -1,4 +1,4 @@
-import { type JSX } from "react";
+import type { JSX } from "react";
 import { IoMdStats } from "react-icons/io";
 import { useNavigate } from "react-router";
 import { CircleButton } from "./CircleButton.js";

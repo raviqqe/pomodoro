@@ -1,6 +1,6 @@
-import { DateSerializer } from "../domain/date-serializer.js";
-import { type PerformanceRecordRepository } from "./performance-record-repository.js";
-import { type PerformanceRecord } from "./performance-record.js";
+import { serializeDate } from "../domain/date-serializer.js";
+import type { PerformanceRecord } from "./performance-record.js";
+import type { PerformanceRecordRepository } from "./performance-record-repository.js";
 
 const MINUTE = 60;
 
@@ -8,7 +8,7 @@ export class PerformanceTracker {
   private readonly performanceRecordRepository: PerformanceRecordRepository;
   private seconds = 0;
 
-  constructor(performanceRecordRepository: PerformanceRecordRepository) {
+  public constructor(performanceRecordRepository: PerformanceRecordRepository) {
     this.performanceRecordRepository = performanceRecordRepository;
   }
 
@@ -19,7 +19,7 @@ export class PerformanceTracker {
       return;
     }
 
-    const date: string = DateSerializer.serialize(new Date());
+    const date = serializeDate(new Date());
     const record: PerformanceRecord | null =
       await this.performanceRecordRepository.findOne(date);
 

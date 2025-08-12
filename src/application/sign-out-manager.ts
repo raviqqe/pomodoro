@@ -1,13 +1,13 @@
-import { type AuthenticationController } from "./authentication-controller.js";
-import { type AuthenticationPresenter } from "./authentication-presenter.js";
-import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
+import type { AuthenticationController } from "./authentication-controller.js";
+import type { AuthenticationPresenter } from "./authentication-presenter.js";
+import type { PerformanceGraphPresenter } from "./performance-graph-presenter.js";
 
 export class SignOutManager {
   private readonly authenticationController: AuthenticationController;
   private readonly authenticationPresenter: AuthenticationPresenter;
   private readonly performanceGraphPresenter: PerformanceGraphPresenter;
 
-  constructor(
+  public constructor(
     authenticationController: AuthenticationController,
     authenticationPresenter: AuthenticationPresenter,
     performanceGraphPresenter: PerformanceGraphPresenter,

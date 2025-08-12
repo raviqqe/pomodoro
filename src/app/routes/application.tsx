@@ -1,5 +1,5 @@
 import { styled } from "@linaria/react";
-import { type JSX } from "react";
+import type { JSX } from "react";
 import { Outlet, useLocation } from "react-router";
 import { SignOut } from "../components/SignOut.js";
 import { ViewGraphButton } from "../components/ViewGraphButton.js";

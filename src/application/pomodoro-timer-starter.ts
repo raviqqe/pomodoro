@@ -1,11 +1,11 @@
-import { type NotificationInitializer } from "./notification-controller.js";
-import { type PomodoroTimer } from "./pomodoro-timer.js";
+import type { NotificationInitializer } from "./notification-controller.js";
+import type { PomodoroTimer } from "./pomodoro-timer.js";
 
 export class PomodoroTimerStarter {
   private readonly pomodoroTimer: PomodoroTimer;
   private readonly notificationController: NotificationInitializer;
 
-  constructor(
+  public constructor(
     pomodoroTimer: PomodoroTimer,
     notificationController: NotificationInitializer,
   ) {

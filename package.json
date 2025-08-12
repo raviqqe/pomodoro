@@ -7,7 +7,7 @@
     "start": "react-router dev",
     "build": "react-router typegen && tsc && react-router build",
     "preview": "vite preview",
-    "lint": "eslint src",
+    "lint": "biome ci",
     "test": "vitest --coverage",
     "deploy": "firebase deploy"
   },
@@ -36,6 +36,8 @@
   "devDependencies": {
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
+    "@biomejs/biome": "^2.1.4",
+    "@raviqqe/biome-config": "^2.0.16",
     "@raviqqe/eslint-config": "^5.0.0",
     "@raviqqe/react-tsconfig": "^2.0.0",
     "@react-router/dev": "^7.8.0",

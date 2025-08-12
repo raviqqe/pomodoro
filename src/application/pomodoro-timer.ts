@@ -1,8 +1,8 @@
-import { type NotificationPresenter } from "./notification-presenter.js";
-import { type PerformanceTracker } from "./performance-tracker.js";
-import { type PomodoroTimerPresenter } from "./pomodoro-timer-presenter.js";
-import { type PomodoroTimerState } from "./pomodoro-timer-state.js";
-import { type Timer } from "./timer.js";
+import type { NotificationPresenter } from "./notification-presenter.js";
+import type { PerformanceTracker } from "./performance-tracker.js";
+import type { PomodoroTimerPresenter } from "./pomodoro-timer-presenter.js";
+import type { PomodoroTimerState } from "./pomodoro-timer-state.js";
+import type { Timer } from "./timer.js";
 
 export class PomodoroTimer {
   private readonly timer: Timer;
@@ -12,7 +12,7 @@ export class PomodoroTimer {
   private pomodoro = true;
   private breakCount = 0;
 
-  constructor(
+  public constructor(
     timer: Timer,
     timerPresenter: PomodoroTimerPresenter,
     notificationPresenter: NotificationPresenter,

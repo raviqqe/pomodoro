@@ -1,4 +1,4 @@
-import { type JSX } from "react";
+import type { JSX } from "react";
 import { MdTimer } from "react-icons/md";
 import { useNavigate } from "react-router";
 import { CircleButton } from "./CircleButton.js";

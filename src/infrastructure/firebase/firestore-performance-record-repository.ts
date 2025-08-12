@@ -1,8 +1,8 @@
-import { type FirebaseApp } from "firebase/app";
+import type { FirebaseApp } from "firebase/app";
 import { type Auth, getAuth } from "firebase/auth";
 import {
-  collection,
   type CollectionReference,
+  collection,
   doc,
   type Firestore,
   getDocs,
@@ -12,8 +12,8 @@ import {
   setDoc,
   where,
 } from "firebase/firestore/lite";
-import { type PerformanceRecordRepository } from "../../application/performance-record-repository.js";
-import { type PerformanceRecord } from "../../application/performance-record.js";
+import type { PerformanceRecord } from "../../application/performance-record.js";
+import type { PerformanceRecordRepository } from "../../application/performance-record-repository.js";
 
 export class FirestorePerformanceRecordRepository
   implements PerformanceRecordRepository
@@ -21,7 +21,7 @@ export class FirestorePerformanceRecordRepository
   private readonly auth: Auth;
   private readonly firestore: Firestore;
 
-  constructor(app: FirebaseApp) {
+  public constructor(app: FirebaseApp) {
     this.auth = getAuth(app);
     this.firestore = getFirestore(app);
   }

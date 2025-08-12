@@ -1,4 +1,4 @@
-import { type TimerPresenter } from "./timer-presenter.js";
+import type { TimerPresenter } from "./timer-presenter.js";
 
 export class Timer {
   private readonly setInterval: (
@@ -10,7 +10,7 @@ export class Timer {
   private readonly presenter: TimerPresenter;
   private interval?: number;
 
-  constructor(
+  public constructor(
     setInterval: (callback: () => void, interval: number) => number,
     clearInterval: (id: number) => void,
     presenter: TimerPresenter,
@@ -33,7 +33,6 @@ export class Timer {
     this.presenter.presentStopped(false);
     this.presenter.presentTime(duration);
 
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     this.interval = this.setInterval(async () => {
       duration--;
 

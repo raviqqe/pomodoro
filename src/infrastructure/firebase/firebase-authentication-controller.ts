@@ -1,13 +1,13 @@
 import { delay } from "es-toolkit";
-import { type FirebaseApp } from "firebase/app";
+import type { FirebaseApp } from "firebase/app";
 import {
   type Auth,
-  getAuth,
   GoogleAuthProvider,
+  getAuth,
   signInWithPopup,
   type User,
 } from "firebase/auth";
-import { type AuthenticationController } from "../../application/authentication-controller.js";
+import type { AuthenticationController } from "../../application/authentication-controller.js";
 
 export class FirebaseAuthenticationController
   implements AuthenticationController
@@ -15,7 +15,7 @@ export class FirebaseAuthenticationController
   private readonly auth: Auth;
   private signedIn: boolean | null = null;
 
-  constructor(app: FirebaseApp) {
+  public constructor(app: FirebaseApp) {
     this.auth = getAuth(app);
     this.auth.onAuthStateChanged((user: User | null): void => {
       this.signedIn = !!user;

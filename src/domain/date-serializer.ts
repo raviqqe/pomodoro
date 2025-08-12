@@ -2,12 +2,7 @@ import { format, parse } from "date-fns";
 
 const DATE_FORMAT = "yyyyMMdd";
 
-export class DateSerializer {
-  public static serialize(date: Date): string {
-    return format(date, DATE_FORMAT);
-  }
+export const serializeDate = (date: Date): string => format(date, DATE_FORMAT);
 
-  public static deserialize(formattedString: string): Date {
-    return parse(formattedString, DATE_FORMAT, new Date());
-  }
-}
+export const deserializeDate = (formattedString: string): Date =>
+  parse(formattedString, DATE_FORMAT, new Date());
