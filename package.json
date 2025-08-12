@@ -7,7 +7,7 @@
     "start": "react-router dev",
     "build": "react-router typegen && tsc && react-router build",
     "preview": "vite preview",
-    "lint": "eslint src",
+    "lint": "biome ci",
     "test": "vitest --coverage",
     "deploy": "firebase deploy"
   },
