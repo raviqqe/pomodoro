@@ -13,7 +13,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { DateSerializer } from "../../domain/date-serializer.js";
+import { deserializeDate } from "../../domain/date-serializer.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
 import { Loader } from "../components/Loader.js";
@@ -49,8 +49,8 @@ export default (): JSX.Element => {
             stroke={white}
             tickFormatter={(date: string): string => {
               const days: number = differenceInDays(
-                DateSerializer.deserialize(lastDatum.date),
-                DateSerializer.deserialize(date),
+                deserializeDate(lastDatum.date),
+                deserializeDate(date),
               );
 
               return days === 0 ? "Today" : `${days} days ago`;
