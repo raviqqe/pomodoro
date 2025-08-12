@@ -1,6 +1,6 @@
 import { atom } from "nanostores";
-import { type PerformanceGraphPresenter } from "../application/performance-graph-presenter.js";
-import { type PerformanceGraph } from "../application/performance-graph.js";
+import type { PerformanceGraph } from "../application/performance-graph.js";
+import type { PerformanceGraphPresenter } from "../application/performance-graph-presenter.js";
 
 export class NanostoresPerformanceGraphPresenter
   implements PerformanceGraphPresenter

@@ -1,4 +1,4 @@
-import { type TimerPresenter } from "./timer-presenter.js";
+import type { TimerPresenter } from "./timer-presenter.js";
 
 export class Timer {
   private readonly setInterval: (

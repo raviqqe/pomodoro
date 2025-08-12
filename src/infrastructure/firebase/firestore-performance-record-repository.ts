@@ -1,8 +1,8 @@
-import { type FirebaseApp } from "firebase/app";
+import type { FirebaseApp } from "firebase/app";
 import { type Auth, getAuth } from "firebase/auth";
 import {
-  collection,
   type CollectionReference,
+  collection,
   doc,
   type Firestore,
   getDocs,
@@ -12,8 +12,8 @@ import {
   setDoc,
   where,
 } from "firebase/firestore/lite";
-import { type PerformanceRecordRepository } from "../../application/performance-record-repository.js";
-import { type PerformanceRecord } from "../../application/performance-record.js";
+import type { PerformanceRecord } from "../../application/performance-record.js";
+import type { PerformanceRecordRepository } from "../../application/performance-record-repository.js";
 
 export class FirestorePerformanceRecordRepository
   implements PerformanceRecordRepository

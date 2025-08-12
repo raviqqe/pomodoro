@@ -1,8 +1,8 @@
 import { milliseconds, subMonths } from "date-fns";
 import { range } from "es-toolkit";
 import { DateSerializer } from "../domain/date-serializer.js";
-import { type PerformanceGraphPresenter } from "./performance-graph-presenter.js";
-import { type PerformanceRecordRepository } from "./performance-record-repository.js";
+import type { PerformanceGraphPresenter } from "./performance-graph-presenter.js";
+import type { PerformanceRecordRepository } from "./performance-record-repository.js";
 
 export class PerformanceGraphViewer {
   private readonly performanceRecordRepository: PerformanceRecordRepository;

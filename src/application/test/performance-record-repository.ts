@@ -1,5 +1,5 @@
 import { type Mocked, vi } from "vitest";
-import { type PerformanceRecordRepository } from "../performance-record-repository.js";
+import type { PerformanceRecordRepository } from "../performance-record-repository.js";
 
 export const performanceRecordRepository: Mocked<PerformanceRecordRepository> =
   {
