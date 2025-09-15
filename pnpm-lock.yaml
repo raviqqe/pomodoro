@@ -67,7 +67,7 @@ importers:
         version: 0.17.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       recharts:
         specifier: ^3.2.0
-        version: 3.2.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)
+        version: 3.2.0(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)
       worker-timers:
         specifier: ^8.0.24
         version: 8.0.24
@@ -92,13 +92,13 @@ importers:
         version: 7.9.1(@types/node@24.3.1)(@vitejs/plugin-rsc@0.4.11(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(vite@7.1.5(@types/node@24.3.1)(terser@5.44.0)(yaml@2.8.1)))(react-router@7.9.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(terser@5.44.0)(typescript@5.9.2)(vite@7.1.5(@types/node@24.3.1)(terser@5.44.0)(yaml@2.8.1))(yaml@2.8.1)
       '@testing-library/react':
         specifier: ^16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@types/react':
-        specifier: ^19.1.12
-        version: 19.1.12
+        specifier: ^19.1.13
+        version: 19.1.13
       '@types/recharts':
         specifier: ^2.0.1
-        version: 2.0.1(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)
+        version: 2.0.1(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)
       '@vitejs/plugin-react':
         specifier: ^5.0.2
         version: 5.0.2(vite@7.1.5(@types/node@24.3.1)(terser@5.44.0)(yaml@2.8.1))
@@ -1871,8 +1871,8 @@ packages:
   '@types/node@24.3.1':
     resolution: {integrity: sha512-3vXmQDXy+woz+gnrTvuvNrPzekOi+Ds0ReMxw0LzBiK3a+1k0kQn9f2NWk+lgD4rJehFUmYy2gMhJ2ZI+7YP9g==}
 
-  '@types/react@19.1.12':
-    resolution: {integrity: sha512-cMoR+FoAf/Jyq6+Df2/Z41jISvGZZ2eTlnsaJRptmZ76Caldwy1odD4xTr/gNV9VLj0AWgg/nmkevIyUfIIq5w==}
+  '@types/react@19.1.13':
+    resolution: {integrity: sha512-hHkbU/eoO3EG5/MZkuFSKmYqPbSVk5byPFa3e7y/8TybHiLMACgI8seVYlicwk7H5K/rI2px9xrQp/C+AUDTiQ==}
 
   '@types/recharts@2.0.1':
     resolution: {integrity: sha512-/cFs7oiafzByUwBSWA1IzE6FW+ppPwQAWsDTadSgVOwzveY9MESpyLHyyHY0SfPPKLW4+4qVNYHPXd0rFiC8vg==}
@@ -2228,6 +2228,11 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
+  browserslist@4.26.0:
+    resolution: {integrity: sha512-P9go2WrP9FiPwLv3zqRD/Uoxo0RSHjzFCiQz7d4vbmwNqQFo9T9WCeP/Qn5EbcKQY6DBbkxEXNcpJOmncNrb7A==}
+    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
+    hasBin: true
+
   buffer-crc32@1.0.0:
     resolution: {integrity: sha512-Db1SbgBS/fg/392AblrMJk97KggmvYhr4pB5ZIMTWtaivCPMWLkmb7m21cJvpvgK+J3nsU2CmmixNBZx4vFj/w==}
     engines: {node: '>=8.0.0'}
@@ -2278,6 +2283,9 @@ packages:
   camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
+
+  caniuse-lite@1.0.30001741:
+    resolution: {integrity: sha512-QGUGitqsc8ARjLdgAfxETDhRbJ0REsP6O3I96TAth/mVjh2cYzN2u+3AzPP3aVSm2FehEItaJw1xd+IGBXWeSw==}
 
   caniuse-lite@1.0.30001741:
     resolution: {integrity: sha512-QGUGitqsc8ARjLdgAfxETDhRbJ0REsP6O3I96TAth/mVjh2cYzN2u+3AzPP3aVSm2FehEItaJw1xd+IGBXWeSw==}
@@ -2733,6 +2741,9 @@ packages:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
     engines: {node: '>=0.10.0'}
     hasBin: true
+
+  electron-to-chromium@1.5.218:
+    resolution: {integrity: sha512-uwwdN0TUHs8u6iRgN8vKeWZMRll4gBkz+QMqdS7DDe49uiK68/UX92lFb61oiFPrpYZNeZIqa4bA7O6Aiasnzg==}
 
   electron-to-chromium@1.5.218:
     resolution: {integrity: sha512-uwwdN0TUHs8u6iRgN8vKeWZMRll4gBkz+QMqdS7DDe49uiK68/UX92lFb61oiFPrpYZNeZIqa4bA7O6Aiasnzg==}
@@ -4012,6 +4023,9 @@ packages:
     resolution: {integrity: sha512-3gD+6zsrLQH7DyYOUIutaauuXrcyxeTPyQuZQCQoNPZMHMMS5m4y0xclNpvYzoK3VNzuyxT6eF4mkIL4WSZ1eQ==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
+
+  node-releases@2.0.21:
+    resolution: {integrity: sha512-5b0pgg78U3hwXkCM8Z9b2FJdPZlr9Psr9V2gQPESdGHqbntyFJKFW4r5TeWGFzafGY3hzs1JC62VEQMbl1JFkw==}
 
   node-releases@2.0.21:
     resolution: {integrity: sha512-5b0pgg78U3hwXkCM8Z9b2FJdPZlr9Psr9V2gQPESdGHqbntyFJKFW4r5TeWGFzafGY3hzs1JC62VEQMbl1JFkw==}
@@ -7312,7 +7326,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.2
 
-  '@reduxjs/toolkit@2.9.0(react-redux@9.2.0(@types/react@19.1.12)(react@19.1.1)(redux@5.0.1))(react@19.1.1)':
+  '@reduxjs/toolkit@2.9.0(react-redux@9.2.0(@types/react@19.1.13)(react@19.1.1)(redux@5.0.1))(react@19.1.1)':
     dependencies:
       '@standard-schema/spec': 1.0.0
       '@standard-schema/utils': 0.3.0
@@ -7322,7 +7336,7 @@ snapshots:
       reselect: 5.1.1
     optionalDependencies:
       react: 19.1.1
-      react-redux: 9.2.0(@types/react@19.1.12)(react@19.1.1)(redux@5.0.1)
+      react-redux: 9.2.0(@types/react@19.1.13)(react@19.1.1)(redux@5.0.1)
 
   '@rolldown/pluginutils@1.0.0-beta.34': {}
 
@@ -7491,14 +7505,14 @@ snapshots:
       picocolors: 1.1.1
       pretty-format: 27.5.1
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@babel/runtime': 7.28.3
       '@testing-library/dom': 10.4.1
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
     optionalDependencies:
-      '@types/react': 19.1.12
+      '@types/react': 19.1.13
 
   '@tootallnate/once@2.0.0': {}
 
@@ -7575,13 +7589,13 @@ snapshots:
     dependencies:
       undici-types: 7.10.0
 
-  '@types/react@19.1.12':
+  '@types/react@19.1.13':
     dependencies:
       csstype: 3.1.3
 
-  '@types/recharts@2.0.1(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)':
+  '@types/recharts@2.0.1(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)':
     dependencies:
-      recharts: 3.2.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)
+      recharts: 3.2.0(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1)
     transitivePeerDependencies:
       - '@types/react'
       - react
@@ -8054,6 +8068,14 @@ snapshots:
       node-releases: 2.0.21
       update-browserslist-db: 1.1.3(browserslist@4.26.0)
 
+  browserslist@4.26.0:
+    dependencies:
+      baseline-browser-mapping: 2.8.4
+      caniuse-lite: 1.0.30001741
+      electron-to-chromium: 1.5.218
+      node-releases: 2.0.21
+      update-browserslist-db: 1.1.3(browserslist@4.26.0)
+
   buffer-crc32@1.0.0: {}
 
   buffer-equal-constant-time@1.0.1: {}
@@ -8112,6 +8134,8 @@ snapshots:
   callsites@3.1.0: {}
 
   camelcase@6.3.0: {}
+
+  caniuse-lite@1.0.30001741: {}
 
   caniuse-lite@1.0.30001741: {}
 
@@ -8534,6 +8558,8 @@ snapshots:
   ejs@3.1.10:
     dependencies:
       jake: 10.9.4
+
+  electron-to-chromium@1.5.218: {}
 
   electron-to-chromium@1.5.218: {}
 
@@ -10133,6 +10159,8 @@ snapshots:
 
   node-releases@2.0.21: {}
 
+  node-releases@2.0.21: {}
+
   nopt@8.1.0:
     dependencies:
       abbrev: 3.0.1
@@ -10551,13 +10579,13 @@ snapshots:
 
   react-is@19.1.1: {}
 
-  react-redux@9.2.0(@types/react@19.1.12)(react@19.1.1)(redux@5.0.1):
+  react-redux@9.2.0(@types/react@19.1.13)(react@19.1.1)(redux@5.0.1):
     dependencies:
       '@types/use-sync-external-store': 0.0.6
       react: 19.1.1
       use-sync-external-store: 1.5.0(react@19.1.1)
     optionalDependencies:
-      '@types/react': 19.1.12
+      '@types/react': 19.1.13
       redux: 5.0.1
 
   react-refresh@0.14.2: {}
@@ -10613,9 +10641,9 @@ snapshots:
 
   readdirp@4.1.2: {}
 
-  recharts@3.2.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1):
+  recharts@3.2.0(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(redux@5.0.1):
     dependencies:
-      '@reduxjs/toolkit': 2.9.0(react-redux@9.2.0(@types/react@19.1.12)(react@19.1.1)(redux@5.0.1))(react@19.1.1)
+      '@reduxjs/toolkit': 2.9.0(react-redux@9.2.0(@types/react@19.1.13)(react@19.1.1)(redux@5.0.1))(react@19.1.1)
       clsx: 2.1.1
       decimal.js-light: 2.5.1
       es-toolkit: 1.39.10
@@ -10624,7 +10652,7 @@ snapshots:
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
       react-is: 19.1.1
-      react-redux: 9.2.0(@types/react@19.1.12)(react@19.1.1)(redux@5.0.1)
+      react-redux: 9.2.0(@types/react@19.1.13)(react@19.1.1)(redux@5.0.1)
       reselect: 5.1.1
       tiny-invariant: 1.3.3
       use-sync-external-store: 1.5.0(react@19.1.1)
@@ -11424,6 +11452,12 @@ snapshots:
   unpipe@1.0.0: {}
 
   upath@1.2.0: {}
+
+  update-browserslist-db@1.1.3(browserslist@4.26.0):
+    dependencies:
+      browserslist: 4.26.0
+      escalade: 3.2.0
+      picocolors: 1.1.1
 
   update-browserslist-db@1.1.3(browserslist@4.26.0):
     dependencies:
