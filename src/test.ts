@@ -7,5 +7,7 @@ window.ResizeObserver = defaultImport(ResizeObserver);
 
 afterEach(() => {
   cleanup();
+
   vi.restoreAllMocks();
+  vi.resetAllMocks();
 });

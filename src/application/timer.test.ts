@@ -1,5 +1,5 @@
 import { range } from "es-toolkit";
-import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { beforeEach, expect, it, vi } from "vitest";
 import { timerPresenter } from "./test/timer-presenter.js";
 import { Timer } from "./timer.js";
 
@@ -16,10 +16,6 @@ beforeEach(() => {
     (id) => window.clearInterval(id),
     timerPresenter,
   );
-});
-
-afterEach(() => {
-  vi.restoreAllMocks();
 });
 
 it("starts", () => {
