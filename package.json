@@ -53,7 +53,7 @@
     "jsdom": "^27.3.0",
     "resize-observer-polyfill": "^1.5.1",
     "typescript": "^5.9.3",
-    "vite": "^7.2.7",
+    "vite": "^7.3.0",
     "vite-plugin-pwa": "^1.2.0",
     "vitest": "^4.0.15"
   },
