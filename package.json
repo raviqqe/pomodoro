@@ -35,7 +35,7 @@
     "react-router": "^7.10.1",
     "react-spinners": "^0.17.0",
     "recharts": "^3.5.1",
-    "worker-timers": "^8.0.25"
+    "worker-timers": "^8.0.26"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.28.5",
