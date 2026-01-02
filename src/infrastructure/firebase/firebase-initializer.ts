@@ -9,13 +9,13 @@ type FirebaseConfiguration = Required<
 >;
 
 export class FirebaseInitializer {
-  private readonly configuration: FirebaseConfiguration;
+  readonly #configuration: FirebaseConfiguration;
 
   public constructor(configuration: FirebaseConfiguration) {
-    this.configuration = configuration;
+    this.#configuration = configuration;
   }
 
   public initialize(): FirebaseApp {
-    return initializeApp(this.configuration);
+    return initializeApp(this.#configuration);
   }
 }

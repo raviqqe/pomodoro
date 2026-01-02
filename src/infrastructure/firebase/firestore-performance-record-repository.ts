@@ -18,12 +18,12 @@ import type { PerformanceRecordRepository } from "../../application/performance-
 export class FirestorePerformanceRecordRepository
   implements PerformanceRecordRepository
 {
-  private readonly auth: Auth;
-  private readonly firestore: Firestore;
+  readonly #auth: Auth;
+  readonly #firestore: Firestore;
 
   public constructor(app: FirebaseApp) {
-    this.auth = getAuth(app);
-    this.firestore = getFirestore(app);
+    this.#auth = getAuth(app);
+    this.#firestore = getFirestore(app);
   }
 
   public async create(record: PerformanceRecord): Promise<void> {
@@ -32,7 +32,7 @@ export class FirestorePerformanceRecordRepository
 
   public async findOne(date: string): Promise<PerformanceRecord | null> {
     const snapshot = await getDocs(
-      query(this.collection(), where("date", "==", date)),
+      query(this.#collection, where("date", "==", date)),
     );
     const documentSnapshot = snapshot.docs[0];
 
@@ -43,7 +43,7 @@ export class FirestorePerformanceRecordRepository
 
   public async findManySince(date: string): Promise<PerformanceRecord[]> {
     const snapshot = await getDocs(
-      query(this.collection(), where("date", ">=", date), orderBy("date")),
+      query(this.#collection, where("date", ">=", date), orderBy("date")),
     );
 
     return snapshot.docs.map(
@@ -56,18 +56,18 @@ export class FirestorePerformanceRecordRepository
   }
 
   public async createOrUpdate(record: PerformanceRecord): Promise<void> {
-    await setDoc(doc(this.collection(), record.date), record);
+    await setDoc(doc(this.#collection, record.date), record);
   }
 
-  private collection(): CollectionReference {
-    const user = this.auth.currentUser;
+  get #collection(): CollectionReference {
+    const user = this.#auth.currentUser;
 
     if (!user) {
       throw new Error("user not authenticated");
     }
 
     return collection(
-      doc(collection(this.firestore, "users"), user.uid),
+      doc(collection(this.#firestore, "users"), user.uid),
       "performanceRecords",
     );
   }
