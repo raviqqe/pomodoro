@@ -32,7 +32,7 @@ export class FirestorePerformanceRecordRepository
 
   public async findOne(date: string): Promise<PerformanceRecord | null> {
     const snapshot = await getDocs(
-      query(this.#collection(), where("date", "==", date)),
+      query(this.#collection, where("date", "==", date)),
     );
     const documentSnapshot = snapshot.docs[0];
 
@@ -43,7 +43,7 @@ export class FirestorePerformanceRecordRepository
 
   public async findManySince(date: string): Promise<PerformanceRecord[]> {
     const snapshot = await getDocs(
-      query(this.#collection(), where("date", ">=", date), orderBy("date")),
+      query(this.#collection, where("date", ">=", date), orderBy("date")),
     );
 
     return snapshot.docs.map(
@@ -56,10 +56,10 @@ export class FirestorePerformanceRecordRepository
   }
 
   public async createOrUpdate(record: PerformanceRecord): Promise<void> {
-    await setDoc(doc(this.#collection(), record.date), record);
+    await setDoc(doc(this.#collection, record.date), record);
   }
 
-  #collection(): CollectionReference {
+  get #collection(): CollectionReference {
     const user = this.#auth.currentUser;
 
     if (!user) {
