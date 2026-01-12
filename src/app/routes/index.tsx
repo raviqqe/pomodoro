@@ -6,7 +6,7 @@ import { SignIn } from "../components/SignIn.js";
 import styles from "./index.module.css";
 
 export default (): JSX.Element => (
-  <div className={styles.container}>
+  <div className={styles.root}>
     <div className={styles.title}>P🍅m🍅d🍅r🍅</div>
     <SignIn signIn={() => signInManager.signIn()} />
     <a

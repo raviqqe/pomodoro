@@ -9,7 +9,7 @@ export default (): JSX.Element => {
   const { pathname } = useLocation();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.root}>
       <Outlet />
       <div className={styles.buttons}>
         <SignOut />

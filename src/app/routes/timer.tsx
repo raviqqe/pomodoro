@@ -12,7 +12,7 @@ export default (): JSX.Element => {
   const seconds = useStore(pomodoroTimerPresenter.seconds);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.root}>
       {stopped ? (
         <>
           <div className={styles.state}>

@@ -30,7 +30,7 @@ export default (): JSX.Element => {
   const lastDatum = last(graph.data);
 
   return lastDatum ? (
-    <div className={styles.container}>
+    <div className={styles.root}>
       <ResponsiveContainer>
         <BarChart data={graph.data}>
           <CartesianGrid fill={white} stroke={grey} strokeDasharray="3 3" />
