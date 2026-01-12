@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import type { ComponentPropsWithoutRef, JSX } from "react";
 import styles from "./Button.module.css";
 
@@ -12,12 +13,10 @@ export const Button = ({
 }: Props): JSX.Element => (
   <button
     {...props}
-    className={[
+    className={classNames(
       styles.button,
       secondary ? styles.secondary : styles.primary,
       className,
-    ]
-      .filter(Boolean)
-      .join(" ")}
+    )}
   />
 );
