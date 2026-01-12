@@ -5,6 +5,7 @@
     "deserialize",
     "dimgray",
     "firestore",
+    "isbot",
     "linaria",
     "loscore",
     "luxon",
