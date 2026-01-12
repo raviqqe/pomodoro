@@ -1,0 +1,19 @@
+.button {
+  box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.primary {
+  background: var(--red);
+}
+
+.secondary {
+  background: var(--grey);
+}

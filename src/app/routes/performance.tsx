@@ -1,4 +1,3 @@
-import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { useAsync } from "@raviqqe/react-hooks";
 import { differenceInDays } from "date-fns";
@@ -18,16 +17,7 @@ import { performanceGraphPresenter } from "../../main/performance-graph-presente
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
 import { Loader } from "../components/Loader.js";
 import { grey, red, white } from "../style.js";
-
-const Container = styled.div`
-  width: 80vw;
-  height: 80vh;
-`;
-
-const Message = styled.div`
-  color: ${white};
-  font-size: 1.5em;
-`;
+import styles from "./performance.module.css";
 
 export default (): JSX.Element => {
   useAsync(() => performanceGraphViewer.viewGraph(), []);
@@ -40,7 +30,7 @@ export default (): JSX.Element => {
   const lastDatum = last(graph.data);
 
   return lastDatum ? (
-    <Container>
+    <div className={styles.container}>
       <ResponsiveContainer>
         <BarChart data={graph.data}>
           <CartesianGrid fill={white} stroke={grey} strokeDasharray="3 3" />
@@ -68,8 +58,8 @@ export default (): JSX.Element => {
           <Bar dataKey="pomodoros" fill={red} />
         </BarChart>
       </ResponsiveContainer>
-    </Container>
+    </div>
   ) : (
-    <Message>No performance graph to show yet!</Message>
+    <div className={styles.message}>No performance graph to show yet!</div>
   );
 };

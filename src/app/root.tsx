@@ -1,9 +1,9 @@
 import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
-import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { useAsync } from "@raviqqe/react-hooks";
 import type { JSX, ReactNode } from "react";
+import styles from "./root.module.css";
 import {
   Links,
   type LinksFunction,
@@ -19,7 +19,6 @@ import { configuration } from "../configuration.js";
 import { applicationInitializer } from "../main/application-initializer.js";
 import { authenticationPresenter } from "../main/authentication-presenter.js";
 import { Loader } from "./components/Loader.js";
-import { black, lightBlue } from "./style.js";
 
 export const meta: MetaFunction = () => [
   {
@@ -77,25 +76,6 @@ export const links: LinksFunction = () => [
   },
 ];
 
-const Body = styled.body`
-  background: ${lightBlue};
-  margin: 0;
-  padding: 0;
-  color: ${black};
-  font-family: Roboto, sans-serif;
-  line-height: 1.4;
-  font-size: 16px;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-`;
-
-const LoaderContainer = styled.div`
-  display: grid;
-  place-items: center;
-  height: 100%;
-  width: 100%;
-`;
 
 export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   const signedIn = useStore(authenticationPresenter.signedIn);
@@ -120,17 +100,17 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
           src="https://plausible.io/js/script.js"
         />
       </head>
-      <Body>
+      <body className={styles.body}>
         {location || signedIn === null ? (
-          <LoaderContainer>
+          <div className={styles.loaderContainer}>
             <Loader />
-          </LoaderContainer>
+          </div>
         ) : (
           children
         )}
         <ScrollRestoration />
         <Scripts />
-      </Body>
+      </body>
     </html>
   );
 };

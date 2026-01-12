@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.buttons {
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
+}
+
+.buttons > :not(:last-child) {
+  margin-bottom: 0.5em;
+}
