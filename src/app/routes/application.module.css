@@ -9,8 +9,8 @@
   position: fixed;
   top: 0.5em;
   right: 0.5em;
-}
 
-.buttons > :not(:last-child) {
-  margin-bottom: 0.5em;
+  & > :not(:last-child) {
+    margin-bottom: 0.5em;
+  }
 }

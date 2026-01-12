@@ -8,12 +8,12 @@
   border: none;
   cursor: pointer;
   flex-shrink: 0;
-}
 
-.primary {
-  background: var(--red);
-}
+  &.primary {
+    background: var(--red);
+  }
 
-.secondary {
-  background: var(--grey);
+  &.secondary {
+    background: var(--grey);
+  }
 }
