@@ -5,7 +5,11 @@ type Props = ComponentPropsWithoutRef<"button"> & {
   secondary?: boolean;
 };
 
-export const Button = ({ secondary, className, ...props }: Props): JSX.Element => (
+export const Button = ({
+  secondary,
+  className,
+  ...props
+}: Props): JSX.Element => (
   <button
     {...props}
     className={[

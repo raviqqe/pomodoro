@@ -3,7 +3,6 @@ import "@fontsource/roboto";
 import { useStore } from "@nanostores/react";
 import { useAsync } from "@raviqqe/react-hooks";
 import type { JSX, ReactNode } from "react";
-import styles from "./root.module.css";
 import {
   Links,
   type LinksFunction,
@@ -19,6 +18,7 @@ import { configuration } from "../configuration.js";
 import { applicationInitializer } from "../main/application-initializer.js";
 import { authenticationPresenter } from "../main/authentication-presenter.js";
 import { Loader } from "./components/Loader.js";
+import styles from "./root.module.css";
 
 export const meta: MetaFunction = () => [
   {
@@ -75,7 +75,6 @@ export const links: LinksFunction = () => [
     rel: "manifest",
   },
 ];
-
 
 export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   const signedIn = useStore(authenticationPresenter.signedIn);

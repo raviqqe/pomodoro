@@ -9,7 +9,11 @@ export default (): JSX.Element => (
   <div className={styles.container}>
     <div className={styles.title}>P🍅m🍅d🍅r🍅</div>
     <SignIn signIn={() => signInManager.signIn()} />
-    <a className={styles.githubLink} href={configuration.repositoryUrl} target="_blank">
+    <a
+      className={styles.githubLink}
+      href={configuration.repositoryUrl}
+      target="_blank"
+    >
       <FaGithub />
     </a>
   </div>
