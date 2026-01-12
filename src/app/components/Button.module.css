@@ -1,5 +1,5 @@
 .button {
-  box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
   display: flex;
   justify-content: center;
   align-items: center;

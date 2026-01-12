@@ -5,6 +5,7 @@
   --light-blue: steelblue;
   --red: tomato;
   --white: white;
+  --box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
 
   background: var(--light-blue);
   margin: 0;
