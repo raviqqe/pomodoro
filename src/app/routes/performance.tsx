@@ -1,4 +1,3 @@
-import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { useAsync } from "@raviqqe/react-hooks";
 import { differenceInDays } from "date-fns";
@@ -17,17 +16,7 @@ import { deserializeDate } from "../../domain/date-serializer.js";
 import { performanceGraphPresenter } from "../../main/performance-graph-presenter.js";
 import { performanceGraphViewer } from "../../main/performance-graph-viewer.js";
 import { Loader } from "../components/Loader.js";
-import { grey, red, white } from "../style.js";
-
-const Container = styled.div`
-  width: 80vw;
-  height: 80vh;
-`;
-
-const Message = styled.div`
-  color: ${white};
-  font-size: 1.5em;
-`;
+import styles from "./performance.module.css";
 
 export default (): JSX.Element => {
   useAsync(() => performanceGraphViewer.viewGraph(), []);
@@ -40,13 +29,17 @@ export default (): JSX.Element => {
   const lastDatum = last(graph.data);
 
   return lastDatum ? (
-    <Container>
+    <div className={styles.root}>
       <ResponsiveContainer>
         <BarChart data={graph.data}>
-          <CartesianGrid fill={white} stroke={grey} strokeDasharray="3 3" />
+          <CartesianGrid
+            fill="var(--white)"
+            stroke="var(--grey)"
+            strokeDasharray="3 3"
+          />
           <XAxis
             dataKey="date"
-            stroke={white}
+            stroke="var(--white)"
             tickFormatter={(date: string): string => {
               const days: number = differenceInDays(
                 deserializeDate(lastDatum.date),
@@ -57,19 +50,19 @@ export default (): JSX.Element => {
             }}
             tickMargin={10}
           />
-          <YAxis allowDecimals={false} stroke={white} tickMargin={5}>
+          <YAxis allowDecimals={false} stroke="var(--white)" tickMargin={5}>
             <Label
               angle={-90}
               position="insideLeft"
-              style={{ fill: white }}
+              style={{ fill: "var(--white)" }}
               value="Pomodoros"
             />
           </YAxis>
-          <Bar dataKey="pomodoros" fill={red} />
+          <Bar dataKey="pomodoros" fill="var(--red)" />
         </BarChart>
       </ResponsiveContainer>
-    </Container>
+    </div>
   ) : (
-    <Message>No performance graph to show yet!</Message>
+    <div className={styles.message}>No performance graph to show yet!</div>
   );
 };

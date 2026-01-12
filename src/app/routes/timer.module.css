@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > * {
+    margin: 1rem;
+  }
+}
+
+.state {
+  font-size: 5em;
+}
+
+.time {
+  color: var(--white);
+  font-size: 10em;
+}
+
+.seconds {
+  font-size: 0.6em;
+  margin-left: 0.2ex;
+}

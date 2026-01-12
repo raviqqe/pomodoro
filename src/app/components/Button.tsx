@@ -1,15 +1,22 @@
-import { styled } from "@linaria/react";
-import { boxShadow, grey, red, white } from "../style.js";
+import classNames from "classnames";
+import type { ComponentPropsWithoutRef, JSX } from "react";
+import styles from "./Button.module.css";
 
-export const Button = styled.button<{ secondary?: boolean }>`
-  ${boxShadow};
-  background: ${({ secondary }) => (secondary ? grey : red)};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: inherit;
-  color: ${white};
-  border: none;
-  cursor: pointer;
-  flex-shrink: 0;
-`;
+type Props = ComponentPropsWithoutRef<"button"> & {
+  secondary?: boolean;
+};
+
+export const Button = ({
+  secondary,
+  className,
+  ...props
+}: Props): JSX.Element => (
+  <button
+    {...props}
+    className={classNames(
+      styles.button,
+      secondary ? styles.secondary : styles.primary,
+      className,
+    )}
+  />
+);

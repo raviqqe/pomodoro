@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=24.7.0"
-  },
   "scripts": {
     "start": "react-router dev",
     "build": "react-router typegen && tsc && react-router build",
@@ -17,12 +14,11 @@
   "dependencies": {
     "@fontsource/chelsea-market": "^5.2.7",
     "@fontsource/roboto": "^5.2.9",
-    "@linaria/core": "^6.3.0",
-    "@linaria/react": "^6.3.0",
     "@nanostores/react": "^1.0.0",
     "@raviqqe/react-hooks": "^0.6.9",
     "@react-router/node": "^7.12.0",
     "@sentry/browser": "^10.32.1",
+    "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
     "default-import": "^2.0.8",
     "es-toolkit": "^1.43.0",
@@ -38,8 +34,6 @@
     "worker-timers": "^8.0.28"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.28.5",
-    "@babel/preset-typescript": "^7.28.5",
     "@biomejs/biome": "^2.3.11",
     "@raviqqe/biome-config": "^2.0.24",
     "@raviqqe/react-tsconfig": "^2.0.2",
@@ -48,7 +42,6 @@
     "@types/react": "^19.2.7",
     "@vitejs/plugin-react": "^5.1.2",
     "@vitest/coverage-v8": "^4.0.16",
-    "@wyw-in-js/vite": "^0.8.1",
     "firebase-tools": "^15.2.1",
     "jsdom": "^27.4.0",
     "resize-observer-polyfill": "^1.5.1",
@@ -56,6 +49,9 @@
     "vite": "^7.3.1",
     "vite-plugin-pwa": "^1.2.0",
     "vitest": "^4.0.16"
+  },
+  "engines": {
+    "node": ">=25.2.1"
   },
   "packageManager": "pnpm@10.25.0+sha512.5e82639027af37cf832061bcc6d639c219634488e0f2baebe785028a793de7b525ffcd3f7ff574f5e9860654e098fe852ba8ac5dd5cefe1767d23a020a92f501"
 }

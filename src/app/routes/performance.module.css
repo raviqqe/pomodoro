@@ -1,0 +1,9 @@
+.root {
+  width: 80vw;
+  height: 80vh;
+}
+
+.message {
+  color: var(--white);
+  font-size: 1.5em;
+}
