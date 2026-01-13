@@ -15,7 +15,7 @@ export const Button = ({
     {...props}
     className={classNames(
       styles.button,
-      secondary ? styles.secondary : styles.primary,
+      secondary ? styles.secondary : undefined,
       className,
     )}
   />
