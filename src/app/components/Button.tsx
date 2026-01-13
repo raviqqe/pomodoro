@@ -2,13 +2,13 @@ import classNames from "classnames";
 import type { ComponentPropsWithoutRef, JSX } from "react";
 import styles from "./Button.module.css";
 
-type Props = ComponentPropsWithoutRef<"button"> & {
+interface Props extends ComponentPropsWithoutRef<"button"> {
   secondary?: boolean;
-};
+}
 
 export const Button = ({
-  secondary,
   className,
+  secondary,
   ...props
 }: Props): JSX.Element => (
   <button
