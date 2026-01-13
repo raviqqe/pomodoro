@@ -1,4 +1,4 @@
-.body {
+.root {
   --black: #222;
   --blue: steelblue;
   --grey: dimgray;
@@ -6,7 +6,9 @@
   --red: tomato;
   --white: white;
   --box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+}
 
+.body {
   background: var(--light-blue);
   margin: 0;
   padding: 0;
