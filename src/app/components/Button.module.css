@@ -1,4 +1,5 @@
 .button {
+  background: var(--red);
   box-shadow: var(--box-shadow);
   display: flex;
   justify-content: center;
@@ -8,10 +9,6 @@
   border: none;
   cursor: pointer;
   flex-shrink: 0;
-
-  &.primary {
-    background: var(--red);
-  }
 
   &.secondary {
     background: var(--grey);
