@@ -89,7 +89,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   }, [signedIn]);
 
   return (
-    <html lang="en">
+    <html className={styles.root} lang="en">
       <head>
         <Meta />
         <Links />
