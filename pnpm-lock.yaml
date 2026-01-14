@@ -32,9 +32,6 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
-      default-import:
-        specifier: ^2.0.8
-        version: 2.0.8
       es-toolkit:
         specifier: ^1.43.0
         version: 1.43.0
@@ -99,9 +96,6 @@ importers:
       jsdom:
         specifier: ^27.4.0
         version: 27.4.0
-      resize-observer-polyfill:
-        specifier: ^1.5.1
-        version: 1.5.1
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -2623,10 +2617,6 @@ packages:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
 
-  default-import@2.0.8:
-    resolution: {integrity: sha512-gAUvTfQIJISdj3udi6766hyGW/iqPt969qlgLxZvks/wePN1t0BWQYhUz/Q8jpc1PpclXrUtUJd6NEdFnvXiFg==}
-    engines: {node: '>=20'}
-
   defaults@1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
 
@@ -4416,9 +4406,6 @@ packages:
 
   reselect@5.1.1:
     resolution: {integrity: sha512-K/BG6eIky/SBpzfHZv/dd+9JBFiS4SWV7FIujVyJRux6e45+73RaUHXLmIR1f7WOMaQ0U1km6qwklRQxpJJY0w==}
-
-  resize-observer-polyfill@1.5.1:
-    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
 
   resolve@1.22.11:
     resolution: {integrity: sha512-RfqAvLnMl313r7c9oclB1HhUEAezcpLjz95wFH4LVuhk9JF/r22qmVP9AMmOU4vMX7Q8pN8jwNg/CSpdFnMjTQ==}
@@ -8102,8 +8089,6 @@ snapshots:
 
   deepmerge@4.3.1: {}
 
-  default-import@2.0.8: {}
-
   defaults@1.0.4:
     dependencies:
       clone: 1.0.4
@@ -10245,8 +10230,6 @@ snapshots:
   require-from-string@2.0.2: {}
 
   reselect@5.1.1: {}
-
-  resize-observer-polyfill@1.5.1: {}
 
   resolve@1.22.11:
     dependencies:
