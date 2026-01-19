@@ -39,8 +39,8 @@ importers:
         specifier: ^12.8.0
         version: 12.8.0
       isbot:
-        specifier: ^5.1.32
-        version: 5.1.32
+        specifier: ^5.1.33
+        version: 5.1.33
       nanostores:
         specifier: ^1.1.0
         version: 1.1.0
@@ -3544,8 +3544,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  isbot@5.1.32:
-    resolution: {integrity: sha512-VNfjM73zz2IBZmdShMfAUg10prm6t7HFUQmNAEOAVS4YH92ZrZcvkMcGX6cIgBJAzWDzPent/EeAtYEHNPNPBQ==}
+  isbot@5.1.33:
+    resolution: {integrity: sha512-P4Hgb5NqswjkI0J1CM6XKXon/sxKY1SuowE7Qx2hrBhIwICFyXy54mfgB5eMHXsbe/eStzzpbIGNOvGmz+dlKg==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -4810,6 +4810,7 @@ packages:
   tar@7.5.2:
     resolution: {integrity: sha512-7NyxrTE4Anh8km8iEy7o0QYPs+0JKBTj5ZaqHg6B39erLg0qYXN3BijtShwbsNSvQ+LN75+KV+C4QR/f6Gwnpg==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   tcp-port-used@1.0.2:
     resolution: {integrity: sha512-l7ar8lLUD3XS1V2lfoJlCBaeoaWo/2xfYt81hM7VlvR4RrMVFqfmzfhLVk40hAb368uitje5gPtBRL1m/DGvLA==}
@@ -7169,7 +7170,7 @@ snapshots:
       dedent: 1.7.1
       es-module-lexer: 1.7.0
       exit-hook: 2.2.1
-      isbot: 5.1.32
+      isbot: 5.1.33
       jsesc: 3.0.2
       lodash: 4.17.21
       p-map: 7.0.4
@@ -9420,7 +9421,7 @@ snapshots:
 
   isarray@2.0.5: {}
 
-  isbot@5.1.32: {}
+  isbot@5.1.33: {}
 
   isexe@2.0.0: {}
 
