@@ -12,6 +12,7 @@ export default (): JSX.Element => (
     <a
       className={styles.githubLink}
       href={configuration.repositoryUrl}
+      rel="noopener"
       target="_blank"
     >
       <FaGithub />
