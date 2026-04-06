@@ -8,11 +8,11 @@ export class PerformanceTracker {
   readonly #performanceRecordRepository: PerformanceRecordRepository;
   #seconds = 0;
 
-  public constructor(performanceRecordRepository: PerformanceRecordRepository) {
+  constructor(performanceRecordRepository: PerformanceRecordRepository) {
     this.#performanceRecordRepository = performanceRecordRepository;
   }
 
-  public async addSecond(): Promise<void> {
+  async addSecond(): Promise<void> {
     this.#seconds++;
 
     if (this.#seconds !== MINUTE) {

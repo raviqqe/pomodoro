@@ -12,7 +12,7 @@ export class PomodoroTimer {
   #pomodoro = true;
   #breakCount = 0;
 
-  public constructor(
+  constructor(
     timer: Timer,
     timerPresenter: PomodoroTimerPresenter,
     notificationPresenter: NotificationPresenter,
@@ -24,7 +24,7 @@ export class PomodoroTimer {
     this.#performanceTracker = performanceTracker;
   }
 
-  public start(): void {
+  start(): void {
     switch (this.#state()) {
       case "longBreak":
         this.#startBreak(15 * 60);
@@ -38,7 +38,7 @@ export class PomodoroTimer {
     }
   }
 
-  public stop(): void {
+  stop(): void {
     this.#timer.stop();
 
     this.#pomodoro = true;

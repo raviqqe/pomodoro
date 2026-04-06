@@ -6,7 +6,7 @@ export class Timer {
   readonly #presenter: TimerPresenter;
   #interval?: number;
 
-  public constructor(
+  constructor(
     setInterval: (callback: () => void, interval: number) => number,
     clearInterval: (id: number) => void,
     presenter: TimerPresenter,
@@ -16,7 +16,7 @@ export class Timer {
     this.#presenter = presenter;
   }
 
-  public start(
+  start(
     duration: number,
     {
       onEnd,
@@ -48,7 +48,7 @@ export class Timer {
     }, 1000);
   }
 
-  public stop(): void {
+  stop(): void {
     if (this.#interval === undefined) {
       throw new Error("Timer not started");
     }

@@ -5,7 +5,7 @@ export class SignInManager {
   readonly #authenticationController: AuthenticationController;
   readonly #authenticationPresenter: AuthenticationPresenter;
 
-  public constructor(
+  constructor(
     authenticationController: AuthenticationController,
     authenticationPresenter: AuthenticationPresenter,
   ) {
@@ -13,7 +13,7 @@ export class SignInManager {
     this.#authenticationPresenter = authenticationPresenter;
   }
 
-  public async signIn(): Promise<void> {
+  async signIn(): Promise<void> {
     await this.#authenticationController.signIn();
 
     this.#authenticationPresenter.presentSignedIn(

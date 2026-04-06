@@ -8,7 +8,7 @@ export class PerformanceGraphViewer {
   readonly #performanceRecordRepository: PerformanceRecordRepository;
   readonly #performanceGraphPresenter: PerformanceGraphPresenter;
 
-  public constructor(
+  constructor(
     performanceRecordRepository: PerformanceRecordRepository,
     performanceGraphPresenter: PerformanceGraphPresenter,
   ) {
@@ -16,7 +16,7 @@ export class PerformanceGraphViewer {
     this.#performanceGraphPresenter = performanceGraphPresenter;
   }
 
-  public async viewGraph(today: Date = new Date()): Promise<void> {
+  async viewGraph(today: Date = new Date()): Promise<void> {
     const records = await this.#performanceRecordRepository.findManySince(
       serializeDate(subMonths(new Date(today), 1)),
     );

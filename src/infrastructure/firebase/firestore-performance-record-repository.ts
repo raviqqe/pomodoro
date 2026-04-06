@@ -21,16 +21,16 @@ export class FirestorePerformanceRecordRepository
   readonly #auth: Auth;
   readonly #firestore: Firestore;
 
-  public constructor(app: FirebaseApp) {
+  constructor(app: FirebaseApp) {
     this.#auth = getAuth(app);
     this.#firestore = getFirestore(app);
   }
 
-  public async create(record: PerformanceRecord): Promise<void> {
+  async create(record: PerformanceRecord): Promise<void> {
     await this.createOrUpdate(record);
   }
 
-  public async findOne(date: string): Promise<PerformanceRecord | null> {
+  async findOne(date: string): Promise<PerformanceRecord | null> {
     const snapshot = await getDocs(
       query(this.#collection, where("date", "==", date)),
     );
@@ -41,7 +41,7 @@ export class FirestorePerformanceRecordRepository
       : null;
   }
 
-  public async findManySince(date: string): Promise<PerformanceRecord[]> {
+  async findManySince(date: string): Promise<PerformanceRecord[]> {
     const snapshot = await getDocs(
       query(this.#collection, where("date", ">=", date), orderBy("date")),
     );
@@ -51,11 +51,11 @@ export class FirestorePerformanceRecordRepository
     );
   }
 
-  public async update(record: PerformanceRecord): Promise<void> {
+  async update(record: PerformanceRecord): Promise<void> {
     await this.createOrUpdate(record);
   }
 
-  public async createOrUpdate(record: PerformanceRecord): Promise<void> {
+  async createOrUpdate(record: PerformanceRecord): Promise<void> {
     await setDoc(doc(this.#collection, record.date), record);
   }
 

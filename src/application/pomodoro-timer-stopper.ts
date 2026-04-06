@@ -3,11 +3,11 @@ import type { PomodoroTimer } from "./pomodoro-timer.js";
 export class PomodoroTimerStopper {
   readonly #pomodoroTimer: PomodoroTimer;
 
-  public constructor(pomodoroTimer: PomodoroTimer) {
+  constructor(pomodoroTimer: PomodoroTimer) {
     this.#pomodoroTimer = pomodoroTimer;
   }
 
-  public stop(): void {
+  stop(): void {
     this.#pomodoroTimer.stop();
   }
 }
