@@ -7,7 +7,7 @@ export class SignOutManager {
   readonly #authenticationPresenter: AuthenticationPresenter;
   readonly #performanceGraphPresenter: PerformanceGraphPresenter;
 
-  public constructor(
+  constructor(
     authenticationController: AuthenticationController,
     authenticationPresenter: AuthenticationPresenter,
     performanceGraphPresenter: PerformanceGraphPresenter,
@@ -17,7 +17,7 @@ export class SignOutManager {
     this.#performanceGraphPresenter = performanceGraphPresenter;
   }
 
-  public async signOut(): Promise<void> {
+  async signOut(): Promise<void> {
     await this.#authenticationController.signOut();
 
     this.#authenticationPresenter.presentSignedIn(

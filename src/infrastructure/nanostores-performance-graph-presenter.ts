@@ -5,9 +5,9 @@ import type { PerformanceGraphPresenter } from "../application/performance-graph
 export class NanostoresPerformanceGraphPresenter
   implements PerformanceGraphPresenter
 {
-  public readonly graph = atom<PerformanceGraph | null>(null);
+  readonly graph = atom<PerformanceGraph | null>(null);
 
-  public presentGraph(graph: PerformanceGraph | null): void {
+  presentGraph(graph: PerformanceGraph | null): void {
     this.graph.set(graph);
   }
 }

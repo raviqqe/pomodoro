@@ -5,7 +5,7 @@ export class PomodoroTimerStarter {
   readonly #pomodoroTimer: PomodoroTimer;
   readonly #notificationController: NotificationInitializer;
 
-  public constructor(
+  constructor(
     pomodoroTimer: PomodoroTimer,
     notificationController: NotificationInitializer,
   ) {
@@ -13,7 +13,7 @@ export class PomodoroTimerStarter {
     this.#notificationController = notificationController;
   }
 
-  public async start(): Promise<void> {
+  async start(): Promise<void> {
     await this.#notificationController.initialize();
     this.#pomodoroTimer.start();
   }
