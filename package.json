@@ -19,7 +19,7 @@
     "@react-router/node": "^7.16.0",
     "@sentry/react-router": "^10.53.1",
     "classnames": "^2.5.1",
-    "date-fns": "^4.3.0",
+    "date-fns": "^4.4.0",
     "es-toolkit": "^1.46.1",
     "firebase": "^12.13.0",
     "isbot": "^5.1.40",
