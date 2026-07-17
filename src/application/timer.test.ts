@@ -36,7 +36,7 @@ it("calls a tick callback", () => {
   timer.start(42, { ...dummyCallbacks, onTick: tickCallback });
 
   for (const _ of range(43)) {
-    (spy.mock.calls[0]?.[0] as () => void)();
+    (spy.mock.calls[0]?.[0] as (() => void) | undefined)?.();
   }
 
   expect(tickCallback).toHaveBeenCalledTimes(42);
@@ -49,7 +49,7 @@ it("calls an end callback when time is up", () => {
   timer.start(42, { ...dummyCallbacks, onEnd: end });
 
   for (const _ of range(43)) {
-    (spy.mock.calls[0]?.[0] as () => void)();
+    (spy.mock.calls[0]?.[0] as (() => void) | undefined)?.();
   }
 
   expect(end).toHaveBeenCalledTimes(1);
@@ -61,7 +61,7 @@ it("presents time", () => {
   timer.start(42, dummyCallbacks);
 
   for (const _ of range(43)) {
-    (spy.mock.calls[0]?.[0] as () => void)();
+    (spy.mock.calls[0]?.[0] as (() => void) | undefined)?.();
   }
 
   expect(timerPresenter.presentStopped.mock.calls).toEqual([[false], [true]]);
