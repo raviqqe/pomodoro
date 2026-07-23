@@ -22,7 +22,7 @@
     "es-toolkit": "^1.49.0",
     "firebase": "^12.16.0",
     "isbot": "^5.2.1",
-    "nanostores": "^1.3.0",
+    "nanostores": "^1.4.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-icons": "^5.7.0",
