@@ -42,7 +42,7 @@
     "@vitejs/plugin-react": "^6.0.4",
     "@vitest/coverage-v8": "^4.1.10",
     "firebase-tools": "^15.24.0",
-    "jsdom": "^29.1.1",
+    "jsdom": "^30.0.0",
     "knip": "^6.14.2",
     "typescript": "^7.0.2",
     "vite": "^8.1.5",
