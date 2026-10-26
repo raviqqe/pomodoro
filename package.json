@@ -20,7 +20,7 @@
     "classnames": "^2.5.1",
     "date-fns": "^4.4.0",
     "es-toolkit": "^1.52.0",
-    "firebase": "^13.0.0",
+    "firebase": "^13.1.0",
     "isbot": "^5.2.2",
     "nanostores": "^1.5.5",
     "react": "^19.3.1",
