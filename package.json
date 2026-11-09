@@ -19,7 +19,7 @@
     "@sentry/react-router": "^11.10.0",
     "classnames": "^2.5.1",
     "date-fns": "^4.4.0",
-    "es-toolkit": "^1.53.1",
+    "es-toolkit": "^1.53.2",
     "firebase": "^13.2.0",
     "isbot": "^5.2.2",
     "nanostores": "^1.5.5",
