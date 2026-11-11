@@ -32,7 +32,7 @@
     "worker-timers": "^8.0.34"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.6.4",
+    "@biomejs/biome": "^2.6.6",
     "@raviqqe/biome-config": "^2.0.29",
     "@raviqqe/react-tsconfig": "^2.0.4",
     "@react-router/dev": "^8.5.1",
